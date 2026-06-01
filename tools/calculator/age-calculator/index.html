@@ -1,0 +1,351 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Age Calculator - Calculate Your Exact Age Online | ToolPrime</title>
+    <meta name="description" content="Calculate your exact age in years, months, days. Free online age calculator with zodiac sign. Birthday countdown.">
+    <meta name="keywords" content="age calculator, calculate age, how old am i, birthday calculator, age in days, age finder">
+    <link rel="canonical" href="https://toolprime.online/tools/calculator/age-calculator/">
+    <meta property="og:title" content="Age Calculator - ToolPrime">
+    <meta property="og:description" content="Calculate your exact age instantly. Free, accurate, easy to use.">
+
+    <link rel="stylesheet" href="../../../css/tool-style.css">
+    <style>@media(max-width:480px){body{padding:0 10px!important}}</style>
+    <link rel="icon" type="image/png" href="../../../assets/images/toolprime.png">
+    <style>footer{margin-left:-16px;margin-right:-16px}@media(max-width:768px){footer{margin-left:-12px;margin-right:-12px}}@media(max-width:480px){footer{margin-left:-8px;margin-right:-8px}}</style>
+</head>
+<body style="padding: 0 16px; margin: 0; overflow-x: hidden;">
+<!-- ═══════════ HEADER ═══════════ -->
+<header style="background:#fff;border-bottom:1px solid #e8eaed;padding:0;position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,0.04)">
+    <div style="max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 24px;gap:20px">
+        
+        <!-- Logo - Direct image only -->
+        <a href="../index.html" style="display:flex;align-items:center;text-decoration:none;flex-shrink:0">
+            <img src="../assets/images/toolprime.png" alt="ToolPrime" style="height:38px;width:auto;display:block">
+        </a>
+        
+        <!-- Search -->
+        <div style="flex:1;max-width:480px">
+            <input type="text" id="tpSearch" placeholder="Search tools..." autocomplete="off"
+                style="width:100%;padding:12px 20px;background:#f5f5f7;border:2px solid transparent;border-radius:14px;font-size:0.9rem;font-family:inherit;color:#1d1d1f;outline:none;transition:all 0.25s ease"
+                onfocus="this.style.background='#fff';this.style.borderColor='#0071e3';this.style.boxShadow='0 0 0 4px rgba(0,113,227,0.08)'"
+                onblur="this.style.background='#f5f5f7';this.style.borderColor='transparent';this.style.boxShadow='none'">
+        </div>
+        
+        <!-- Right -->
+        <div id="tpRight" style="flex-shrink:0">
+            <span style="font-size:0.78rem;color:#6e6e73;font-weight:500">🛠️ 20+ Tools</span>
+        </div>
+    </div>
+</header>
+
+<script>
+(function(){
+    const path = window.location.pathname;
+    const depth = (path.match(/\//g)||[]).length - 1;
+    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+    
+    // Fix logo link
+    const logoLink = document.querySelector('header a[href="../index.html"]');
+    if(logoLink) logoLink.href = prefix + 'index.html';
+    
+    // Fix logo image
+    const logoImg = document.querySelector('header img[src="../assets/images/toolprime.png"]');
+    if(logoImg) logoImg.src = prefix + 'assets/images/toolprime.png';
+    
+    // Fix search
+    const search = document.getElementById('tpSearch');
+    if(search){
+        search.addEventListener('keydown', function(e){
+            if(e.key === 'Enter'){
+                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
+            }
+        });
+    }
+    
+    // Home button for tool pages
+    if(depth > 0){
+        const right = document.getElementById('tpRight');
+        if(right){
+            right.innerHTML = '<a href="' + prefix + 'index.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f5f5f7;border-radius:10px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:600;transition:0.2s;white-space:nowrap" onmouseover="this.style.background=\'#0071e3\';this.style.color=\'#fff\'" onmouseout="this.style.background=\'#f5f5f7\';this.style.color=\'#1d1d1f\'">🏠 Home</a>';
+        }
+        const header = document.querySelector('header');
+        if(header){ header.style.marginLeft = '-32px'; header.style.marginRight = '-32px'; }
+    }
+})();
+</script>
+<!-- ═══════════ TOOLPRIME HEADER ═══════════ -->
+
+
+<script>
+// Auto-fix header paths based on page location
+(function(){
+    const depth = (window.location.pathname.match(/\//g)||[]).length - 1;
+    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+    
+    const logo = document.getElementById('tpLogo');
+    const logoImg = document.getElementById('tpLogoImg');
+    const search = document.getElementById('tpSearch');
+    const right = document.getElementById('tpRight');
+    
+    if(logo && prefix) logo.href = prefix + 'index.html';
+    if(logoImg && prefix) logoImg.src = prefix + 'assets/images/toolprime.png';
+    
+    // Search redirect
+    if(search){
+        search.addEventListener('keydown', function(e){
+            if(e.key === 'Enter'){
+                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
+            }
+        });
+    }
+    
+    // Show home button on tool pages
+    if(depth > 0 && right){
+        right.innerHTML = '<a href="' + prefix + 'index.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f5f5f7;border-radius:10px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:600;transition:0.2s;white-space:nowrap" onmouseover="this.style.background=\'#0071e3\';this.style.color=\'#fff\'" onmouseout="this.style.background=\'#f5f5f7\';this.style.color=\'#1d1d1f\'">🏠 Home</a>';
+    }
+    
+    // Style header margin for tool pages
+    const header = document.getElementById('tpHeader');
+    if(depth > 0 && header){
+        header.style.marginLeft = '-32px';
+        header.style.marginRight = '-32px';
+    }
+})();
+</script>
+<!-- ═══════════ HEADER ═══════════ -->
+
+<!-- ═══════════ PREMIUM HEADER ═══════════ -->
+
+
+
+
+
+
+
+
+
+
+
+<div class="ac-wrap">
+    <a href="../../../index.html" class="ac-back">← Back to Store</a>
+    
+    <div class="ac-card">
+        <h1>🎂 Age Calculator</h1>
+        <p class="ac-desc">Calculate your exact age. Find out how many years, months, days — and total days you have lived!</p>
+        
+        <div class="input-row">
+            <input type="date" id="dobInput" title="Date of Birth">
+        </div>
+        
+        <button class="btn-calc" onclick="calculate()">🎯 Calculate My Age</button>
+        
+        <div class="result-grid" id="resultGrid" style="display:none">
+            <div class="res-box"><div class="res-num" id="years">-</div><div class="res-lbl">Years</div></div>
+            <div class="res-box"><div class="res-num" id="months">-</div><div class="res-lbl">Months</div></div>
+            <div class="res-box"><div class="res-num" id="days">-</div><div class="res-lbl">Days</div></div>
+            <div class="res-box"><div class="res-num" id="hours">-</div><div class="res-lbl">Hours</div></div>
+            <div class="res-box"><div class="res-num" id="minutes">-</div><div class="res-lbl">Minutes</div></div>
+            <div class="res-box"><div class="res-num" id="weeks">-</div><div class="res-lbl">Weeks</div></div>
+        </div>
+        
+        <div class="extra-info" id="extraInfo" style="display:none">
+            <div class="extra-row"><span class="elbl">📅 Date of Birth</span><span class="eval" id="dobDisplay">-</span></div>
+            <div class="extra-row"><span class="elbl">📆 Total Days Lived</span><span class="eval highlight" id="totalDays">-</span></div>
+            <div class="extra-row"><span class="elbl">🎈 Next Birthday</span><span class="eval" id="nextBirthday">-</span></div>
+            <div class="extra-row"><span class="elbl">⏳ Days Until Birthday</span><span class="eval highlight" id="daysUntil">-</span></div>
+            <div class="extra-row"><span class="elbl">🎉 Birthday Day of Week</span><span class="eval" id="dobDay">-</span></div>
+        </div>
+        
+        <div class="zodiac-box" id="zodiacBox" style="display:none">
+            <span class="zodiac-icon" id="zodiacIcon">⭐</span>
+            <div class="zodiac-info">
+                <span id="zodiacName">-</span>
+                <small id="zodiacDate">-</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+function msg(t){const x=document.getElementById('toast');x.textContent=t;x.className='toast ok show';clearTimeout(x._t);x._t=setTimeout(()=>x.classList.remove('show'),2000)}
+
+const zodiacSigns=[
+    {name:'♑ Capricorn',start:'12-22',end:'01-19',icon:'♑',emoji:'🐐'},
+    {name:'♒ Aquarius',start:'01-20',end:'02-18',icon:'♒',emoji:'🏺'},
+    {name:'♓ Pisces',start:'02-19',end:'03-20',icon:'♓',emoji:'🐟'},
+    {name:'♈ Aries',start:'03-21',end:'04-19',icon:'♈',emoji:'🐏'},
+    {name:'♉ Taurus',start:'04-20',end:'05-20',icon:'♉',emoji:'🐂'},
+    {name:'♊ Gemini',start:'05-21',end:'06-20',icon:'♊',emoji:'👯'},
+    {name:'♋ Cancer',start:'06-21',end:'07-22',icon:'♋',emoji:'🦀'},
+    {name:'♌ Leo',start:'07-23',end:'08-22',icon:'♌',emoji:'🦁'},
+    {name:'♍ Virgo',start:'08-23',end:'09-22',icon:'♍',emoji:'👩'},
+    {name:'♎ Libra',start:'09-23',end:'10-22',icon:'♎',emoji:'⚖️'},
+    {name:'♏ Scorpio',start:'10-23',end:'11-21',icon:'♏',emoji:'🦂'},
+    {name:'♐ Sagittarius',start:'11-22',end:'12-21',icon:'♐',emoji:'🏹'}
+];
+
+function getZodiac(month,day){
+    const md=`${String(month).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+    for(const z of zodiacSigns){
+        if(z.start<=z.end){if(md>=z.start&&md<=z.end)return z}
+        else{if(md>=z.start||md<=z.end)return z}
+    }
+    return zodiacSigns[0];
+}
+
+function calculate(){
+    const dobVal=document.getElementById('dobInput').value;
+    if(!dobVal){msg('Please select your date of birth!');return}
+    
+    const dob=new Date(dobVal);
+    const now=new Date();
+    
+    if(dob>now){msg('Date of birth cannot be in the future!');return}
+    
+    // Calculate years, months, days
+    let years=now.getFullYear()-dob.getFullYear();
+    let months=now.getMonth()-dob.getMonth();
+    let days=now.getDate()-dob.getDate();
+    
+    if(days<0){
+        months--;
+        const prevMonth=new Date(now.getFullYear(),now.getMonth(),0);
+        days+=prevMonth.getDate();
+    }
+    if(months<0){years--;months+=12}
+    
+    // Total values
+    const diffMs=now-dob;
+    const totalDays=Math.floor(diffMs/(1000*60*60*24));
+    const totalHours=Math.floor(diffMs/(1000*60*60));
+    const totalMinutes=Math.floor(diffMs/(1000*60));
+    const totalWeeks=Math.floor(totalDays/7);
+    
+    // Display
+    document.getElementById('years').textContent=years;
+    document.getElementById('months').textContent=months;
+    document.getElementById('days').textContent=days;
+    document.getElementById('hours').textContent=totalHours.toLocaleString();
+    document.getElementById('minutes').textContent=totalMinutes.toLocaleString();
+    document.getElementById('weeks').textContent=totalWeeks.toLocaleString();
+    
+    document.getElementById('resultGrid').style.display='grid';
+    
+    // Extra info
+    document.getElementById('dobDisplay').textContent=dob.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+    document.getElementById('totalDays').textContent=totalDays.toLocaleString()+' days';
+    document.getElementById('dobDay').textContent=dob.toLocaleDateString('en-US',{weekday:'long'});
+    
+    // Next birthday
+    const nextBday=new Date(now.getFullYear(),dob.getMonth(),dob.getDate());
+    if(nextBday<=now) nextBday.setFullYear(now.getFullYear()+1);
+    const daysUntil=Math.ceil((nextBday-now)/(1000*60*60*24));
+    document.getElementById('nextBirthday').textContent=nextBday.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+    document.getElementById('daysUntil').textContent=daysUntil+' days';
+    
+    document.getElementById('extraInfo').style.display='block';
+    
+    // Zodiac
+    const zodiac=getZodiac(dob.getMonth()+1,dob.getDate());
+    document.getElementById('zodiacIcon').textContent=zodiac.icon;
+    document.getElementById('zodiacName').textContent=zodiac.name+' '+zodiac.emoji;
+    document.getElementById('zodiacDate').textContent=zodiac.start+' to '+zodiac.end;
+    document.getElementById('zodiacBox').style.display='flex';
+    
+    // Scroll to results
+    document.getElementById('resultGrid').scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+// Set today as max date
+document.getElementById('dobInput').setAttribute('max',new Date().toISOString().split('T')[0]);
+
+// Keyboard shortcut
+document.addEventListener('keydown',e=>{
+    if(e.ctrlKey&&e.key==='Enter'){e.preventDefault();calculate();}
+});
+</script>
+
+<div style="background:#fff;border:1px solid #e5e5ea;border-radius:14px;padding:28px;margin-top:20px;box-shadow:0 2px 8px rgba(0,0,0,0.04)">
+    <h2 style="font-size:1.2rem;font-weight:700;margin-bottom:12px;color:#1d1d1f">📋 How to Calculate Your Exact Age</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:20px">
+        <div style="background:#f5f5f7;padding:16px;border-radius:10px">
+            <div style="font-size:1.5rem;font-weight:700;color:#0071e3;margin-bottom:4px">1️⃣</div>
+            <div style="font-weight:600;margin-bottom:2px">Select Birth Date</div>
+            <div style="font-size:0.8rem;color:#6e6e73">Use the date picker to select your exact date of birth.</div>
+        </div>
+        <div style="background:#f5f5f7;padding:16px;border-radius:10px">
+            <div style="font-size:1.5rem;font-weight:700;color:#0071e3;margin-bottom:4px">2️⃣</div>
+            <div style="font-weight:600;margin-bottom:2px">Click Calculate</div>
+            <div style="font-size:0.8rem;color:#6e6e73">Press the Calculate button or use Ctrl+Enter shortcut.</div>
+        </div>
+        <div style="background:#f5f5f7;padding:16px;border-radius:10px">
+            <div style="font-size:1.5rem;font-weight:700;color:#0071e3;margin-bottom:4px">3️⃣</div>
+            <div style="font-weight:600;margin-bottom:2px">See Your Results</div>
+            <div style="font-size:0.8rem;color:#6e6e73">View age in years, months, days, plus zodiac sign & total days lived!</div>
+        </div>
+    </div>
+    
+    <h2 style="font-size:1.1rem;font-weight:700;margin:20px 0 10px;color:#1d1d1f">✨ Features</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;margin-bottom:20px">
+        <div style="font-size:0.85rem">✅ Exact age calculation</div>
+        <div style="font-size:0.85rem">✅ Years, months, days</div>
+        <div style="font-size:0.85rem">✅ Zodiac sign detection</div>
+        <div style="font-size:0.85rem">✅ Total days lived</div>
+        <div style="font-size:0.85rem">✅ Next birthday countdown</div>
+        <div style="font-size:0.85rem">✅ Birthday day of week</div>
+        <div style="font-size:0.85rem">✅ Free & instant</div>
+        <div style="font-size:0.85rem">✅ No data stored</div>
+    </div>
+    
+    <h2 style="font-size:1.1rem;font-weight:700;margin:20px 0 10px;color:#1d1d1f">❓ FAQ</h2>
+    <div style="margin-bottom:8px"><strong>Q: How accurate is this age calculator?</strong><br><span style="color:#6e6e73;font-size:0.88rem">A: 100% accurate - calculates to the exact day including leap years.</span></div>
+    <div style="margin-bottom:8px"><strong>Q: Does it store my birth date?</strong><br><span style="color:#6e6e73;font-size:0.88rem">A: No, everything is processed in your browser. No data is collected.</span></div>
+    
+    <h2 style="font-size:1.1rem;font-weight:700;margin:20px 0 10px;color:#1d1d1f">🔗 Related Tools</h2>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a href="../bmi-calculator/index.html" class="related-link">⚖️ BMI Calculator</a>
+        <a href="../../time/stopwatch-timer/index.html" class="related-link">⏱️ Stopwatch Timer</a>
+    </div>
+</div>
+<footer style="background:#fff;border-top:1px solid #e5e5ea;padding:24px 20px;margin-top:40px">
+    <div style="max-width:800px;margin:0 auto;text-align:center">
+        <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:12px">
+            <a href="../../../index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🏠 Home</a>
+            <a href="../../../tools/image/png-to-jpg-converter/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🖼️ PNG to JPG</a>
+            <a href="../../../tools/text/word-counter/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">📝 Word Counter</a>
+            <a href="../../../tools/url/qr-generator/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">📱 QR Code</a>
+            <a href="../../../tools/security/password-generator/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🔐 Password</a>
+        </div>
+        <p style="color:#8e8e93;font-size:0.76rem;margin:0">&copy; 2025 ToolPrime. All rights reserved. Made with ❤️</p>
+    </div>
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

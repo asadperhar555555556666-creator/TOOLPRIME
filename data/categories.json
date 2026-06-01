@@ -1,0 +1,13 @@
+﻿[
+  { "id": "all", "name": "🔥 All" },
+  { "id": "text", "name": "📝 Text" },
+  { "id": "image", "name": "🖼️ Image" },
+  { "id": "developer", "name": "💻 Developer" },
+  { "id": "security", "name": "🔐 Security" },
+  { "id": "calculator", "name": "🧮 Calculator" },
+  { "id": "url", "name": "🔗 URL & Web" },
+  { "id": "pdf", "name": "📄 PDF" },
+  { "id": "time", "name": "⏱️ Time & Date" },
+  { "id": "design", "name": "🎨 Design" },
+  { "id": "fun", "name": "🎲 Fun" }
+]

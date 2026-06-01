@@ -1,0 +1,622 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator - Strong Random Password | ToolPrime</title>
+    <meta name="description" content="Generate strong secure passwords online free. Customize length, include symbols & numbers.">
+    <meta name="keywords" content="password generator, strong password, random password, secure password">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        
+        body{
+            font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+            background:#f5f5f7;
+            color:#1d1d1f;
+            line-height:1.6;
+            min-height:100vh;
+        }
+        
+        .header{
+            background:#fff;
+            border-bottom:1px solid #e5e5ea;
+            padding:0 20px;
+        }
+        .header-inner{
+            max-width:750px;
+            margin:0 auto;
+            display:flex;
+            align-items:center;
+            height:54px;
+        }
+        .logo{
+            display:flex;
+            align-items:center;
+            text-decoration:none;
+            gap:8px;
+        }
+        .logo img{height:28px}
+        .logo span{font-weight:700;font-size:1rem;color:#0071e3}
+        
+        .container{
+            max-width:750px;
+            margin:0 auto;
+            padding:24px 20px 50px;
+        }
+        .back{
+            display:inline-flex;
+            align-items:center;
+            gap:6px;
+            color:#0071e3;
+            text-decoration:none;
+            font-weight:500;
+            font-size:0.9rem;
+            margin-bottom:18px;
+        }
+        .back:hover{text-decoration:underline}
+        
+        .card{
+            background:#fff;
+            border:1px solid #e5e5ea;
+            border-radius:14px;
+            padding:24px;
+            box-shadow:0 1px 4px rgba(0,0,0,0.04);
+        }
+        .card h1{
+            font-size:1.5rem;
+            font-weight:700;
+            margin-bottom:6px;
+            display:flex;
+            align-items:center;
+            gap:8px;
+        }
+        .card .desc{
+            color:#6e6e73;
+            font-size:0.9rem;
+            margin-bottom:22px;
+        }
+        
+        label{
+            display:block;
+            font-size:0.78rem;
+            font-weight:600;
+            color:#1d1d1f;
+            margin-bottom:6px;
+            text-transform:uppercase;
+            letter-spacing:0.3px;
+        }
+        
+        input[type=text],input[type=password],input[type=number]{
+            width:100%;
+            padding:12px 14px;
+            background:#f5f5f7;
+            border:2px solid #e5e5ea;
+            border-radius:10px;
+            font-size:0.9rem;
+            font-family:inherit;
+            color:#1d1d1f;
+            margin-bottom:14px;
+            transition:0.15s;
+        }
+        input:focus{
+            border-color:#0071e3;
+            outline:none;
+            background:#fff;
+            box-shadow:0 0 0 3px rgba(0,113,227,0.08);
+        }
+        
+        input[type=range]{
+            width:100%;
+            height:6px;
+            cursor:pointer;
+            accent-color:#0071e3;
+            margin-bottom:0;
+        }
+        
+        .pass-box{
+            background:#f5f5f7;
+            border:2px solid #0071e3;
+            border-radius:12px;
+            padding:16px 20px;
+            margin-bottom:16px;
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+        .pass-text{
+            flex:1;
+            font-family:'Courier New',monospace;
+            font-size:1.3rem;
+            font-weight:700;
+            color:#0071e3;
+            word-break:break-all;
+            letter-spacing:1px;
+        }
+        .pass-text.empty{
+            color:#6e6e73;
+            font-weight:400;
+            font-size:0.9rem;
+        }
+        
+        .btn{
+            display:inline-flex;
+            align-items:center;
+            gap:6px;
+            padding:10px 20px;
+            border-radius:10px;
+            border:none;
+            font-weight:600;
+            font-size:0.85rem;
+            cursor:pointer;
+            font-family:inherit;
+            transition:0.15s;
+        }
+        .btn-copy{
+            background:#0071e3;
+            color:#fff;
+            white-space:nowrap;
+            flex-shrink:0;
+        }
+        .btn-copy:hover{background:#005bb5}
+        .btn-copy.copied{background:#34c759}
+        
+        .strength-bar{
+            height:6px;
+            border-radius:3px;
+            margin-bottom:18px;
+            background:#e5e5ea;
+            transition:0.3s;
+        }
+        .strength-bar.weak{background:#ff3b30}
+        .strength-bar.medium{background:#ff9500}
+        .strength-bar.strong{background:#34c759}
+        
+        .strength-label{
+            font-size:0.75rem;
+            font-weight:600;
+            margin-bottom:4px;
+            text-align:right;
+        }
+        .strength-label.weak{color:#ff3b30}
+        .strength-label.medium{color:#ff9500}
+        .strength-label.strong{color:#34c759}
+        
+        .slider-row{
+            display:flex;
+            align-items:center;
+            gap:12px;
+            margin-bottom:14px;
+        }
+        .slider-row label{min-width:55px;margin-bottom:0}
+        .slider-row input[type=range]{flex:1}
+        .len-val{
+            font-size:1.3rem;
+            font-weight:700;
+            color:#0071e3;
+            min-width:35px;
+            text-align:center;
+        }
+        
+        .opts{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:8px;
+            margin-bottom:16px;
+        }
+        .opt{
+            display:flex;
+            align-items:center;
+            gap:8px;
+            padding:10px 14px;
+            background:#f5f5f7;
+            border:2px solid #e5e5ea;
+            border-radius:10px;
+            cursor:pointer;
+            font-size:0.85rem;
+            font-weight:500;
+        }
+        .opt:hover{border-color:#0071e3}
+        .opt input{display:none}
+        .opt .box{
+            width:20px;
+            height:20px;
+            border-radius:5px;
+            border:2px solid #d0d0d5;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            flex-shrink:0;
+        }
+        .opt input:checked+.box{
+            background:#0071e3;
+            border-color:#0071e3;
+        }
+        .opt input:checked+.box::after{
+            content:'✓';
+            color:#fff;
+            font-weight:700;
+            font-size:0.7rem;
+        }
+        
+        .btn-gen{
+            width:100%;
+            padding:14px;
+            background:linear-gradient(135deg,#0071e3,#5ac8fa);
+            color:#fff;
+            border:none;
+            border-radius:12px;
+            font-size:1rem;
+            font-weight:700;
+            cursor:pointer;
+            font-family:inherit;
+            transition:0.2s;
+        }
+        .btn-gen:hover{
+            transform:translateY(-1px);
+            box-shadow:0 4px 16px rgba(0,113,227,0.3);
+        }
+        .btn-gen:active{transform:scale(0.97)}
+        
+        .history{margin-top:14px}
+        .history h3{font-size:0.9rem;margin-bottom:8px}
+        .hist-item{
+            display:flex;
+            align-items:center;
+            gap:8px;
+            padding:8px 12px;
+            background:#f5f5f7;
+            border-radius:8px;
+            margin-bottom:4px;
+            font-family:monospace;
+            font-size:0.78rem;
+            color:#6e6e73;
+        }
+        .hist-item span:last-child{
+            cursor:pointer;
+            color:#0071e3;
+            font-size:0.72rem;
+            margin-left:auto;
+            padding:4px 8px;
+            border:1px solid #e5e5ea;
+            border-radius:6px;
+        }
+        .hist-item span:last-child:hover{
+            background:#0071e3;
+            color:#fff;
+        }
+        
+        .toast{
+            position:fixed;
+            bottom:24px;
+            left:50%;
+            transform:translateX(-50%);
+            background:#1d1d1f;
+            color:#fff;
+            padding:10px 22px;
+            border-radius:24px;
+            font-size:0.85rem;
+            z-index:999;
+            opacity:0;
+            transition:0.3s;
+        }
+        .toast.show{opacity:1}
+        
+        @media(max-width:600px){
+            .container{padding:16px 12px 30px}
+            .card{padding:16px}
+            .card h1{font-size:1.2rem}
+            .opts{grid-template-columns:1fr}
+            .pass-text{font-size:1rem}
+            .header{padding:0 12px}
+        }
+    </style>
+    <link rel="stylesheet" href="../../../css/tool-style.css">
+    <style>@media(max-width:480px){body{padding:0 10px!important}}</style>
+    <link rel="icon" type="image/png" href="../../../assets/images/toolprime.png">
+    <style>footer{margin-left:-16px;margin-right:-16px}@media(max-width:768px){footer{margin-left:-12px;margin-right:-12px}}@media(max-width:480px){footer{margin-left:-8px;margin-right:-8px}}</style>
+</head>
+<body style="padding: 0 16px; margin: 0; overflow-x: hidden;">
+<!-- ═══════════ HEADER ═══════════ -->
+<header style="background:#fff;border-bottom:1px solid #e8eaed;padding:0;position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,0.04)">
+    <div style="max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 24px;gap:20px">
+        
+        <!-- Logo - Direct image only -->
+        <a href="../index.html" style="display:flex;align-items:center;text-decoration:none;flex-shrink:0">
+            <img src="../assets/images/toolprime.png" alt="ToolPrime" style="height:38px;width:auto;display:block">
+        </a>
+        
+        <!-- Search -->
+        <div style="flex:1;max-width:480px">
+            <input type="text" id="tpSearch" placeholder="Search tools..." autocomplete="off"
+                style="width:100%;padding:12px 20px;background:#f5f5f7;border:2px solid transparent;border-radius:14px;font-size:0.9rem;font-family:inherit;color:#1d1d1f;outline:none;transition:all 0.25s ease"
+                onfocus="this.style.background='#fff';this.style.borderColor='#0071e3';this.style.boxShadow='0 0 0 4px rgba(0,113,227,0.08)'"
+                onblur="this.style.background='#f5f5f7';this.style.borderColor='transparent';this.style.boxShadow='none'">
+        </div>
+        
+        <!-- Right -->
+        <div id="tpRight" style="flex-shrink:0">
+            <span style="font-size:0.78rem;color:#6e6e73;font-weight:500">🛠️ 20+ Tools</span>
+        </div>
+    </div>
+</header>
+
+<script>
+(function(){
+    const path = window.location.pathname;
+    const depth = (path.match(/\//g)||[]).length - 1;
+    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+    
+    // Fix logo link
+    const logoLink = document.querySelector('header a[href="../index.html"]');
+    if(logoLink) logoLink.href = prefix + 'index.html';
+    
+    // Fix logo image
+    const logoImg = document.querySelector('header img[src="../assets/images/toolprime.png"]');
+    if(logoImg) logoImg.src = prefix + 'assets/images/toolprime.png';
+    
+    // Fix search
+    const search = document.getElementById('tpSearch');
+    if(search){
+        search.addEventListener('keydown', function(e){
+            if(e.key === 'Enter'){
+                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
+            }
+        });
+    }
+    
+    // Home button for tool pages
+    if(depth > 0){
+        const right = document.getElementById('tpRight');
+        if(right){
+            right.innerHTML = '<a href="' + prefix + 'index.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f5f5f7;border-radius:10px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:600;transition:0.2s;white-space:nowrap" onmouseover="this.style.background=\'#0071e3\';this.style.color=\'#fff\'" onmouseout="this.style.background=\'#f5f5f7\';this.style.color=\'#1d1d1f\'">🏠 Home</a>';
+        }
+        const header = document.querySelector('header');
+        if(header){ header.style.marginLeft = '-32px'; header.style.marginRight = '-32px'; }
+    }
+})();
+</script>
+<!-- ═══════════ TOOLPRIME HEADER ═══════════ -->
+
+
+<script>
+// Auto-fix header paths based on page location
+(function(){
+    const depth = (window.location.pathname.match(/\//g)||[]).length - 1;
+    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+    
+    const logo = document.getElementById('tpLogo');
+    const logoImg = document.getElementById('tpLogoImg');
+    const search = document.getElementById('tpSearch');
+    const right = document.getElementById('tpRight');
+    
+    if(logo && prefix) logo.href = prefix + 'index.html';
+    if(logoImg && prefix) logoImg.src = prefix + 'assets/images/toolprime.png';
+    
+    // Search redirect
+    if(search){
+        search.addEventListener('keydown', function(e){
+            if(e.key === 'Enter'){
+                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
+            }
+        });
+    }
+    
+    // Show home button on tool pages
+    if(depth > 0 && right){
+        right.innerHTML = '<a href="' + prefix + 'index.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f5f5f7;border-radius:10px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:600;transition:0.2s;white-space:nowrap" onmouseover="this.style.background=\'#0071e3\';this.style.color=\'#fff\'" onmouseout="this.style.background=\'#f5f5f7\';this.style.color=\'#1d1d1f\'">🏠 Home</a>';
+    }
+    
+    // Style header margin for tool pages
+    const header = document.getElementById('tpHeader');
+    if(depth > 0 && header){
+        header.style.marginLeft = '-32px';
+        header.style.marginRight = '-32px';
+    }
+})();
+</script>
+<!-- ═══════════ HEADER ═══════════ -->
+
+<!-- ═══════════ PREMIUM HEADER ═══════════ -->
+
+
+
+
+
+
+
+
+
+    
+
+    <div class="container">
+        <a href="../../../index.html" class="back">← Back to Store</a>
+        
+        <div class="card">
+            <h1>🔐 Password Generator</h1>
+            <p class="desc">Generate strong, secure passwords instantly. Customize length and character types.</p>
+            
+            <div class="pass-box">
+                <span class="pass-text empty" id="passDisplay">Click Generate</span>
+                <button class="btn btn-copy" id="copyBtn" onclick="copyPass()">📋 Copy</button>
+            </div>
+            
+            <div class="strength-label" id="strengthLabel">Strength: -</div>
+            <div class="strength-bar" id="strengthBar"></div>
+            
+            <div class="slider-row">
+                <label>Length:</label>
+                <input type="range" id="lenSlider" min="4" max="64" value="16" oninput="updateLen()">
+                <span class="len-val" id="lenVal">16</span>
+            </div>
+            
+            <div class="opts">
+                <label class="opt"><input type="checkbox" id="upper" checked onchange="gen()"><span class="box"></span> A-Z Uppercase</label>
+                <label class="opt"><input type="checkbox" id="lower" checked onchange="gen()"><span class="box"></span> a-z Lowercase</label>
+                <label class="opt"><input type="checkbox" id="numbers" checked onchange="gen()"><span class="box"></span> 0-9 Numbers</label>
+                <label class="opt"><input type="checkbox" id="symbols" checked onchange="gen()"><span class="box"></span> @#$% Symbols</label>
+            </div>
+            
+            <button class="btn-gen" onclick="gen()">✨ Generate Password</button>
+            
+            <div class="history" id="historyBox" style="display:none">
+                <h3>📜 Recent</h3>
+                <div id="histList"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+        let history=[];
+        
+        function showToast(m){
+            const t=document.getElementById('toast');
+            t.textContent=m;t.className='toast show';
+            clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),2000);
+        }
+        
+        function updateLen(){
+            document.getElementById('lenVal').textContent=document.getElementById('lenSlider').value;
+            gen();
+        }
+        
+        function gen(){
+            const len=parseInt(document.getElementById('lenSlider').value);
+            const upper=document.getElementById('upper').checked;
+            const lower=document.getElementById('lower').checked;
+            const nums=document.getElementById('numbers').checked;
+            const sym=document.getElementById('symbols').checked;
+            
+            let chars='';
+            if(upper) chars+='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            if(lower) chars+='abcdefghijklmnopqrstuvwxyz';
+            if(nums) chars+='0123456789';
+            if(sym) chars+='!@#$%^&*()_+-=[]{}|;:,.<>?/~';
+            
+            const passDisplay=document.getElementById('passDisplay');
+            const strengthBar=document.getElementById('strengthBar');
+            const strengthLabel=document.getElementById('strengthLabel');
+            const copyBtn=document.getElementById('copyBtn');
+            
+            if(!chars){
+                passDisplay.textContent='Select at least one option';
+                passDisplay.className='pass-text empty';
+                strengthBar.className='strength-bar';
+                strengthLabel.textContent='Strength: -';
+                strengthLabel.className='strength-label';
+                return;
+            }
+            
+            let pass='';
+            for(let i=0;i<len;i++) pass+=chars[Math.floor(Math.random()*chars.length)];
+            
+            passDisplay.textContent=pass;
+            passDisplay.className='pass-text';
+            copyBtn.textContent='📋 Copy';
+            copyBtn.className='btn btn-copy';
+            
+            let score=0;
+            if(len>=8) score++;
+            if(len>=12) score++;
+            if(len>=16) score++;
+            if(upper) score++;
+            if(lower) score++;
+            if(nums) score++;
+            if(sym) score++;
+            
+            if(score<=3){
+                strengthBar.className='strength-bar weak';
+                strengthLabel.textContent='Strength: Weak';
+                strengthLabel.className='strength-label weak';
+            }else if(score<=5){
+                strengthBar.className='strength-bar medium';
+                strengthLabel.textContent='Strength: Medium';
+                strengthLabel.className='strength-label medium';
+            }else{
+                strengthBar.className='strength-bar strong';
+                strengthLabel.textContent='Strength: Strong 💪';
+                strengthLabel.className='strength-label strong';
+            }
+            
+            history.unshift(pass);
+            if(history.length>5) history.pop();
+            renderHistory();
+        }
+        
+        function renderHistory(){
+            const box=document.getElementById('historyBox');
+            const list=document.getElementById('histList');
+            if(history.length===0){box.style.display='none';return}
+            box.style.display='block';
+            list.innerHTML=history.map((p,i)=>`
+                <div class="hist-item">
+                    <span>🔒</span>
+                    <span style="flex:1;overflow:hidden;text-overflow:ellipsis">${p}</span>
+                    <span onclick="copyHist(${i})">Copy</span>
+                </div>
+            `).join('');
+        }
+        
+        function copyPass(){
+            const pass=document.getElementById('passDisplay').textContent;
+            if(!pass||document.getElementById('passDisplay').classList.contains('empty')){
+                showToast('Generate first!');return;
+            }
+            navigator.clipboard.writeText(pass).then(()=>{
+                document.getElementById('copyBtn').textContent='✅ Copied!';
+                document.getElementById('copyBtn').className='btn btn-copy copied';
+                showToast('Password copied!');
+                setTimeout(()=>{
+                    document.getElementById('copyBtn').textContent='📋 Copy';
+                    document.getElementById('copyBtn').className='btn btn-copy';
+                },2000);
+            });
+        }
+        
+        function copyHist(i){
+            navigator.clipboard.writeText(history[i]).then(()=>showToast('Copied!'));
+        }
+        
+        document.addEventListener('keydown',e=>{
+            if(e.ctrlKey&&e.key==='g'){e.preventDefault();gen();}
+        });
+        
+        gen();
+    </script>
+
+<footer style="background:#fff;border-top:1px solid #e5e5ea;padding:24px 20px;margin-top:40px">
+    <div style="max-width:800px;margin:0 auto;text-align:center">
+        <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:12px">
+            <a href="../../../index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🏠 Home</a>
+            <a href="../../../tools/image/png-to-jpg-converter/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🖼️ PNG to JPG</a>
+            <a href="../../../tools/text/word-counter/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">📝 Word Counter</a>
+            <a href="../../../tools/url/qr-generator/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">📱 QR Code</a>
+            <a href="../../../tools/security/password-generator/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🔐 Password</a>
+        </div>
+        <p style="color:#8e8e93;font-size:0.76rem;margin:0">&copy; 2025 ToolPrime. All rights reserved. Made with ❤️</p>
+    </div>
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

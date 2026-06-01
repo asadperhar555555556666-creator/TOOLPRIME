@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Stopwatch & Timer - Online Stopwatch with Laps | ToolPrime</title>
+    <meta name="description" content="Free online stopwatch & countdown timer. Lap recording, alarm sound. Precise time tracking tool.">
+    <meta name="keywords" content="online stopwatch, countdown timer, lap timer, online timer, stopwatch with laps, time tracker">
+    <meta property="og:title" content="Stopwatch & Timer - Online Stopwatch with Laps | ToolPrime">
+    <meta property="og:description" content="Free online stopwatch & countdown timer. Lap recording, alarm sound. Precise time tracking tool.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://toolprime.online/tools/time/stopwatch-timer/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Stopwatch & Timer - Online Stopwatch with Laps | ToolPrime">
+    <meta name="twitter:description" content="Free online stopwatch & countdown timer. Lap recording, alarm sound. Precise time tracking tool.">
+    <link rel="canonical" href="https://toolprime.online/tools/time/stopwatch-timer/">
+
+    <link rel="stylesheet" href="../../../css/tool-style.css">
+    <style>@media(max-width:480px){body{padding:0 10px!important}}</style>
+    <link rel="icon" type="image/png" href="../../../assets/images/toolprime.png">
+    <style>footer{margin-left:-16px;margin-right:-16px}@media(max-width:768px){footer{margin-left:-12px;margin-right:-12px}}@media(max-width:480px){footer{margin-left:-8px;margin-right:-8px}}</style>
+</head>
+<body style="padding: 0 16px; margin: 0; overflow-x: hidden;">
+<!-- ═══════════ HEADER ═══════════ -->
+<header style="background:#fff;border-bottom:1px solid #e8eaed;padding:0;position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,0.04)">
+    <div style="max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 24px;gap:20px">
+        
+        <!-- Logo - Direct image only -->
+        <a href="../index.html" style="display:flex;align-items:center;text-decoration:none;flex-shrink:0">
+            <img src="../assets/images/toolprime.png" alt="ToolPrime" style="height:38px;width:auto;display:block">
+        </a>
+        
+        <!-- Search -->
+        <div style="flex:1;max-width:480px">
+            <input type="text" id="tpSearch" placeholder="Search tools..." autocomplete="off"
+                style="width:100%;padding:12px 20px;background:#f5f5f7;border:2px solid transparent;border-radius:14px;font-size:0.9rem;font-family:inherit;color:#1d1d1f;outline:none;transition:all 0.25s ease"
+                onfocus="this.style.background='#fff';this.style.borderColor='#0071e3';this.style.boxShadow='0 0 0 4px rgba(0,113,227,0.08)'"
+                onblur="this.style.background='#f5f5f7';this.style.borderColor='transparent';this.style.boxShadow='none'">
+        </div>
+        
+        <!-- Right -->
+        <div id="tpRight" style="flex-shrink:0">
+            <span style="font-size:0.78rem;color:#6e6e73;font-weight:500">🛠️ 20+ Tools</span>
+        </div>
+    </div>
+</header>
+
+<script>
+(function(){
+    const path = window.location.pathname;
+    const depth = (path.match(/\//g)||[]).length - 1;
+    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+    
+    // Fix logo link
+    const logoLink = document.querySelector('header a[href="../index.html"]');
+    if(logoLink) logoLink.href = prefix + 'index.html';
+    
+    // Fix logo image
+    const logoImg = document.querySelector('header img[src="../assets/images/toolprime.png"]');
+    if(logoImg) logoImg.src = prefix + 'assets/images/toolprime.png';
+    
+    // Fix search
+    const search = document.getElementById('tpSearch');
+    if(search){
+        search.addEventListener('keydown', function(e){
+            if(e.key === 'Enter'){
+                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
+            }
+        });
+    }
+    
+    // Home button for tool pages
+    if(depth > 0){
+        const right = document.getElementById('tpRight');
+        if(right){
+            right.innerHTML = '<a href="' + prefix + 'index.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f5f5f7;border-radius:10px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:600;transition:0.2s;white-space:nowrap" onmouseover="this.style.background=\'#0071e3\';this.style.color=\'#fff\'" onmouseout="this.style.background=\'#f5f5f7\';this.style.color=\'#1d1d1f\'">🏠 Home</a>';
+        }
+        const header = document.querySelector('header');
+        if(header){ header.style.marginLeft = '-32px'; header.style.marginRight = '-32px'; }
+    }
+})();
+</script>
+<!-- ═══════════ TOOLPRIME HEADER ═══════════ -->
+
+
+<script>
+// Auto-fix header paths based on page location
+(function(){
+    const depth = (window.location.pathname.match(/\//g)||[]).length - 1;
+    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+    
+    const logo = document.getElementById('tpLogo');
+    const logoImg = document.getElementById('tpLogoImg');
+    const search = document.getElementById('tpSearch');
+    const right = document.getElementById('tpRight');
+    
+    if(logo && prefix) logo.href = prefix + 'index.html';
+    if(logoImg && prefix) logoImg.src = prefix + 'assets/images/toolprime.png';
+    
+    // Search redirect
+    if(search){
+        search.addEventListener('keydown', function(e){
+            if(e.key === 'Enter'){
+                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
+            }
+        });
+    }
+    
+    // Show home button on tool pages
+    if(depth > 0 && right){
+        right.innerHTML = '<a href="' + prefix + 'index.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f5f5f7;border-radius:10px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:600;transition:0.2s;white-space:nowrap" onmouseover="this.style.background=\'#0071e3\';this.style.color=\'#fff\'" onmouseout="this.style.background=\'#f5f5f7\';this.style.color=\'#1d1d1f\'">🏠 Home</a>';
+    }
+    
+    // Style header margin for tool pages
+    const header = document.getElementById('tpHeader');
+    if(depth > 0 && header){
+        header.style.marginLeft = '-32px';
+        header.style.marginRight = '-32px';
+    }
+})();
+</script>
+<!-- ═══════════ HEADER ═══════════ -->
+
+<!-- ═══════════ PREMIUM HEADER ═══════════ -->
+
+
+
+
+
+
+
+
+
+
+
+<div class="tp-container">
+    <a href="../../../index.html" class="tp-back">← Back to Store</a>
+    
+    <div class="tp-card">
+        <h1>⏱️ Stopwatch & Timer</h1>
+        <p class="desc">Precise online stopwatch with lap recording & countdown timer with alarm sound.</p>
+        
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('stopwatch')" id="tabSW">⏱️ Stopwatch</button>
+            <button class="tab" onclick="switchTab('timer')" id="tabTM">⏰ Timer</button>
+        </div>
+        
+        <div class="display">
+            <div class="time" id="display">00:00:00</div>
+            <div class="milli" id="milli">.00</div>
+        </div>
+        
+        <!-- Stopwatch -->
+        <div id="swControls">
+            <div class="btn-row">
+                <button class="btn btn-start" id="swBtn" onclick="swToggle()">▶️ Start</button>
+                <button class="btn btn-lap" id="lapBtn" onclick="swLap()" disabled>🏁 Lap</button>
+            </div>
+            <div style="text-align:center"><button class="btn btn-reset" onclick="swReset()">🔄 Reset</button></div>
+        </div>
+        
+        <!-- Timer -->
+        <div id="tmControls" style="display:none">
+            <div class="timer-setup">
+                <input type="number" id="tmMin" value="1" min="0" max="99">
+                <label>min</label>
+                <input type="number" id="tmSec" value="0" min="0" max="59">
+                <label>sec</label>
+            </div>
+            <div class="btn-row">
+                <button class="btn btn-start" id="tmBtn" onclick="tmToggle()">▶️ Start</button>
+            </div>
+            <div style="text-align:center"><button class="btn btn-reset" onclick="tmReset()">🔄 Reset</button></div>
+        </div>
+        
+        <div class="laps" id="laps">
+            <div style="font-weight:600;padding:8px;color:var(--accent);border-bottom:1px solid var(--border)">📋 Laps</div>
+            <div id="lapsList"></div>
+        </div>
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.className='toast show';clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),2000)}
+
+// ========== TABS ==========
+let currentTab='stopwatch';
+function switchTab(t){
+    currentTab=t;
+    document.getElementById('tabSW').classList.toggle('active',t==='stopwatch');
+    document.getElementById('tabTM').classList.toggle('active',t==='timer');
+    document.getElementById('swControls').style.display=t==='stopwatch'?'block':'none';
+    document.getElementById('tmControls').style.display=t==='timer'?'block':'none';
+    if(t==='stopwatch'){updateSWDisplay();document.getElementById('laps').classList.toggle('show',laps.length>0)}
+    else{updateTMDisplay();document.getElementById('laps').classList.remove('show')}
+}
+
+// ========== STOPWATCH ==========
+let swRunning=false,swTime=0,swInterval,laps=[];
+function swToggle(){
+    if(swRunning){swRunning=false;clearInterval(swInterval);document.getElementById('swBtn').textContent='▶️ Start';document.getElementById('swBtn').className='btn btn-start';document.getElementById('lapBtn').disabled=true}
+    else{swRunning=true;swInterval=setInterval(()=>{swTime+=10;updateSWDisplay()},10);document.getElementById('swBtn').textContent='⏸️ Pause';document.getElementById('swBtn').className='btn btn-stop';document.getElementById('lapBtn').disabled=false}
+}
+function swLap(){laps.unshift(swTime);renderLaps();showToast('Lap recorded!')}
+function swReset(){swRunning=false;clearInterval(swInterval);swTime=0;laps=[];updateSWDisplay();document.getElementById('swBtn').textContent='▶️ Start';document.getElementById('swBtn').className='btn btn-start';document.getElementById('lapBtn').disabled=true;document.getElementById('laps').classList.remove('show')}
+
+function updateSWDisplay(){
+    const ms=Math.floor(swTime%1000/10),s=Math.floor(swTime/1000%60),m=Math.floor(swTime/60000%60),h=Math.floor(swTime/3600000);
+    document.getElementById('display').textContent=String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+    document.getElementById('milli').textContent='.'+String(ms).padStart(2,'0');
+    document.getElementById('display').classList.toggle('running',swRunning);
+}
+
+function renderLaps(){
+    document.getElementById('laps').classList.add('show');
+    const list=document.getElementById('lapsList');
+    list.innerHTML=laps.map((t,i)=>{
+        const ms=Math.floor(t%1000/10),s=Math.floor(t/1000%60),m=Math.floor(t/60000%60),h=Math.floor(t/3600000);
+        return '<div class="lap-row"><span class="lap-num">#'+(laps.length-i)+'</span><span class="lap-time">'+String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0')+'.'+String(ms).padStart(2,'0')+'</span></div>';
+    }).join('');
+}
+
+// ========== TIMER ==========
+let tmRunning=false,tmRemain=0,tmInterval;
+function tmToggle(){
+    if(tmRunning){tmRunning=false;clearInterval(tmInterval);document.getElementById('tmBtn').textContent='▶️ Resume';document.getElementById('tmBtn').className='btn btn-start';return}
+    if(tmRemain<=0){const m=parseInt(document.getElementById('tmMin').value)||0;const s=parseInt(document.getElementById('tmSec').value)||0;tmRemain=m*60+s;if(tmRemain<=0){showToast('Set time!');return}}
+    tmRunning=true;document.getElementById('tmBtn').textContent='⏸️ Pause';document.getElementById('tmBtn').className='btn btn-stop';
+    tmInterval=setInterval(()=>{tmRemain--;updateTMDisplay();if(tmRemain<=0){tmStop();showToast('⏰ Time is up!');document.getElementById('display').classList.add('alarm');setTimeout(()=>document.getElementById('display').classList.remove('alarm'),3000)}},1000);
+}
+function tmStop(){tmRunning=false;clearInterval(tmInterval);document.getElementById('tmBtn').textContent='▶️ Start';document.getElementById('tmBtn').className='btn btn-start'}
+function tmReset(){tmRunning=false;clearInterval(tmInterval);tmRemain=0;updateTMDisplay();document.getElementById('tmBtn').textContent='▶️ Start';document.getElementById('tmBtn').className='btn btn-start';document.getElementById('display').classList.remove('alarm')}
+
+function updateTMDisplay(){
+    const s=tmRemain%60,m=Math.floor(tmRemain/60%60),h=Math.floor(tmRemain/3600);
+    document.getElementById('display').textContent=String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+    document.getElementById('milli').textContent='';
+}
+
+// Init
+updateSWDisplay();
+</script>
+
+<footer style="background:#fff;border-top:1px solid #e5e5ea;padding:24px 20px;margin-top:40px">
+    <div style="max-width:800px;margin:0 auto;text-align:center">
+        <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:12px">
+            <a href="../../../index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🏠 Home</a>
+            <a href="../../../tools/image/png-to-jpg-converter/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🖼️ PNG to JPG</a>
+            <a href="../../../tools/text/word-counter/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">📝 Word Counter</a>
+            <a href="../../../tools/url/qr-generator/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">📱 QR Code</a>
+            <a href="../../../tools/security/password-generator/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🔐 Password</a>
+        </div>
+        <p style="color:#8e8e93;font-size:0.76rem;margin:0">&copy; 2025 ToolPrime. All rights reserved. Made with ❤️</p>
+    </div>
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

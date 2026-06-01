@@ -1,0 +1,15 @@
+﻿{
+    "name":  "PDF to Image",
+    "description":  "Convert PDF pages to JPG or PNG images online. Free, fast, and secure. No upload needed.",
+    "category":  "pdf",
+    "tags":  [
+                 "pdf",
+                 "image",
+                 "jpg",
+                 "png",
+                 "converter"
+             ],
+    "keywords":  "pdf to image, pdf to jpg, pdf to png, convert pdf to image, pdf converter, extract pdf pages",
+    "howToUse":  "1. Upload PDF file 2. Select page(s) \u0026 format 3. Click Convert 4. Download images",
+    "faq":  "Q: Max file size? A: 20MB. Q: All pages? A: Yes, or select specific pages."
+}

@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Image Compressor - Reduce Image Size Online Free | ToolPrime</title>
+    <meta name="description" content="Compress images online without losing quality. Reduce JPG, PNG, WebP file size. Free image optimizer tool.">
+    <meta name="keywords" content="compress image, image compressor, reduce image size, image optimizer, compress jpg, compress png">
+    <meta property="og:title" content="Image Compressor - Reduce Image Size Online Free | ToolPrime">
+    <meta property="og:description" content="Compress images online without losing quality. Reduce JPG, PNG, WebP file size. Free image optimizer tool.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://toolprime.online/tools/image/image-compressor/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Image Compressor - Reduce Image Size Online Free | ToolPrime">
+    <meta name="twitter:description" content="Compress images online without losing quality. Reduce JPG, PNG, WebP file size. Free image optimizer tool.">
+    <link rel="canonical" href="https://toolprime.online/tools/image/image-compressor/">
+
+    <link rel="stylesheet" href="../../../css/tool-style.css">
+    <style>@media(max-width:480px){body{padding:0 10px!important}}</style>
+    <link rel="icon" type="image/png" href="../../../assets/images/toolprime.png">
+    <style>footer{margin-left:-16px;margin-right:-16px}@media(max-width:768px){footer{margin-left:-12px;margin-right:-12px}}@media(max-width:480px){footer{margin-left:-8px;margin-right:-8px}}</style>
+</head>
+<body style="padding: 0 16px; margin: 0; overflow-x: hidden;">
+<!-- ═══════════ HEADER ═══════════ -->
+<header style="background:#fff;border-bottom:1px solid #e8eaed;padding:0;position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,0.04)">
+    <div style="max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 24px;gap:20px">
+        
+        <!-- Logo - Direct image only -->
+        <a href="../index.html" style="display:flex;align-items:center;text-decoration:none;flex-shrink:0">
+            <img src="../assets/images/toolprime.png" alt="ToolPrime" style="height:38px;width:auto;display:block">
+        </a>
+        
+        <!-- Search -->
+        <div style="flex:1;max-width:480px">
+            <input type="text" id="tpSearch" placeholder="Search tools..." autocomplete="off"
+                style="width:100%;padding:12px 20px;background:#f5f5f7;border:2px solid transparent;border-radius:14px;font-size:0.9rem;font-family:inherit;color:#1d1d1f;outline:none;transition:all 0.25s ease"
+                onfocus="this.style.background='#fff';this.style.borderColor='#0071e3';this.style.boxShadow='0 0 0 4px rgba(0,113,227,0.08)'"
+                onblur="this.style.background='#f5f5f7';this.style.borderColor='transparent';this.style.boxShadow='none'">
+        </div>
+        
+        <!-- Right -->
+        <div id="tpRight" style="flex-shrink:0">
+            <span style="font-size:0.78rem;color:#6e6e73;font-weight:500">🛠️ 20+ Tools</span>
+        </div>
+    </div>
+</header>
+
+<script>
+(function(){
+    const path = window.location.pathname;
+    const depth = (path.match(/\//g)||[]).length - 1;
+    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+    
+    // Fix logo link
+    const logoLink = document.querySelector('header a[href="../index.html"]');
+    if(logoLink) logoLink.href = prefix + 'index.html';
+    
+    // Fix logo image
+    const logoImg = document.querySelector('header img[src="../assets/images/toolprime.png"]');
+    if(logoImg) logoImg.src = prefix + 'assets/images/toolprime.png';
+    
+    // Fix search
+    const search = document.getElementById('tpSearch');
+    if(search){
+        search.addEventListener('keydown', function(e){
+            if(e.key === 'Enter'){
+                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
+            }
+        });
+    }
+    
+    // Home button for tool pages
+    if(depth > 0){
+        const right = document.getElementById('tpRight');
+        if(right){
+            right.innerHTML = '<a href="' + prefix + 'index.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f5f5f7;border-radius:10px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:600;transition:0.2s;white-space:nowrap" onmouseover="this.style.background=\'#0071e3\';this.style.color=\'#fff\'" onmouseout="this.style.background=\'#f5f5f7\';this.style.color=\'#1d1d1f\'">🏠 Home</a>';
+        }
+        const header = document.querySelector('header');
+        if(header){ header.style.marginLeft = '-32px'; header.style.marginRight = '-32px'; }
+    }
+})();
+</script>
+<!-- ═══════════ TOOLPRIME HEADER ═══════════ -->
+
+
+<script>
+// Auto-fix header paths based on page location
+(function(){
+    const depth = (window.location.pathname.match(/\//g)||[]).length - 1;
+    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+    
+    const logo = document.getElementById('tpLogo');
+    const logoImg = document.getElementById('tpLogoImg');
+    const search = document.getElementById('tpSearch');
+    const right = document.getElementById('tpRight');
+    
+    if(logo && prefix) logo.href = prefix + 'index.html';
+    if(logoImg && prefix) logoImg.src = prefix + 'assets/images/toolprime.png';
+    
+    // Search redirect
+    if(search){
+        search.addEventListener('keydown', function(e){
+            if(e.key === 'Enter'){
+                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
+            }
+        });
+    }
+    
+    // Show home button on tool pages
+    if(depth > 0 && right){
+        right.innerHTML = '<a href="' + prefix + 'index.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f5f5f7;border-radius:10px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:600;transition:0.2s;white-space:nowrap" onmouseover="this.style.background=\'#0071e3\';this.style.color=\'#fff\'" onmouseout="this.style.background=\'#f5f5f7\';this.style.color=\'#1d1d1f\'">🏠 Home</a>';
+    }
+    
+    // Style header margin for tool pages
+    const header = document.getElementById('tpHeader');
+    if(depth > 0 && header){
+        header.style.marginLeft = '-32px';
+        header.style.marginRight = '-32px';
+    }
+})();
+</script>
+<!-- ═══════════ HEADER ═══════════ -->
+
+<!-- ═══════════ PREMIUM HEADER ═══════════ -->
+
+
+
+
+
+
+
+
+
+<div class="tp-wrap">
+    <a href="../../../index.html" class="tp-back">← Back to Store</a>
+    <div class="tp-card">
+        <h1>🗜️ Image Compressor</h1>
+        <p class="tp-desc">Compress images without losing quality. Reduce file size online.</p>
+        <div style="border:2px dashed var(--border);border-radius:14px;padding:40px 20px;text-align:center;cursor:pointer;background:var(--search-bg);margin-bottom:14px" id="dropZone">
+    <div style="font-size:3rem;margin-bottom:8px">📁</div>
+    <div style="font-weight:600">Drop image here or click</div>
+    <div style="font-size:0.78rem;color:var(--text-secondary)">JPG, PNG, WEBP • Max 10MB</div>
+    <input type="file" id="fileInp" accept="image/*" style="display:none">
+</div>
+<div class="row" id="previewRow" style="display:none">
+    <div class="col"><div class="result"><div class="lbl">Original</div><div id="origSize" style="font-weight:600"></div></div></div>
+    <div class="col"><div class="result"><div class="lbl">Compressed</div><div id="compSize" style="font-weight:600;color:#4ade80"></div></div></div>
+</div>
+<div style="display:flex;gap:8px;margin-bottom:12px">
+    <label style="margin-bottom:0">Quality:</label>
+    <input type="range" id="qual" min="10" max="100" value="70" style="flex:1;margin-bottom:0">
+    <span id="qualV" style="color:var(--accent);font-weight:600">70%</span>
+</div>
+<button class="btn" id="dlBtn" onclick="compress()" disabled>🗜️ Compress & Download</button>
+<script>
+let oFile=null,oImg=null;
+const dz=document.getElementById('dropZone'),fi=document.getElementById('fileInp');
+dz.onclick=()=>fi.click();
+dz.ondragover=e=>{e.preventDefault();dz.style.borderColor='var(--accent)'};
+dz.ondragleave=()=>dz.style.borderColor='var(--border)';
+dz.ondrop=e=>{e.preventDefault();dz.style.borderColor='var(--border)';if(e.dataTransfer.files[0])load(e.dataTransfer.files[0])};
+fi.onchange=e=>{if(e.target.files[0])load(e.target.files[0])};
+document.getElementById('qual').oninput=()=>document.getElementById('qualV').textContent=document.getElementById('qual').value+'%';
+function load(f){
+    if(f.size>10*1024*1024){msg('Max 10MB!');return}
+    oFile=f;const r=new FileReader();
+    r.onload=e=>{const i=new Image();i.onload=()=>{oImg=i};i.src=e.target.result};
+    r.readAsDataURL(f);
+    document.getElementById('origSize').textContent=(f.size/1024).toFixed(1)+' KB';
+    document.getElementById('previewRow').style.display='flex';
+    document.getElementById('dlBtn').disabled=false;
+    dz.querySelector('div:first-child').textContent='✅';
+    dz.querySelector('div:nth-child(2)').textContent=f.name;
+}
+function compress(){
+    if(!oImg){msg('Upload image first!');return}
+    const q=document.getElementById('qual').value/100;
+    const c=document.createElement('canvas');c.width=oImg.width;c.height=oImg.height;
+    c.getContext('2d').drawImage(oImg,0,0);
+    c.toBlob(b=>{
+        document.getElementById('compSize').textContent=(b.size/1024).toFixed(1)+' KB';
+        const u=URL.createObjectURL(b),a=document.createElement('a');
+        a.href=u;a.download='compressed.jpg';document.body.appendChild(a);a.click();
+        document.body.removeChild(a);URL.revokeObjectURL(u);msg('Downloaded!');
+    },'image/jpeg',q);
+}
+</script>
+    </div>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+function msg(t){const x=document.getElementById('toast');x.textContent=t;x.className='toast ok show';clearTimeout(x._t);x._t=setTimeout(()=>x.classList.remove('show'),2000)}
+</script>
+
+<footer style="background:#fff;border-top:1px solid #e5e5ea;padding:24px 20px;margin-top:40px">
+    <div style="max-width:800px;margin:0 auto;text-align:center">
+        <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:12px">
+            <a href="../../../index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🏠 Home</a>
+            <a href="../../../tools/image/png-to-jpg-converter/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🖼️ PNG to JPG</a>
+            <a href="../../../tools/text/word-counter/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">📝 Word Counter</a>
+            <a href="../../../tools/url/qr-generator/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">📱 QR Code</a>
+            <a href="../../../tools/security/password-generator/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🔐 Password</a>
+        </div>
+        <p style="color:#8e8e93;font-size:0.76rem;margin:0">&copy; 2025 ToolPrime. All rights reserved. Made with ❤️</p>
+    </div>
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

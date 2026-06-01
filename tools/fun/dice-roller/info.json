@@ -1,0 +1,11 @@
+﻿{
+    "name":  "Dice Roller",
+    "description":  "Roll virtual dice for games and decision making.",
+    "category":  "fun",
+    "tags":  [
+
+             ],
+    "keywords":  "dice roller, virtual dice, roll dice online, random dice, d20 roller, board game dice",
+    "howToUse":  "1. Select dice type (d4, d6, d8, d10, d12, d20, d100) 2. Choose count 3. Click Roll 4. See result",
+    "faq":  "Q: Is it random? A: Yes, truly random. Q: Multiple dice? A: Yes, up to 20 dice."
+}

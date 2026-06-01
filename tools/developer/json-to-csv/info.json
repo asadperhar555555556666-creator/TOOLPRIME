@@ -1,0 +1,15 @@
+﻿{
+    "name":  "JSON to CSV",
+    "description":  "Convert JSON data to CSV format instantly. Paste JSON, get downloadable CSV file.",
+    "category":  "developer",
+    "tags":  [
+                 "json",
+                 "csv",
+                 "converter",
+                 "data",
+                 "excel"
+             ],
+    "keywords":  "json to csv, convert json to csv, json to excel, json converter, csv download, json array to csv",
+    "howToUse":  "1. Paste JSON array data 2. Click Convert 3. See CSV output 4. Download .csv file for Excel",
+    "faq":  "Q: Nested objects? A: Yes, auto-flattened. Q: Large files? A: Works with any size."
+}

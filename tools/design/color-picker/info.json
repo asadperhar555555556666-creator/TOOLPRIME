@@ -1,0 +1,17 @@
+﻿{
+    "name":  "Color Picker",
+    "description":  "Pick colors, convert HEX, RGB, HSL. Generate color palettes. Free online color tool.",
+    "category":  "design",
+    "tags":  [
+                 "color",
+                 "picker",
+                 "hex",
+                 "rgb",
+                 "hsl",
+                 "palette",
+                 "design"
+             ],
+    "keywords":  "color picker, hex color, rgb color, hsl color, color converter, pick color online",
+    "howToUse":  "1. Use color slider or enter HEX/RGB/HSL 2. See color preview 3. Click any format to copy",
+    "faq":  "Q: What formats? A: HEX, RGB, HSL, CMYK. Q: Can I generate palette? A: Yes, random palette."
+}

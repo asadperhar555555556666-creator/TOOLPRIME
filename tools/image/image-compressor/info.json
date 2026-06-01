@@ -1,0 +1,11 @@
+﻿{
+    "name":  "Image Compressor",
+    "description":  "Compress images without losing quality. Reduce file size online.",
+    "category":  "image",
+    "tags":  [
+
+             ],
+    "keywords":  "compress image, reduce image size, image compressor online, compress jpg, compress png, image optimizer",
+    "howToUse":  "1. Upload image 2. Set compression quality 3. Click Compress 4. Download compressed file",
+    "faq":  "Q: Will quality decrease? A: Minimal loss at 70-80% quality. Q: Max file size? A: 10MB."
+}

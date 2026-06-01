@@ -1,0 +1,65 @@
+﻿[
+  {
+    "id": 1,
+    "name": "Word Counter",
+    "desc": "Count words and characters instantly",
+    "icon": "📝",
+    "iconImage": "",
+    "category": "text",
+    "link": "tools/word-counter.html"
+  },
+  {
+    "id": 2,
+    "name": "Password Generator",
+    "desc": "Generate strong random passwords",
+    "icon": "🔑",
+    "iconImage": "",
+    "category": "security",
+    "link": "tools/password-generator.html"
+  },
+  {
+    "id": 3,
+    "name": "QR Code Generator",
+    "desc": "Create QR codes from any text or URL",
+    "icon": "📱",
+    "iconImage": "",
+    "category": "url",
+    "link": "tools/qr-generator.html"
+  },
+  {
+    "id": 4,
+    "name": "Age Calculator",
+    "desc": "Calculate your exact age in seconds",
+    "icon": "🎂",
+    "iconImage": "",
+    "category": "calculator",
+    "link": "tools/age-calculator.html"
+  },
+  {
+    "id": 5,
+    "name": "Image Compressor",
+    "desc": "Compress images without losing quality",
+    "icon": "🗜️",
+    "iconImage": "",
+    "category": "image",
+    "link": "tools/image-compressor.html"
+  },
+  {
+    "id": 6,
+    "name": "JSON Formatter",
+    "desc": "Format and validate your JSON data",
+    "icon": "{ }",
+    "iconImage": "",
+    "category": "developer",
+    "link": "tools/json-formatter.html"
+  },
+  {
+    "id": 7,
+    "name": "Dice Roller",
+    "desc": "Roll virtual dice for games",
+    "icon": "🎲",
+    "iconImage": "",
+    "category": "fun",
+    "link": "tools/dice-roller.html"
+  }
+]

@@ -1,0 +1,15 @@
+﻿{
+    "name":  "Base64 Encoder / Decoder",
+    "description":  "Encode text to Base64 or decode Base64 back to text. Essential developer tool for data encoding.",
+    "category":  "developer",
+    "tags":  [
+                 "base64",
+                 "encode",
+                 "decode",
+                 "data",
+                 "developer"
+             ],
+    "keywords":  "base64 encoder, base64 decoder, encode to base64, decode base64, base64 converter, text to base64",
+    "howToUse":  "1. Paste text 2. Choose Encode or Decode 3. Result appears instantly 4. Copy output",
+    "faq":  "Q: What is Base64? A: Binary-to-text encoding. Q: Is it encryption? A: No, just encoding."
+}

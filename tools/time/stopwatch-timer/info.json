@@ -1,0 +1,15 @@
+﻿{
+    "name":  "Stopwatch \u0026 Timer",
+    "description":  "Online stopwatch with lap recording \u0026 countdown timer with alarm. Free and easy to use.",
+    "category":  "time",
+    "tags":  [
+                 "stopwatch",
+                 "timer",
+                 "countdown",
+                 "clock",
+                 "time"
+             ],
+    "keywords":  "online stopwatch, countdown timer, lap timer, online timer, stopwatch with laps, time tracker",
+    "howToUse":  "1. Choose Stopwatch or Timer tab 2. Start/Pause/Reset 3. Record laps (stopwatch) or set time (timer)",
+    "faq":  "Q: Is it accurate? A: Yes, millisecond precision. Q: Works offline? A: Yes, browser-based."
+}

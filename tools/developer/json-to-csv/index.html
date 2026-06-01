@@ -1,0 +1,321 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON to CSV Converter - Convert JSON to Excel | ToolPrime</title>
+    <meta name="description" content="Convert JSON to CSV online free. Transform JSON data to CSV for Excel & Google Sheets. Download CSV file.">
+    <meta name="keywords" content="json to csv, convert json to csv, json to excel, json converter, csv download, json array to csv">
+    <meta property="og:title" content="JSON to CSV Converter - Convert JSON to Excel | ToolPrime">
+    <meta property="og:description" content="Convert JSON to CSV online free. Transform JSON data to CSV for Excel & Google Sheets. Download CSV file.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://toolprime.online/tools/developer/json-to-csv/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="JSON to CSV Converter - Convert JSON to Excel | ToolPrime">
+    <meta name="twitter:description" content="Convert JSON to CSV online free. Transform JSON data to CSV for Excel & Google Sheets. Download CSV file.">
+    <link rel="canonical" href="https://toolprime.online/tools/developer/json-to-csv/">
+
+    <link rel="stylesheet" href="../../../css/tool-style.css">
+    <style>@media(max-width:480px){body{padding:0 10px!important}}</style>
+    <link rel="icon" type="image/png" href="../../../assets/images/toolprime.png">
+    <style>footer{margin-left:-16px;margin-right:-16px}@media(max-width:768px){footer{margin-left:-12px;margin-right:-12px}}@media(max-width:480px){footer{margin-left:-8px;margin-right:-8px}}</style>
+</head>
+<body style="padding: 0 16px; margin: 0; overflow-x: hidden;">
+<!-- ═══════════ HEADER ═══════════ -->
+<header style="background:#fff;border-bottom:1px solid #e8eaed;padding:0;position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,0.04)">
+    <div style="max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 24px;gap:20px">
+        
+        <!-- Logo - Direct image only -->
+        <a href="../index.html" style="display:flex;align-items:center;text-decoration:none;flex-shrink:0">
+            <img src="../assets/images/toolprime.png" alt="ToolPrime" style="height:38px;width:auto;display:block">
+        </a>
+        
+        <!-- Search -->
+        <div style="flex:1;max-width:480px">
+            <input type="text" id="tpSearch" placeholder="Search tools..." autocomplete="off"
+                style="width:100%;padding:12px 20px;background:#f5f5f7;border:2px solid transparent;border-radius:14px;font-size:0.9rem;font-family:inherit;color:#1d1d1f;outline:none;transition:all 0.25s ease"
+                onfocus="this.style.background='#fff';this.style.borderColor='#0071e3';this.style.boxShadow='0 0 0 4px rgba(0,113,227,0.08)'"
+                onblur="this.style.background='#f5f5f7';this.style.borderColor='transparent';this.style.boxShadow='none'">
+        </div>
+        
+        <!-- Right -->
+        <div id="tpRight" style="flex-shrink:0">
+            <span style="font-size:0.78rem;color:#6e6e73;font-weight:500">🛠️ 20+ Tools</span>
+        </div>
+    </div>
+</header>
+
+<script>
+(function(){
+    const path = window.location.pathname;
+    const depth = (path.match(/\//g)||[]).length - 1;
+    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+    
+    // Fix logo link
+    const logoLink = document.querySelector('header a[href="../index.html"]');
+    if(logoLink) logoLink.href = prefix + 'index.html';
+    
+    // Fix logo image
+    const logoImg = document.querySelector('header img[src="../assets/images/toolprime.png"]');
+    if(logoImg) logoImg.src = prefix + 'assets/images/toolprime.png';
+    
+    // Fix search
+    const search = document.getElementById('tpSearch');
+    if(search){
+        search.addEventListener('keydown', function(e){
+            if(e.key === 'Enter'){
+                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
+            }
+        });
+    }
+    
+    // Home button for tool pages
+    if(depth > 0){
+        const right = document.getElementById('tpRight');
+        if(right){
+            right.innerHTML = '<a href="' + prefix + 'index.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f5f5f7;border-radius:10px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:600;transition:0.2s;white-space:nowrap" onmouseover="this.style.background=\'#0071e3\';this.style.color=\'#fff\'" onmouseout="this.style.background=\'#f5f5f7\';this.style.color=\'#1d1d1f\'">🏠 Home</a>';
+        }
+        const header = document.querySelector('header');
+        if(header){ header.style.marginLeft = '-32px'; header.style.marginRight = '-32px'; }
+    }
+})();
+</script>
+<!-- ═══════════ TOOLPRIME HEADER ═══════════ -->
+
+
+<script>
+// Auto-fix header paths based on page location
+(function(){
+    const depth = (window.location.pathname.match(/\//g)||[]).length - 1;
+    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+    
+    const logo = document.getElementById('tpLogo');
+    const logoImg = document.getElementById('tpLogoImg');
+    const search = document.getElementById('tpSearch');
+    const right = document.getElementById('tpRight');
+    
+    if(logo && prefix) logo.href = prefix + 'index.html';
+    if(logoImg && prefix) logoImg.src = prefix + 'assets/images/toolprime.png';
+    
+    // Search redirect
+    if(search){
+        search.addEventListener('keydown', function(e){
+            if(e.key === 'Enter'){
+                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
+            }
+        });
+    }
+    
+    // Show home button on tool pages
+    if(depth > 0 && right){
+        right.innerHTML = '<a href="' + prefix + 'index.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f5f5f7;border-radius:10px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:600;transition:0.2s;white-space:nowrap" onmouseover="this.style.background=\'#0071e3\';this.style.color=\'#fff\'" onmouseout="this.style.background=\'#f5f5f7\';this.style.color=\'#1d1d1f\'">🏠 Home</a>';
+    }
+    
+    // Style header margin for tool pages
+    const header = document.getElementById('tpHeader');
+    if(depth > 0 && header){
+        header.style.marginLeft = '-32px';
+        header.style.marginRight = '-32px';
+    }
+})();
+</script>
+<!-- ═══════════ HEADER ═══════════ -->
+
+<!-- ═══════════ PREMIUM HEADER ═══════════ -->
+
+
+
+
+
+
+
+
+
+
+
+<div class="tp-container">
+    <a href="../../../index.html" class="tp-back">← Back to Store</a>
+    
+    <div class="card">
+        <h1>🔄 JSON to CSV Converter</h1>
+        <p>Convert JSON array data to CSV format. Paste your JSON, get instant CSV output ready for Excel or Google Sheets.</p>
+        
+        <label>📝 Paste JSON Data</label>
+        <textarea id="jsonInput" placeholder='[
+  {"name": "John", "age": 30, "city": "NYC"},
+  {"name": "Jane", "age": 25, "city": "LA"}
+]'></textarea>
+        
+        <div class="error-box" id="errorBox"></div>
+        
+        <div class="btn-row">
+            <button class="btn btn-primary" onclick="convertJSONtoCSV()">🔄 Convert to CSV</button>
+            <button class="btn btn-green" onclick="downloadCSV()" id="downloadBtn" disabled>⬇️ Download CSV</button>
+            <button class="btn btn-outline" onclick="clearAll()">🗑️ Clear</button>
+        </div>
+        
+        <label style="margin-top:16px">📊 CSV Output</label>
+        <textarea id="csvOutput" placeholder="CSV output will appear here..." readonly></textarea>
+        
+        <div class="example-box">
+            <h4>💡 Try These Examples (click)</h4>
+            <code onclick="tryExample('users')">👥 Users: [{"name":"John","email":"john@mail.com","age":30},{"name":"Jane","email":"jane@mail.com","age":25}]</code>
+            <code onclick="tryExample('products')">🛍️ Products: [{"id":1,"product":"Phone","price":599},{"id":2,"product":"Laptop","price":999}]</code>
+            <code onclick="tryExample('nested')">📊 Nested: [{"name":"John","address":{"city":"NYC","zip":"10001"}},{"name":"Jane","address":{"city":"LA","zip":"90001"}}]</code>
+        </div>
+    </div>
+</div>
+
+<script>
+let currentCSV = '';
+
+const examples = {
+    'users': '[{"name":"John","email":"john@mail.com","age":30},{"name":"Jane","email":"jane@mail.com","age":25}]',
+    'products': '[{"id":1,"product":"Phone","price":599},{"id":2,"product":"Laptop","price":999}]',
+    'nested': '[{"name":"John","address":{"city":"NYC","zip":"10001"}},{"name":"Jane","address":{"city":"LA","zip":"90001"}}]'
+};
+
+function tryExample(type){
+    document.getElementById('jsonInput').value = examples[type];
+    convertJSONtoCSV();
+}
+
+function flattenObject(obj, prefix = '') {
+    let result = {};
+    for (const key in obj) {
+        const value = obj[key];
+        const newKey = prefix ? `${prefix}.${key}` : key;
+        if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
+            Object.assign(result, flattenObject(value, newKey));
+        } else {
+            result[newKey] = Array.isArray(value) ? JSON.stringify(value) : value;
+        }
+    }
+    return result;
+}
+
+function convertJSONtoCSV() {
+    const input = document.getElementById('jsonInput').value.trim();
+    const errorBox = document.getElementById('errorBox');
+    errorBox.classList.remove('show');
+    
+    if (!input) {
+        errorBox.textContent = 'Please paste JSON data!';
+        errorBox.classList.add('show');
+        return;
+    }
+    
+    try {
+        let data = JSON.parse(input);
+        
+        // If single object, wrap in array
+        if (!Array.isArray(data)) {
+            data = [data];
+        }
+        
+        if (data.length === 0) {
+            errorBox.textContent = 'JSON array is empty!';
+            errorBox.classList.add('show');
+            return;
+        }
+        
+        // Flatten nested objects
+        const flatData = data.map(item => flattenObject(item));
+        
+        // Get all headers
+        const headers = [...new Set(flatData.flatMap(obj => Object.keys(obj)))];
+        
+        // Build CSV
+        let csv = headers.join(',') + '\n';
+        
+        flatData.forEach(row => {
+            const values = headers.map(h => {
+                let val = row[h] !== undefined ? row[h] : '';
+                // Escape commas and quotes
+                if (typeof val === 'string' && (val.includes(',') || val.includes('"') || val.includes('\n'))) {
+                    val = '"' + val.replace(/"/g, '""') + '"';
+                }
+                return val;
+            });
+            csv += values.join(',') + '\n';
+        });
+        
+        document.getElementById('csvOutput').value = csv;
+        currentCSV = csv;
+        document.getElementById('downloadBtn').disabled = false;
+        
+        // Count
+        const rowCount = data.length;
+        const colCount = headers.length;
+        document.getElementById('csvOutput').placeholder = `✅ Converted! ${rowCount} rows × ${colCount} columns`;
+        
+    } catch (e) {
+        errorBox.textContent = '❌ Invalid JSON: ' + e.message;
+        errorBox.classList.add('show');
+    }
+}
+
+function downloadCSV() {
+    if (!currentCSV) return;
+    const blob = new Blob([currentCSV], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'data.csv';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+}
+
+function clearAll() {
+    document.getElementById('jsonInput').value = '';
+    document.getElementById('csvOutput').value = '';
+    currentCSV = '';
+    document.getElementById('downloadBtn').disabled = true;
+    document.getElementById('errorBox').classList.remove('show');
+}
+
+// Live convert on input
+document.getElementById('jsonInput').addEventListener('input', function() {
+    if (this.value.trim()) convertJSONtoCSV();
+});
+</script>
+
+<footer style="background:#fff;border-top:1px solid #e5e5ea;padding:24px 20px;margin-top:40px">
+    <div style="max-width:800px;margin:0 auto;text-align:center">
+        <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:12px">
+            <a href="../../../index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🏠 Home</a>
+            <a href="../../../tools/image/png-to-jpg-converter/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🖼️ PNG to JPG</a>
+            <a href="../../../tools/text/word-counter/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">📝 Word Counter</a>
+            <a href="../../../tools/url/qr-generator/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">📱 QR Code</a>
+            <a href="../../../tools/security/password-generator/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🔐 Password</a>
+        </div>
+        <p style="color:#8e8e93;font-size:0.76rem;margin:0">&copy; 2025 ToolPrime. All rights reserved. Made with ❤️</p>
+    </div>
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

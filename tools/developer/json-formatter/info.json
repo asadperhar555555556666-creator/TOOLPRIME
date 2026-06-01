@@ -1,0 +1,11 @@
+﻿{
+    "name":  "JSON Formatter",
+    "description":  "Format, validate, and beautify your JSON data online.",
+    "category":  "developer",
+    "tags":  [
+
+             ],
+    "keywords":  "json formatter, json beautifier, json validator, format json, json prettify, json editor",
+    "howToUse":  "1. Paste JSON data 2. Click Format/Beautify 3. See formatted output 4. Copy or validate",
+    "faq":  "Q: Does it validate JSON? A: Yes, shows errors. Q: Can I minify? A: Yes, use Minify button."
+}

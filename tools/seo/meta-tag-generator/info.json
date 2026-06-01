@@ -1,0 +1,16 @@
+﻿{
+    "name":  "Meta Tag Generator",
+    "description":  "Generate SEO meta tags, Open Graph, Twitter Cards. Preview how your site looks on Google \u0026 social media.",
+    "category":  "seo",
+    "tags":  [
+                 "seo",
+                 "meta",
+                 "tags",
+                 "open-graph",
+                 "twitter",
+                 "google"
+             ],
+    "keywords":  "meta tag generator, seo meta tags, open graph generator, twitter card generator, html meta tags",
+    "howToUse":  "1. Enter page title \u0026 description 2. Add URL \u0026 image 3. See Google/Facebook/Twitter preview 4. Copy HTML code",
+    "faq":  "Q: What are meta tags? A: HTML tags for SEO \u0026 social sharing. Q: Character limits? A: Title 60, Desc 160."
+}

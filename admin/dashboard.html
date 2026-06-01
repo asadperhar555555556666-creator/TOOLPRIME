@@ -1,0 +1,373 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - ToolPrime Admin</title><meta name="robots" content="noindex">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:system-ui,sans-serif;background:#f5f5f7;color:#1d1d1f;min-height:100vh}
+        .hdr{background:#1a1f2e;color:#fff;padding:0 24px}
+        .hdr-in{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+        .btn{padding:8px 18px;border-radius:20px;border:none;cursor:pointer;font-weight:600;font-size:0.82rem;font-family:inherit;text-decoration:none;display:inline-block;margin:2px}
+        .btn-w{background:#fff;color:#1a1f2e}.btn-r{background:#ff3b30;color:#fff}.btn-b{background:#0071e3;color:#fff}.btn-g{background:#34c759;color:#fff}
+        .cont{max-width:1100px;margin:0 auto;padding:24px 20px}
+        .card{background:#fff;border:1px solid #e5e5ea;border-radius:14px;padding:28px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:20px}
+        .card h3{margin-bottom:16px;font-size:1.05rem;display:flex;align-items:center;gap:8px}
+        .row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+        .row input,.row select{flex:1;min-width:140px;padding:12px 16px;border:2px solid #e5e5ea;border-radius:10px;font-size:0.9rem;font-family:inherit;background:#fafafa}
+        .row input:focus,.row select:focus{border-color:#0071e3;outline:none;background:#fff}
+        
+        .upload-zone{border:2px dashed #d0d0d5;border-radius:12px;padding:24px;text-align:center;cursor:pointer;transition:0.2s;background:#fafafa;margin-bottom:12px}
+        .upload-zone:hover{border-color:#0071e3;background:#f0f6ff}
+        .upload-zone input{display:none}
+        .upload-zone .ic{font-size:2rem;margin-bottom:6px}
+        .upload-zone .tx{font-weight:600;font-size:0.9rem}
+        .upload-zone .hi{font-size:0.75rem;color:#6e6e73;margin-top:2px}
+        
+        .file-list{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+        .file-tag{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;background:#e8f0fe;border-radius:20px;font-size:0.78rem;color:#0071e3;font-weight:500}
+        .file-tag .rm{cursor:pointer;color:#ff3b30;font-weight:700}
+        
+        table{width:100%;border-collapse:collapse;font-size:0.85rem}
+        th{text-align:left;padding:12px 10px;border-bottom:2px solid #e5e5ea;color:#6e6e73;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.5px}
+        td{padding:10px;border-bottom:1px solid #e5e5ea}
+        .badge{padding:3px 10px;border-radius:12px;background:#e8f0fe;color:#0071e3;font-size:0.7rem;font-weight:600}
+        
+        .setup-box{background:#fffbe6;border:1px solid #f59e0b;border-radius:12px;padding:18px;margin-bottom:20px}
+        .setup-box h4{color:#f59e0b;margin-bottom:8px;font-size:0.9rem}
+        .setup-box p{font-size:0.8rem;color:#6e6e73;line-height:1.5}
+        .setup-box code{background:#fef3c7;padding:2px 6px;border-radius:4px;font-size:0.8rem}
+        
+        .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1d1d1f;color:#fff;padding:12px 24px;border-radius:24px;font-size:0.88rem;z-index:999;opacity:0;transition:0.3s}
+        .toast.show{opacity:1}
+        
+        .tabs{display:flex;gap:4px;margin-bottom:20px;background:#e5e5ea;border-radius:10px;padding:4px}
+        .tab{flex:1;padding:10px;text-align:center;border-radius:8px;cursor:pointer;font-weight:600;font-size:0.85rem;border:none;background:transparent;color:#6e6e73;font-family:inherit}
+        .tab.active{background:#fff;color:#0071e3;box-shadow:0 1px 3px rgba(0,0,0,0.08)}
+        
+        @media(max-width:768px){.row{flex-direction:column}.upload-zone{padding:18px}}
+    </style>
+</head>
+<body>
+
+<div class="hdr">
+    <div class="hdr-in">
+        <h2 style="font-size:1.1rem">⚙️ ToolPrime Admin</h2>
+        <div style="display:flex;gap:8px">
+            <a href="../index.html" class="btn btn-w">🏠 Visit Site</a>
+            <button class="btn btn-r" onclick="logout()">🚪 Logout</button>
+        </div>
+    </div>
+</div>
+
+<div class="cont">
+    <!-- GITHUB SETUP -->
+    <div class="setup-box">
+        <h4>🔧 GitHub Setup (One Time)</h4>
+        <p>1. Go to <code>github.com/settings/tokens</code> → Generate new token (classic)<br>
+        2. Select <b>repo</b> scope → Generate → Copy token<br>
+        3. Paste below → Save</p>
+        <div class="row">
+            <input type="text" id="ghUser" placeholder="GitHub Username">
+            <input type="password" id="ghToken" placeholder="GitHub Token (ghp_xxx)">
+            <input type="text" id="ghRepo" placeholder="Repo" value="toolprime">
+            <button class="btn btn-b" onclick="saveGH()">💾 Save Config</button>
+        </div>
+        <span id="ghStatus" style="font-size:0.82rem"></span>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs">
+        <button class="tab active" onclick="switchTab('add')">➕ Add Tool</button>
+        <button class="tab" onclick="switchTab('upload')">📤 Upload Files</button>
+        <button class="tab" onclick="switchTab('manage')">📋 Manage</button>
+    </div>
+
+    <!-- ADD TOOL TAB -->
+    <div id="tab-add">
+        <div class="card">
+            <h3>➕ Add New Tool</h3>
+            <div class="row">
+                <input type="text" id="toolName" placeholder="Tool Name (e.g., Word Counter)">
+                <input type="text" id="toolSlug" placeholder="tool-slug (auto-filled)">
+                <select id="toolCat">
+                    <option value="">Select Category</option>
+                    <option value="image">🖼️ Image</option><option value="text">📝 Text</option>
+                    <option value="developer">💻 Developer</option><option value="security">🔐 Security</option>
+                    <option value="calculator">🧮 Calculator</option><option value="url">🔗 URL</option>
+                    <option value="converter">🔄 Converter</option><option value="fun">🎲 Fun</option>
+                    <option value="design">🎨 Design</option><option value="seo">📈 SEO</option><option value="pdf">📄 PDF</option><option value="time">⏱️ Time</option>
+                </select>
+                <input type="text" id="toolIcon" placeholder="Icon (emoji)" maxlength="2">
+            </div>
+            <div class="row">
+                <input type="text" id="toolDesc" placeholder="Description (optional)">
+            </div>
+            
+            <!-- Upload index.html -->
+            <div class="upload-zone" id="htmlZone">
+                <div class="ic">📄</div>
+                <div class="tx">Upload index.html</div>
+                <div class="hi">Tool page HTML file (optional)</div>
+                <input type="file" id="htmlFile" accept=".html">
+            </div>
+            
+            <!-- Upload icon.png -->
+            <div class="upload-zone" id="iconZone">
+                <div class="ic">🖼️</div>
+                <div class="tx">Upload icon.png</div>
+                <div class="hi">128x128px PNG (optional)</div>
+                <input type="file" id="iconFile" accept=".png">
+            </div>
+            
+            <button class="btn btn-b" onclick="addTool()" style="width:100%;padding:14px;font-size:1rem">➕ Add Tool & Save to GitHub</button>
+        </div>
+    </div>
+
+    <!-- UPLOAD FILES TAB -->
+    <div id="tab-upload" style="display:none">
+        <div class="card">
+            <h3>📤 Upload Files to GitHub</h3>
+            <p style="font-size:0.85rem;color:#6e6e73;margin-bottom:16px">Upload any file directly to your GitHub repository</p>
+            <div class="row">
+                <select id="uploadPath" style="flex:1">
+                    <option value="">Root folder</option>
+                    <option value="tools/image/">tools/image/</option>
+                    <option value="tools/text/">tools/text/</option>
+                    <option value="tools/developer/">tools/developer/</option>
+                    <option value="tools/security/">tools/security/</option>
+                    <option value="tools/calculator/">tools/calculator/</option>
+                    <option value="tools/url/">tools/url/</option>
+                    <option value="tools/converter/">tools/converter/</option>
+                    <option value="tools/fun/">tools/fun/</option>
+                    <option value="tools/design/">tools/design/</option>
+                    <option value="tools/seo/">tools/seo/</option>
+                    <option value="tools/pdf/">tools/pdf/</option>
+                    <option value="tools/time/">tools/time/</option>
+                </select>
+            </div>
+            <div class="upload-zone" id="fileZone">
+                <div class="ic">📁</div>
+                <div class="tx">Drop files here or click</div>
+                <div class="hi">Any file type • Max 25MB each</div>
+                <input type="file" id="anyFile" multiple>
+            </div>
+            <div class="file-list" id="fileList"></div>
+            <button class="btn btn-g" onclick="uploadFiles()" style="width:100%;padding:14px;font-size:1rem">📤 Upload Files to GitHub</button>
+        </div>
+    </div>
+
+    <!-- MANAGE TAB -->
+    <div id="tab-manage" style="display:none">
+        <div class="card">
+            <h3>📋 All Tools (<span id="toolCount">0</span>)</h3>
+            <div style="overflow-x:auto"><table>
+                <thead><tr><th>Icon</th><th>Name</th><th>Slug</th><th>Category</th><th>HTML</th><th>Icon</th><th>Actions</th></tr></thead>
+                <tbody id="toolTable"><tr><td colspan="7" style="text-align:center;color:#6e6e73;padding:20px">No tools added yet</td></tr></tbody>
+            </table></div>
+        </div>
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+if(sessionStorage.getItem('tp_admin')!=='true'){window.location.href='index.html'}
+
+let tools=JSON.parse(localStorage.getItem('tp_tools')||'[]');
+let uploadedFiles=[];
+let ghUser=localStorage.getItem('gh_user')||'';
+let ghToken=localStorage.getItem('gh_token')||'';
+let ghRepo=localStorage.getItem('gh_repo')||'toolprime';
+
+document.getElementById('ghUser').value=ghUser;
+document.getElementById('ghToken').value=ghToken;
+document.getElementById('ghRepo').value=ghRepo;
+if(ghToken){document.getElementById('ghStatus').innerHTML='✅ Connected!';document.getElementById('ghStatus').style.color='#34c759'}
+
+function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.className='toast show';clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),3000)}
+function logout(){sessionStorage.removeItem('tp_admin');window.location.href='index.html'}
+
+// Tabs
+function switchTab(t){
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    event.target.classList.add('active');
+    document.getElementById('tab-add').style.display=t==='add'?'block':'none';
+    document.getElementById('tab-upload').style.display=t==='upload'?'block':'none';
+    document.getElementById('tab-manage').style.display=t==='manage'?'block':'none';
+    if(t==='manage')render();
+}
+
+// GitHub config
+function saveGH(){
+    ghUser=document.getElementById('ghUser').value.trim();
+    ghToken=document.getElementById('ghToken').value.trim();
+    ghRepo=document.getElementById('ghRepo').value.trim()||'toolprime';
+    localStorage.setItem('gh_user',ghUser);localStorage.setItem('gh_token',ghToken);localStorage.setItem('gh_repo',ghRepo);
+    document.getElementById('ghStatus').innerHTML='✅ Connected!';document.getElementById('ghStatus').style.color='#34c759';
+    showToast('✅ GitHub config saved!');
+}
+
+// Slug auto-generate
+document.getElementById('toolName').addEventListener('input',function(){
+    document.getElementById('toolSlug').value=this.value.toLowerCase().replace(/[^a-z0-9\s]/g,'').replace(/\s+/g,'-');
+});
+
+// Upload zones click
+document.getElementById('htmlZone').addEventListener('click',()=>document.getElementById('htmlFile').click());
+document.getElementById('iconZone').addEventListener('click',()=>document.getElementById('iconFile').click());
+document.getElementById('fileZone').addEventListener('click',()=>document.getElementById('anyFile').click());
+
+document.getElementById('htmlFile').addEventListener('change',function(){
+    if(this.files[0]){document.getElementById('htmlZone').querySelector('.ic').textContent='✅';document.getElementById('htmlZone').querySelector('.tx').textContent=this.files[0].name}
+});
+document.getElementById('iconFile').addEventListener('change',function(){
+    if(this.files[0]){document.getElementById('iconZone').querySelector('.ic').textContent='✅';document.getElementById('iconZone').querySelector('.tx').textContent=this.files[0].name}
+});
+document.getElementById('anyFile').addEventListener('change',function(){
+    uploadedFiles=[...this.files];
+    renderFileList();
+});
+
+function renderFileList(){
+    document.getElementById('fileList').innerHTML=uploadedFiles.map((f,i)=>`
+        <span class="file-tag">📄 ${f.name} <span class="rm" onclick="removeFile(${i})">×</span></span>
+    `).join('');
+}
+function removeFile(i){uploadedFiles.splice(i,1);renderFileList()}
+
+// GitHub save function
+async function saveToGitHub(path,content,isBase64=false){
+    if(!ghToken){showToast('❌ Configure GitHub first!');return false}
+    const url=`https://api.github.com/repos/${ghUser}/${ghRepo}/contents/${path}`;
+    let sha='';
+    try{const r=await fetch(url,{headers:{'Authorization':'token '+ghToken}});if(r.ok){const d=await r.json();sha=d.sha}}catch(e){}
+    const body={message:'Update '+path,content:isBase64?content:btoa(unescape(encodeURIComponent(content)))};
+    if(sha)body.sha=sha;
+    const r=await fetch(url,{method:'PUT',headers:{'Authorization':'token '+ghToken,'Content-Type':'application/json'},body:JSON.stringify(body)});
+    return r.ok;
+}
+
+// Add tool
+async function addTool(){
+    const name=document.getElementById('toolName').value.trim();
+    const slug=document.getElementById('toolSlug').value.trim().toLowerCase().replace(/[^a-z0-9-]/g,'-');
+    const cat=document.getElementById('toolCat').value;
+    const icon=document.getElementById('toolIcon').value||'🔧';
+    const desc=document.getElementById('toolDesc').value.trim();
+    
+    if(!name||!slug||!cat){showToast('❌ Fill name, slug & category!');return}
+    if(!ghToken){showToast('❌ Configure GitHub first!');return}
+    
+    const folder=`tools/${cat}/${slug}/`;
+    
+    // Save info.json
+    const info=JSON.stringify({name,description:desc||`Free online ${name} tool`,category:cat},null,2);
+    await saveToGitHub(folder+'info.json',info);
+    
+    // Save index.html if uploaded
+    const htmlFile=document.getElementById('htmlFile').files[0];
+    if(htmlFile){
+        const reader=new FileReader();
+        reader.onload=async function(e){
+            await saveToGitHub(folder+'index.html',e.target.result);
+        };
+        reader.readAsText(htmlFile);
+    }else{
+        const defaultHTML=`<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>${name} - ToolPrime</title><link rel="stylesheet" href="../../../css/tool-style.css"></head><body style="padding:0 16px"><header style="background:#fff;border-bottom:1px solid #e8eaed;padding:0;position:sticky;top:0;z-index:100;margin-left:-16px;margin-right:-16px"><div style="max-width:1400px;margin:0 auto;display:flex;align-items:center;height:64px;padding:0 24px"><a href="../../../index.html"><img src="../../../assets/images/toolprime.png" alt="TP" style="height:38px"></a></div></header><div style="max-width:800px;margin:0 auto;padding:32px 0"><h1>${icon} ${name}</h1><p>${desc||'Free online tool'}</p></div></body></html>`;
+        await saveToGitHub(folder+'index.html',defaultHTML);
+    }
+    
+    // Save icon.png if uploaded
+    const iconFile=document.getElementById('iconFile').files[0];
+    if(iconFile){
+        const reader=new FileReader();
+        reader.onload=async function(e){
+            const base64=e.target.result.split(',')[1];
+            await saveToGitHub(folder+'icon.png',base64,true);
+        };
+        reader.readAsDataURL(iconFile);
+    }
+    
+    // Add to tools list
+    tools.push({name,slug,cat,icon});
+    localStorage.setItem('tp_tools',JSON.stringify(tools));
+    
+    // Update script.js
+    await updateScript();
+    
+    // Clear form
+    document.getElementById('toolName').value='';
+    document.getElementById('toolSlug').value='';
+    document.getElementById('toolIcon').value='';
+    document.getElementById('toolDesc').value='';
+    document.getElementById('htmlZone').querySelector('.ic').textContent='📄';
+    document.getElementById('htmlZone').querySelector('.tx').textContent='Upload index.html';
+    document.getElementById('iconZone').querySelector('.ic').textContent='🖼️';
+    document.getElementById('iconZone').querySelector('.tx').textContent='Upload icon.png';
+    
+    showToast('✅ Tool saved! Cloudflare will auto-deploy!');
+    render();
+}
+
+async function updateScript(){
+    let s=`const TOOLS = [\n`;
+    const defaults=[
+        ["tools/image/png-to-jpg-converter/","image"],["tools/image/image-compressor/","image"],["tools/image/image-resizer/","image"],
+        ["tools/text/word-counter/","text"],["tools/security/password-generator/","security"],["tools/url/qr-generator/","url"],
+        ["tools/calculator/age-calculator/","calculator"],["tools/calculator/bmi-calculator/","calculator"],
+        ["tools/developer/json-formatter/","developer"],["tools/developer/website-to-apk/","developer"],["tools/developer/url-encoder/","developer"],
+        ["tools/developer/base64-encoder/","developer"],["tools/developer/json-to-csv/","developer"],
+        ["tools/fun/dice-roller/","fun"],["tools/converter/unit-converter/","converter"],
+        ["tools/design/color-picker/","design"],["tools/design/color-picker-from-image/","design"],
+        ["tools/seo/meta-tag-generator/","seo"],["tools/pdf/pdf-to-image/","pdf"],["tools/pdf/image-to-pdf/","pdf"],
+        ["tools/time/stopwatch-timer/","time"]
+    ];
+    defaults.forEach(t=>s+=`    ["${t[0]}","${t[1]}"],\n`);
+    tools.forEach(t=>s+=`    ["tools/${t.cat}/${t.slug}/","${t.cat}"],\n`);
+    s+=`];`;
+    return await saveToGitHub('js/script.js',s);
+}
+
+// Upload files
+async function uploadFiles(){
+    if(!ghToken){showToast('❌ Configure GitHub first!');return}
+    if(!uploadedFiles.length){showToast('❌ Select files!');return}
+    const folder=document.getElementById('uploadPath').value;
+    for(const f of uploadedFiles){
+        const reader=new FileReader();
+        reader.onload=async function(e){
+            const path=folder+f.name;
+            const content=f.type.startsWith('image/')?e.target.result.split(',')[1]:e.target.result;
+            const isBase64=f.type.startsWith('image/');
+            await saveToGitHub(path,isBase64?content:e.target.result,isBase64);
+        };
+        if(f.type.startsWith('image/')){reader.readAsDataURL(f)}else{reader.readAsText(f)}
+    }
+    uploadedFiles=[];renderFileList();
+    showToast('✅ Files uploaded! Cloudflare deploying...');
+}
+
+function render(){
+    document.getElementById('toolCount').textContent=tools.length;
+    const tb=document.getElementById('toolTable');
+    if(!tools.length){tb.innerHTML='<tr><td colspan="7" style="text-align:center;color:#6e6e73;padding:20px">No tools yet</td></tr>';return}
+    tb.innerHTML=tools.map((t,i)=>`
+        <tr>
+            <td style="font-size:1.5rem">${t.icon}</td>
+            <td><strong>${t.name}</strong></td>
+            <td><code style="font-size:0.75rem">${t.slug}</code></td>
+            <td><span class="badge">${t.cat}</span></td>
+            <td>📄</td>
+            <td>🖼️</td>
+            <td><button class="btn btn-r" style="padding:4px 10px;font-size:0.65rem" onclick="delTool(${i})">🗑️</button></td>
+        </tr>
+    `).join('');
+}
+
+function delTool(i){if(!confirm('Delete '+tools[i].name+'?'))return;tools.splice(i,1);localStorage.setItem('tp_tools',JSON.stringify(tools));updateScript();render();showToast('🗑️ Deleted!')}
+
+render();
+</script>
+</body>
+</html>

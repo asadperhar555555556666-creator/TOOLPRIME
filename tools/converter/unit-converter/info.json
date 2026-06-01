@@ -1,0 +1,16 @@
+﻿{
+    "name":  "Unit Converter",
+    "description":  "Convert length, weight, temperature, area, speed, volume \u0026 more. All-in-one free online converter.",
+    "category":  "converter",
+    "tags":  [
+                 "unit",
+                 "converter",
+                 "length",
+                 "weight",
+                 "temperature",
+                 "currency"
+             ],
+    "keywords":  "unit converter, length converter, weight converter, temperature converter, metric converter, measurement converter",
+    "howToUse":  "1. Select category (Length, Weight, Temp, etc.) 2. Enter value 3. Choose units 4. See instant conversion",
+    "faq":  "Q: How many units? A: 7 categories, 50+ units. Q: Is it accurate? A: Yes, precise conversion."
+}

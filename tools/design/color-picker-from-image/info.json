@@ -1,0 +1,16 @@
+﻿{
+    "name":  "Color Picker from Image",
+    "description":  "Upload an image and pick any color. Get HEX, RGB, HSL codes. Extract color palettes from photos.",
+    "category":  "design",
+    "tags":  [
+                 "color",
+                 "picker",
+                 "image",
+                 "palette",
+                 "hex",
+                 "rgb"
+             ],
+    "keywords":  "color picker from image, extract color from photo, image color picker, get hex from image, color palette from image",
+    "howToUse":  "1. Upload any image 2. Click anywhere on image 3. Get HEX, RGB, HSL values 4. Extract color palette",
+    "faq":  "Q: What formats? A: JPG, PNG, WEBP. Q: Can I get palette? A: Yes, 6 dominant colors."
+}

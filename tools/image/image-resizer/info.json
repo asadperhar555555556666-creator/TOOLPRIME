@@ -1,0 +1,14 @@
+﻿{
+    "name":  "Image Resizer",
+    "description":  "Resize images online free. Change width, height, or percentage. No upload needed.",
+    "category":  "image",
+    "tags":  [
+                 "image",
+                 "resize",
+                 "resizer",
+                 "photo"
+             ],
+    "keywords":  "resize image, image resizer online, change image size, photo resizer, resize jpg, resize png",
+    "howToUse":  "1. Upload image 2. Enter new dimensions 3. Lock aspect ratio (optional) 4. Download resized image",
+    "faq":  "Q: Does it maintain quality? A: Yes, high-quality resize. Q: What formats? A: JPG, PNG, WEBP."
+}

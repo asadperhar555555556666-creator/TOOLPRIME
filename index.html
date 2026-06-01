@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToolPrime - Free Online Tools | No Sign-Up Required</title>
+    <meta name="description" content="100+ free online tools: Image converter, word counter, QR generator, password generator, age calculator, unit converter & more. No sign-up, fast & free.">
+    <meta name="keywords" content="online tools, free tools, image converter, word counter, qr generator, password generator, age calculator, bmi calculator, unit converter, json formatter, pdf converter, color picker, meta tag generator">
+    <meta name="theme-color" content="#1877f2">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="assets/images/toolprime.png">
+<link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ToolPrime">
+<link rel="apple-touch-icon" href="assets/images/icon-192.png"><script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "ToolPrime",
+    "url": "https://toolprime.online",
+    "description": "Free online tools - No sign-up required",
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://toolprime.online/?q={search_term}",
+        "query-input": "required name=search_term"
+    }
+}
+</script></head>
+<body>
+
+    <!-- ═══════════ HEADER ═══════════ -->
+<header style="background:#fff;border-bottom:1px solid #e8eaed;padding:0;position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,0.04)">
+    <div style="max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 24px;gap:20px">
+        
+        <!-- Logo - Direct image only -->
+        <a href="/" style="display:flex;align-items:center;text-decoration:none;flex-shrink:0">
+            <img src="assets/images/toolprime.png" alt="ToolPrime" style="height:38px;width:auto;display:block">
+        </a>
+        
+        <!-- Search -->
+        <div style="flex:1;max-width:480px">
+            <input type="text" id="tpSearch" placeholder="Search tools..." autocomplete="off"
+                style="width:100%;padding:12px 20px;background:#f5f5f7;border:2px solid transparent;border-radius:14px;font-size:0.9rem;font-family:inherit;color:#1d1d1f;outline:none;transition:all 0.25s ease"
+                onfocus="this.style.background='#fff';this.style.borderColor='#0071e3';this.style.boxShadow='0 0 0 4px rgba(0,113,227,0.08)'"
+                onblur="this.style.background='#f5f5f7';this.style.borderColor='transparent';this.style.boxShadow='none'">
+        </div>
+        
+        <!-- Right -->
+        <div id="tpRight" style="flex-shrink:0">
+            <span style="font-size:0.78rem;color:#6e6e73;font-weight:500">🛠️ 20+ Tools</span>
+        </div>
+    </div>
+</header>
+
+<script>
+(function(){
+    const path = window.location.pathname;
+    const depth = (path.match(/\//g)||[]).length - 1;
+    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+    
+    // Fix logo link
+    const logoLink = document.querySelector('header a[href="/"]');
+    if(logoLink) logoLink.href = prefix + 'index.html';
+    
+    // Fix logo image
+    const logoImg = document.querySelector('header img[src="assets/images/toolprime.png"]');
+    if(logoImg) logoImg.src = prefix + 'assets/images/toolprime.png';
+    
+    // Fix search
+    const search = document.getElementById('tpSearch');
+    if(search){
+        search.addEventListener('keydown', function(e){
+            if(e.key === 'Enter'){
+                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
+            }
+        });
+    }
+    
+    // Home button for tool pages
+    if(depth > 0){
+        const right = document.getElementById('tpRight');
+        if(right){
+            right.innerHTML = '<a href="' + prefix + 'index.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f5f5f7;border-radius:10px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:600;transition:0.2s;white-space:nowrap" onmouseover="this.style.background=\'#0071e3\';this.style.color=\'#fff\'" onmouseout="this.style.background=\'#f5f5f7\';this.style.color=\'#1d1d1f\'">🏠 Home</a>';
+        }
+        const header = document.querySelector('header');
+        if(header){ header.style.marginLeft = '-32px'; header.style.marginRight = '-32px'; }
+    }
+})();
+</script>
+
+<script>
+(function(){
+    const path = window.location.pathname;
+    const depth = (path.match(/\//g)||[]).length - 1;
+    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+    
+    // Fix logo link
+    const logoLink = document.querySelector('header a[href="/"]');
+    if(logoLink) logoLink.href = prefix + 'index.html';
+    
+    // Fix logo image
+    const logoImg = document.querySelector('header img[src="assets/images/toolprime.png"]');
+    if(logoImg) logoImg.src = prefix + 'assets/images/toolprime.png';
+    
+    // Fix search
+    const search = document.getElementById('tpSearch');
+    if(search){
+        search.addEventListener('keydown', function(e){
+            if(e.key === 'Enter'){
+                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
+            }
+        });
+    }
+    
+    // Home button for tool pages
+    if(depth > 0){
+        const right = document.getElementById('tpRight');
+        if(right){
+            right.innerHTML = '<a href="' + prefix + 'index.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f5f5f7;border-radius:10px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:600;transition:0.2s;white-space:nowrap" onmouseover="this.style.background=\'#0071e3\';this.style.color=\'#fff\'" onmouseout="this.style.background=\'#f5f5f7\';this.style.color=\'#1d1d1f\'">🏠 Home</a>';
+        }
+        const header = document.querySelector('header');
+        if(header){ header.style.marginLeft = '-32px'; header.style.marginRight = '-32px'; }
+    }
+})();
+</script>
+
+<script>
+// Auto-fix header paths based on page location
+(function(){
+    const depth = (window.location.pathname.match(/\//g)||[]).length - 1;
+    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+    
+    const logo = document.getElementById('tpLogo');
+    const logoImg = document.getElementById('tpLogoImg');
+    const search = document.getElementById('tpSearch');
+    const right = document.getElementById('tpRight');
+    
+    if(logo && prefix) logo.href = prefix + 'index.html';
+    if(logoImg && prefix) logoImg.src = prefix + 'assets/images/toolprime.png';
+    
+    // Search redirect
+    if(search){
+        search.addEventListener('keydown', function(e){
+            if(e.key === 'Enter'){
+                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
+            }
+        });
+    }
+    
+    // Show home button on tool pages
+    if(depth > 0 && right){
+        right.innerHTML = '<a href="' + prefix + 'index.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f5f5f7;border-radius:10px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:600;transition:0.2s;white-space:nowrap" onmouseover="this.style.background=\'#0071e3\';this.style.color=\'#fff\'" onmouseout="this.style.background=\'#f5f5f7\';this.style.color=\'#1d1d1f\'">🏠 Home</a>';
+    }
+    
+    // Style header margin for tool pages
+    const header = document.getElementById('tpHeader');
+    if(depth > 0 && header){
+        header.style.marginLeft = '-32px';
+        header.style.marginRight = '-32px';
+    }
+})();
+</script>
+
+    <div class="hero">
+        <h1>Free Online Tools</h1>
+        <p>No sign-up. No tracking. Just pure utility.</p>
+        <div class="stats">
+            <div class="stat-item"><div class="stat-value" id="tt">0</div><div class="stat-label">Tools</div></div>
+            <div class="stat-item"><div class="stat-value" id="tc">0</div><div class="stat-label">Categories</div></div>
+            <div class="stat-item"><div class="stat-value">100%</div><div class="stat-label">Free</div></div>
+        </div>
+    </div>
+
+    <div class="categories" id="cats"></div>
+
+    <div class="main">
+        <div class="grid" id="grid"></div>
+        <div class="empty" id="empty" style="display:none">
+            <div class="empty-icon">📦</div>
+            <h3>No tools found</h3>
+            <p>Try adjusting your search</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#">Sitemap</a><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Contact</a>
+        </div>
+        <p class="footer-copy">&copy; 2025 ToolPrime. Made with ❤️</p>
+    
+<!-- SEO Content Section -->
+<section style="max-width:1400px;margin:0 auto;padding:30px 20px;background:#fff;border-top:1px solid #e5e5ea">
+    <div style="max-width:900px;margin:0 auto">
+        <h2 style="font-size:1.3rem;font-weight:700;margin-bottom:12px;color:#1d1d1f">Free Online Tools - No Sign-Up Required</h2>
+        <p style="color:#6e6e73;font-size:0.9rem;line-height:1.7;margin-bottom:16px">
+            ToolPrime offers <strong>20+ free online tools</strong> including image converter, word counter, QR code generator, password generator, age calculator, BMI calculator, unit converter, JSON formatter, and more. All tools work directly in your browser — <strong>no sign-up, no tracking, no ads</strong>. Just pure utility.
+        </p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:16px">
+            <div><strong>🖼️ Image Tools:</strong> PNG to JPG, Image Compressor, Image Resizer</div>
+            <div><strong>📝 Text Tools:</strong> Word Counter, Case Converter</div>
+            <div><strong>💻 Developer Tools:</strong> JSON Formatter, Base64 Encoder, URL Encoder, JSON to CSV, Website to APK</div>
+            <div><strong>🔐 Security:</strong> Password Generator</div>
+            <div><strong>🧮 Calculators:</strong> Age Calculator, BMI Calculator, Unit Converter</div>
+            <div><strong>🔗 URL Tools:</strong> QR Code Generator</div>
+            <div><strong>🎨 Design:</strong> Color Picker, Color from Image</div>
+            <div><strong>📈 SEO:</strong> Meta Tag Generator</div>
+            <div><strong>📄 PDF:</strong> PDF to Image, Image to PDF</div>
+            <div><strong>⏱️ Time:</strong> Stopwatch & Timer</div>
+            <div><strong>🎲 Fun:</strong> Dice Roller</div>
+        </div>
+    </div>
+</section></footer>
+
+    <script src="js/script.js"></script>
+<script>
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/service-worker.js')}
+</script></body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+﻿{
+    "name":  "BMI Calculator",
+    "description":  "Calculate your Body Mass Index (BMI) instantly. Find your ideal weight range \u0026 health status.",
+    "category":  "calculator",
+    "tags":  [
+                 "bmi",
+                 "health",
+                 "weight",
+                 "body",
+                 "fitness"
+             ],
+    "keywords":  "bmi calculator, body mass index, ideal weight, health calculator, bmi checker, weight calculator",
+    "howToUse":  "1. Enter height \u0026 weight 2. Select unit (metric/imperial) 3. Click Calculate 4. See BMI \u0026 health status",
+    "faq":  "Q: What is normal BMI? A: 18.5-24.9. Q: Is BMI accurate? A: General guideline, consult doctor."
+}

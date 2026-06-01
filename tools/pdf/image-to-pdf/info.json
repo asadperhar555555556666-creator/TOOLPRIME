@@ -1,0 +1,15 @@
+﻿{
+    "name":  "Image to PDF",
+    "description":  "Convert JPG, PNG, WebP images to PDF online. Merge multiple images into one PDF. Free \u0026 fast.",
+    "category":  "pdf",
+    "tags":  [
+                 "image",
+                 "pdf",
+                 "converter",
+                 "jpg to pdf",
+                 "png to pdf"
+             ],
+    "keywords":  "image to pdf, jpg to pdf, png to pdf, convert image to pdf, merge images to pdf, photo to pdf",
+    "howToUse":  "1. Upload images 2. Arrange order 3. Select page size 4. Click Convert \u0026 Download PDF",
+    "faq":  "Q: Multiple images? A: Yes, merge into one PDF. Q: What formats? A: JPG, PNG, WEBP."
+}

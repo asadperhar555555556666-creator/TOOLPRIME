@@ -1,0 +1,14 @@
+﻿{
+    "name":  "Password Generator",
+    "description":  "Generate strong, secure random passwords. Customize length, characters, numbers \u0026 symbols.",
+    "category":  "security",
+    "tags":  [
+                 "password",
+                 "generator",
+                 "security",
+                 "strong"
+             ],
+    "keywords":  "password generator, strong password, random password generator, secure password, password maker",
+    "howToUse":  "1. Select length 2. Choose character types (A-Z, a-z, 0-9, symbols) 3. Click Generate 4. Copy password",
+    "faq":  "Q: Is it secure? A: Generated in browser, not stored. Q: How long should password be? A: 12+ characters."
+}

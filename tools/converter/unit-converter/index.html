@@ -1,0 +1,380 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Unit Converter - Length Weight Temperature & More | ToolPrime</title>
+    <meta name="description" content="Free online unit converter. Convert length, weight, temperature, area, speed, volume, time. 50+ units.">
+    <meta name="keywords" content="unit converter, length converter, weight converter, temperature converter, metric converter, measurement converter">
+    <link rel="canonical" href="https://toolprime.online/tools/converter/unit-converter/">
+    <meta property="og:title" content="Unit Converter - ToolPrime">
+    <meta property="og:description" content="Convert any unit instantly. Length, weight, temperature & more.">
+
+    <link rel="stylesheet" href="../../../css/tool-style.css">
+    <style>@media(max-width:480px){body{padding:0 10px!important}}</style>
+    <link rel="icon" type="image/png" href="../../../assets/images/toolprime.png">
+    <style>footer{margin-left:-16px;margin-right:-16px}@media(max-width:768px){footer{margin-left:-12px;margin-right:-12px}}@media(max-width:480px){footer{margin-left:-8px;margin-right:-8px}}</style>
+</head>
+<body style="padding: 0 16px; margin: 0; overflow-x: hidden;">
+<!-- ═══════════ HEADER ═══════════ -->
+<header style="background:#fff;border-bottom:1px solid #e8eaed;padding:0;position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,0.04)">
+    <div style="max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 24px;gap:20px">
+        
+        <!-- Logo - Direct image only -->
+        <a href="../index.html" style="display:flex;align-items:center;text-decoration:none;flex-shrink:0">
+            <img src="../assets/images/toolprime.png" alt="ToolPrime" style="height:38px;width:auto;display:block">
+        </a>
+        
+        <!-- Search -->
+        <div style="flex:1;max-width:480px">
+            <input type="text" id="tpSearch" placeholder="Search tools..." autocomplete="off"
+                style="width:100%;padding:12px 20px;background:#f5f5f7;border:2px solid transparent;border-radius:14px;font-size:0.9rem;font-family:inherit;color:#1d1d1f;outline:none;transition:all 0.25s ease"
+                onfocus="this.style.background='#fff';this.style.borderColor='#0071e3';this.style.boxShadow='0 0 0 4px rgba(0,113,227,0.08)'"
+                onblur="this.style.background='#f5f5f7';this.style.borderColor='transparent';this.style.boxShadow='none'">
+        </div>
+        
+        <!-- Right -->
+        <div id="tpRight" style="flex-shrink:0">
+            <span style="font-size:0.78rem;color:#6e6e73;font-weight:500">🛠️ 20+ Tools</span>
+        </div>
+    </div>
+</header>
+
+<script>
+(function(){
+    const path = window.location.pathname;
+    const depth = (path.match(/\//g)||[]).length - 1;
+    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+    
+    // Fix logo link
+    const logoLink = document.querySelector('header a[href="../index.html"]');
+    if(logoLink) logoLink.href = prefix + 'index.html';
+    
+    // Fix logo image
+    const logoImg = document.querySelector('header img[src="../assets/images/toolprime.png"]');
+    if(logoImg) logoImg.src = prefix + 'assets/images/toolprime.png';
+    
+    // Fix search
+    const search = document.getElementById('tpSearch');
+    if(search){
+        search.addEventListener('keydown', function(e){
+            if(e.key === 'Enter'){
+                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
+            }
+        });
+    }
+    
+    // Home button for tool pages
+    if(depth > 0){
+        const right = document.getElementById('tpRight');
+        if(right){
+            right.innerHTML = '<a href="' + prefix + 'index.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f5f5f7;border-radius:10px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:600;transition:0.2s;white-space:nowrap" onmouseover="this.style.background=\'#0071e3\';this.style.color=\'#fff\'" onmouseout="this.style.background=\'#f5f5f7\';this.style.color=\'#1d1d1f\'">🏠 Home</a>';
+        }
+        const header = document.querySelector('header');
+        if(header){ header.style.marginLeft = '-32px'; header.style.marginRight = '-32px'; }
+    }
+})();
+</script>
+<!-- ═══════════ TOOLPRIME HEADER ═══════════ -->
+
+
+<script>
+// Auto-fix header paths based on page location
+(function(){
+    const depth = (window.location.pathname.match(/\//g)||[]).length - 1;
+    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+    
+    const logo = document.getElementById('tpLogo');
+    const logoImg = document.getElementById('tpLogoImg');
+    const search = document.getElementById('tpSearch');
+    const right = document.getElementById('tpRight');
+    
+    if(logo && prefix) logo.href = prefix + 'index.html';
+    if(logoImg && prefix) logoImg.src = prefix + 'assets/images/toolprime.png';
+    
+    // Search redirect
+    if(search){
+        search.addEventListener('keydown', function(e){
+            if(e.key === 'Enter'){
+                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
+            }
+        });
+    }
+    
+    // Show home button on tool pages
+    if(depth > 0 && right){
+        right.innerHTML = '<a href="' + prefix + 'index.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f5f5f7;border-radius:10px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:600;transition:0.2s;white-space:nowrap" onmouseover="this.style.background=\'#0071e3\';this.style.color=\'#fff\'" onmouseout="this.style.background=\'#f5f5f7\';this.style.color=\'#1d1d1f\'">🏠 Home</a>';
+    }
+    
+    // Style header margin for tool pages
+    const header = document.getElementById('tpHeader');
+    if(depth > 0 && header){
+        header.style.marginLeft = '-32px';
+        header.style.marginRight = '-32px';
+    }
+})();
+</script>
+<!-- ═══════════ HEADER ═══════════ -->
+
+<!-- ═══════════ PREMIUM HEADER ═══════════ -->
+
+
+
+
+
+
+
+
+
+
+
+<div class="uc-wrap">
+    <a href="../../../index.html" class="uc-back">← Back to Store</a>
+    
+    <div class="uc-card">
+        <h1>📏 Unit Converter</h1>
+        <p class="uc-desc">Convert between units instantly. Length, weight, temperature, area, speed, volume, time — all in one place!</p>
+        
+        <!-- Category Tabs -->
+        <div class="cat-tabs" id="catTabs">
+            <button class="cat-tab active" data-cat="length">📏 Length</button>
+            <button class="cat-tab" data-cat="weight">⚖️ Weight</button>
+            <button class="cat-tab" data-cat="temperature">🌡️ Temp</button>
+            <button class="cat-tab" data-cat="area">📐 Area</button>
+            <button class="cat-tab" data-cat="speed">🚀 Speed</button>
+            <button class="cat-tab" data-cat="volume">🧪 Volume</button>
+            <button class="cat-tab" data-cat="time">⏱️ Time</button>
+        </div>
+        
+        <!-- Converter -->
+        <div class="conv-row">
+            <input type="number" id="inputVal" value="1" oninput="convert()" placeholder="Enter value">
+            <select id="fromUnit" onchange="convert()"></select>
+            <button class="swap-btn" onclick="swap()" title="Swap">🔄</button>
+            <select id="toUnit" onchange="convert()"></select>
+        </div>
+        
+        <div class="result-box">
+            <div class="result-val" id="resultVal">-</div>
+            <div class="result-eq" id="resultEq"></div>
+        </div>
+        
+        <!-- Quick Conversions -->
+        <div class="quick-cards" id="quickCards"></div>
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+function msg(t){const x=document.getElementById('toast');x.textContent=t;x.className='toast ok show';clearTimeout(x._t);x._t=setTimeout(()=>x.classList.remove('show'),2000)}
+
+// Unit definitions (all relative to base unit)
+const units={
+    length:{
+        base:'meter',
+        list:[
+            {name:'Kilometer',abbr:'km',val:1000},
+            {name:'Meter',abbr:'m',val:1},
+            {name:'Centimeter',abbr:'cm',val:0.01},
+            {name:'Millimeter',abbr:'mm',val:0.001},
+            {name:'Mile',abbr:'mi',val:1609.344},
+            {name:'Yard',abbr:'yd',val:0.9144},
+            {name:'Foot',abbr:'ft',val:0.3048},
+            {name:'Inch',abbr:'in',val:0.0254},
+            {name:'Nautical Mile',abbr:'nmi',val:1852}
+        ]
+    },
+    weight:{
+        base:'kilogram',
+        list:[
+            {name:'Kilogram',abbr:'kg',val:1},
+            {name:'Gram',abbr:'g',val:0.001},
+            {name:'Milligram',abbr:'mg',val:0.000001},
+            {name:'Pound',abbr:'lb',val:0.453592},
+            {name:'Ounce',abbr:'oz',val:0.0283495},
+            {name:'Ton (Metric)',abbr:'t',val:1000},
+            {name:'Stone',abbr:'st',val:6.35029}
+        ]
+    },
+    temperature:{
+        base:'celsius',
+        list:[
+            {name:'Celsius',abbr:'°C',val:'c'},
+            {name:'Fahrenheit',abbr:'°F',val:'f'},
+            {name:'Kelvin',abbr:'K',val:'k'}
+        ]
+    },
+    area:{
+        base:'sqmeter',
+        list:[
+            {name:'Square Meter',abbr:'m²',val:1},
+            {name:'Square Kilometer',abbr:'km²',val:1000000},
+            {name:'Square Mile',abbr:'mi²',val:2589988},
+            {name:'Square Foot',abbr:'ft²',val:0.092903},
+            {name:'Acre',abbr:'ac',val:4046.86},
+            {name:'Hectare',abbr:'ha',val:10000}
+        ]
+    },
+    speed:{
+        base:'mps',
+        list:[
+            {name:'Meters/sec',abbr:'m/s',val:1},
+            {name:'Kilometers/hr',abbr:'km/h',val:0.277778},
+            {name:'Miles/hr',abbr:'mph',val:0.44704},
+            {name:'Knot',abbr:'kn',val:0.514444},
+            {name:'Mach',abbr:'M',val:343}
+        ]
+    },
+    volume:{
+        base:'liter',
+        list:[
+            {name:'Liter',abbr:'L',val:1},
+            {name:'Milliliter',abbr:'mL',val:0.001},
+            {name:'Cubic Meter',abbr:'m³',val:1000},
+            {name:'Gallon (US)',abbr:'gal',val:3.78541},
+            {name:'Quart',abbr:'qt',val:0.946353},
+            {name:'Pint',abbr:'pt',val:0.473176},
+            {name:'Cup',abbr:'cup',val:0.236588},
+            {name:'Fluid Ounce',abbr:'fl oz',val:0.0295735}
+        ]
+    },
+    time:{
+        base:'second',
+        list:[
+            {name:'Second',abbr:'sec',val:1},
+            {name:'Minute',abbr:'min',val:60},
+            {name:'Hour',abbr:'hr',val:3600},
+            {name:'Day',abbr:'day',val:86400},
+            {name:'Week',abbr:'wk',val:604800},
+            {name:'Month (30d)',abbr:'mo',val:2592000},
+            {name:'Year (365d)',abbr:'yr',val:31536000}
+        ]
+    }
+};
+
+let currentCat='length';
+
+// Category tabs
+document.getElementById('catTabs').addEventListener('click',e=>{
+    const tab=e.target.closest('.cat-tab');if(!tab)return;
+    document.querySelectorAll('.cat-tab').forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    currentCat=tab.dataset.cat;
+    populateUnits();
+    convert();
+});
+
+function populateUnits(){
+    const unitList=units[currentCat].list;
+    const from=document.getElementById('fromUnit');
+    const to=document.getElementById('toUnit');
+    from.innerHTML=unitList.map((u,i)=>`<option value="${i}" ${i===0?'selected':''}>${u.abbr} - ${u.name}</option>`).join('');
+    to.innerHTML=unitList.map((u,i)=>`<option value="${i}" ${i===Math.min(1,unitList.length-1)?'selected':''}>${u.abbr} - ${u.name}</option>`).join('');
+    updateQuickCards();
+}
+
+function convertTemp(val,from,to){
+    let c;
+    if(from==='c') c=val;
+    else if(from==='f') c=(val-32)*5/9;
+    else c=val-273.15;
+    
+    if(to==='c') return c;
+    if(to==='f') return (c*9/5)+32;
+    return c+273.15;
+}
+
+function convert(){
+    const val=parseFloat(document.getElementById('inputVal').value)||0;
+    const unitList=units[currentCat].list;
+    const fromIdx=parseInt(document.getElementById('fromUnit').value);
+    const toIdx=parseInt(document.getElementById('toUnit').value);
+    const from=unitList[fromIdx];
+    const to=unitList[toIdx];
+    
+    let result;
+    if(currentCat==='temperature'){
+        result=convertTemp(val,from.val,to.val);
+    }else{
+        const baseVal=val*from.val;
+        result=baseVal/to.val;
+    }
+    
+    const formatted=result<0.000001?result.toExponential(6):result.toLocaleString('en-US',{maximumFractionDigits:10});
+    document.getElementById('resultVal').textContent=formatted+' '+to.abbr;
+    document.getElementById('resultEq').textContent=`${val} ${from.abbr} = ${formatted} ${to.abbr}`;
+}
+
+function swap(){
+    const from=document.getElementById('fromUnit');
+    const to=document.getElementById('toUnit');
+    const temp=from.value;
+    from.value=to.value;
+    to.value=temp;
+    convert();
+}
+
+function updateQuickCards(){
+    const unitList=units[currentCat].list;
+    const container=document.getElementById('quickCards');
+    container.innerHTML=unitList.slice(0,6).map((u,i)=>
+        `<div class="quick-card" onclick="quickConvert(${i})">
+            <div class="qc-val">${u.abbr}</div>
+            <div>${u.name}</div>
+        </div>`
+    ).join('');
+}
+
+function quickConvert(idx){
+    document.getElementById('toUnit').value=idx;
+    convert();
+}
+
+// Keyboard shortcut
+document.addEventListener('keydown',e=>{
+    if(e.key==='Enter'){e.preventDefault();convert();}
+});
+
+// Init
+populateUnits();
+convert();
+</script>
+
+<footer style="background:#fff;border-top:1px solid #e5e5ea;padding:24px 20px;margin-top:40px">
+    <div style="max-width:800px;margin:0 auto;text-align:center">
+        <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:12px">
+            <a href="../../../index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🏠 Home</a>
+            <a href="../../../tools/image/png-to-jpg-converter/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🖼️ PNG to JPG</a>
+            <a href="../../../tools/text/word-counter/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">📝 Word Counter</a>
+            <a href="../../../tools/url/qr-generator/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">📱 QR Code</a>
+            <a href="../../../tools/security/password-generator/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🔐 Password</a>
+        </div>
+        <p style="color:#8e8e93;font-size:0.76rem;margin:0">&copy; 2025 ToolPrime. All rights reserved. Made with ❤️</p>
+    </div>
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

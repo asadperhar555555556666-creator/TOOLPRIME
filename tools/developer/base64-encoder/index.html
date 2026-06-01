@@ -1,0 +1,275 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Base64 Encoder & Decoder - Encode Decode Online | ToolPrime</title>
+    <meta name="description" content="Base64 encode decode online. Convert text to Base64 or decode Base64 to text. Free developer tool.">
+    <meta name="keywords" content="base64 encoder, base64 decoder, encode base64, decode base64, text to base64, base64 converter">
+    <meta property="og:title" content="Base64 Encoder & Decoder - Encode Decode Online | ToolPrime">
+    <meta property="og:description" content="Base64 encode decode online. Convert text to Base64 or decode Base64 to text. Free developer tool.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://toolprime.online/tools/developer/base64-encoder/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Base64 Encoder & Decoder - Encode Decode Online | ToolPrime">
+    <meta name="twitter:description" content="Base64 encode decode online. Convert text to Base64 or decode Base64 to text. Free developer tool.">
+    <link rel="canonical" href="https://toolprime.online/tools/developer/base64-encoder/">
+
+    <link rel="stylesheet" href="../../../css/tool-style.css">
+    <style>@media(max-width:480px){body{padding:0 10px!important}}</style>
+    <link rel="icon" type="image/png" href="../../../assets/images/toolprime.png">
+    <style>footer{margin-left:-16px;margin-right:-16px}@media(max-width:768px){footer{margin-left:-12px;margin-right:-12px}}@media(max-width:480px){footer{margin-left:-8px;margin-right:-8px}}</style>
+</head>
+<body style="padding: 0 16px; margin: 0; overflow-x: hidden;">
+<!-- ═══════════ HEADER ═══════════ -->
+<header style="background:#fff;border-bottom:1px solid #e8eaed;padding:0;position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,0.04)">
+    <div style="max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 24px;gap:20px">
+        
+        <!-- Logo - Direct image only -->
+        <a href="../index.html" style="display:flex;align-items:center;text-decoration:none;flex-shrink:0">
+            <img src="../assets/images/toolprime.png" alt="ToolPrime" style="height:38px;width:auto;display:block">
+        </a>
+        
+        <!-- Search -->
+        <div style="flex:1;max-width:480px">
+            <input type="text" id="tpSearch" placeholder="Search tools..." autocomplete="off"
+                style="width:100%;padding:12px 20px;background:#f5f5f7;border:2px solid transparent;border-radius:14px;font-size:0.9rem;font-family:inherit;color:#1d1d1f;outline:none;transition:all 0.25s ease"
+                onfocus="this.style.background='#fff';this.style.borderColor='#0071e3';this.style.boxShadow='0 0 0 4px rgba(0,113,227,0.08)'"
+                onblur="this.style.background='#f5f5f7';this.style.borderColor='transparent';this.style.boxShadow='none'">
+        </div>
+        
+        <!-- Right -->
+        <div id="tpRight" style="flex-shrink:0">
+            <span style="font-size:0.78rem;color:#6e6e73;font-weight:500">🛠️ 20+ Tools</span>
+        </div>
+    </div>
+</header>
+
+<script>
+(function(){
+    const path = window.location.pathname;
+    const depth = (path.match(/\//g)||[]).length - 1;
+    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+    
+    // Fix logo link
+    const logoLink = document.querySelector('header a[href="../index.html"]');
+    if(logoLink) logoLink.href = prefix + 'index.html';
+    
+    // Fix logo image
+    const logoImg = document.querySelector('header img[src="../assets/images/toolprime.png"]');
+    if(logoImg) logoImg.src = prefix + 'assets/images/toolprime.png';
+    
+    // Fix search
+    const search = document.getElementById('tpSearch');
+    if(search){
+        search.addEventListener('keydown', function(e){
+            if(e.key === 'Enter'){
+                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
+            }
+        });
+    }
+    
+    // Home button for tool pages
+    if(depth > 0){
+        const right = document.getElementById('tpRight');
+        if(right){
+            right.innerHTML = '<a href="' + prefix + 'index.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f5f5f7;border-radius:10px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:600;transition:0.2s;white-space:nowrap" onmouseover="this.style.background=\'#0071e3\';this.style.color=\'#fff\'" onmouseout="this.style.background=\'#f5f5f7\';this.style.color=\'#1d1d1f\'">🏠 Home</a>';
+        }
+        const header = document.querySelector('header');
+        if(header){ header.style.marginLeft = '-32px'; header.style.marginRight = '-32px'; }
+    }
+})();
+</script>
+<!-- ═══════════ TOOLPRIME HEADER ═══════════ -->
+
+
+<script>
+// Auto-fix header paths based on page location
+(function(){
+    const depth = (window.location.pathname.match(/\//g)||[]).length - 1;
+    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+    
+    const logo = document.getElementById('tpLogo');
+    const logoImg = document.getElementById('tpLogoImg');
+    const search = document.getElementById('tpSearch');
+    const right = document.getElementById('tpRight');
+    
+    if(logo && prefix) logo.href = prefix + 'index.html';
+    if(logoImg && prefix) logoImg.src = prefix + 'assets/images/toolprime.png';
+    
+    // Search redirect
+    if(search){
+        search.addEventListener('keydown', function(e){
+            if(e.key === 'Enter'){
+                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
+            }
+        });
+    }
+    
+    // Show home button on tool pages
+    if(depth > 0 && right){
+        right.innerHTML = '<a href="' + prefix + 'index.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f5f5f7;border-radius:10px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:600;transition:0.2s;white-space:nowrap" onmouseover="this.style.background=\'#0071e3\';this.style.color=\'#fff\'" onmouseout="this.style.background=\'#f5f5f7\';this.style.color=\'#1d1d1f\'">🏠 Home</a>';
+    }
+    
+    // Style header margin for tool pages
+    const header = document.getElementById('tpHeader');
+    if(depth > 0 && header){
+        header.style.marginLeft = '-32px';
+        header.style.marginRight = '-32px';
+    }
+})();
+</script>
+<!-- ═══════════ HEADER ═══════════ -->
+
+<!-- ═══════════ PREMIUM HEADER ═══════════ -->
+
+
+
+
+
+
+
+
+
+
+
+<div class="tp-container">
+    <a href="../../../index.html" class="tp-back">← Back to Store</a>
+    
+    <div class="tp-card">
+        <h1>🔐 Base64 Encoder / Decoder</h1>
+        <p class="desc">Encode text to Base64 format or decode Base64 back to readable text. Essential for data encoding, APIs & web development.</p>
+        
+        <div class="tabs">
+            <button class="tab active" onclick="setMode('encode')" id="tabEncode">🔒 Encode</button>
+            <button class="tab" onclick="setMode('decode')" id="tabDecode">🔓 Decode</button>
+        </div>
+        
+        <label id="inputLabel">📝 Text to Encode</label>
+        <textarea id="inputText" placeholder="Enter text to encode to Base64..."></textarea>
+        
+        <div class="btn-row">
+            <button class="btn btn-primary" onclick="process()" id="btnProcess">🔒 Encode to Base64</button>
+            <button class="btn btn-green" onclick="copyOutput()">📋 Copy Result</button>
+            <button class="btn btn-outline" onclick="swapIO()">🔄 Swap</button>
+        </div>
+        
+        <label style="margin-top:14px" id="outputLabel">✅ Encoded Result</label>
+        <textarea id="outputText" placeholder="Base64 result will appear here..." readonly></textarea>
+        
+        <div class="info-row">
+            Input: <span id="inputLen">0</span> chars | Output: <span id="outputLen">0</span> chars
+        </div>
+    </div>
+    
+    <div class="tp-card">
+        <div class="example-box">
+            <h4>💡 Try These Examples (click)</h4>
+            <code onclick="tryExample('Hello, World!')">📝 Encode: Hello, World!</code>
+            <code onclick="tryExample('ToolPrime is awesome!')">📝 Encode: ToolPrime is awesome!</code>
+            <code onclick="tryExample('SGVsbG8sIFdvcmxkIQ==')">🔓 Decode: SGVsbG8sIFdvcmxkIQ==</code>
+            <code onclick="tryExample('eyJuYW1lIjoiSm9obiIsImFnZSI6MzB9')">🔓 Decode JSON: eyJuYW1lIjoiSm9obiIsImFnZSI6MzB9</code>
+        </div>
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+let mode='encode';
+
+function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.className='toast show';clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),2000)}
+
+function setMode(m){
+    mode=m;
+    document.getElementById('tabEncode').classList.toggle('active',m==='encode');
+    document.getElementById('tabDecode').classList.toggle('active',m==='decode');
+    document.getElementById('inputLabel').textContent=m==='encode'?'📝 Text to Encode':'🔐 Base64 to Decode';
+    document.getElementById('outputLabel').textContent=m==='encode'?'✅ Base64 Encoded':'✅ Decoded Text';
+    document.getElementById('btnProcess').textContent=m==='encode'?'🔒 Encode to Base64':'🔓 Decode from Base64';
+    process();
+}
+
+function process(){
+    const input=document.getElementById('inputText').value;
+    let output='';
+    try{
+        if(mode==='encode'){
+            output=btoa(unescape(encodeURIComponent(input)));
+        }else{
+            output=decodeURIComponent(escape(atob(input)));
+        }
+    }catch(e){
+        output='❌ Error: Invalid input for '+mode;
+    }
+    document.getElementById('outputText').value=output;
+    document.getElementById('inputLen').textContent=input.length;
+    document.getElementById('outputLen').textContent=output.length;
+}
+
+function copyOutput(){
+    const v=document.getElementById('outputText').value;
+    if(!v)return showToast('Nothing to copy!');
+    navigator.clipboard.writeText(v).then(()=>showToast('✅ Copied!'));
+}
+
+function swapIO(){
+    const inp=document.getElementById('inputText').value;
+    const out=document.getElementById('outputText').value;
+    document.getElementById('inputText').value=out;
+    document.getElementById('outputText').value=inp;
+    mode=mode==='encode'?'decode':'encode';
+    setMode(mode);
+}
+
+function tryExample(text){
+    document.getElementById('inputText').value=text;
+    if(text.includes('=')&&text.match(/^[A-Za-z0-9+/=]+$/)){
+        setMode('decode');
+    }else{
+        setMode('encode');
+    }
+    process();
+}
+
+document.getElementById('inputText').addEventListener('input',process);
+process();
+</script>
+
+<footer style="background:#fff;border-top:1px solid #e5e5ea;padding:24px 20px;margin-top:40px">
+    <div style="max-width:800px;margin:0 auto;text-align:center">
+        <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:12px">
+            <a href="../../../index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🏠 Home</a>
+            <a href="../../../tools/image/png-to-jpg-converter/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🖼️ PNG to JPG</a>
+            <a href="../../../tools/text/word-counter/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">📝 Word Counter</a>
+            <a href="../../../tools/url/qr-generator/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">📱 QR Code</a>
+            <a href="../../../tools/security/password-generator/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🔐 Password</a>
+        </div>
+        <p style="color:#8e8e93;font-size:0.76rem;margin:0">&copy; 2025 ToolPrime. All rights reserved. Made with ❤️</p>
+    </div>
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

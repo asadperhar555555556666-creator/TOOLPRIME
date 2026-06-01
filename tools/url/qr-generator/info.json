@@ -1,0 +1,14 @@
+﻿{
+    "name":  "QR Code Generator",
+    "description":  "Generate free QR codes from text, URLs, WiFi \u0026 more. Download as PNG instantly.",
+    "category":  "url",
+    "tags":  [
+                 "qr",
+                 "qrcode",
+                 "generator",
+                 "barcode"
+             ],
+    "keywords":  "qr code generator, free qr code, create qr code, qr maker, url to qr, wifi qr code",
+    "howToUse":  "1. Select QR type (URL, Text, WiFi, etc.) 2. Enter data 3. Customize color \u0026 size 4. Download PNG",
+    "faq":  "Q: Is it free? A: Yes, no limits. Q: What can I encode? A: URLs, text, WiFi, phone, email."
+}

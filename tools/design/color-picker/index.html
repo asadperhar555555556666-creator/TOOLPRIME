@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Color Picker - HEX RGB HSL Color Converter | ToolPrime</title>
+    <meta name="description" content="Online color picker & converter. Pick colors, convert HEX to RGB to HSL. Generate color palettes. Free tool.">
+    <meta name="keywords" content="color picker, hex color, rgb color, hsl color, color converter, color palette generator">
+    <meta property="og:title" content="Color Picker - HEX RGB HSL Color Converter | ToolPrime">
+    <meta property="og:description" content="Online color picker & converter. Pick colors, convert HEX to RGB to HSL. Generate color palettes. Free tool.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://toolprime.online/tools/design/color-picker/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Color Picker - HEX RGB HSL Color Converter | ToolPrime">
+    <meta name="twitter:description" content="Online color picker & converter. Pick colors, convert HEX to RGB to HSL. Generate color palettes. Free tool.">
+    <link rel="canonical" href="https://toolprime.online/tools/design/color-picker/">
+
+    <link rel="stylesheet" href="../../../css/tool-style.css">
+    <style>@media(max-width:480px){body{padding:0 10px!important}}</style>
+    <link rel="icon" type="image/png" href="../../../assets/images/toolprime.png">
+    <style>footer{margin-left:-16px;margin-right:-16px}@media(max-width:768px){footer{margin-left:-12px;margin-right:-12px}}@media(max-width:480px){footer{margin-left:-8px;margin-right:-8px}}</style>
+</head>
+<body style="padding: 0 16px; margin: 0; overflow-x: hidden;">
+<!-- ═══════════ HEADER ═══════════ -->
+<header style="background:#fff;border-bottom:1px solid #e8eaed;padding:0;position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,0.04)">
+    <div style="max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 24px;gap:20px">
+        
+        <!-- Logo - Direct image only -->
+        <a href="../index.html" style="display:flex;align-items:center;text-decoration:none;flex-shrink:0">
+            <img src="../assets/images/toolprime.png" alt="ToolPrime" style="height:38px;width:auto;display:block">
+        </a>
+        
+        <!-- Search -->
+        <div style="flex:1;max-width:480px">
+            <input type="text" id="tpSearch" placeholder="Search tools..." autocomplete="off"
+                style="width:100%;padding:12px 20px;background:#f5f5f7;border:2px solid transparent;border-radius:14px;font-size:0.9rem;font-family:inherit;color:#1d1d1f;outline:none;transition:all 0.25s ease"
+                onfocus="this.style.background='#fff';this.style.borderColor='#0071e3';this.style.boxShadow='0 0 0 4px rgba(0,113,227,0.08)'"
+                onblur="this.style.background='#f5f5f7';this.style.borderColor='transparent';this.style.boxShadow='none'">
+        </div>
+        
+        <!-- Right -->
+        <div id="tpRight" style="flex-shrink:0">
+            <span style="font-size:0.78rem;color:#6e6e73;font-weight:500">🛠️ 20+ Tools</span>
+        </div>
+    </div>
+</header>
+
+<script>
+(function(){
+    const path = window.location.pathname;
+    const depth = (path.match(/\//g)||[]).length - 1;
+    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+    
+    // Fix logo link
+    const logoLink = document.querySelector('header a[href="../index.html"]');
+    if(logoLink) logoLink.href = prefix + 'index.html';
+    
+    // Fix logo image
+    const logoImg = document.querySelector('header img[src="../assets/images/toolprime.png"]');
+    if(logoImg) logoImg.src = prefix + 'assets/images/toolprime.png';
+    
+    // Fix search
+    const search = document.getElementById('tpSearch');
+    if(search){
+        search.addEventListener('keydown', function(e){
+            if(e.key === 'Enter'){
+                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
+            }
+        });
+    }
+    
+    // Home button for tool pages
+    if(depth > 0){
+        const right = document.getElementById('tpRight');
+        if(right){
+            right.innerHTML = '<a href="' + prefix + 'index.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f5f5f7;border-radius:10px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:600;transition:0.2s;white-space:nowrap" onmouseover="this.style.background=\'#0071e3\';this.style.color=\'#fff\'" onmouseout="this.style.background=\'#f5f5f7\';this.style.color=\'#1d1d1f\'">🏠 Home</a>';
+        }
+        const header = document.querySelector('header');
+        if(header){ header.style.marginLeft = '-32px'; header.style.marginRight = '-32px'; }
+    }
+})();
+</script>
+<!-- ═══════════ TOOLPRIME HEADER ═══════════ -->
+
+
+<script>
+// Auto-fix header paths based on page location
+(function(){
+    const depth = (window.location.pathname.match(/\//g)||[]).length - 1;
+    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+    
+    const logo = document.getElementById('tpLogo');
+    const logoImg = document.getElementById('tpLogoImg');
+    const search = document.getElementById('tpSearch');
+    const right = document.getElementById('tpRight');
+    
+    if(logo && prefix) logo.href = prefix + 'index.html';
+    if(logoImg && prefix) logoImg.src = prefix + 'assets/images/toolprime.png';
+    
+    // Search redirect
+    if(search){
+        search.addEventListener('keydown', function(e){
+            if(e.key === 'Enter'){
+                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
+            }
+        });
+    }
+    
+    // Show home button on tool pages
+    if(depth > 0 && right){
+        right.innerHTML = '<a href="' + prefix + 'index.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f5f5f7;border-radius:10px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:600;transition:0.2s;white-space:nowrap" onmouseover="this.style.background=\'#0071e3\';this.style.color=\'#fff\'" onmouseout="this.style.background=\'#f5f5f7\';this.style.color=\'#1d1d1f\'">🏠 Home</a>';
+    }
+    
+    // Style header margin for tool pages
+    const header = document.getElementById('tpHeader');
+    if(depth > 0 && header){
+        header.style.marginLeft = '-32px';
+        header.style.marginRight = '-32px';
+    }
+})();
+</script>
+<!-- ═══════════ HEADER ═══════════ -->
+
+<!-- ═══════════ PREMIUM HEADER ═══════════ -->
+
+
+
+
+
+
+
+
+
+
+
+<div class="tp-container">
+    <a href="../../../index.html" class="tp-back">← Back to Store</a>
+    
+    <div class="tp-card">
+        <h1>🎨 Color Picker & Converter</h1>
+        <p class="desc">Pick any color, convert between HEX, RGB, HSL. Click to copy values. Generate random palettes!</p>
+        
+        <div class="picker-area">
+            <div class="color-preview" id="preview"></div>
+            <div class="picker-controls">
+                <input type="color" id="colorPicker" value="#3b82f6" onchange="updateFromPicker()">
+                <input type="text" id="hexInput" placeholder="HEX" value="#3b82f6" oninput="updateFromHEX()">
+                <input type="text" id="rgbInput" placeholder="RGB" value="59, 130, 246" oninput="updateFromRGB()">
+                <input type="text" id="hslInput" placeholder="HSL" value="217, 91%, 60%" oninput="updateFromHSL()">
+            </div>
+        </div>
+        
+        <div class="color-codes">
+            <div class="code-box" onclick="copyValue('hexValue', this)">
+                <div class="val" id="hexValue">#3b82f6</div>
+                <div class="lbl">HEX</div>
+            </div>
+            <div class="code-box" onclick="copyValue('rgbValue', this)">
+                <div class="val" id="rgbValue">rgb(59,130,246)</div>
+                <div class="lbl">RGB</div>
+            </div>
+            <div class="code-box" onclick="copyValue('hslValue', this)">
+                <div class="val" id="hslValue">hsl(217,91%,60%)</div>
+                <div class="lbl">HSL</div>
+            </div>
+            <div class="code-box" onclick="copyValue('cmykValue', this)">
+                <div class="val" id="cmykValue">cmyk(76%,47%,0%,4%)</div>
+                <div class="lbl">CMYK</div>
+            </div>
+        </div>
+        
+        <div class="btn-row">
+            <button class="btn btn-blue" onclick="randomColor()">🎲 Random Color</button>
+            <button class="btn btn-outline" onclick="generatePalette()">🌈 Generate Palette</button>
+        </div>
+        
+        <div class="palette" id="palette"></div>
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.className='toast show';clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),2000)}
+
+function hexToRgb(h){const r=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(h);return r?[parseInt(r[1],16),parseInt(r[2],16),parseInt(r[3],16)]:[0,0,0]}
+function rgbToHex(r,g,b){return'#'+[r,g,b].map(x=>x.toString(16).padStart(2,'0')).join('')}
+function rgbToHsl(r,g,b){r/=255;g/=255;b/=255;const max=Math.max(r,g,b),min=Math.min(r,g,b);let h,s,l=(max+min)/2;if(max===min)h=s=0;else{const d=max-min;s=l>0.5?d/(2-max-min):d/(max+min);switch(max){case r:h=((g-b)/d+(g<b?6:0))/6;break;case g:h=((b-r)/d+2)/6;break;case b:h=((r-g)/d+4)/6;break}}return[Math.round(h*360),Math.round(s*100),Math.round(l*100)]}
+function hslToRgb(h,s,l){s/=100;l/=100;const a=s*Math.min(l,1-l);const f=n=>{const k=(n+h/30)%12;return l-a*Math.max(Math.min(k-3,9-k,1),-1)};return[Math.round(f(0)*255),Math.round(f(8)*255),Math.round(f(4)*255)]}
+function rgbToCmyk(r,g,b){let c=1-(r/255),m=1-(g/255),y=1-(b/255),k=Math.min(c,m,y);if(k===1)return[0,0,0,100];c=Math.round((c-k)/(1-k)*100);m=Math.round((m-k)/(1-k)*100);y=Math.round((y-k)/(1-k)*100);k=Math.round(k*100);return[c,m,y,k]}
+
+function updateAll(hex){
+    const[r,g,b]=hexToRgb(hex);
+    const[h,s,l]=rgbToHsl(r,g,b);
+    const[c,m,y,k]=rgbToCmyk(r,g,b);
+    document.getElementById('preview').style.background=hex;
+    document.getElementById('colorPicker').value=hex;
+    document.getElementById('hexInput').value=hex;
+    document.getElementById('rgbInput').value=r+', '+g+', '+b;
+    document.getElementById('hslInput').value=h+', '+s+'%, '+l+'%';
+    document.getElementById('hexValue').textContent=hex;
+    document.getElementById('rgbValue').textContent='rgb('+r+','+g+','+b+')';
+    document.getElementById('hslValue').textContent='hsl('+h+','+s+'%,'+l+'%)';
+    document.getElementById('cmykValue').textContent='cmyk('+c+'%,'+m+'%,'+y+'%,'+k+'%)';
+}
+
+function updateFromPicker(){updateAll(document.getElementById('colorPicker').value)}
+function updateFromHEX(){let v=document.getElementById('hexInput').value.trim();if(!v.startsWith('#'))v='#'+v;if(/^#[0-9a-fA-F]{6}$/.test(v))updateAll(v)}
+function updateFromRGB(){const v=document.getElementById('rgbInput').value.split(',').map(x=>parseInt(x));if(v.length===3&&v.every(x=>!isNaN(x)&&x>=0&&x<=255))updateAll(rgbToHex(v[0],v[1],v[2]))}
+function updateFromHSL(){const v=document.getElementById('hslInput').value.replace(/%/g,'').split(',').map(x=>parseFloat(x));if(v.length===3&&!isNaN(v[0])&&!isNaN(v[1])&&!isNaN(v[2])){const[r,g,b]=hslToRgb(v[0],v[1],v[2]);updateAll(rgbToHex(r,g,b))}}
+
+function copyValue(id,el){
+    const v=document.getElementById(id).textContent;
+    navigator.clipboard.writeText(v).then(()=>{
+        el.classList.add('copied');showToast('Copied: '+v);
+        setTimeout(()=>el.classList.remove('copied'),1000);
+    });
+}
+
+function randomColor(){
+    const h='#'+Math.floor(Math.random()*16777215).toString(16).padStart(6,'0');
+    updateAll(h);
+}
+
+function generatePalette(){
+    const base=hexToRgb(document.getElementById('hexInput').value||'#3b82f6');
+    const colors=[];
+    for(let i=0;i<5;i++){
+        const r=Math.min(255,Math.max(0,base[0]+Math.floor(Math.random()*120-60)));
+        const g=Math.min(255,Math.max(0,base[1]+Math.floor(Math.random()*120-60)));
+        const b=Math.min(255,Math.max(0,base[2]+Math.floor(Math.random()*120-60)));
+        colors.push(rgbToHex(r,g,b));
+    }
+    const p=document.getElementById('palette');
+    p.innerHTML=colors.map(c=>'<div class="palette-color" style="background:'+c+'" onclick="updateAll(\''+c+'\')" title="'+c+'"></div>').join('');
+}
+
+updateAll('#3b82f6');
+generatePalette();
+</script>
+
+<footer style="background:#fff;border-top:1px solid #e5e5ea;padding:24px 20px;margin-top:40px">
+    <div style="max-width:800px;margin:0 auto;text-align:center">
+        <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:12px">
+            <a href="../../../index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🏠 Home</a>
+            <a href="../../../tools/image/png-to-jpg-converter/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🖼️ PNG to JPG</a>
+            <a href="../../../tools/text/word-counter/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">📝 Word Counter</a>
+            <a href="../../../tools/url/qr-generator/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">📱 QR Code</a>
+            <a href="../../../tools/security/password-generator/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🔐 Password</a>
+        </div>
+        <p style="color:#8e8e93;font-size:0.76rem;margin:0">&copy; 2025 ToolPrime. All rights reserved. Made with ❤️</p>
+    </div>
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,14 @@
+﻿{
+    "name":  "Website to APK",
+    "description":  "Install ToolPrime as app. PWA guide for Android \u0026 iOS.",
+    "category":  "developer",
+    "tags":  [
+                 "apk",
+                 "pwa",
+                 "install",
+                 "app"
+             ],
+    "keywords":  "website to apk, convert site to app, web to android app, make apk from website, pwa builder",
+    "howToUse":  "1. Enter website URL 2. Click Install App 3. Follow device instructions 4. App appears on home screen",
+    "faq":  "Q: Is it free? A: Yes, PWA install. Q: Works offline? A: Yes, with service worker."
+}

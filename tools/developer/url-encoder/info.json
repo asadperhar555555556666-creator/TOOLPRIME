@@ -1,0 +1,15 @@
+﻿{
+    "name":  "URL Encoder / Decoder",
+    "description":  "Encode or decode URLs online. Convert special characters to URL-safe format and vice versa.",
+    "category":  "developer",
+    "tags":  [
+                 "url",
+                 "encode",
+                 "decode",
+                 "percent",
+                 "web"
+             ],
+    "keywords":  "url encoder, url decoder, percent encoding, encode url online, decode url, url escape",
+    "howToUse":  "1. Paste text/URL 2. Choose Encode or Decode 3. See result instantly 4. Copy output",
+    "faq":  "Q: What is URL encoding? A: Converts special chars to % format. Q: When to use? A: API calls, query strings."
+}

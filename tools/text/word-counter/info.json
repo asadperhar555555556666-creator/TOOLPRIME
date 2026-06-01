@@ -1,0 +1,11 @@
+﻿{
+    "name":  "Word Counter",
+    "description":  "Count words, characters, sentences \u0026 paragraphs instantly.",
+    "category":  "text",
+    "tags":  [
+
+             ],
+    "keywords":  "word counter, character counter, count words online, word count tool, text counter",
+    "howToUse":  "1. Paste your text 2. Instantly see word count, character count, sentences \u0026 paragraphs",
+    "faq":  "Q: Is it accurate? A: Yes, real-time counting. Q: Max text length? A: Unlimited."
+}
