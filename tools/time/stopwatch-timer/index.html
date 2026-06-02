@@ -2,109 +2,75 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="robots" content="index, follow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Stopwatch & Timer - Online Stopwatch with Laps | ToolPrime</title>
-    <meta name="description" content="Free online stopwatch & countdown timer. Lap recording, alarm sound. Precise time tracking tool.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Stopwatch & Timer - Online Stopwatch with Laps | ToolPrime</title>
+    <meta name="description" content="Free online stopwatch & countdown timer. Lap recording, precise time tracking. Stopwatch with milliseconds, countdown with alarm.">
     <meta name="keywords" content="online stopwatch, countdown timer, lap timer, online timer, stopwatch with laps, time tracker">
-    <meta property="og:title" content="Stopwatch & Timer - Online Stopwatch with Laps | ToolPrime">
-    <meta property="og:description" content="Free online stopwatch & countdown timer. Lap recording, alarm sound. Precise time tracking tool.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://toolprime.online../../stopwatch-timer/">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Stopwatch & Timer - Online Stopwatch with Laps | ToolPrime">
-    <meta name="twitter:description" content="Free online stopwatch & countdown timer. Lap recording, alarm sound. Precise time tracking tool.">
-    <link rel="canonical" href="https://toolprime.online../../stopwatch-timer/">
-
+    <meta property="og:title" content="Free Stopwatch & Timer | ToolPrime">
+    <link rel="canonical" href="https://toolprime.online/tools/time/stopwatch-timer/">
     <link rel="icon" type="image/png" href="../../../assets/images/toolprime.png">
-    
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:system-ui,-apple-system,sans-serif;background:#f5f5f7;color:#1d1d1f;line-height:1.6;min-height:100vh}
+        .header{background:#fff;border-bottom:1px solid #e5e5ea;padding:0 20px;position:sticky;top:0;z-index:100}
+        .header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;height:56px;justify-content:space-between}
+        .logo{display:flex;align-items:center;text-decoration:none;gap:8px}.logo img{height:32px}
+        .home-btn{padding:7px 14px;background:#f5f5f7;border-radius:8px;text-decoration:none;color:#1d1d1f;font-weight:600;font-size:0.82rem;transition:0.15s}
+        .home-btn:hover{background:#0071e3;color:#fff}
+        .container{max-width:550px;margin:0 auto;padding:30px 20px 50px}
+        .back-btn{display:inline-flex;align-items:center;gap:8px;color:#0071e3;text-decoration:none;font-weight:600;font-size:0.88rem;margin-bottom:24px;padding:10px 18px;background:#e8f4fd;border-radius:50px;transition:0.2s}
+        .back-btn:hover{background:#0071e3;color:#fff;gap:12px;box-shadow:0 4px 12px rgba(0,113,227,0.25)}
+        .card{background:#fff;border:1px solid #e5e5ea;border-radius:14px;padding:28px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:24px}
+        .card h1{font-size:1.5rem;font-weight:800;margin-bottom:8px}.card .desc{color:#6e6e73;margin-bottom:20px;font-size:0.9rem}
+        .tabs{display:flex;gap:4px;margin-bottom:16px;background:#f5f5f7;border-radius:10px;padding:4px}
+        .tab{flex:1;padding:10px;text-align:center;border-radius:8px;cursor:pointer;font-weight:600;font-size:0.85rem;border:none;background:transparent;color:#6e6e73;font-family:inherit;transition:0.15s}
+        .tab.active{background:#fff;color:#0071e3;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+        .display{text-align:center;padding:30px 20px;background:#f5f5f7;border-radius:14px;margin-bottom:18px}
+        .time{font-size:3rem;font-weight:800;font-family:'SF Mono','Courier New',monospace;letter-spacing:2px}
+        .milli{font-size:1.3rem;color:#6e6e73;font-family:'SF Mono',monospace}
+        .btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+        .btn{display:inline-flex;align-items:center;gap:6px;padding:12px 22px;border-radius:10px;border:none;font-weight:600;font-size:0.9rem;cursor:pointer;font-family:inherit;transition:0.15s}
+        .btn-start{background:#34c759;color:#fff;flex:1;justify-content:center}.btn-start:hover{background:#2db14a}
+        .btn-stop{background:#ff3b30;color:#fff}.btn-stop:hover{background:#e0352b}
+        .btn-lap{background:#0071e3;color:#fff}.btn-lap:hover{background:#005bb5}
+        .btn-reset{background:#6e6e73;color:#fff}.btn-reset:hover{background:#555}
+        .timer-setup{display:flex;gap:10px;justify-content:center;align-items:center;margin-bottom:14px}
+        .timer-setup input{width:60px;padding:10px;text-align:center;background:#f5f5f7;border:2px solid #e5e5ea;border-radius:8px;font-size:1rem;font-family:inherit}
+        .timer-setup label{font-size:0.85rem;font-weight:600}
+        .laps{max-height:180px;overflow-y:auto;background:#f5f5f7;border-radius:10px;padding:8px;display:none}
+        .laps.show{display:block}
+        .lap-row{display:flex;justify-content:space-between;padding:6px 10px;font-family:'SF Mono',monospace;font-size:0.82rem;border-bottom:1px solid #e5e5ea}
+        .lap-row:last-child{border:none}.lap-num{color:#0071e3;font-weight:600}
+        .article{background:#fff;border:1px solid #e5e5ea;border-radius:14px;padding:28px;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+        .article h2{font-size:1.2rem;font-weight:700;margin:20px 0 10px}.article h2:first-child{margin-top:0}
+        .article p{color:#6e6e73;font-size:0.88rem;line-height:1.7;margin-bottom:12px}
+        .faq-box{background:#fafafa;border-radius:10px;padding:14px 16px;margin-bottom:8px}
+        .faq-box strong{display:block;font-size:0.9rem;margin-bottom:4px}.faq-box p{font-size:0.82rem;margin:0;color:#6e6e73}
+        .related{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+        .related a{padding:8px 16px;background:#f5f5f7;border-radius:20px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:500;border:1px solid #e5e5ea}
+        .related a:hover{border-color:#0071e3;color:#0071e3}
+        footer{background:#fff;border-top:1px solid #e5e5ea;padding:20px;text-align:center;margin-top:20px}
+        footer .links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+        footer .links a{color:#6e6e73;text-decoration:none;font-size:0.8rem}footer .links a:hover{color:#0071e3}
+        footer .copy{color:#8e8e93;font-size:0.72rem}
+        @media(max-width:600px){.card{padding:18px}.card h1{font-size:1.2rem}.time{font-size:2.2rem}}
+    </style>
 </head>
-<body style="padding: 0 16px; margin: 0; overflow-x: hidden;">
-<!-- ═══════════ HEADER ═══════════ -->
+<body>
 
-<script>
-(function(){
-    const path = window.location.pathname;
-    const depth = (path.match(/\//g)||[]).length - 1;
-    const prefix = depth > 0 ? '../'.repeat(depth) : '';
-    
-    // Fix logo link
-    const logoLink = document.querySelector('header a[href="../../../index.html"]');
-    if(logoLink) logoLink.href = prefix + 'index.html';
-    
-    // Fix logo image
-    const logoImg = document.querySelector('header img[src="../../../ssets/images/toolprime.png"]');
-    if(logoImg) logoImg.src = prefix + 'assets/images/toolprime.png';
-    
-    // Fix search
-    const search = document.getElementById('tpSearch');
-    if(search){
-        search.addEventListener('keydown', function(e){
-            if(e.key === 'Enter'){
-                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
-            }
-        });
-    }
-    
-    // Home button for tool pages
-    if(depth > 0){
-        const right = document.getElementById('tpRight');
-        if(right){
-            right.innerHTML = '<a href="../../../index.html"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px;width:auto">Home</a>';
-        }
-        const header = document.querySelector('header');
-        if(header){ header.style.marginLeft = '-32px'; header.style.marginRight = '-32px'; }
-    }
-})();
-</script>
-<!-- ═══════════ TOOLPRIME HEADER ═══════════ -->
+<header class="header">
+    <div class="header-inner">
+        <a href="../../../index.html" class="logo"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px"></a>
+        <a href="../../../index.html" class="home-btn">Home</a>
+    </div>
+</header>
 
-<script>
-// Auto-fix header paths based on page location
-(function(){
-    const depth = (window.location.pathname.match(/\//g)||[]).length - 1;
-    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+<div class="container">
+    <a href="../../../index.html" class="back-btn">← Back to Store</a>
     
-    const logo = document.getElementById('tpLogo');
-    const logoImg = document.getElementById('tpLogoImg');
-    const search = document.getElementById('tpSearch');
-    const right = document.getElementById('tpRight');
-    
-    if(logo && prefix) logo.href = prefix + 'index.html';
-    if(logoImg && prefix) logoImg.src = prefix + 'assets/images/toolprime.png';
-    
-    // Search redirect
-    if(search){
-        search.addEventListener('keydown', function(e){
-            if(e.key === 'Enter'){
-                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
-            }
-        });
-    }
-    
-    // Show home button on tool pages
-    if(depth > 0 && right){
-        right.innerHTML = '<a href="../../../index.html"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px;width:auto">Home</a>';
-    }
-    
-    // Style header margin for tool pages
-    const header = document.getElementById('tpHeader');
-    if(depth > 0 && header){
-        header.style.marginLeft = '-32px';
-        header.style.marginRight = '-32px';
-    }
-})();
-</script>
-<!-- ═══════════ HEADER ═══════════ -->
-
-<!-- ═══════════ PREMIUM HEADER ═══════════ -->
-
-<div class="tp-container">
-    <a href="../../../index.html"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px;width:auto">← Back to Store</a>
-    
-    <div class="tp-card">
+    <div class="card">
         <h1>⏱️ Stopwatch & Timer</h1>
-        <p class="desc">Precise online stopwatch with lap recording & countdown timer with alarm sound.</p>
+        <p class="desc">Precise online stopwatch with lap recording & countdown timer.</p>
         
         <div class="tabs">
             <button class="tab active" onclick="switchTab('stopwatch')" id="tabSW">⏱️ Stopwatch</button>
@@ -116,124 +82,96 @@
             <div class="milli" id="milli">.00</div>
         </div>
         
-        <!-- Stopwatch -->
         <div id="swControls">
             <div class="btn-row">
-                <button class="btn btn-start" id="swBtn" onclick="swToggle()">▶️ Start</button>
+                <button class="btn btn-start" id="swBtn" onclick="swToggle()">▶ Start</button>
                 <button class="btn btn-lap" id="lapBtn" onclick="swLap()" disabled>🏁 Lap</button>
+                <button class="btn btn-reset" onclick="swReset()">↺ Reset</button>
             </div>
-            <div style="text-align:center"><button class="btn btn-reset" onclick="swReset()">🔄 Reset</button></div>
         </div>
         
-        <!-- Timer -->
         <div id="tmControls" style="display:none">
             <div class="timer-setup">
-                <input type="number" id="tmMin" value="1" min="0" max="99">
-                <label>min</label>
-                <input type="number" id="tmSec" value="0" min="0" max="59">
-                <label>sec</label>
+                <input type="number" id="tmMin" value="1" min="0" max="99"><label>min</label>
+                <input type="number" id="tmSec" value="0" min="0" max="59"><label>sec</label>
             </div>
             <div class="btn-row">
-                <button class="btn btn-start" id="tmBtn" onclick="tmToggle()">▶️ Start</button>
+                <button class="btn btn-start" id="tmBtn" onclick="tmToggle()">▶ Start</button>
+                <button class="btn btn-reset" onclick="tmReset()">↺ Reset</button>
             </div>
-            <div style="text-align:center"><button class="btn btn-reset" onclick="tmReset()">🔄 Reset</button></div>
         </div>
         
-        <div class="laps" id="laps">
-            <div style="font-weight:600;padding:8px;color:var(--accent);border-bottom:1px solid var(--border)">📋 Laps</div>
-            <div id="lapsList"></div>
+        <div class="laps" id="laps"><div style="font-weight:600;padding:6px;color:#0071e3;border-bottom:1px solid #e5e5ea">Laps</div><div id="lapsList"></div></div>
+    </div>
+    
+    <div class="article">
+        <h2>Free Online Stopwatch & Timer</h2>
+        <p>Track time with <strong>millisecond precision</strong>. Stopwatch with lap recording & countdown timer with alarm.</p>
+        <h2>How to Use</h2>
+        <ul><li>Choose Stopwatch or Timer → Start → Record laps or wait for alarm!</li></ul>
+        <h2>Features</h2>
+        <ul><li>✅ Millisecond stopwatch</li><li>✅ Lap recording</li><li>✅ Countdown timer</li><li>✅ Pause & resume</li></ul>
+        <div class="faq-box"><strong>Q: Is it accurate?</strong><p>A: Yes, millisecond precision.</p></div>
+        <div class="faq-box"><strong>Q: Does it work offline?</strong><p>A: Yes, runs in your browser.</p></div>
+        <h2>Related Tools</h2>
+        <div class="related">
+            <a href="../../calculator/age-calculator/">Age Calculator</a>
+            <a href="../../calculator/bmi-calculator/">BMI Calculator</a>
+            <a href="../../converter/unit-converter/">Unit Converter</a>
         </div>
     </div>
 </div>
 
-<div class="toast" id="toast"></div>
+<footer>
+    <div class="links"><a href="../../../index.html">Home</a><a href="../../../about.html">About</a><a href="../../../contact.html">Contact</a><a href="../../../privacy.html">Privacy</a><a href="../../../terms.html">Terms</a></div>
+    <p class="copy">&copy; 2025 ToolPrime. Made with ❤️</p>
+</footer>
 
 <script>
-function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.className='toast show';clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),2000)}
-
-// ========== TABS ==========
-let currentTab='stopwatch';
-function switchTab(t){
-    currentTab=t;
-    document.getElementById('tabSW').classList.toggle('active',t==='stopwatch');
-    document.getElementById('tabTM').classList.toggle('active',t==='timer');
-    document.getElementById('swControls').style.display=t==='stopwatch'?'block':'none';
-    document.getElementById('tmControls').style.display=t==='timer'?'block':'none';
-    if(t==='stopwatch'){updateSWDisplay();document.getElementById('laps').classList.toggle('show',laps.length>0)}
-    else{updateTMDisplay();document.getElementById('laps').classList.remove('show')}
-}
-
-// ========== STOPWATCH ==========
 let swRunning=false,swTime=0,swInterval,laps=[];
-function swToggle(){
-    if(swRunning){swRunning=false;clearInterval(swInterval);document.getElementById('swBtn').textContent='▶️ Start';document.getElementById('swBtn').className='btn btn-start';document.getElementById('lapBtn').disabled=true}
-    else{swRunning=true;swInterval=setInterval(()=>{swTime+=10;updateSWDisplay()},10);document.getElementById('swBtn').textContent='⏸️ Pause';document.getElementById('swBtn').className='btn btn-stop';document.getElementById('lapBtn').disabled=false}
-}
-function swLap(){laps.unshift(swTime);renderLaps();showToast('Lap recorded!')}
-function swReset(){swRunning=false;clearInterval(swInterval);swTime=0;laps=[];updateSWDisplay();document.getElementById('swBtn').textContent='▶️ Start';document.getElementById('swBtn').className='btn btn-start';document.getElementById('lapBtn').disabled=true;document.getElementById('laps').classList.remove('show')}
+let tmRunning=false,tmRemain=0,tmInterval,currentTab='stopwatch';
 
-function updateSWDisplay(){
+function switchTab(t){
+    currentTab=t;document.getElementById('tabSW').classList.toggle('active',t==='stopwatch');document.getElementById('tabTM').classList.toggle('active',t==='timer');
+    document.getElementById('swControls').style.display=t==='stopwatch'?'block':'none';document.getElementById('tmControls').style.display=t==='timer'?'block':'none';
+    document.getElementById('laps').classList.toggle('show',t==='stopwatch'&&laps.length>0);
+}
+
+function swToggle(){
+    if(swRunning){swRunning=false;clearInterval(swInterval);document.getElementById('swBtn').textContent='▶ Start';document.getElementById('swBtn').className='btn btn-start';document.getElementById('lapBtn').disabled=true}
+    else{swRunning=true;swInterval=setInterval(()=>{swTime+=10;updateSW()},10);document.getElementById('swBtn').textContent='⏸ Pause';document.getElementById('swBtn').className='btn btn-stop';document.getElementById('lapBtn').disabled=false}
+}
+function swLap(){laps.unshift(swTime);renderLaps()}
+function swReset(){swRunning=false;clearInterval(swInterval);swTime=0;laps=[];updateSW();document.getElementById('swBtn').textContent='▶ Start';document.getElementById('swBtn').className='btn btn-start';document.getElementById('lapBtn').disabled=true;document.getElementById('laps').classList.remove('show')}
+
+function updateSW(){
     const ms=Math.floor(swTime%1000/10),s=Math.floor(swTime/1000%60),m=Math.floor(swTime/60000%60),h=Math.floor(swTime/3600000);
     document.getElementById('display').textContent=String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
     document.getElementById('milli').textContent='.'+String(ms).padStart(2,'0');
-    document.getElementById('display').classList.toggle('running',swRunning);
 }
 
 function renderLaps(){
     document.getElementById('laps').classList.add('show');
-    const list=document.getElementById('lapsList');
-    list.innerHTML=laps.map((t,i)=>{
+    document.getElementById('lapsList').innerHTML=laps.map((t,i)=>{
         const ms=Math.floor(t%1000/10),s=Math.floor(t/1000%60),m=Math.floor(t/60000%60),h=Math.floor(t/3600000);
-        return '<div class="lap-row"><span class="lap-num">#'+(laps.length-i)+'</span><span class="lap-time">'+String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0')+'.'+String(ms).padStart(2,'0')+'</span></div>';
+        return '<div class="lap-row"><span class="lap-num">#'+(laps.length-i)+'</span><span>'+String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0')+'.'+String(ms).padStart(2,'0')+'</span></div>';
     }).join('');
 }
 
-// ========== TIMER ==========
-let tmRunning=false,tmRemain=0,tmInterval;
 function tmToggle(){
-    if(tmRunning){tmRunning=false;clearInterval(tmInterval);document.getElementById('tmBtn').textContent='▶️ Resume';document.getElementById('tmBtn').className='btn btn-start';return}
-    if(tmRemain<=0){const m=parseInt(document.getElementById('tmMin').value)||0;const s=parseInt(document.getElementById('tmSec').value)||0;tmRemain=m*60+s;if(tmRemain<=0){showToast('Set time!');return}}
-    tmRunning=true;document.getElementById('tmBtn').textContent='⏸️ Pause';document.getElementById('tmBtn').className='btn btn-stop';
-    tmInterval=setInterval(()=>{tmRemain--;updateTMDisplay();if(tmRemain<=0){tmStop();showToast('⏰ Time is up!');document.getElementById('display').classList.add('alarm');setTimeout(()=>document.getElementById('display').classList.remove('alarm'),3000)}},1000);
+    if(tmRunning){tmRunning=false;clearInterval(tmInterval);document.getElementById('tmBtn').textContent='▶ Resume';document.getElementById('tmBtn').className='btn btn-start';return}
+    if(tmRemain<=0){const m=parseInt(document.getElementById('tmMin').value)||0;const s=parseInt(document.getElementById('tmSec').value)||0;tmRemain=m*60+s;if(tmRemain<=0)return}
+    tmRunning=true;document.getElementById('tmBtn').textContent='⏸ Pause';document.getElementById('tmBtn').className='btn btn-stop';
+    tmInterval=setInterval(()=>{tmRemain--;updateTM();if(tmRemain<=0){tmStop();alert('⏰ Time is up!')}},1000);
 }
-function tmStop(){tmRunning=false;clearInterval(tmInterval);document.getElementById('tmBtn').textContent='▶️ Start';document.getElementById('tmBtn').className='btn btn-start'}
-function tmReset(){tmRunning=false;clearInterval(tmInterval);tmRemain=0;updateTMDisplay();document.getElementById('tmBtn').textContent='▶️ Start';document.getElementById('tmBtn').className='btn btn-start';document.getElementById('display').classList.remove('alarm')}
+function tmStop(){tmRunning=false;clearInterval(tmInterval);document.getElementById('tmBtn').textContent='▶ Start';document.getElementById('tmBtn').className='btn btn-start'}
+function tmReset(){tmRunning=false;clearInterval(tmInterval);tmRemain=0;updateTM();document.getElementById('tmBtn').textContent='▶ Start';document.getElementById('tmBtn').className='btn btn-start'}
 
-function updateTMDisplay(){
+function updateTM(){
     const s=tmRemain%60,m=Math.floor(tmRemain/60%60),h=Math.floor(tmRemain/3600);
     document.getElementById('display').textContent=String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
     document.getElementById('milli').textContent='';
 }
-
-// Init
-updateSWDisplay();
 </script>
-
-<footer class="tp-footer">
-    <div class="tp-footer-inner">
-        <div class="tp-footer-links">
-            <a href="../../../index.html"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px;width:auto">Home</a>
-            <a href="../../../bout.html">About</a>
-            <a href="../../../contact.html">Contact</a>
-            <a href="../../../privacy.html">Privacy Policy</a>
-            <a href="../../../	erms.html">Terms of Service</a>
-        </div>
-        <p class="tp-footer-copy">&copy; 2025 ToolPrime. All rights reserved. Made with ❤️</p>
-    </div>
-</footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

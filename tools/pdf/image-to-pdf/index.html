@@ -2,293 +2,161 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="robots" content="index, follow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Image to PDF - JPG to PDF Converter Online | ToolPrime</title>
-    <meta name="description" content="Convert images to PDF online free. Merge JPG, PNG, WebP into one PDF. Multiple images to single PDF file.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Image to PDF Converter - JPG to PDF Online | ToolPrime</title>
+    <meta name="description" content="Convert images to PDF online free. Merge JPG, PNG, WebP into one PDF. Multiple images to single PDF file. No upload needed.">
     <meta name="keywords" content="image to pdf, jpg to pdf, png to pdf, convert image to pdf, merge images to pdf, photo to pdf">
-    <meta property="og:title" content="Image to PDF - JPG to PDF Converter Online | ToolPrime">
-    <meta property="og:description" content="Convert images to PDF online free. Merge JPG, PNG, WebP into one PDF. Multiple images to single PDF file.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://toolprime.online../../image-to-pdf/">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Image to PDF - JPG to PDF Converter Online | ToolPrime">
-    <meta name="twitter:description" content="Convert images to PDF online free. Merge JPG, PNG, WebP into one PDF. Multiple images to single PDF file.">
-    <link rel="canonical" href="https://toolprime.online../../image-to-pdf/">
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
+    <meta property="og:title" content="Free Image to PDF Converter | ToolPrime">
+    <link rel="canonical" href="https://toolprime.online/tools/pdf/image-to-pdf/">
     <link rel="icon" type="image/png" href="../../../assets/images/toolprime.png">
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:system-ui,-apple-system,sans-serif;background:#f5f5f7;color:#1d1d1f;line-height:1.6;min-height:100vh}
+        .header{background:#fff;border-bottom:1px solid #e5e5ea;padding:0 20px;position:sticky;top:0;z-index:100}
+        .header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;height:56px;justify-content:space-between}
+        .logo{display:flex;align-items:center;text-decoration:none;gap:8px}.logo img{height:32px}
+        .home-btn{padding:7px 14px;background:#f5f5f7;border-radius:8px;text-decoration:none;color:#1d1d1f;font-weight:600;font-size:0.82rem;transition:0.15s}
+        .home-btn:hover{background:#0071e3;color:#fff}
+        .container{max-width:700px;margin:0 auto;padding:30px 20px 50px}
+        .back-btn{display:inline-flex;align-items:center;gap:8px;color:#0071e3;text-decoration:none;font-weight:600;font-size:0.88rem;margin-bottom:24px;padding:10px 18px;background:#e8f4fd;border-radius:50px;transition:0.2s}
+        .back-btn:hover{background:#0071e3;color:#fff;gap:12px;box-shadow:0 4px 12px rgba(0,113,227,0.25)}
+        .card{background:#fff;border:1px solid #e5e5ea;border-radius:14px;padding:28px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:24px}
+        .card h1{font-size:1.5rem;font-weight:800;margin-bottom:8px}.card .desc{color:#6e6e73;margin-bottom:20px;font-size:0.9rem}
+        .upload-zone{border:2px dashed #d0d0d5;border-radius:12px;padding:36px 20px;text-align:center;cursor:pointer;transition:0.2s;background:#fafafa;margin-bottom:16px}
+        .upload-zone:hover{border-color:#0071e3;background:#f0f6ff}
+        .upload-zone input{display:none}
+        .upload-icon{font-size:2.5rem;margin-bottom:6px}.upload-text{font-weight:600;font-size:0.95rem}.upload-hint{font-size:0.75rem;color:#6e6e73;margin-top:4px}
+        .image-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:8px;margin-bottom:14px}
+        .image-item{position:relative;background:#f5f5f7;border-radius:8px;overflow:hidden;border:1px solid #e5e5ea}
+        .image-item img{width:100%;height:80px;object-fit:cover;display:block}
+        .image-item .name{font-size:0.6rem;padding:3px;color:#6e6e73;text-align:center}
+        .image-item .remove{position:absolute;top:3px;right:3px;width:20px;height:20px;border-radius:50%;background:#ff3b30;color:#fff;border:none;cursor:pointer;font-size:0.65rem}
+        .options{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px;align-items:center}
+        .options select{padding:8px 12px;background:#f5f5f7;border:2px solid #e5e5ea;border-radius:8px;font-size:0.85rem;font-family:inherit}
+        .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:10px;border:none;font-weight:600;font-size:0.85rem;cursor:pointer;font-family:inherit;transition:0.15s}
+        .btn-primary{background:#0071e3;color:#fff;width:100%;justify-content:center}.btn-primary:hover{background:#005bb5}
+        .btn-primary:disabled{background:#a0c4e8;cursor:not-allowed}
+        .btn-outline{background:transparent;border:2px solid #e5e5ea;color:#1d1d1f}.btn-outline:hover{border-color:#0071e3;color:#0071e3}
+        .article{background:#fff;border:1px solid #e5e5ea;border-radius:14px;padding:28px;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+        .article h2{font-size:1.2rem;font-weight:700;margin:20px 0 10px}.article h2:first-child{margin-top:0}
+        .article p{color:#6e6e73;font-size:0.88rem;line-height:1.7;margin-bottom:12px}
+        .faq-box{background:#fafafa;border-radius:10px;padding:14px 16px;margin-bottom:8px}
+        .faq-box strong{display:block;font-size:0.9rem;margin-bottom:4px}.faq-box p{font-size:0.82rem;margin:0;color:#6e6e73}
+        .related{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+        .related a{padding:8px 16px;background:#f5f5f7;border-radius:20px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:500;border:1px solid #e5e5ea}
+        .related a:hover{border-color:#0071e3;color:#0071e3}
+        footer{background:#fff;border-top:1px solid #e5e5ea;padding:20px;text-align:center;margin-top:20px}
+        footer .links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+        footer .links a{color:#6e6e73;text-decoration:none;font-size:0.8rem}footer .links a:hover{color:#0071e3}
+        footer .copy{color:#8e8e93;font-size:0.72rem}
+        .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1d1d1f;color:#fff;padding:10px 22px;border-radius:24px;font-size:0.85rem;z-index:999;opacity:0;transition:0.3s}
+        .toast.show{opacity:1}
+        @media(max-width:600px){.card{padding:18px}.card h1{font-size:1.2rem}}
+    </style>
 </head>
-<body style="padding: 0 16px; margin: 0; overflow-x: hidden;">
-<!-- ═══════════ HEADER ═══════════ -->
+<body>
 
-<script>
-(function(){
-    const path = window.location.pathname;
-    const depth = (path.match(/\//g)||[]).length - 1;
-    const prefix = depth > 0 ? '../'.repeat(depth) : '';
-    
-    // Fix logo link
-    const logoLink = document.querySelector('header a[href="../../../index.html"]');
-    if(logoLink) logoLink.href = prefix + 'index.html';
-    
-    // Fix logo image
-    const logoImg = document.querySelector('header img[src="../../../ssets/images/toolprime.png"]');
-    if(logoImg) logoImg.src = prefix + 'assets/images/toolprime.png';
-    
-    // Fix search
-    const search = document.getElementById('tpSearch');
-    if(search){
-        search.addEventListener('keydown', function(e){
-            if(e.key === 'Enter'){
-                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
-            }
-        });
-    }
-    
-    // Home button for tool pages
-    if(depth > 0){
-        const right = document.getElementById('tpRight');
-        if(right){
-            right.innerHTML = '<a href="../../../index.html"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px;width:auto">Home</a>';
-        }
-        const header = document.querySelector('header');
-        if(header){ header.style.marginLeft = '-32px'; header.style.marginRight = '-32px'; }
-    }
-})();
-</script>
-<!-- ═══════════ TOOLPRIME HEADER ═══════════ -->
+<header class="header">
+    <div class="header-inner">
+        <a href="../../../index.html" class="logo"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px"></a>
+        <a href="../../../index.html" class="home-btn">Home</a>
+    </div>
+</header>
 
-<script>
-// Auto-fix header paths based on page location
-(function(){
-    const depth = (window.location.pathname.match(/\//g)||[]).length - 1;
-    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+<div class="container">
+    <a href="../../../index.html" class="back-btn">← Back to Store</a>
     
-    const logo = document.getElementById('tpLogo');
-    const logoImg = document.getElementById('tpLogoImg');
-    const search = document.getElementById('tpSearch');
-    const right = document.getElementById('tpRight');
-    
-    if(logo && prefix) logo.href = prefix + 'index.html';
-    if(logoImg && prefix) logoImg.src = prefix + 'assets/images/toolprime.png';
-    
-    // Search redirect
-    if(search){
-        search.addEventListener('keydown', function(e){
-            if(e.key === 'Enter'){
-                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
-            }
-        });
-    }
-    
-    // Show home button on tool pages
-    if(depth > 0 && right){
-        right.innerHTML = '<a href="../../../index.html"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px;width:auto">Home</a>';
-    }
-    
-    // Style header margin for tool pages
-    const header = document.getElementById('tpHeader');
-    if(depth > 0 && header){
-        header.style.marginLeft = '-32px';
-        header.style.marginRight = '-32px';
-    }
-})();
-</script>
-<!-- ═══════════ HEADER ═══════════ -->
-
-<!-- ═══════════ PREMIUM HEADER ═══════════ -->
-
-<div class="tp-container">
-    <a href="../../../index.html"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px;width:auto">← Back to Store</a>
-    
-    <div class="tp-card">
-        <h1>🖼️ Image to PDF Converter</h1>
-        <p class="desc">Convert JPG, PNG, WebP to PDF. Images are automatically compressed for PDF. Works with any image size!</p>
+    <div class="card">
+        <h1>📑 Image to PDF</h1>
+        <p class="desc">Convert JPG, PNG, WebP images to a single PDF file. Merge multiple images into one document.</p>
         
         <div class="upload-zone" id="uploadZone">
             <div class="upload-icon">📁</div>
-            <div class="upload-text">Drop images here or click to browse</div>
-            <div class="upload-hint">JPG, PNG, WebP • Any size (auto-compressed)</div>
+            <div class="upload-text">Drop images here or click</div>
+            <div class="upload-hint">JPG, PNG, WebP • Multiple files</div>
             <input type="file" id="fileInput" accept="image/*" multiple>
         </div>
         
         <div class="image-list" id="imageList"></div>
         
-        <div id="options" style="display:none">
-            <div class="options">
-                <label>📐 Page:</label>
-                <select id="pageSize">
-                    <option value="a4">A4</option>
-                    <option value="letter">Letter</option>
-                </select>
-                <label>📊 Quality:</label>
-                <select id="quality">
-                    <option value="0.5">Low (small PDF)</option>
-                    <option value="0.7" selected>Medium</option>
-                    <option value="0.9">High (large PDF)</option>
-                </select>
-                <button onclick="clearAll()" style="margin-left:auto;padding:6px 14px;border-radius:20px;border:1px solid var(--red);background:transparent;color:var(--red);cursor:pointer;font-size:0.8rem;font-weight:600">Clear All</button>
-            </div>
-            <button class="btn btn-primary" id="convertBtn" onclick="convertToPDF()" disabled>📄 Convert & Download PDF</button>
+        <div class="options" id="options" style="display:none">
+            <select id="pageSize"><option value="a4">A4</option><option value="letter">Letter</option><option value="fit">Fit to Image</option></select>
+            <button class="btn btn-outline" onclick="clearAll()" style="margin-left:auto">Clear All</button>
+        </div>
+        
+        <button class="btn btn-primary" id="convertBtn" onclick="convertToPDF()" disabled>📄 Convert to PDF & Download</button>
+    </div>
+    
+    <div class="article">
+        <h2>Free Image to PDF Converter</h2>
+        <p>Convert <strong>images to PDF</strong> instantly. Merge multiple photos into a single PDF file.</p>
+        <h2>How to Use</h2>
+        <ul><li>Upload images → Choose page size → Convert & Download!</li></ul>
+        <h2>Features</h2>
+        <ul><li>✅ Multiple images to one PDF</li><li>✅ A4, Letter, Fit options</li><li>✅ JPG, PNG, WebP support</li><li>✅ Works in browser</li></ul>
+        <div class="faq-box"><strong>Q: How many images can I add?</strong><p>A: As many as you want!</p></div>
+        <div class="faq-box"><strong>Q: Is the PDF quality good?</strong><p>A: Yes, high quality output.</p></div>
+        <h2>Related Tools</h2>
+        <div class="related">
+            <a href="../pdf-to-image/">PDF to Image</a>
+            <a href="../../image/png-to-jpg-converter/">PNG to JPG</a>
+            <a href="../../image/image-resizer/">Image Resizer</a>
         </div>
     </div>
 </div>
+
+<footer>
+    <div class="links"><a href="../../../index.html">Home</a><a href="../../../about.html">About</a><a href="../../../contact.html">Contact</a><a href="../../../privacy.html">Privacy</a><a href="../../../terms.html">Terms</a></div>
+    <p class="copy">&copy; 2025 ToolPrime. Made with ❤️</p>
+</footer>
 
 <div class="toast" id="toast"></div>
 
 <script>
 let images=[];
-const uploadZone=document.getElementById('uploadZone');
-const fileInput=document.getElementById('fileInput');
-const toast=document.getElementById('toast');
+function msg(m){const t=document.getElementById('toast');t.textContent=m;t.className='toast show';clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),2000)}
 
-function showToast(m,err){toast.textContent=m;toast.className='toast show'+(err?' err':'');clearTimeout(toast._t);toast._t=setTimeout(()=>toast.classList.remove('show'),3000)}
-
-uploadZone.addEventListener('click',()=>fileInput.click());
-uploadZone.addEventListener('dragover',e=>{e.preventDefault();uploadZone.classList.add('drag')});
-uploadZone.addEventListener('dragleave',()=>uploadZone.classList.remove('drag'));
-uploadZone.addEventListener('drop',e=>{e.preventDefault();uploadZone.classList.remove('drag');if(e.dataTransfer.files.length)addImages(e.dataTransfer.files)});
-fileInput.addEventListener('change',e=>{if(e.target.files.length)addImages(e.target.files)});
+document.getElementById('uploadZone').onclick=()=>document.getElementById('fileInput').click();
+document.getElementById('fileInput').onchange=e=>{if(e.target.files.length)addImages(e.target.files)};
 
 function addImages(files){
-    let added=0;
-    for(const file of files){
-        if(!file.type.startsWith('image/'))continue;
+    for(const f of files){
+        if(!f.type.startsWith('image/'))continue;
         const reader=new FileReader();
-        reader.onload=function(e){
-            images.push({name:file.name,data:e.target.result});
-            renderImages();
-        };
-        reader.readAsDataURL(file);
-        added++;
+        reader.onload=function(e){images.push({name:f.name,data:e.target.result});renderImages()};
+        reader.readAsDataURL(f);
     }
-    if(added)showToast(added+' image(s) added! Total: '+images.length);
 }
 
 function renderImages(){
     const list=document.getElementById('imageList');
-    if(images.length===0){list.innerHTML='';document.getElementById('options').style.display='none';return}
-    
-    list.innerHTML=images.map((img,i)=>`
-        <div class="image-item">
-            <button class="remove" onclick="removeImage(${i})">×</button>
-            <img src="${img.data}" alt="${img.name}">
-            <div class="name">${img.name.substring(0,15)}</div>
-        </div>
-    `).join('');
-    
-    document.getElementById('options').style.display='block';
-    document.getElementById('convertBtn').disabled=false;
+    list.innerHTML=images.map((img,i)=>`<div class="image-item"><button class="remove" onclick="removeImage(${i})">×</button><img src="${img.data}"><div class="name">${img.name.substring(0,12)}</div></div>`).join('');
+    document.getElementById('options').style.display=images.length?'flex':'none';
+    document.getElementById('convertBtn').disabled=!images.length;
 }
 
-function removeImage(i){images.splice(i,1);renderImages();showToast('Image removed. Total: '+images.length)}
-function clearAll(){images=[];renderImages();showToast('All cleared')}
+function removeImage(i){images.splice(i,1);renderImages()}
+function clearAll(){images=[];renderImages()}
 
 async function convertToPDF(){
-    if(!images.length){showToast('Add images first!',true);return}
+    if(!images.length)return;
+    const {jsPDF}=window.jspdf;
+    const pageSize=document.getElementById('pageSize').value;
+    const pdf=pageSize==='fit'?new jsPDF('p','px',[images[0].width||800,images[0].height||600]):new jsPDF('p','mm',pageSize);
     
-    const btn=document.getElementById('convertBtn');
-    btn.textContent='⏳ Converting...';
-    btn.disabled=true;
-    
-    try{
-        const {jsPDF}=window.jspdf;
-        if(!jsPDF){throw new Error('PDF library not loaded')}
-        
-        const pageSize=document.getElementById('pageSize').value;
-        const quality=parseFloat(document.getElementById('quality').value);
-        const pdf=new jsPDF('p','mm',pageSize);
-        const pw=pdf.internal.pageSize.getWidth()-20;
-        const ph=pdf.internal.pageSize.getHeight()-20;
-        
-        // Convert each image using canvas to compress
-        for(let i=0;i<images.length;i++){
-            if(i>0)pdf.addPage();
-            
-            const imgData=await compressImage(images[i].data,1200,quality);
-            
-            const img=new Image();
-            await new Promise((resolve,reject)=>{
-                img.onload=resolve;
-                img.onerror=reject;
-                img.src=imgData;
-            });
-            
-            // Scale to fit page
-            const ratio=Math.min(pw/img.width,ph/img.height);
-            const w=img.width*ratio;
-            const h=img.height*ratio;
-            const x=10+(pw-w)/2;
-            const y=10+(ph-h)/2;
-            
-            pdf.addImage(imgData,'JPEG',x,y,w,h);
-        }
-        
-        pdf.save('images-to-pdf.pdf');
-        showToast('✅ PDF downloaded!');
-    }catch(e){
-        console.error(e);
-        showToast('❌ Error: '+e.message,true);
-    }
-    
-    btn.textContent='📄 Convert & Download PDF';
-    btn.disabled=false;
-}
-
-// Compress image using canvas
-function compressImage(dataURL,maxSize,quality){
-    return new Promise(resolve=>{
+    for(let i=0;i<images.length;i++){
+        if(i>0)pdf.addPage();
         const img=new Image();
-        img.onload=function(){
-            const canvas=document.createElement('canvas');
-            let w=img.width,h=img.height;
-            
-            // Resize if too large
-            if(w>maxSize||h>maxSize){
-                const ratio=Math.min(maxSize/w,maxSize/h);
-                w=Math.round(w*ratio);
-                h=Math.round(h*ratio);
-            }
-            
-            canvas.width=w;
-            canvas.height=h;
-            const ctx=canvas.getContext('2d');
-            ctx.drawImage(img,0,0,w,h);
-            resolve(canvas.toDataURL('image/jpeg',quality));
-        };
-        img.src=dataURL;
-    });
+        img.src=images[i].data;
+        await new Promise(r=>{img.onload=r});
+        const pw=pdf.internal.pageSize.getWidth(),ph=pdf.internal.pageSize.getHeight();
+        if(pageSize==='fit'){pdf.addImage(images[i].data,'JPEG',0,0,pw,ph)}
+        else{const ratio=Math.min(pw/img.width,ph/img.height);const w=img.width*ratio,h=img.height*ratio;pdf.addImage(images[i].data,'JPEG',(pw-w)/2,(ph-h)/2,w,h)}
+    }
+    pdf.save('images-to-pdf.pdf');
+    msg('PDF downloaded!');
 }
 </script>
-
-<footer class="tp-footer">
-    <div class="tp-footer-inner">
-        <div class="tp-footer-links">
-            <a href="../../../index.html"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px;width:auto">Home</a>
-            <a href="../../../bout.html">About</a>
-            <a href="../../../contact.html">Contact</a>
-            <a href="../../../privacy.html">Privacy Policy</a>
-            <a href="../../../	erms.html">Terms of Service</a>
-        </div>
-        <p class="tp-footer-copy">&copy; 2025 ToolPrime. All rights reserved. Made with ❤️</p>
-    </div>
-</footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

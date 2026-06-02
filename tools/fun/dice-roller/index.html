@@ -2,182 +2,127 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="robots" content="index, follow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Dice Roller - Roll Virtual Dice Online Free | ToolPrime</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Dice Roller - Roll Virtual Dice Online | ToolPrime</title>
     <meta name="description" content="Roll dice online free. Virtual dice roller for D&D, board games. d4, d6, d8, d10, d12, d20, d100.">
     <meta name="keywords" content="dice roller, virtual dice, roll dice, d20 roller, dnd dice, board game dice, random dice">
-    <meta property="og:title" content="Dice Roller - Roll Virtual Dice Online Free | ToolPrime">
-    <meta property="og:description" content="Roll dice online free. Virtual dice roller for D&D, board games. d4, d6, d8, d10, d12, d20, d100.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://toolprime.online../../dice-roller/">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Dice Roller - Roll Virtual Dice Online Free | ToolPrime">
-    <meta name="twitter:description" content="Roll dice online free. Virtual dice roller for D&D, board games. d4, d6, d8, d10, d12, d20, d100.">
-    <link rel="canonical" href="https://toolprime.online../../dice-roller/">
-
+    <meta property="og:title" content="Free Dice Roller | ToolPrime">
+    <link rel="canonical" href="https://toolprime.online/tools/fun/dice-roller/">
     <link rel="icon" type="image/png" href="../../../assets/images/toolprime.png">
-    
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:system-ui,-apple-system,sans-serif;background:#f5f5f7;color:#1d1d1f;line-height:1.6;min-height:100vh}
+        .header{background:#fff;border-bottom:1px solid #e5e5ea;padding:0 20px;position:sticky;top:0;z-index:100}
+        .header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;height:56px;justify-content:space-between}
+        .logo{display:flex;align-items:center;text-decoration:none;gap:8px}.logo img{height:32px}
+        .home-btn{padding:7px 14px;background:#f5f5f7;border-radius:8px;text-decoration:none;color:#1d1d1f;font-weight:600;font-size:0.82rem;transition:0.15s}
+        .home-btn:hover{background:#0071e3;color:#fff}
+        .container{max-width:550px;margin:0 auto;padding:30px 20px 50px}
+        .back-btn{display:inline-flex;align-items:center;gap:8px;color:#0071e3;text-decoration:none;font-weight:600;font-size:0.88rem;margin-bottom:24px;padding:10px 18px;background:#e8f4fd;border-radius:50px;transition:0.2s}
+        .back-btn:hover{background:#0071e3;color:#fff;gap:12px;box-shadow:0 4px 12px rgba(0,113,227,0.25)}
+        .card{background:#fff;border:1px solid #e5e5ea;border-radius:14px;padding:28px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:24px}
+        .card h1{font-size:1.5rem;font-weight:800;margin-bottom:8px}.card .desc{color:#6e6e73;margin-bottom:20px;font-size:0.9rem}
+        .dice-display{text-align:center;padding:40px 20px;background:#f5f5f7;border-radius:16px;margin-bottom:20px}
+        .dice-display .face{font-size:5rem;transition:0.1s;display:inline-block}
+        .dice-display .rolling{animation:shake 0.1s infinite}
+        @keyframes shake{0%{transform:rotate(0deg)}25%{transform:rotate(-15deg)}50%{transform:rotate(0deg)}75%{transform:rotate(15deg)}100%{transform:rotate(0deg)}}
+        .dice-display .total{font-size:1.2rem;font-weight:700;color:#0071e3;margin-top:8px}
+        .controls{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px;align-items:end}
+        .control-group{flex:1;min-width:100px}
+        label{display:block;font-size:0.78rem;font-weight:600;color:#1d1d1f;margin-bottom:6px}
+        select,input[type=number]{width:100%;padding:10px 14px;background:#f5f5f7;border:2px solid #e5e5ea;border-radius:10px;font-size:0.9rem;font-family:inherit;color:#1d1d1f;transition:0.15s}
+        select:focus,input:focus{border-color:#0071e3;outline:none;background:#fff;box-shadow:0 0 0 3px rgba(0,113,227,0.06)}
+        .btn-roll{width:100%;padding:16px;background:linear-gradient(135deg,#ff6b6b,#ee5a24);color:#fff;border:none;border-radius:14px;font-size:1.1rem;font-weight:700;cursor:pointer;font-family:inherit;transition:0.2s}
+        .btn-roll:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(238,90,36,0.3)}
+        .btn-roll:active{transform:scale(0.95)}
+        .results{margin-top:16px}
+        .result-item{display:flex;align-items:center;gap:10px;padding:10px 14px;background:#f5f5f7;border-radius:10px;margin-bottom:6px;font-size:0.85rem}
+        .result-item .dice-icon{font-size:1.5rem}
+        .result-item .dice-val{font-weight:700;color:#0071e3}
+        .article{background:#fff;border:1px solid #e5e5ea;border-radius:14px;padding:28px;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+        .article h2{font-size:1.2rem;font-weight:700;margin:20px 0 10px}.article h2:first-child{margin-top:0}
+        .article p{color:#6e6e73;font-size:0.88rem;line-height:1.7;margin-bottom:12px}
+        .article ul{padding-left:18px;margin-bottom:12px}.article li{color:#6e6e73;font-size:0.85rem;line-height:1.7;margin-bottom:4px}
+        .faq-box{background:#fafafa;border-radius:10px;padding:14px 16px;margin-bottom:8px}
+        .related{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+        .related a{padding:8px 16px;background:#f5f5f7;border-radius:20px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:500;border:1px solid #e5e5ea}
+        .related a:hover{border-color:#0071e3;color:#0071e3}
+        footer{background:#fff;border-top:1px solid #e5e5ea;padding:20px;text-align:center;margin-top:20px}
+        footer .links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+        footer .links a{color:#6e6e73;text-decoration:none;font-size:0.8rem}footer .links a:hover{color:#0071e3}
+        footer .copy{color:#8e8e93;font-size:0.72rem}
+        @media(max-width:600px){.card{padding:18px}.card h1{font-size:1.2rem}.dice-display .face{font-size:3.5rem}}
+    </style>
 </head>
-<body style="padding: 0 16px; margin: 0; overflow-x: hidden;">
-<!-- ═══════════ HEADER ═══════════ -->
+<body>
 
-<script>
-(function(){
-    const path = window.location.pathname;
-    const depth = (path.match(/\//g)||[]).length - 1;
-    const prefix = depth > 0 ? '../'.repeat(depth) : '';
-    
-    // Fix logo link
-    const logoLink = document.querySelector('header a[href="../../../index.html"]');
-    if(logoLink) logoLink.href = prefix + 'index.html';
-    
-    // Fix logo image
-    const logoImg = document.querySelector('header img[src="../../../ssets/images/toolprime.png"]');
-    if(logoImg) logoImg.src = prefix + 'assets/images/toolprime.png';
-    
-    // Fix search
-    const search = document.getElementById('tpSearch');
-    if(search){
-        search.addEventListener('keydown', function(e){
-            if(e.key === 'Enter'){
-                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
-            }
-        });
-    }
-    
-    // Home button for tool pages
-    if(depth > 0){
-        const right = document.getElementById('tpRight');
-        if(right){
-            right.innerHTML = '<a href="../../../index.html"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px;width:auto">Home</a>';
-        }
-        const header = document.querySelector('header');
-        if(header){ header.style.marginLeft = '-32px'; header.style.marginRight = '-32px'; }
-    }
-})();
-</script>
-<!-- ═══════════ TOOLPRIME HEADER ═══════════ -->
+<header class="header">
+    <div class="header-inner">
+        <a href="../../../index.html" class="logo"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px"></a>
+        <a href="../../../index.html" class="home-btn">Home</a>
+    </div>
+</header>
 
-<script>
-// Auto-fix header paths based on page location
-(function(){
-    const depth = (window.location.pathname.match(/\//g)||[]).length - 1;
-    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+<div class="container">
+    <a href="../../../index.html" class="back-btn">← Back to Store</a>
     
-    const logo = document.getElementById('tpLogo');
-    const logoImg = document.getElementById('tpLogoImg');
-    const search = document.getElementById('tpSearch');
-    const right = document.getElementById('tpRight');
-    
-    if(logo && prefix) logo.href = prefix + 'index.html';
-    if(logoImg && prefix) logoImg.src = prefix + 'assets/images/toolprime.png';
-    
-    // Search redirect
-    if(search){
-        search.addEventListener('keydown', function(e){
-            if(e.key === 'Enter'){
-                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
-            }
-        });
-    }
-    
-    // Show home button on tool pages
-    if(depth > 0 && right){
-        right.innerHTML = '<a href="../../../index.html"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px;width:auto">Home</a>';
-    }
-    
-    // Style header margin for tool pages
-    const header = document.getElementById('tpHeader');
-    if(depth > 0 && header){
-        header.style.marginLeft = '-32px';
-        header.style.marginRight = '-32px';
-    }
-})();
-</script>
-<!-- ═══════════ HEADER ═══════════ -->
-
-<!-- ═══════════ PREMIUM HEADER ═══════════ -->
-
-<div class="tp-wrap">
-    <a href="../../../index.html"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px;width:auto">← Back to Store</a>
-    <div class="tp-card">
+    <div class="card">
         <h1>🎲 Dice Roller</h1>
-        <p class="tp-desc">Roll virtual dice for games and decision making.</p>
-        <div class="result" style="margin-bottom:14px;min-height:120px;display:flex;align-items:center;justify-content:center">
-    <div class="big" id="dice" style="font-size:5rem;transition:0.1s">🎲</div>
+        <p class="desc">Roll virtual dice for D&D, board games, or decision making. Multiple dice types available!</p>
+        
+        <div class="dice-display">
+            <div class="face" id="diceFace">🎲</div>
+            <div class="total" id="totalDisplay"></div>
+        </div>
+        
+        <div class="controls">
+            <div class="control-group"><label>Dice Type</label><select id="diceType"><option value="4">d4</option><option value="6" selected>d6</option><option value="8">d8</option><option value="10">d10</option><option value="12">d12</option><option value="20">d20</option><option value="100">d100</option></select></div>
+            <div class="control-group"><label>Count</label><input type="number" id="diceCount" value="1" min="1" max="20"></div>
+        </div>
+        
+        <button class="btn-roll" onclick="roll()">🎯 Roll Dice!</button>
+        
+        <div class="results" id="results"></div>
+    </div>
+    
+    <div class="article">
+        <h2>Free Online Dice Roller</h2>
+        <p>Roll <strong>virtual dice</strong> for games, D&D, or just for fun. Supports d4, d6, d8, d10, d12, d20, and d100.</p>
+        <h2>How to Use</h2>
+        <ul><li><strong>Step 1:</strong> Select dice type (d6, d20, etc.)</li><li><strong>Step 2:</strong> Choose how many dice</li><li><strong>Step 3:</strong> Click Roll Dice!</li></ul>
+        <h2>Features</h2>
+        <ul><li>✅ 7 dice types (d4 to d100)</li><li>✅ Roll up to 20 dice</li><li>✅ Random & fair results</li><li>✅ Fun animation</li></ul>
+        <div class="faq-box"><strong>Q: Is it truly random?</strong><p>A: Yes, uses JavaScript Math.random() for fair rolls.</p></div>
+        <div class="faq-box"><strong>Q: Can I roll multiple dice?</strong><p>A: Yes, up to 20 dice at once!</p></div>
+        <h2>Related Tools</h2>
+        <div class="related">
+            <a href="../../converter/unit-converter/">Unit Converter</a>
+            <a href="../../calculator/age-calculator/">Age Calculator</a>
+            <a href="../../time/stopwatch-timer/">Stopwatch Timer</a>
+        </div>
+    </div>
 </div>
-<div style="display:flex;gap:8px;align-items:center;margin-bottom:14px;flex-wrap:wrap">
-    <label style="margin-bottom:0;min-width:40px">Dice:</label>
-    <select id="dType" style="width:auto;flex:1;margin-bottom:0">
-        <option value="4">d4 (4 sides)</option>
-        <option value="6" selected>d6 (6 sides)</option>
-        <option value="8">d8 (8 sides)</option>
-        <option value="10">d10 (10 sides)</option>
-        <option value="12">d12 (12 sides)</option>
-        <option value="20">d20 (20 sides)</option>
-        <option value="100">d100</option>
-    </select>
-</div>
-<div style="display:flex;gap:8px;align-items:center;margin-bottom:14px">
-    <label style="margin-bottom:0;min-width:40px">Count:</label>
-    <input type="number" id="dCount" value="1" min="1" max="20" style="width:80px;margin-bottom:0">
-</div>
-<button class="btn" onclick="roll()">🎯 Roll Dice!</button>
-<div class="result" style="margin-top:12px;display:none" id="history">
-    <div class="lbl">History</div>
-    <div id="histList" style="font-size:0.85rem;color:var(--text);margin-top:4px"></div>
-</div>
+
+<footer>
+    <div class="links"><a href="../../../index.html">Home</a><a href="../../../about.html">About</a><a href="../../../contact.html">Contact</a><a href="../../../privacy.html">Privacy</a><a href="../../../terms.html">Terms</a></div>
+    <p class="copy">&copy; 2025 ToolPrime. Made with ❤️</p>
+</footer>
+
 <script>
 const emojis={4:'🔺',6:'🎲',8:'🔷',10:'🔟',12:'🔔',20:'💎',100:'💯'};
-let hist=[];
 function roll(){
-    const sides=parseInt(document.getElementById('dType').value);
-    const count=parseInt(document.getElementById('dCount').value)||1;
-    const d=document.getElementById('dice');
-    d.style.transform='rotate(360deg) scale(1.2)';
-    setTimeout(()=>d.style.transform='rotate(0deg) scale(1)',100);
+    const sides=parseInt(document.getElementById('diceType').value);
+    const count=parseInt(document.getElementById('diceCount').value)||1;
+    const face=document.getElementById('diceFace');
+    face.classList.add('rolling');
+    setTimeout(()=>face.classList.remove('rolling'),300);
     let results=[],total=0;
     for(let i=0;i<count;i++){const r=Math.floor(Math.random()*sides)+1;results.push(r);total+=r}
-    d.textContent=count>1?total:results[0];
-    hist.unshift(`${count}d${sides}: [${results.join(', ')}] = ${total}`);
-    if(hist.length>10)hist.pop();
-    document.getElementById('histList').innerHTML=hist.map(h=>`<div>${h}</div>`).join('');
-    document.getElementById('history').style.display='block';
+    face.textContent=count===1?results[0]:emojis[sides]||'🎲';
+    document.getElementById('totalDisplay').textContent=count>1?'Total: '+total:'';
+    const resDiv=document.getElementById('results');
+    resDiv.innerHTML='<h3 style="font-size:0.9rem;margin-bottom:6px">Result:</h3>'+results.map((r,i)=>`<div class="result-item"><span class="dice-icon">${emojis[sides]||'🎲'}</span><span>Die ${i+1}:</span><span class="dice-val">${r}</span></div>`).join('');
 }
 </script>
-    </div>
-</div>
-<div class="toast" id="toast"></div>
-<script>
-function msg(t){const x=document.getElementById('toast');x.textContent=t;x.className='toast ok show';clearTimeout(x._t);x._t=setTimeout(()=>x.classList.remove('show'),2000)}
-</script>
-
-<footer class="tp-footer">
-    <div class="tp-footer-inner">
-        <div class="tp-footer-links">
-            <a href="../../../index.html"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px;width:auto">Home</a>
-            <a href="../../../bout.html">About</a>
-            <a href="../../../contact.html">Contact</a>
-            <a href="../../../privacy.html">Privacy Policy</a>
-            <a href="../../../	erms.html">Terms of Service</a>
-        </div>
-        <p class="tp-footer-copy">&copy; 2025 ToolPrime. All rights reserved. Made with ❤️</p>
-    </div>
-</footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

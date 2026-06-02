@@ -2,258 +2,162 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Meta Tag Generator - SEO Meta Tags Maker | ToolPrime</title>
-    <meta name="description" content="Generate SEO meta tags online. Create Open Graph, Twitter Card, Google preview. Free meta tag generator.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Meta Tag Generator - SEO Tags Maker | ToolPrime</title>
+    <meta name="description" content="Generate SEO meta tags online. Create Open Graph, Twitter Card, Google preview. Free meta tag generator for websites.">
     <meta name="keywords" content="meta tag generator, seo meta tags, open graph generator, twitter card, html meta tags, seo tools">
-    <link rel="canonical" href="https://toolprime.online../../meta-tag-generator/">
-
+    <meta property="og:title" content="Free Meta Tag Generator | ToolPrime">
+    <link rel="canonical" href="https://toolprime.online/tools/seo/meta-tag-generator/">
     <link rel="icon" type="image/png" href="../../../assets/images/toolprime.png">
-    
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:system-ui,-apple-system,sans-serif;background:#f5f5f7;color:#1d1d1f;line-height:1.6;min-height:100vh}
+        .header{background:#fff;border-bottom:1px solid #e5e5ea;padding:0 20px;position:sticky;top:0;z-index:100}
+        .header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;height:56px;justify-content:space-between}
+        .logo{display:flex;align-items:center;text-decoration:none;gap:8px}.logo img{height:32px}
+        .home-btn{padding:7px 14px;background:#f5f5f7;border-radius:8px;text-decoration:none;color:#1d1d1f;font-weight:600;font-size:0.82rem;transition:0.15s}
+        .home-btn:hover{background:#0071e3;color:#fff}
+        .container{max-width:750px;margin:0 auto;padding:30px 20px 50px}
+        .back-btn{display:inline-flex;align-items:center;gap:8px;color:#0071e3;text-decoration:none;font-weight:600;font-size:0.88rem;margin-bottom:24px;padding:10px 18px;background:#e8f4fd;border-radius:50px;transition:0.2s}
+        .back-btn:hover{background:#0071e3;color:#fff;gap:12px;box-shadow:0 4px 12px rgba(0,113,227,0.25)}
+        .card{background:#fff;border:1px solid #e5e5ea;border-radius:14px;padding:28px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:24px}
+        .card h1{font-size:1.5rem;font-weight:800;margin-bottom:8px}.card .desc{color:#6e6e73;margin-bottom:20px;font-size:0.9rem}
+        label{display:block;font-size:0.78rem;font-weight:600;color:#1d1d1f;margin-bottom:6px}
+        input[type=text],input[type=url],textarea{width:100%;padding:10px 14px;background:#f5f5f7;border:2px solid #e5e5ea;border-radius:10px;font-size:0.9rem;font-family:inherit;color:#1d1d1f;margin-bottom:12px;transition:0.15s}
+        input:focus,textarea:focus{border-color:#0071e3;outline:none;background:#fff;box-shadow:0 0 0 3px rgba(0,113,227,0.06)}
+        textarea{resize:vertical;min-height:80px}
+        .row{display:flex;gap:10px;flex-wrap:wrap}.row .col{flex:1;min-width:120px}
+        .btn-gen{width:100%;padding:14px;background:linear-gradient(135deg,#0071e3,#5ac8fa);color:#fff;border:none;border-radius:12px;font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit;transition:0.2s}
+        .btn-gen:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,113,227,0.3)}
+        .preview-box{background:#fafafa;border-radius:10px;padding:16px;margin-top:16px}
+        .preview-box h3{font-size:0.9rem;margin-bottom:10px}
+        .g-preview{background:#fff;border:1px solid #dadce0;border-radius:8px;padding:14px;max-width:500px}
+        .g-preview .g-url{color:#202124;font-size:0.75rem}.g-preview .g-title{color:#1a0dab;font-size:1.1rem;font-weight:600;cursor:pointer}.g-preview .g-title:hover{text-decoration:underline}
+        .g-preview .g-desc{color:#4d5156;font-size:0.82rem;line-height:1.4}
+        .code-output{background:#1d1d1f;color:#e2e8f0;padding:14px;border-radius:10px;font-family:'SF Mono',monospace;font-size:0.78rem;line-height:1.6;overflow-x:auto;max-height:250px;overflow-y:auto;margin-top:12px;white-space:pre-wrap}
+        .btn-copy{padding:8px 16px;background:#34c759;color:#fff;border:none;border-radius:8px;cursor:pointer;font-weight:600;font-size:0.8rem;margin-top:8px;font-family:inherit}
+        .btn-copy:hover{background:#2db14a}
+        .article{background:#fff;border:1px solid #e5e5ea;border-radius:14px;padding:28px;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+        .article h2{font-size:1.2rem;font-weight:700;margin:20px 0 10px}.article h2:first-child{margin-top:0}
+        .article p{color:#6e6e73;font-size:0.88rem;line-height:1.7;margin-bottom:12px}
+        .faq-box{background:#fafafa;border-radius:10px;padding:14px 16px;margin-bottom:8px}
+        .faq-box strong{display:block;font-size:0.9rem;margin-bottom:4px}.faq-box p{font-size:0.82rem;margin:0;color:#6e6e73}
+        .related{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+        .related a{padding:8px 16px;background:#f5f5f7;border-radius:20px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:500;border:1px solid #e5e5ea}
+        .related a:hover{border-color:#0071e3;color:#0071e3}
+        footer{background:#fff;border-top:1px solid #e5e5ea;padding:20px;text-align:center;margin-top:20px}
+        footer .links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+        footer .links a{color:#6e6e73;text-decoration:none;font-size:0.8rem}footer .links a:hover{color:#0071e3}
+        footer .copy{color:#8e8e93;font-size:0.72rem}
+        @media(max-width:600px){.card{padding:18px}.card h1{font-size:1.2rem}.row{flex-direction:column}}
+    </style>
 </head>
-<body style="padding: 0 16px; margin: 0; overflow-x: hidden;">
-<!-- ═══════════ HEADER ═══════════ -->
+<body>
 
-<script>
-(function(){
-    const path = window.location.pathname;
-    const depth = (path.match(/\//g)||[]).length - 1;
-    const prefix = depth > 0 ? '../'.repeat(depth) : '';
-    
-    // Fix logo link
-    const logoLink = document.querySelector('header a[href="../../../index.html"]');
-    if(logoLink) logoLink.href = prefix + 'index.html';
-    
-    // Fix logo image
-    const logoImg = document.querySelector('header img[src="../../../ssets/images/toolprime.png"]');
-    if(logoImg) logoImg.src = prefix + 'assets/images/toolprime.png';
-    
-    // Fix search
-    const search = document.getElementById('tpSearch');
-    if(search){
-        search.addEventListener('keydown', function(e){
-            if(e.key === 'Enter'){
-                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
-            }
-        });
-    }
-    
-    // Home button for tool pages
-    if(depth > 0){
-        const right = document.getElementById('tpRight');
-        if(right){
-            right.innerHTML = '<a href="../../../index.html"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px;width:auto">Home</a>';
-        }
-        const header = document.querySelector('header');
-        if(header){ header.style.marginLeft = '-32px'; header.style.marginRight = '-32px'; }
-    }
-})();
-</script>
-<!-- ═══════════ TOOLPRIME HEADER ═══════════ -->
+<header class="header">
+    <div class="header-inner">
+        <a href="../../../index.html" class="logo"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px"></a>
+        <a href="../../../index.html" class="home-btn">Home</a>
+    </div>
+</header>
 
-<script>
-// Auto-fix header paths based on page location
-(function(){
-    const depth = (window.location.pathname.match(/\//g)||[]).length - 1;
-    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+<div class="container">
+    <a href="../../../index.html" class="back-btn">← Back to Store</a>
     
-    const logo = document.getElementById('tpLogo');
-    const logoImg = document.getElementById('tpLogoImg');
-    const search = document.getElementById('tpSearch');
-    const right = document.getElementById('tpRight');
-    
-    if(logo && prefix) logo.href = prefix + 'index.html';
-    if(logoImg && prefix) logoImg.src = prefix + 'assets/images/toolprime.png';
-    
-    // Search redirect
-    if(search){
-        search.addEventListener('keydown', function(e){
-            if(e.key === 'Enter'){
-                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
-            }
-        });
-    }
-    
-    // Show home button on tool pages
-    if(depth > 0 && right){
-        right.innerHTML = '<a href="../../../index.html"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px;width:auto">Home</a>';
-    }
-    
-    // Style header margin for tool pages
-    const header = document.getElementById('tpHeader');
-    if(depth > 0 && header){
-        header.style.marginLeft = '-32px';
-        header.style.marginRight = '-32px';
-    }
-})();
-</script>
-<!-- ═══════════ HEADER ═══════════ -->
-
-<!-- ═══════════ PREMIUM HEADER ═══════════ -->
-
-<div class="tp-container">
-    <a href="../../../index.html"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px;width:auto">← Back to Store</a>
-    
-    <div class="tp-card">
-        <h1>📈 Meta Tag Generator</h1>
-        <p class="desc">Generate SEO meta tags, Open Graph & Twitter Cards. Preview your site on Google, Facebook & Twitter!</p>
+    <div class="card">
+        <h1>🏷️ Meta Tag Generator</h1>
+        <p class="desc">Generate SEO meta tags for your website. See Google preview & get ready-to-use HTML code.</p>
         
-        <label>🌐 Website URL</label>
-        <input type="url" id="url" placeholder="https://example.com" value="https://toolprime.online" oninput="generate()">
+        <label>Page Title (50-60 chars)</label>
+        <input type="text" id="pageTitle" value="My Website - Best Free Tools" oninput="generate()">
         
-        <label>📝 Page Title (50-60 chars)</label>
-        <input type="text" id="title" placeholder="Your Page Title" value="ToolPrime - Free Online Tools" maxlength="60" oninput="generate()">
-        <small style="color:var(--sub);font-size:0.7rem"><span id="titleCount">0</span>/60 characters</small>
-        
-        <label>📄 Meta Description (150-160 chars)</label>
-        <textarea id="desc" placeholder="Page description..." maxlength="160" oninput="generate()">100+ free online tools. No sign-up. No tracking. Just pure utility at your fingertips.</textarea>
-        <small style="color:var(--sub);font-size:0.7rem"><span id="descCount">0</span>/160 characters</small>
+        <label>Meta Description (150-160 chars)</label>
+        <textarea id="pageDesc" oninput="generate()">Free online tools for everyone. No sign-up, no tracking, just pure utility.</textarea>
         
         <div class="row">
-            <div><label>🔑 Keywords (comma separated)</label><input type="text" id="keywords" placeholder="tools, online, free" value="online tools, free tools, utility tools" oninput="generate()"></div>
-            <div><label>👤 Author</label><input type="text" id="author" placeholder="Your Name" value="ToolPrime" oninput="generate()"></div>
+            <div class="col"><label>Website URL</label><input type="url" id="pageUrl" value="https://example.com" oninput="generate()"></div>
+            <div class="col"><label>Keywords</label><input type="text" id="pageKeys" value="tools, online, free" oninput="generate()"></div>
         </div>
         
         <div class="row">
-            <div><label>🖼️ OG Image URL</label><input type="url" id="ogImage" placeholder="https://example.com/image.jpg" oninput="generate()"></div>
-            <div><label>🐦 Twitter Handle</label><input type="text" id="twitter" placeholder="@username" value="@toolprime" oninput="generate()"></div>
+            <div class="col"><label>Author</label><input type="text" id="pageAuthor" value="ToolPrime" oninput="generate()"></div>
+            <div class="col"><label>OG Image URL</label><input type="url" id="ogImage" placeholder="https://example.com/image.jpg" oninput="generate()"></div>
         </div>
         
         <button class="btn-gen" onclick="generate()">✨ Generate Meta Tags</button>
+        
+        <div class="preview-box">
+            <h3>🔍 Google Search Preview</h3>
+            <div class="g-preview">
+                <div class="g-url" id="gUrl">example.com</div>
+                <div class="g-title" id="gTitle">My Website</div>
+                <div class="g-desc" id="gDesc">Free online tools for everyone...</div>
+            </div>
+        </div>
+        
+        <h3 style="font-size:0.9rem;margin-top:16px">💻 Generated HTML Code</h3>
+        <div class="code-output" id="codeOutput"></div>
+        <button class="btn-copy" onclick="copyCode()">📋 Copy Code</button>
     </div>
     
-    <!-- Preview Section -->
-    <div class="card preview-section">
-        <h3>🔍 Google Search Preview</h3>
-        <div class="google-preview">
-            <div class="g-url" id="gUrl">toolprime.online</div>
-            <div class="g-title" id="gTitle">ToolPrime - Free Online Tools</div>
-            <div class="g-desc" id="gDesc">100+ free online tools. No sign-up...</div>
+    <div class="article">
+        <h2>Free Meta Tag Generator</h2>
+        <p>Generate <strong>SEO meta tags</strong> for better Google ranking. Includes Open Graph & Twitter Card tags.</p>
+        <h2>How to Use</h2>
+        <ul><li>Fill in your page details</li><li>See Google preview</li><li>Copy & paste code in HTML head</li></ul>
+        <h2>Features</h2>
+        <ul><li>✅ Title & Description tags</li><li>✅ Google search preview</li><li>✅ Open Graph tags</li><li>✅ Twitter Card tags</li></ul>
+        <div class="faq-box"><strong>Q: Where to paste the code?</strong><p>A: Inside the <head> section of your HTML.</p></div>
+        <div class="faq-box"><strong>Q: What are meta tags?</strong><p>A: HTML tags that help search engines understand your page.</p></div>
+        <h2>Related Tools</h2>
+        <div class="related">
+            <a href="../../developer/json-formatter/">JSON Formatter</a>
+            <a href="../../developer/url-encoder/">URL Encoder</a>
+            <a href="../../text/word-counter/">Word Counter</a>
         </div>
-        
-        <h3 style="margin-top:18px">📱 Social Media Preview</h3>
-        <div class="social-preview">
-            <div class="fb-preview">
-                <div class="fb-img">🌐</div>
-                <div class="fb-body">
-                    <div class="fb-url" id="fbUrl">toolprime.online</div>
-                    <div class="fb-title" id="fbTitle">ToolPrime - Free Online Tools</div>
-                    <div class="fb-desc" id="fbDesc">100+ free online tools...</div>
-                </div>
-            </div>
-            <div class="tw-preview">
-                <div class="tw-img">🐦</div>
-                <div class="tw-body">
-                    <div class="tw-title" id="twTitle">ToolPrime - Free Online Tools</div>
-                    <div class="tw-desc" id="twDesc">100+ free online tools...</div>
-                    <div class="tw-url" id="twUrl">toolprime.online</div>
-                </div>
-            </div>
-        </div>
-        
-        <h3 style="margin-top:18px">💻 Generated Code <button class="btn-copy" onclick="copyCode()">📋 Copy Code</button></h3>
-        <div class="code-output" id="codeOutput"></div>
     </div>
 </div>
 
-<div class="toast" id="toast"></div>
+<footer>
+    <div class="links"><a href="../../../index.html">Home</a><a href="../../../about.html">About</a><a href="../../../contact.html">Contact</a><a href="../../../privacy.html">Privacy</a><a href="../../../terms.html">Terms</a></div>
+    <p class="copy">&copy; 2025 ToolPrime. Made with ❤️</p>
+</footer>
 
 <script>
-function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.className='toast show';clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),2000)}
-function trunc(s,l){return s.length>l?s.substring(0,l)+'...':s}
-
 function generate(){
-    const url=document.getElementById('url').value||'https://example.com';
-    const title=document.getElementById('title').value||'Page Title';
-    const desc=document.getElementById('desc').value||'Page description';
-    const keywords=document.getElementById('keywords').value;
-    const author=document.getElementById('author').value;
-    const ogImage=document.getElementById('ogImage').value;
-    const twitter=document.getElementById('twitter').value||'@username';
+    const title=document.getElementById('pageTitle').value||'Page Title';
+    const desc=document.getElementById('pageDesc').value||'';
+    const url=document.getElementById('pageUrl').value||'https://example.com';
+    const keys=document.getElementById('pageKeys').value||'';
+    const author=document.getElementById('pageAuthor').value||'';
+    const ogImg=document.getElementById('ogImage').value||'';
     
-    // Counters
-    document.getElementById('titleCount').textContent=title.length;
-    document.getElementById('descCount').textContent=desc.length;
-    
-    // Domain from URL
     let domain='';try{domain=new URL(url).hostname}catch(e){domain=url}
     
-    // Google Preview
-    document.getElementById('gUrl').textContent=domain+' › page';
-    document.getElementById('gTitle').textContent=trunc(title,60);
-    document.getElementById('gDesc').textContent=trunc(desc,160);
+    document.getElementById('gUrl').textContent=domain;
+    document.getElementById('gTitle').textContent=title.substring(0,60);
+    document.getElementById('gDesc').textContent=desc.substring(0,160);
     
-    // FB Preview
-    document.getElementById('fbUrl').textContent=domain.toUpperCase();
-    document.getElementById('fbTitle').textContent=trunc(title,60);
-    document.getElementById('fbDesc').textContent=trunc(desc,160);
-    
-    // Twitter Preview
-    document.getElementById('twTitle').textContent=trunc(title,60);
-    document.getElementById('twDesc').textContent=trunc(desc,160);
-    document.getElementById('twUrl').textContent=domain;
-    
-    // Generate Code
-    let code='<!-- SEO Meta Tags -->\n';
-    code+='<title>Meta Tag Generator - SEO Meta Tags Maker | ToolPrime</title>\n';
-    code+='<meta name="description" content="Generate SEO meta tags online. Create Open Graph, Twitter Card, Google preview. Free meta tag generator.">\n';
-    if(keywords) code+='<meta name="keywords" content="meta tag generator, seo meta tags, open graph generator, twitter card, html meta tags, seo tools">\n';
-    if(author) code+='<meta name="author" content="'+author+'">\n';
+    let code='<title>'+title+'</title>\n';
+    code+='<meta name="description" content="'+desc+'">\n';
+    if(keys)code+='<meta name="keywords" content="'+keys+'">\n';
+    if(author)code+='<meta name="author" content="'+author+'">\n';
     code+='<link rel="canonical" href="'+url+'">\n';
     code+='<meta name="robots" content="index, follow">\n\n';
-    
-    code+='<!-- Open Graph / Facebook -->\n';
-    code+='<meta property="og:type" content="website">\n';
-    code+='<meta property="og:url" content="'+url+'">\n';
     code+='<meta property="og:title" content="'+title+'">\n';
     code+='<meta property="og:description" content="'+desc+'">\n';
-    if(ogImage) code+='<meta property="og:image" content="'+ogImage+'">\n\n';
-    
-    code+='<!-- Twitter -->\n';
-    code+='<meta property="twitter:card" content="summary_large_image">\n';
-    code+='<meta property="twitter:url" content="'+url+'">\n';
-    code+='<meta property="twitter:title" content="'+title+'">\n';
-    code+='<meta property="twitter:description" content="'+desc+'">\n';
-    if(ogImage) code+='<meta property="twitter:image" content="'+ogImage+'">\n';
-    if(twitter) code+='<meta name="twitter:site" content="'+twitter+'">\n';
+    code+='<meta property="og:url" content="'+url+'">\n';
+    if(ogImg)code+='<meta property="og:image" content="'+ogImg+'">\n';
+    code+='\n<meta name="twitter:card" content="summary_large_image">\n';
+    code+='<meta name="twitter:title" content="'+title+'">\n';
+    code+='<meta name="twitter:description" content="'+desc+'">\n';
+    if(ogImg)code+='<meta name="twitter:image" content="'+ogImg+'">\n';
     
     document.getElementById('codeOutput').textContent=code;
 }
 
-function copyCode(){
-    const code=document.getElementById('codeOutput').textContent;
-    navigator.clipboard.writeText(code).then(()=>showToast('✅ Code copied! Paste in HTML <head>'));
-}
-
-// Init
+function copyCode(){navigator.clipboard.writeText(document.getElementById('codeOutput').textContent).then(()=>alert('Code copied!'))}
 generate();
 </script>
-
-<footer class="tp-footer">
-    <div class="tp-footer-inner">
-        <div class="tp-footer-links">
-            <a href="../../../index.html"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px;width:auto">Home</a>
-            <a href="../../../bout.html">About</a>
-            <a href="../../../contact.html">Contact</a>
-            <a href="../../../privacy.html">Privacy Policy</a>
-            <a href="../../../	erms.html">Terms of Service</a>
-        </div>
-        <p class="tp-footer-copy">&copy; 2025 ToolPrime. All rights reserved. Made with ❤️</p>
-    </div>
-</footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

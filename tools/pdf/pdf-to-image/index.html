@@ -2,267 +2,165 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="robots" content="index, follow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>PDF to Image - Convert PDF to JPG PNG Online | ToolPrime</title>
-    <meta name="description" content="Convert PDF to JPG or PNG online free. Extract pages from PDF. High quality PDF to image converter.">
-    <meta name="keywords" content="pdf to image, pdf to jpg, pdf to png, convert pdf, pdf converter, extract pdf pages">
-    <meta property="og:title" content="PDF to Image - Convert PDF to JPG PNG Online | ToolPrime">
-    <meta property="og:description" content="Convert PDF to JPG or PNG online free. Extract pages from PDF. High quality PDF to image converter.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://toolprime.online../../pdf-to-image/">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="PDF to Image - Convert PDF to JPG PNG Online | ToolPrime">
-    <meta name="twitter:description" content="Convert PDF to JPG or PNG online free. Extract pages from PDF. High quality PDF to image converter.">
-    <link rel="canonical" href="https://toolprime.online../../pdf-to-image/">
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free PDF to Image Converter - PDF to JPG PNG Online | ToolPrime</title>
+    <meta name="description" content="Convert PDF to JPG or PNG online free. Extract pages from PDF. High quality, no upload needed, works in browser.">
+    <meta name="keywords" content="pdf to image, pdf to jpg, pdf to png, convert pdf to image, pdf converter, extract pdf pages">
+    <meta property="og:title" content="Free PDF to Image Converter | ToolPrime">
+    <link rel="canonical" href="https://toolprime.online/tools/pdf/pdf-to-image/">
     <link rel="icon" type="image/png" href="../../../assets/images/toolprime.png">
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:system-ui,-apple-system,sans-serif;background:#f5f5f7;color:#1d1d1f;line-height:1.6;min-height:100vh}
+        .header{background:#fff;border-bottom:1px solid #e5e5ea;padding:0 20px;position:sticky;top:0;z-index:100}
+        .header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;height:56px;justify-content:space-between}
+        .logo{display:flex;align-items:center;text-decoration:none;gap:8px}.logo img{height:32px}
+        .home-btn{padding:7px 14px;background:#f5f5f7;border-radius:8px;text-decoration:none;color:#1d1d1f;font-weight:600;font-size:0.82rem;transition:0.15s}
+        .home-btn:hover{background:#0071e3;color:#fff}
+        .container{max-width:750px;margin:0 auto;padding:30px 20px 50px}
+        .back-btn{display:inline-flex;align-items:center;gap:8px;color:#0071e3;text-decoration:none;font-weight:600;font-size:0.88rem;margin-bottom:24px;padding:10px 18px;background:#e8f4fd;border-radius:50px;transition:0.2s}
+        .back-btn:hover{background:#0071e3;color:#fff;gap:12px;box-shadow:0 4px 12px rgba(0,113,227,0.25)}
+        .card{background:#fff;border:1px solid #e5e5ea;border-radius:14px;padding:28px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:24px}
+        .card h1{font-size:1.5rem;font-weight:800;margin-bottom:8px}.card .desc{color:#6e6e73;margin-bottom:20px;font-size:0.9rem}
+        .upload-zone{border:2px dashed #d0d0d5;border-radius:12px;padding:36px 20px;text-align:center;cursor:pointer;transition:0.2s;background:#fafafa;margin-bottom:16px}
+        .upload-zone:hover{border-color:#0071e3;background:#f0f6ff}
+        .upload-zone input{display:none}
+        .upload-icon{font-size:2.5rem;margin-bottom:6px}
+        .upload-text{font-weight:600;font-size:0.95rem}.upload-hint{font-size:0.75rem;color:#6e6e73;margin-top:4px}
+        .options{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px;align-items:center}
+        .options select,.options input{padding:8px 12px;background:#f5f5f7;border:2px solid #e5e5ea;border-radius:8px;font-size:0.85rem;font-family:inherit}
+        .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:10px;border:none;font-weight:600;font-size:0.85rem;cursor:pointer;font-family:inherit;transition:0.15s}
+        .btn-primary{background:#0071e3;color:#fff;width:100%;justify-content:center}.btn-primary:hover{background:#005bb5}
+        .btn-primary:disabled{background:#a0c4e8;cursor:not-allowed}
+        .btn-outline{background:transparent;border:2px solid #e5e5ea;color:#1d1d1f}.btn-outline:hover{border-color:#0071e3;color:#0071e3}
+        .preview-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-top:16px}
+        .preview-card{background:#f5f5f7;border-radius:10px;overflow:hidden;border:1px solid #e5e5ea}
+        .preview-card img{width:100%;display:block}
+        .preview-card .info{padding:8px;display:flex;justify-content:space-between;align-items:center;font-size:0.78rem}
+        .preview-card .dl-btn{padding:4px 10px;background:#34c759;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:0.7rem;font-weight:600}
+        .progress{height:6px;background:#e5e5ea;border-radius:3px;margin:12px 0;display:none}
+        .progress-bar{height:100%;background:#0071e3;border-radius:3px;width:0%;transition:0.3s}
+        .article{background:#fff;border:1px solid #e5e5ea;border-radius:14px;padding:28px;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+        .article h2{font-size:1.2rem;font-weight:700;margin:20px 0 10px}.article h2:first-child{margin-top:0}
+        .article p{color:#6e6e73;font-size:0.88rem;line-height:1.7;margin-bottom:12px}
+        .faq-box{background:#fafafa;border-radius:10px;padding:14px 16px;margin-bottom:8px}
+        .faq-box strong{display:block;font-size:0.9rem;margin-bottom:4px}.faq-box p{font-size:0.82rem;margin:0;color:#6e6e73}
+        .related{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+        .related a{padding:8px 16px;background:#f5f5f7;border-radius:20px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:500;border:1px solid #e5e5ea}
+        .related a:hover{border-color:#0071e3;color:#0071e3}
+        footer{background:#fff;border-top:1px solid #e5e5ea;padding:20px;text-align:center;margin-top:20px}
+        footer .links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+        footer .links a{color:#6e6e73;text-decoration:none;font-size:0.8rem}footer .links a:hover{color:#0071e3}
+        footer .copy{color:#8e8e93;font-size:0.72rem}
+        @media(max-width:600px){.card{padding:18px}.card h1{font-size:1.2rem}.preview-grid{grid-template-columns:1fr 1fr}}
+    </style>
 </head>
-<body style="padding: 0 16px; margin: 0; overflow-x: hidden;">
-<!-- ═══════════ HEADER ═══════════ -->
+<body>
 
-<script>
-(function(){
-    const path = window.location.pathname;
-    const depth = (path.match(/\//g)||[]).length - 1;
-    const prefix = depth > 0 ? '../'.repeat(depth) : '';
-    
-    // Fix logo link
-    const logoLink = document.querySelector('header a[href="../../../index.html"]');
-    if(logoLink) logoLink.href = prefix + 'index.html';
-    
-    // Fix logo image
-    const logoImg = document.querySelector('header img[src="../../../ssets/images/toolprime.png"]');
-    if(logoImg) logoImg.src = prefix + 'assets/images/toolprime.png';
-    
-    // Fix search
-    const search = document.getElementById('tpSearch');
-    if(search){
-        search.addEventListener('keydown', function(e){
-            if(e.key === 'Enter'){
-                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
-            }
-        });
-    }
-    
-    // Home button for tool pages
-    if(depth > 0){
-        const right = document.getElementById('tpRight');
-        if(right){
-            right.innerHTML = '<a href="../../../index.html"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px;width:auto">Home</a>';
-        }
-        const header = document.querySelector('header');
-        if(header){ header.style.marginLeft = '-32px'; header.style.marginRight = '-32px'; }
-    }
-})();
-</script>
-<!-- ═══════════ TOOLPRIME HEADER ═══════════ -->
+<header class="header">
+    <div class="header-inner">
+        <a href="../../../index.html" class="logo"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px"></a>
+        <a href="../../../index.html" class="home-btn">Home</a>
+    </div>
+</header>
 
-<script>
-// Auto-fix header paths based on page location
-(function(){
-    const depth = (window.location.pathname.match(/\//g)||[]).length - 1;
-    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+<div class="container">
+    <a href="../../../index.html" class="back-btn">← Back to Store</a>
     
-    const logo = document.getElementById('tpLogo');
-    const logoImg = document.getElementById('tpLogoImg');
-    const search = document.getElementById('tpSearch');
-    const right = document.getElementById('tpRight');
-    
-    if(logo && prefix) logo.href = prefix + 'index.html';
-    if(logoImg && prefix) logoImg.src = prefix + 'assets/images/toolprime.png';
-    
-    // Search redirect
-    if(search){
-        search.addEventListener('keydown', function(e){
-            if(e.key === 'Enter'){
-                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
-            }
-        });
-    }
-    
-    // Show home button on tool pages
-    if(depth > 0 && right){
-        right.innerHTML = '<a href="../../../index.html"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px;width:auto">Home</a>';
-    }
-    
-    // Style header margin for tool pages
-    const header = document.getElementById('tpHeader');
-    if(depth > 0 && header){
-        header.style.marginLeft = '-32px';
-        header.style.marginRight = '-32px';
-    }
-})();
-</script>
-<!-- ═══════════ HEADER ═══════════ -->
-
-<!-- ═══════════ PREMIUM HEADER ═══════════ -->
-
-<div class="tp-container">
-    <a href="../../../index.html"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px;width:auto">← Back to Store</a>
-    
-    <div class="tp-card">
-        <h1>📄 PDF to Image Converter</h1>
-        <p class="desc">Convert PDF pages to JPG or PNG images. Select format, quality, and download individual pages.</p>
+    <div class="card">
+        <h1>📄 PDF to Image</h1>
+        <p class="desc">Convert PDF pages to JPG or PNG. Select pages, set quality, and download instantly.</p>
         
         <div class="upload-zone" id="uploadZone">
             <div class="upload-icon">📁</div>
-            <div class="upload-text">Drop PDF here or click to browse</div>
-            <div class="upload-hint">Max 20MB • All processing in browser</div>
+            <div class="upload-text">Drop PDF here or click</div>
+            <div class="upload-hint">Max 20MB • All pages or select</div>
             <input type="file" id="fileInput" accept=".pdf">
         </div>
         
-        <div class="options">
-            <label>Format:</label>
-            <select id="formatSelect">
-                <option value="jpeg">JPG</option>
-                <option value="png">PNG</option>
-            </select>
-            <label>Quality:</label>
-            <input type="range" id="qualityRange" min="0.5" max="2" step="0.1" value="1.5">
-            <span id="qualityVal" style="font-weight:700;color:var(--accent)">1.5x</span>
-            <label>Page:</label>
+        <div class="options" id="options" style="display:none">
+            <select id="formatSelect"><option value="jpeg">JPG</option><option value="png">PNG</option></select>
+            <label style="font-size:0.8rem">Quality: <input type="range" id="qualityRange" min="0.5" max="2" step="0.1" value="1.5" oninput="document.getElementById('qualVal').textContent=this.value+'x'"> <span id="qualVal" style="font-weight:700;color:#0071e3">1.5x</span></label>
             <select id="pageSelect"><option value="all">All Pages</option></select>
         </div>
         
         <button class="btn btn-primary" id="convertBtn" onclick="convertPDF()" disabled>🔄 Convert PDF to Image</button>
         <div class="progress" id="progress"><div class="progress-bar" id="progressBar"></div></div>
-        
         <div class="preview-grid" id="previewGrid"></div>
-        <button class="btn btn-outline" id="downloadAllBtn" onclick="downloadAll()" style="display:none">⬇️ Download All Images (ZIP)</button>
+    </div>
+    
+    <div class="article">
+        <h2>Free PDF to Image Converter</h2>
+        <p>Convert <strong>PDF pages to JPG or PNG</strong> instantly. All processing happens in your browser.</p>
+        <h2>How to Use</h2>
+        <ul><li>Upload PDF → Choose format → Convert → Download!</li></ul>
+        <h2>Features</h2>
+        <ul><li>✅ JPG & PNG output</li><li>✅ All pages or select</li><li>✅ Adjustable quality</li><li>✅ Works in browser</li></ul>
+        <div class="faq-box"><strong>Q: Is my PDF uploaded?</strong><p>A: No, everything processes in your browser.</p></div>
+        <div class="faq-box"><strong>Q: What's the max file size?</strong><p>A: 20MB recommended.</p></div>
+        <h2>Related Tools</h2>
+        <div class="related">
+            <a href="../image-to-pdf/">Image to PDF</a>
+            <a href="../../image/png-to-jpg-converter/">PNG to JPG</a>
+            <a href="../../image/image-compressor/">Image Compressor</a>
+        </div>
     </div>
 </div>
 
-<div class="toast" id="toast"></div>
+<footer>
+    <div class="links"><a href="../../../index.html">Home</a><a href="../../../about.html">About</a><a href="../../../contact.html">Contact</a><a href="../../../privacy.html">Privacy</a><a href="../../../terms.html">Terms</a></div>
+    <p class="copy">&copy; 2025 ToolPrime. Made with ❤️</p>
+</footer>
 
 <script>
-pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+let pdfDoc=null;
 
-let pdfDoc=null, pdfFile=null, convertedPages=[];
-const uploadZone=document.getElementById('uploadZone');
-const fileInput=document.getElementById('fileInput');
-const toast=document.getElementById('toast');
+document.getElementById('uploadZone').onclick=()=>document.getElementById('fileInput').click();
+document.getElementById('fileInput').onchange=e=>{if(e.target.files[0])loadPDF(e.target.files[0])};
 
-function showToast(m){toast.textContent=m;toast.className='toast show';clearTimeout(toast._t);toast._t=setTimeout(()=>toast.classList.remove('show'),2500)}
-
-// Quality slider
-document.getElementById('qualityRange').addEventListener('input',function(){
-    document.getElementById('qualityVal').textContent=this.value+'x';
-});
-
-// Upload
-uploadZone.addEventListener('click',()=>fileInput.click());
-uploadZone.addEventListener('dragover',e=>{e.preventDefault();uploadZone.classList.add('drag')});
-uploadZone.addEventListener('dragleave',()=>uploadZone.classList.remove('drag'));
-uploadZone.addEventListener('drop',e=>{e.preventDefault();uploadZone.classList.remove('drag');if(e.dataTransfer.files[0])loadPDF(e.dataTransfer.files[0])});
-fileInput.addEventListener('change',e=>{if(e.target.files[0])loadPDF(e.target.files[0])});
-
-async function loadPDF(file){
-    if(file.size>20*1024*1024){showToast('Max 20MB!');return}
-    pdfFile=file;
-    const url=URL.createObjectURL(file);
-    try{
-        pdfDoc=await pdfjsLib.getDocument(url).promise;
-        document.getElementById('convertBtn').disabled=false;
-        document.getElementById('uploadZone').querySelector('.upload-text').textContent=file.name+' ('+pdfDoc.numPages+' pages)';
-        document.getElementById('uploadZone').querySelector('.upload-icon').textContent='✅';
-        
-        // Populate page select
-        const ps=document.getElementById('pageSelect');
-        ps.innerHTML='<option value="all">All Pages</option>';
-        for(let i=1;i<=pdfDoc.numPages;i++) ps.innerHTML+='<option value="'+i+'">Page '+i+'</option>';
-        
-        showToast('PDF loaded! '+pdfDoc.numPages+' pages');
-    }catch(e){showToast('Error loading PDF!');console.error(e)}
+async function loadPDF(f){
+    if(f.size>20*1024*1024){alert('Max 20MB!');return}
+    const url=URL.createObjectURL(f);
+    pdfDoc=await pdfjsLib.getDocument(url).promise;
+    document.getElementById('convertBtn').disabled=false;
+    document.getElementById('options').style.display='flex';
+    const ps=document.getElementById('pageSelect');
+    ps.innerHTML='<option value="all">All Pages</option>';
+    for(let i=1;i<=pdfDoc.numPages;i++)ps.innerHTML+='<option value="'+i+'">Page '+i+'</option>';
 }
 
 async function convertPDF(){
-    if(!pdfDoc){showToast('Load PDF first!');return}
-    convertedPages=[];
-    document.getElementById('previewGrid').innerHTML='';
-    document.getElementById('downloadAllBtn').style.display='none';
-    
+    if(!pdfDoc)return;
     const format=document.getElementById('formatSelect').value;
     const scale=parseFloat(document.getElementById('qualityRange').value);
     const pageOpt=document.getElementById('pageSelect').value;
+    const progress=document.getElementById('progress'),bar=document.getElementById('progressBar');
+    progress.style.display='block';bar.style.width='0%';
+    document.getElementById('previewGrid').innerHTML='';
     
-    const progress=document.getElementById('progress');
-    const progressBar=document.getElementById('progressBar');
-    progress.style.display='block';
-    progressBar.style.width='0%';
+    let pages=[];if(pageOpt==='all'){for(let i=1;i<=pdfDoc.numPages;i++)pages.push(i)}else{pages.push(parseInt(pageOpt))}
     
-    let pagesToConvert=[];
-    if(pageOpt==='all'){for(let i=1;i<=pdfDoc.numPages;i++)pagesToConvert.push(i)}
-    else{pagesToConvert.push(parseInt(pageOpt))}
-    
-    for(let i=0;i<pagesToConvert.length;i++){
-        const pageNum=pagesToConvert[i];
-        const page=await pdfDoc.getPage(pageNum);
-        const viewport=page.getViewport({scale:scale});
-        const canvas=document.createElement('canvas');
-        canvas.width=viewport.width;canvas.height=viewport.height;
-        const ctx=canvas.getContext('2d');
-        await page.render({canvasContext:ctx,viewport:viewport}).promise;
-        
-        const dataURL=canvas.toDataURL('image/'+(format==='jpeg'?'jpeg':'png'),format==='jpeg'?0.9:1);
-        convertedPages.push({num:pageNum,dataURL:dataURL,width:canvas.width,height:canvas.height});
-        
-        // Preview
+    for(let i=0;i<pages.length;i++){
+        const page=await pdfDoc.getPage(pages[i]);
+        const vp=page.getViewport({scale});
+        const c=document.createElement('canvas');c.width=vp.width;c.height=vp.height;
+        await page.render({canvasContext:c.getContext('2d'),viewport:vp}).promise;
+        const dataURL=c.toDataURL('image/'+(format==='jpeg'?'jpeg':'png'),0.9);
         const card=document.createElement('div');card.className='preview-card';
-        card.innerHTML='<img src="'+dataURL+'" alt="Page '+pageNum+'"><div class="pinfo"><span class="pnum">Page '+pageNum+'</span><button class="pdl" onclick="downloadPage('+(convertedPages.length-1)+')">⬇️ Download</button></div>';
+        card.innerHTML='<img src="'+dataURL+'"><div class="info"><span>Page '+pages[i]+'</span><button class="dl-btn" onclick="downloadPage(\''+dataURL+'\',\''+pages[i]+'\',\''+format+'\')">Download</button></div>';
         document.getElementById('previewGrid').appendChild(card);
-        
-        progressBar.style.width=((i+1)/pagesToConvert.length*100)+'%';
+        bar.style.width=((i+1)/pages.length*100)+'%';
     }
-    
-    if(convertedPages.length>1)document.getElementById('downloadAllBtn').style.display='block';
     progress.style.display='none';
-    showToast('Converted '+convertedPages.length+' page(s)!');
 }
 
-function downloadPage(index){
-    const page=convertedPages[index];
-    const a=document.createElement('a');
-    a.href=page.dataURL;
-    a.download='page_'+page.num+'.'+(document.getElementById('formatSelect').value==='jpeg'?'jpg':'png');
+function downloadPage(dataURL,page,format){
+    const a=document.createElement('a');a.href=dataURL;
+    a.download='page_'+page+'.'+(format==='jpeg'?'jpg':'png');
     document.body.appendChild(a);a.click();document.body.removeChild(a);
-    showToast('Downloaded page '+page.num);
-}
-
-function downloadAll(){
-    convertedPages.forEach((page,i)=>setTimeout(()=>downloadPage(i),i*500));
-    showToast('Downloading all pages...');
 }
 </script>
-
-<footer class="tp-footer">
-    <div class="tp-footer-inner">
-        <div class="tp-footer-links">
-            <a href="../../../index.html"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px;width:auto">Home</a>
-            <a href="../../../bout.html">About</a>
-            <a href="../../../contact.html">Contact</a>
-            <a href="../../../privacy.html">Privacy Policy</a>
-            <a href="../../../	erms.html">Terms of Service</a>
-        </div>
-        <p class="tp-footer-copy">&copy; 2025 ToolPrime. All rights reserved. Made with ❤️</p>
-    </div>
-</footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

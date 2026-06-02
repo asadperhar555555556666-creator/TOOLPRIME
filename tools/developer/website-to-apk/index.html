@@ -2,212 +2,112 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website to APK - Convert Site to Android App | ToolPrime</title>
-    <meta name="description" content="Convert website to Android app. Install any site as PWA app. Free website to APK converter. No coding.">
+    <title>Free Website to APK Converter - Install Any Site as App | ToolPrime</title>
+    <meta name="description" content="Convert any website to Android app. Install sites as PWA apps. Free website to APK guide. No coding required.">
     <meta name="keywords" content="website to apk, convert site to app, web to android, pwa builder, make apk, website to app">
-    <meta property="og:title" content="Website to APK - Convert Site to Android App | ToolPrime">
-    <meta property="og:description" content="Convert website to Android app. Install any site as PWA app. Free website to APK converter. No coding.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://toolprime.online../../website-to-apk/">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Website to APK - Convert Site to Android App | ToolPrime">
-    <meta name="twitter:description" content="Convert website to Android app. Install any site as PWA app. Free website to APK converter. No coding.">
-    <link rel="canonical" href="https://toolprime.online../../website-to-apk/">
-
+    <meta property="og:title" content="Free Website to APK | ToolPrime">
+    <link rel="canonical" href="https://toolprime.online/tools/developer/website-to-apk/">
     <link rel="icon" type="image/png" href="../../../assets/images/toolprime.png">
-    
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:system-ui,-apple-system,sans-serif;background:#f5f5f7;color:#1d1d1f;line-height:1.6;min-height:100vh}
+        .header{background:#fff;border-bottom:1px solid #e5e5ea;padding:0 20px;position:sticky;top:0;z-index:100}
+        .header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;height:56px;justify-content:space-between}
+        .logo{display:flex;align-items:center;text-decoration:none;gap:8px}.logo img{height:32px}
+        .home-btn{padding:7px 14px;background:#f5f5f7;border-radius:8px;text-decoration:none;color:#1d1d1f;font-weight:600;font-size:0.82rem;transition:0.15s}
+        .home-btn:hover{background:#0071e3;color:#fff}
+        .container{max-width:700px;margin:0 auto;padding:30px 20px 50px}
+        .back-btn{display:inline-flex;align-items:center;gap:8px;color:#0071e3;text-decoration:none;font-weight:600;font-size:0.88rem;margin-bottom:24px;padding:10px 18px;background:#e8f4fd;border-radius:50px;transition:0.2s}
+        .back-btn:hover{background:#0071e3;color:#fff;gap:12px;box-shadow:0 4px 12px rgba(0,113,227,0.25)}
+        .card{background:#fff;border:1px solid #e5e5ea;border-radius:14px;padding:28px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:24px}
+        .card h1{font-size:1.5rem;font-weight:800;margin-bottom:8px}.card .desc{color:#6e6e73;margin-bottom:20px;font-size:0.9rem}
+        label{display:block;font-size:0.78rem;font-weight:600;color:#1d1d1f;margin-bottom:6px}
+        input[type=url],input[type=text]{width:100%;padding:12px 14px;background:#f5f5f7;border:2px solid #e5e5ea;border-radius:10px;font-size:0.9rem;font-family:inherit;color:#1d1d1f;margin-bottom:12px;transition:0.15s}
+        input:focus{border-color:#0071e3;outline:none;background:#fff;box-shadow:0 0 0 3px rgba(0,113,227,0.06)}
+        .steps{margin:16px 0}
+        .step{display:flex;gap:14px;align-items:start;padding:14px;background:#f5f5f7;border-radius:10px;margin-bottom:8px}
+        .step-num{width:32px;height:32px;border-radius:50%;background:#0071e3;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem;flex-shrink:0}
+        .step-info h4{font-size:0.9rem;margin-bottom:2px}.step-info p{font-size:0.8rem;color:#6e6e73;margin:0}
+        .btn{display:inline-flex;align-items:center;gap:6px;padding:12px 24px;border-radius:10px;border:none;font-weight:600;font-size:0.9rem;cursor:pointer;font-family:inherit;transition:0.15s;text-decoration:none}
+        .btn-primary{background:#0071e3;color:#fff;width:100%;justify-content:center}.btn-primary:hover{background:#005bb5}
+        .highlight{background:#e8f5e9;border:1px solid #c8e6c9;border-radius:10px;padding:14px;margin:12px 0;text-align:center}
+        .highlight strong{color:#2e7d32}
+        .article{background:#fff;border:1px solid #e5e5ea;border-radius:14px;padding:28px;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+        .article h2{font-size:1.2rem;font-weight:700;margin:20px 0 10px}.article h2:first-child{margin-top:0}
+        .article p{color:#6e6e73;font-size:0.88rem;line-height:1.7;margin-bottom:12px}
+        .faq-box{background:#fafafa;border-radius:10px;padding:14px 16px;margin-bottom:8px}
+        .faq-box strong{display:block;font-size:0.9rem;margin-bottom:4px}.faq-box p{font-size:0.82rem;margin:0;color:#6e6e73}
+        .related{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+        .related a{padding:8px 16px;background:#f5f5f7;border-radius:20px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:500;border:1px solid #e5e5ea}
+        .related a:hover{border-color:#0071e3;color:#0071e3}
+        footer{background:#fff;border-top:1px solid #e5e5ea;padding:20px;text-align:center;margin-top:20px}
+        footer .links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+        footer .links a{color:#6e6e73;text-decoration:none;font-size:0.8rem}footer .links a:hover{color:#0071e3}
+        footer .copy{color:#8e8e93;font-size:0.72rem}
+        @media(max-width:600px){.card{padding:18px}.card h1{font-size:1.2rem}}
+    </style>
 </head>
-<body style="padding: 0 16px; margin: 0; overflow-x: hidden;">
-<!-- ═══════════ HEADER ═══════════ -->
+<body>
 
-<script>
-(function(){
-    const path = window.location.pathname;
-    const depth = (path.match(/\//g)||[]).length - 1;
-    const prefix = depth > 0 ? '../'.repeat(depth) : '';
-    
-    // Fix logo link
-    const logoLink = document.querySelector('header a[href="../../../index.html"]');
-    if(logoLink) logoLink.href = prefix + 'index.html';
-    
-    // Fix logo image
-    const logoImg = document.querySelector('header img[src="../../../ssets/images/toolprime.png"]');
-    if(logoImg) logoImg.src = prefix + 'assets/images/toolprime.png';
-    
-    // Fix search
-    const search = document.getElementById('tpSearch');
-    if(search){
-        search.addEventListener('keydown', function(e){
-            if(e.key === 'Enter'){
-                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
-            }
-        });
-    }
-    
-    // Home button for tool pages
-    if(depth > 0){
-        const right = document.getElementById('tpRight');
-        if(right){
-            right.innerHTML = '<a href="../../../index.html"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px;width:auto">Home</a>';
-        }
-        const header = document.querySelector('header');
-        if(header){ header.style.marginLeft = '-32px'; header.style.marginRight = '-32px'; }
-    }
-})();
-</script>
-<!-- ═══════════ TOOLPRIME HEADER ═══════════ -->
+<header class="header">
+    <div class="header-inner">
+        <a href="../../../index.html" class="logo"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px"></a>
+        <a href="../../../index.html" class="home-btn">Home</a>
+    </div>
+</header>
 
-<script>
-// Auto-fix header paths based on page location
-(function(){
-    const depth = (window.location.pathname.match(/\//g)||[]).length - 1;
-    const prefix = depth > 0 ? '../'.repeat(depth) : '';
-    
-    const logo = document.getElementById('tpLogo');
-    const logoImg = document.getElementById('tpLogoImg');
-    const search = document.getElementById('tpSearch');
-    const right = document.getElementById('tpRight');
-    
-    if(logo && prefix) logo.href = prefix + 'index.html';
-    if(logoImg && prefix) logoImg.src = prefix + 'assets/images/toolprime.png';
-    
-    // Search redirect
-    if(search){
-        search.addEventListener('keydown', function(e){
-            if(e.key === 'Enter'){
-                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
-            }
-        });
-    }
-    
-    // Show home button on tool pages
-    if(depth > 0 && right){
-        right.innerHTML = '<a href="../../../index.html"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px;width:auto">Home</a>';
-    }
-    
-    // Style header margin for tool pages
-    const header = document.getElementById('tpHeader');
-    if(depth > 0 && header){
-        header.style.marginLeft = '-32px';
-        header.style.marginRight = '-32px';
-    }
-})();
-</script>
-<!-- ═══════════ HEADER ═══════════ -->
-
-<!-- ═══════════ PREMIUM HEADER ═══════════ -->
-
-<div class="tp-container">
-    <a href="../../../index.html"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px;width:auto">← Back to Store</a>
+<div class="container">
+    <a href="../../../index.html" class="back-btn">← Back to Store</a>
     
     <div class="card">
-        <h1>📱 Install ToolPrime as App</h1>
-        <p>No APK download needed! Install ToolPrime directly from your browser — works on Android, iPhone, iPad, and PC.</p>
+        <h1>📲 Website to APK</h1>
+        <p class="desc">Install any website as an app on your phone. Uses PWA technology — no coding required!</p>
         
-        <div class="install-box">
-            <div class="icon">📲</div>
-            <h2>One-Tap Install</h2>
-            <p style="color:var(--sub)">No Play Store. No download. Just tap install!</p>
+        <label>Your Website URL</label>
+        <input type="url" id="siteUrl" placeholder="https://your-website.com" value="https://toolprime.online">
+        
+        <label>App Name (optional)</label>
+        <input type="text" id="appName" placeholder="My App" value="ToolPrime">
+        
+        <div class="highlight">
+            <strong>💡 No APK download needed!</strong><br>
+            <span style="font-size:0.85rem;color:#6e6e73">Modern browsers let you install websites directly as apps.</span>
         </div>
         
-        <button class="btn" onclick="installApp()" id="installBtn" style="display:none">
-            ⬇️ Install ToolPrime App
-        </button>
-        
-        <h2>📋 How to Install:</h2>
-        
-        <div class="step">
-            <div class="step-num">1</div>
-            <div class="step-info">
-                <h4>Open in Chrome Browser</h4>
-                <p>Open toolprime.online in Google Chrome on your Android phone.</p>
-            </div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:10px">📱 How to Install:</h3>
+        <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-info"><h4>Open in Chrome (Android)</h4><p>Open the website in Google Chrome on your phone.</p></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-info"><h4>Tap Menu (⋮) → "Install app"</h4><p>Chrome will show an install prompt. Tap Install.</p></div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-info"><h4>App appears on Home Screen!</h4><p>The website now works like a regular app — full screen, no browser bar!</p></div></div>
         </div>
         
-        <div class="step">
-            <div class="step-num">2</div>
-            <div class="step-info">
-                <h4>Tap the Install Button</h4>
-                <p>Look for "Install" or "Add to Home Screen" in the Chrome menu (⋮) or use the button above.</p>
-            </div>
+        <h3 style="font-size:1rem;font-weight:700;margin:16px 0 10px">📱 iPhone Users:</h3>
+        <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-info"><h4>Open in Safari</h4><p>Open the website in Safari browser.</p></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-info"><h4>Tap Share → "Add to Home Screen"</h4><p>Scroll and tap Add to Home Screen.</p></div></div>
         </div>
-        
-        <div class="step">
-            <div class="step-num">3</div>
-            <div class="step-info">
-                <h4>App Appears on Home Screen</h4>
-                <p>ToolPrime will appear as a regular app icon. Open it anytime — no browser needed!</p>
-            </div>
-        </div>
-        
-        <h2>📱 iPhone / iPad Users:</h2>
-        <div class="step">
-            <div class="step-num">1</div>
-            <div class="step-info">
-                <h4>Open in Safari</h4>
-                <p>Open toolprime.online in Safari browser.</p>
-            </div>
-        </div>
-        <div class="step">
-            <div class="step-num">2</div>
-            <div class="step-info">
-                <h4>Tap Share → Add to Home Screen</h4>
-                <p>Tap the Share icon (↑) at the bottom, then scroll and tap "Add to Home Screen".</p>
-            </div>
+    </div>
+    
+    <div class="article">
+        <h2>Free Website to APK Guide</h2>
+        <p>Convert any <strong>website into an app</strong> without coding. Uses PWA (Progressive Web App) technology built into modern browsers.</p>
+        <h2>Why Use This?</h2>
+        <ul><li>✅ No coding needed</li><li>✅ Works on Android & iPhone</li><li>✅ Full screen experience</li><li>✅ Appears on home screen</li></ul>
+        <div class="faq-box"><strong>Q: Is this really an APK?</strong><p>A: It's a PWA — works like an app without the APK file.</p></div>
+        <div class="faq-box"><strong>Q: Can I publish on Play Store?</strong><p>A: For Play Store, use a WebView wrapper tool.</p></div>
+        <h2>Related Tools</h2>
+        <div class="related">
+            <a href="../json-formatter/">JSON Formatter</a>
+            <a href="../url-encoder/">URL Encoder</a>
+            <a href="../../seo/meta-tag-generator/">Meta Tag Generator</a>
         </div>
     </div>
 </div>
 
-<script>
-let deferredPrompt;
-window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
-    document.getElementById('installBtn').style.display = 'block';
-});
-
-function installApp() {
-    if (deferredPrompt) {
-        deferredPrompt.prompt();
-        deferredPrompt.userChoice.then((result) => {
-            if (result.outcome === 'accepted') {
-                console.log('App installed!');
-            }
-            deferredPrompt = null;
-        });
-    } else {
-        alert('Install option will appear in Chrome menu (⋮) → "Install app"');
-    }
-}
-</script>
-
-<footer class="tp-footer">
-    <div class="tp-footer-inner">
-        <div class="tp-footer-links">
-            <a href="../../../index.html"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px;width:auto">Home</a>
-            <a href="../../../bout.html">About</a>
-            <a href="../../../contact.html">Contact</a>
-            <a href="../../../privacy.html">Privacy Policy</a>
-            <a href="../../../	erms.html">Terms of Service</a>
-        </div>
-        <p class="tp-footer-copy">&copy; 2025 ToolPrime. All rights reserved. Made with ❤️</p>
-    </div>
+<footer>
+    <div class="links"><a href="../../../index.html">Home</a><a href="../../../about.html">About</a><a href="../../../contact.html">Contact</a><a href="../../../privacy.html">Privacy</a><a href="../../../terms.html">Terms</a></div>
+    <p class="copy">&copy; 2025 ToolPrime. Made with ❤️</p>
 </footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

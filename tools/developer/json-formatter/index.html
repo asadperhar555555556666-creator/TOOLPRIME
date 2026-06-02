@@ -2,153 +2,140 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="robots" content="index, follow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>JSON Formatter - Beautify & Validate JSON Online | ToolPrime</title>
-    <meta name="description" content="Format, beautify & validate JSON data online. Free JSON editor with syntax highlighting. Minify JSON.">
-    <meta name="keywords" content="json formatter, json beautifier, json validator, format json, json prettify, json editor online">
-    <meta property="og:title" content="JSON Formatter - Beautify & Validate JSON Online | ToolPrime">
-    <meta property="og:description" content="Format, beautify & validate JSON data online. Free JSON editor with syntax highlighting. Minify JSON.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://toolprime.online../../json-formatter/">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="JSON Formatter - Beautify & Validate JSON Online | ToolPrime">
-    <meta name="twitter:description" content="Format, beautify & validate JSON data online. Free JSON editor with syntax highlighting. Minify JSON.">
-    <link rel="canonical" href="https://toolprime.online../../json-formatter/">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free JSON Formatter - Beautify & Validate JSON Online | ToolPrime</title>
+    <meta name="description" content="Format, beautify & validate JSON online. Free JSON editor with syntax highlighting. Minify JSON data.">
+    <meta name="keywords" content="json formatter, json beautifier, json validator, format json, json prettify, json editor">
+    <meta property="og:title" content="Free JSON Formatter | ToolPrime">
+    <link rel="canonical" href="https://toolprime.online/tools/developer/json-formatter/">
     <link rel="icon" type="image/png" href="../../../assets/images/toolprime.png">
-    
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:system-ui,-apple-system,sans-serif;background:#f5f5f7;color:#1d1d1f;line-height:1.6;min-height:100vh}
+        .header{background:#fff;border-bottom:1px solid #e5e5ea;padding:0 20px;position:sticky;top:0;z-index:100}
+        .header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;height:56px;justify-content:space-between}
+        .logo{display:flex;align-items:center;text-decoration:none;gap:8px}.logo img{height:32px}
+        .home-btn{padding:7px 14px;background:#f5f5f7;border-radius:8px;text-decoration:none;color:#1d1d1f;font-weight:600;font-size:0.82rem;transition:0.15s}
+        .home-btn:hover{background:#0071e3;color:#fff}
+        .container{max-width:750px;margin:0 auto;padding:30px 20px 50px}
+        .back-btn{display:inline-flex;align-items:center;gap:8px;color:#0071e3;text-decoration:none;font-weight:600;font-size:0.88rem;margin-bottom:24px;padding:10px 18px;background:#e8f4fd;border-radius:50px;transition:0.2s}
+        .back-btn:hover{background:#0071e3;color:#fff;gap:12px;box-shadow:0 4px 12px rgba(0,113,227,0.25)}
+        .card{background:#fff;border:1px solid #e5e5ea;border-radius:14px;padding:28px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:24px}
+        .card h1{font-size:1.5rem;font-weight:800;margin-bottom:8px}.card .desc{color:#6e6e73;margin-bottom:20px;font-size:0.9rem}
+        label{font-size:0.78rem;font-weight:600;color:#1d1d1f;display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.3px}
+        textarea{width:100%;padding:14px;background:#fafafa;border:2px solid #e5e5ea;border-radius:10px;font-size:0.88rem;font-family:'SF Mono',Monaco,monospace;color:#1d1d1f;resize:vertical;min-height:160px;margin-bottom:12px;transition:0.15s}
+        textarea:focus{border-color:#0071e3;outline:none;background:#fff;box-shadow:0 0 0 3px rgba(0,113,227,0.06)}
+        .btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+        .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:10px;border:none;font-weight:600;font-size:0.85rem;cursor:pointer;font-family:inherit;transition:0.15s}
+        .btn-primary{background:#0071e3;color:#fff;flex:1;justify-content:center}.btn-primary:hover{background:#005bb5}
+        .btn-green{background:#34c759;color:#fff}.btn-green:hover{background:#2db14a}
+        .btn-outline{background:transparent;border:2px solid #e5e5ea;color:#1d1d1f}.btn-outline:hover{border-color:#0071e3;color:#0071e3}
+        .msg{font-size:0.82rem;margin-bottom:8px;min-height:20px}
+        .msg.ok{color:#34c759}.msg.err{color:#ff3b30}
+        .article{background:#fff;border:1px solid #e5e5ea;border-radius:14px;padding:28px;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+        .article h2{font-size:1.2rem;font-weight:700;margin:20px 0 10px}.article h2:first-child{margin-top:0}
+        .article p{color:#6e6e73;font-size:0.88rem;line-height:1.7;margin-bottom:12px}
+        .faq-box{background:#fafafa;border-radius:10px;padding:14px 16px;margin-bottom:8px}
+        .faq-box strong{display:block;font-size:0.9rem;margin-bottom:4px}.faq-box p{font-size:0.82rem;margin:0;color:#6e6e73}
+        .related{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+        .related a{padding:8px 16px;background:#f5f5f7;border-radius:20px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:500;border:1px solid #e5e5ea}
+        .related a:hover{border-color:#0071e3;color:#0071e3}
+        footer{background:#fff;border-top:1px solid #e5e5ea;padding:20px;text-align:center;margin-top:20px}
+        footer .links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+        footer .links a{color:#6e6e73;text-decoration:none;font-size:0.8rem}footer .links a:hover{color:#0071e3}
+        footer .copy{color:#8e8e93;font-size:0.72rem}
+        @media(max-width:600px){.card{padding:18px}.card h1{font-size:1.2rem}.btn-row{flex-direction:column}}
+    </style>
 </head>
-<body style="padding: 0 16px; margin: 0; overflow-x: hidden;">
-<!-- ═══════════ HEADER ═══════════ -->
+<body>
 
-<script>
-(function(){
-    const path = window.location.pathname;
-    const depth = (path.match(/\//g)||[]).length - 1;
-    const prefix = depth > 0 ? '../'.repeat(depth) : '';
-    
-    // Fix logo link
-    const logoLink = document.querySelector('header a[href="../../../index.html"]');
-    if(logoLink) logoLink.href = prefix + 'index.html';
-    
-    // Fix logo image
-    const logoImg = document.querySelector('header img[src="../../../ssets/images/toolprime.png"]');
-    if(logoImg) logoImg.src = prefix + 'assets/images/toolprime.png';
-    
-    // Fix search
-    const search = document.getElementById('tpSearch');
-    if(search){
-        search.addEventListener('keydown', function(e){
-            if(e.key === 'Enter'){
-                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
-            }
-        });
-    }
-    
-    // Home button for tool pages
-    if(depth > 0){
-        const right = document.getElementById('tpRight');
-        if(right){
-            right.innerHTML = '<a href="../../../index.html"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px;width:auto">Home</a>';
-        }
-        const header = document.querySelector('header');
-        if(header){ header.style.marginLeft = '-32px'; header.style.marginRight = '-32px'; }
-    }
-})();
-</script>
-<!-- ═══════════ TOOLPRIME HEADER ═══════════ -->
-
-<script>
-// Auto-fix header paths based on page location
-(function(){
-    const depth = (window.location.pathname.match(/\//g)||[]).length - 1;
-    const prefix = depth > 0 ? '../'.repeat(depth) : '';
-    
-    const logo = document.getElementById('tpLogo');
-    const logoImg = document.getElementById('tpLogoImg');
-    const search = document.getElementById('tpSearch');
-    const right = document.getElementById('tpRight');
-    
-    if(logo && prefix) logo.href = prefix + 'index.html';
-    if(logoImg && prefix) logoImg.src = prefix + 'assets/images/toolprime.png';
-    
-    // Search redirect
-    if(search){
-        search.addEventListener('keydown', function(e){
-            if(e.key === 'Enter'){
-                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
-            }
-        });
-    }
-    
-    // Show home button on tool pages
-    if(depth > 0 && right){
-        right.innerHTML = '<a href="../../../index.html"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px;width:auto">Home</a>';
-    }
-    
-    // Style header margin for tool pages
-    const header = document.getElementById('tpHeader');
-    if(depth > 0 && header){
-        header.style.marginLeft = '-32px';
-        header.style.marginRight = '-32px';
-    }
-})();
-</script>
-<!-- ═══════════ HEADER ═══════════ -->
-
-<!-- ═══════════ PREMIUM HEADER ═══════════ -->
-
-<div class="tp-wrap">
-    <a href="../../../index.html"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px;width:auto">← Back to Store</a>
-    <div class="tp-card">
-        <h1>{ } JSON Formatter</h1>
-        <p class="tp-desc">Format, validate, and beautify your JSON data online.</p>
-        <textarea id="inp" rows="6" placeholder='Paste JSON here... e.g. {"name":"John","age":30}'></textarea>
-<div style="display:flex;gap:8px;margin-bottom:12px">
-    <button class="btn" onclick="fmt()" style="flex:1">✨ Format / Beautify</button>
-    <button class="btn-sm" onclick="min()">📦 Minify</button>
-    <button class="btn-sm" onclick="val()">✅ Validate</button>
-</div>
-<textarea id="out" rows="8" placeholder="Formatted JSON will appear here..." readonly style="font-family:monospace;font-size:0.85rem"></textarea>
-<script>
-const inp=document.getElementById('inp'),out=document.getElementById('out');
-function fmt(){try{const o=JSON.parse(inp.value);out.value=JSON.stringify(o,null,2);out.style.color='var(--text)';msg('Formatted!')}catch(e){out.value='❌ Invalid JSON: '+e.message;out.style.color='#f87171'}}
-function min(){try{const o=JSON.parse(inp.value);out.value=JSON.stringify(o);out.style.color='var(--text)';msg('Minified!')}catch(e){out.value='❌ Invalid JSON';out.style.color='#f87171'}}
-function val(){try{JSON.parse(inp.value);out.value='✅ Valid JSON!';out.style.color='#4ade80';msg('Valid!')}catch(e){out.value='❌ Invalid: '+e.message;out.style.color='#f87171'}}
-</script>
+<header class="header">
+    <div class="header-inner">
+        <a href="../../../index.html" class="logo"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px"></a>
+        <a href="../../../index.html" class="home-btn">Home</a>
     </div>
-</div>
-<div class="toast" id="toast"></div>
-<script>
-function msg(t){const x=document.getElementById('toast');x.textContent=t;x.className='toast ok show';clearTimeout(x._t);x._t=setTimeout(()=>x.classList.remove('show'),2000)}
-</script>
+</header>
 
-<footer class="tp-footer">
-    <div class="tp-footer-inner">
-        <div class="tp-footer-links">
-            <a href="../../../index.html"><img src="../../../assets/images/toolprime.png" alt="ToolPrime" style="height:32px;width:auto">Home</a>
-            <a href="../../../bout.html">About</a>
-            <a href="../../../contact.html">Contact</a>
-            <a href="../../../privacy.html">Privacy Policy</a>
-            <a href="../../../	erms.html">Terms of Service</a>
+<div class="container">
+    <a href="../../../index.html" class="back-btn">← Back to Store</a>
+    
+    <div class="card">
+        <h1>📋 JSON Formatter</h1>
+        <p class="desc">Format, beautify & validate JSON data. Paste your JSON below to get clean, readable output.</p>
+        
+        <label>Input JSON</label>
+        <textarea id="jsonInput" placeholder='{"name":"John","age":30,"city":"NYC"}'></textarea>
+        
+        <div class="msg" id="msgBox"></div>
+        
+        <div class="btn-row">
+            <button class="btn btn-primary" onclick="formatJSON()">✨ Format / Beautify</button>
+            <button class="btn btn-green" onclick="minifyJSON()">📦 Minify</button>
+            <button class="btn btn-outline" onclick="validateJSON()">✅ Validate</button>
+            <button class="btn btn-outline" onclick="copyOutput()">📋 Copy</button>
+            <button class="btn btn-outline" onclick="clearAll()">🗑️ Clear</button>
         </div>
-        <p class="tp-footer-copy">&copy; 2025 ToolPrime. All rights reserved. Made with ❤️</p>
+        
+        <label style="margin-top:16px">Output</label>
+        <textarea id="jsonOutput" placeholder="Result will appear here..." readonly></textarea>
     </div>
+    
+    <div class="article">
+        <h2>Free Online JSON Formatter</h2>
+        <p>Format and validate <strong>JSON data</strong> instantly. Perfect for developers working with APIs, config files, and data exchange.</p>
+        <h2>How to Use</h2>
+        <ul><li>Paste JSON → Click Format/Beautify → See clean output → Copy!</li></ul>
+        <h2>Features</h2>
+        <ul><li>✅ Format/Beautify JSON with 2-space indent</li><li>✅ Minify to single line</li><li>✅ Validate JSON syntax</li><li>✅ Copy output instantly</li></ul>
+        <div class="faq-box"><strong>Q: What is JSON?</strong><p>A: JavaScript Object Notation — a lightweight data format used everywhere.</p></div>
+        <div class="faq-box"><strong>Q: Is my data safe?</strong><p>A: Yes! Everything processes in your browser. No data is sent anywhere.</p></div>
+        <h2>Related Tools</h2>
+        <div class="related">
+            <a href="../base64-encoder/">Base64 Encoder</a>
+            <a href="../url-encoder/">URL Encoder</a>
+            <a href="../json-to-csv/">JSON to CSV</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="links"><a href="../../../index.html">Home</a><a href="../../../about.html">About</a><a href="../../../contact.html">Contact</a><a href="../../../privacy.html">Privacy</a><a href="../../../terms.html">Terms</a></div>
+    <p class="copy">&copy; 2025 ToolPrime. Made with ❤️</p>
 </footer>
+
+<script>
+const inp=document.getElementById('jsonInput'),out=document.getElementById('jsonOutput'),msg=document.getElementById('msgBox');
+
+function show(m,t){msg.textContent=m;msg.className='msg '+(t||'ok')}
+
+function formatJSON(){
+    const v=inp.value.trim();
+    if(!v){show('Please paste JSON!','err');return}
+    try{const o=JSON.parse(v);out.value=JSON.stringify(o,null,2);show('✅ Formatted successfully!','ok')}
+    catch(e){show('❌ Invalid JSON: '+e.message,'err')}
+}
+
+function minifyJSON(){
+    const v=inp.value.trim();
+    if(!v){show('Please paste JSON!','err');return}
+    try{const o=JSON.parse(v);out.value=JSON.stringify(o);show('✅ Minified!','ok')}
+    catch(e){show('❌ Invalid JSON','err')}
+}
+
+function validateJSON(){
+    const v=inp.value.trim();
+    if(!v){show('Please paste JSON!','err');return}
+    try{JSON.parse(v);show('✅ Valid JSON!','ok')}
+    catch(e){show('❌ Invalid: '+e.message,'err')}
+}
+
+function copyOutput(){
+    const v=out.value;
+    if(!v){show('Nothing to copy!','err');return}
+    navigator.clipboard.writeText(v).then(()=>show('✅ Copied!','ok'));
+}
+
+function clearAll(){inp.value='';out.value='';msg.textContent='';msg.className='msg'}
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
