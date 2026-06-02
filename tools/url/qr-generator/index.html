@@ -2,405 +2,166 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="robots" content="index, follow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    
-    <title>Free QR Code Generator - Create QR Codes Online Instantly | ToolPrime</title>
-    <meta name="description" content="Free online QR code generator. Create QR codes for URLs, text, WiFi, phone & email. Customize colors, size & download as PNG. No sign-up required.">
-    <meta name="keywords" content="qr code generator, free qr code, create qr code online, qr maker, url to qr, wifi qr code, qr code creator, generate qr code free">
-    <link rel="canonical" href="https://toolprime.online/tools/url/qr-generator/">
-    
-    <meta property="og:title" content="Free QR Code Generator - ToolPrime">
-    <meta property="og:description" content="Generate QR codes instantly. Free, no sign-up.">
-
-    <link rel="stylesheet" href="../../../css/tool-style.css">
-    <style>@media(max-width:480px){body{padding:0 10px!important}}</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free QR Code Generator - Create QR Codes Online | ToolPrime</title>
+    <meta name="description" content="Generate free QR codes for URLs, text, WiFi, phone & email. Customize colors & download as PNG. No sign-up required.">
+    <meta name="keywords" content="qr code generator, free qr code, create qr code, qr maker, url to qr, wifi qr code">
+    <meta property="og:title" content="Free QR Code Generator | ToolPrime">
+    <link rel="canonical" href="https://toolprime.online../../qr-generator/">
     <link rel="icon" type="image/png" href="../../../assets/images/toolprime.png">
-    <style>footer{margin-left:-16px;margin-right:-16px}@media(max-width:768px){footer{margin-left:-12px;margin-right:-12px}}@media(max-width:480px){footer{margin-left:-8px;margin-right:-8px}}</style>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:system-ui,-apple-system,sans-serif;background:#f5f5f7;color:#1d1d1f;line-height:1.6;min-height:100vh}
+        .header{background:#fff;border-bottom:1px solid #e5e5ea;padding:0 20px;position:sticky;top:0;z-index:100}
+        .header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;height:56px;justify-content:space-between}
+        .logo{display:flex;align-items:center;text-decoration:none;gap:8px}.logo img{height:32px}.logo span{font-weight:700;color:#0071e3}
+        .home-btn{padding:7px 14px;background:#f5f5f7;border-radius:8px;text-decoration:none;color:#1d1d1f;font-weight:600;font-size:0.82rem;transition:0.15s}
+        .home-btn:hover{background:#0071e3;color:#fff}
+        .container{max-width:650px;margin:0 auto;padding:30px 20px 50px}
+        .back{display:inline-flex;align-items:center;gap:6px;color:#0071e3;text-decoration:none;font-weight:500;font-size:0.9rem;margin-bottom:20px}
+        .card{background:#fff;border:1px solid #e5e5ea;border-radius:14px;padding:28px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:24px}
+        .card h1{font-size:1.5rem;font-weight:800;margin-bottom:8px}.card .desc{color:#6e6e73;margin-bottom:20px;font-size:0.9rem}
+        .tabs{display:flex;gap:4px;margin-bottom:16px;background:#f5f5f7;border-radius:10px;padding:4px}
+        .tab{flex:1;padding:9px 12px;text-align:center;border-radius:8px;cursor:pointer;font-weight:600;font-size:0.8rem;border:none;background:transparent;color:#6e6e73;font-family:inherit;transition:0.15s}
+        .tab.active{background:#fff;color:#0071e3;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+        label{display:block;font-size:0.78rem;font-weight:600;color:#1d1d1f;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.3px}
+        input[type=text],input[type=url],input[type=password],textarea,select{width:100%;padding:10px 14px;background:#f5f5f7;border:2px solid #e5e5ea;border-radius:10px;font-size:0.9rem;font-family:inherit;color:#1d1d1f;margin-bottom:12px;transition:0.15s}
+        input:focus,textarea:focus,select:focus{border-color:#0071e3;outline:none;background:#fff;box-shadow:0 0 0 3px rgba(0,113,227,0.06)}
+        textarea{resize:vertical;min-height:80px}
+        .row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px}.row .col{flex:1;min-width:120px}
+        .options{display:flex;gap:14px;align-items:center;margin-bottom:14px;flex-wrap:wrap}
+        .options label{font-size:0.82rem;margin:0;text-transform:none;letter-spacing:0}
+        .options input[type=color]{width:40px;height:35px;border:2px solid #e5e5ea;border-radius:6px;cursor:pointer;padding:2px}
+        .options input[type=range]{width:100px;accent-color:#0071e3}
+        .btn-gen{width:100%;padding:14px;background:linear-gradient(135deg,#0071e3,#5ac8fa);color:#fff;border:none;border-radius:12px;font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit;transition:0.2s;margin-bottom:16px}
+        .btn-gen:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,113,227,0.3)}
+        .qr-result{text-align:center;padding:20px;background:#fff;border:2px solid #0071e3;border-radius:12px;display:none}
+        .qr-result.show{display:block}.qr-result img{max-width:100%}
+        .btn-dl{display:inline-flex;align-items:center;gap:6px;margin-top:12px;padding:10px 20px;background:#34c759;color:#fff;border:none;border-radius:8px;font-weight:600;cursor:pointer;font-family:inherit;font-size:0.85rem}
+        .btn-dl:hover{background:#2db14a}
+        .article{background:#fff;border:1px solid #e5e5ea;border-radius:14px;padding:28px;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+        .article h2{font-size:1.2rem;font-weight:700;margin:20px 0 10px}.article h2:first-child{margin-top:0}
+        .article p{color:#6e6e73;font-size:0.88rem;line-height:1.7;margin-bottom:12px}
+        .article ul{padding-left:18px;margin-bottom:12px}.article li{color:#6e6e73;font-size:0.85rem;line-height:1.7;margin-bottom:4px}
+        .faq-box{background:#fafafa;border-radius:10px;padding:14px 16px;margin-bottom:8px}
+        .faq-box strong{display:block;font-size:0.9rem;margin-bottom:4px}.faq-box p{font-size:0.82rem;margin:0;color:#6e6e73}
+        .related{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+        .related a{padding:8px 16px;background:#f5f5f7;border-radius:20px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:500;border:1px solid #e5e5ea}
+        .related a:hover{border-color:#0071e3;color:#0071e3}
+        footer{background:#fff;border-top:1px solid #e5e5ea;padding:20px;text-align:center;margin-top:20px}
+        footer .links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+        footer .links a{color:#6e6e73;text-decoration:none;font-size:0.8rem}footer .links a:hover{color:#0071e3}
+        footer .copy{color:#8e8e93;font-size:0.72rem}
+        .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1d1d1f;color:#fff;padding:10px 22px;border-radius:24px;font-size:0.85rem;z-index:999;opacity:0;transition:0.3s}
+        .toast.show{opacity:1}
+        @media(max-width:600px){.card{padding:18px}.card h1{font-size:1.2rem}.tabs{flex-wrap:wrap}.tab{font-size:0.75rem;padding:7px 10px}}
+    </style>
 </head>
-<body style="padding: 0 16px; margin: 0; overflow-x: hidden;">
-<!-- ═══════════ HEADER ═══════════ -->
-<header style="background:#fff;border-bottom:1px solid #e8eaed;padding:0;position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,0.04)">
-    <div style="max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 24px;gap:20px">
-        
-        <!-- Logo - Direct image only -->
-        <a href="../index.html" style="display:flex;align-items:center;text-decoration:none;flex-shrink:0">
-            <img src="../assets/images/toolprime.png" alt="ToolPrime" style="height:38px;width:auto;display:block">
-        </a>
-        
-        <!-- Search -->
-        <div style="flex:1;max-width:480px">
-            <input type="text" id="tpSearch" placeholder="Search tools..." autocomplete="off"
-                style="width:100%;padding:12px 20px;background:#f5f5f7;border:2px solid transparent;border-radius:14px;font-size:0.9rem;font-family:inherit;color:#1d1d1f;outline:none;transition:all 0.25s ease"
-                onfocus="this.style.background='#fff';this.style.borderColor='#0071e3';this.style.boxShadow='0 0 0 4px rgba(0,113,227,0.08)'"
-                onblur="this.style.background='#f5f5f7';this.style.borderColor='transparent';this.style.boxShadow='none'">
-        </div>
-        
-        <!-- Right -->
-        <div id="tpRight" style="flex-shrink:0">
-            <span style="font-size:0.78rem;color:#6e6e73;font-weight:500">🛠️ 20+ Tools</span>
-        </div>
+<body>
+
+<header class="header">
+    <div class="header-inner">
+        <a href="../../../index.html" class="logo"><img src="../../../assets/images/toolprime.png" alt="TP"><span>ToolPrime</span></a>
+        <a href="../../../index.html">Home</a>
     </div>
 </header>
 
-<script>
-(function(){
-    const path = window.location.pathname;
-    const depth = (path.match(/\//g)||[]).length - 1;
-    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+<div class="container">
+    <a href="../../../index.html" class="back">← Back to Store</a>
     
-    // Fix logo link
-    const logoLink = document.querySelector('header a[href="../index.html"]');
-    if(logoLink) logoLink.href = prefix + 'index.html';
-    
-    // Fix logo image
-    const logoImg = document.querySelector('header img[src="../assets/images/toolprime.png"]');
-    if(logoImg) logoImg.src = prefix + 'assets/images/toolprime.png';
-    
-    // Fix search
-    const search = document.getElementById('tpSearch');
-    if(search){
-        search.addEventListener('keydown', function(e){
-            if(e.key === 'Enter'){
-                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
-            }
-        });
-    }
-    
-    // Home button for tool pages
-    if(depth > 0){
-        const right = document.getElementById('tpRight');
-        if(right){
-            right.innerHTML = '<a href="' + prefix + 'index.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f5f5f7;border-radius:10px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:600;transition:0.2s;white-space:nowrap" onmouseover="this.style.background=\'#0071e3\';this.style.color=\'#fff\'" onmouseout="this.style.background=\'#f5f5f7\';this.style.color=\'#1d1d1f\'">🏠 Home</a>';
-        }
-        const header = document.querySelector('header');
-        if(header){ header.style.marginLeft = '-32px'; header.style.marginRight = '-32px'; }
-    }
-})();
-</script>
-<!-- ═══════════ TOOLPRIME HEADER ═══════════ -->
-
-
-<script>
-// Auto-fix header paths based on page location
-(function(){
-    const depth = (window.location.pathname.match(/\//g)||[]).length - 1;
-    const prefix = depth > 0 ? '../'.repeat(depth) : '';
-    
-    const logo = document.getElementById('tpLogo');
-    const logoImg = document.getElementById('tpLogoImg');
-    const search = document.getElementById('tpSearch');
-    const right = document.getElementById('tpRight');
-    
-    if(logo && prefix) logo.href = prefix + 'index.html';
-    if(logoImg && prefix) logoImg.src = prefix + 'assets/images/toolprime.png';
-    
-    // Search redirect
-    if(search){
-        search.addEventListener('keydown', function(e){
-            if(e.key === 'Enter'){
-                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
-            }
-        });
-    }
-    
-    // Show home button on tool pages
-    if(depth > 0 && right){
-        right.innerHTML = '<a href="' + prefix + 'index.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f5f5f7;border-radius:10px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:600;transition:0.2s;white-space:nowrap" onmouseover="this.style.background=\'#0071e3\';this.style.color=\'#fff\'" onmouseout="this.style.background=\'#f5f5f7\';this.style.color=\'#1d1d1f\'">🏠 Home</a>';
-    }
-    
-    // Style header margin for tool pages
-    const header = document.getElementById('tpHeader');
-    if(depth > 0 && header){
-        header.style.marginLeft = '-32px';
-        header.style.marginRight = '-32px';
-    }
-})();
-</script>
-<!-- ═══════════ HEADER ═══════════ -->
-
-<!-- ═══════════ PREMIUM HEADER ═══════════ -->
-
-
-
-
-
-
-
-
-
-
-
-<div class="tp-wrap">
-    <a href="../../../index.html" class="tp-back">← Back to Store</a>
-    
-    <div class="tp-card">
+    <div class="card">
         <h1>📱 QR Code Generator</h1>
-        <p class="tp-desc">Generate free QR codes. Choose type, enter data, customize & download as PNG.</p>
+        <p class="desc">Generate free QR codes for URLs, text, WiFi, phone & email. Download as PNG.</p>
         
-        <div class="type-tabs" id="tabs">
-            <button class="type-tab active" data-t="url">🔗 URL</button>
-            <button class="type-tab" data-t="text">📝 Text</button>
-            <button class="type-tab" data-t="wifi">📶 WiFi</button>
-            <button class="type-tab" data-t="phone">📞 Phone</button>
-            <button class="type-tab" data-t="email">📧 Email</button>
+        <div class="tabs" id="tabs">
+            <button class="tab active" data-t="url">🔗 URL</button>
+            <button class="tab" data-t="text">📝 Text</button>
+            <button class="tab" data-t="wifi">📶 WiFi</button>
+            <button class="tab" data-t="phone">📞 Phone</button>
+            <button class="tab" data-t="email">📧 Email</button>
         </div>
         
         <div id="inputs"></div>
         
-        <div class="opts">
-            <div class="opt"><label>Color:</label><input type="color" id="clr" value="#000000"></div>
-            <div class="opt"><label>Size:</label><input type="range" id="szR" min="150" max="400" value="250"><span class="sz" id="szV">250px</span></div>
+        <div class="options">
+            <label>Color: <input type="color" id="qrColor" value="#000000"></label>
+            <label>Size: <input type="range" id="qrSize" min="150" max="400" value="250" oninput="document.getElementById('sizeVal').textContent=this.value+'px'"> <span id="sizeVal" style="font-weight:700;color:#0071e3">250px</span></label>
         </div>
         
         <button class="btn-gen" onclick="gen()">✨ Generate QR Code</button>
         
-        <div class="qr-out" id="out">
+        <div class="qr-result" id="qrResult">
             <div id="qrImg"></div>
             <button class="btn-dl" onclick="dl()">⬇️ Download PNG</button>
         </div>
     </div>
+    
+    <div class="article">
+        <h2>Free QR Code Generator Online</h2>
+        <p>Create <strong>QR codes</strong> instantly for any purpose. Share URLs, WiFi passwords, contact info, or plain text via QR.</p>
+        <h2>How to Generate</h2>
+        <ul><li><strong>Step 1:</strong> Select QR type</li><li><strong>Step 2:</strong> Enter your data</li><li><strong>Step 3:</strong> Customize & download</li></ul>
+        <h2>Features</h2>
+        <ul><li>✅ 5 QR types</li><li>✅ Custom colors & size</li><li>✅ High quality PNG</li><li>✅ Free unlimited</li></ul>
+        <div class="faq-box"><strong>Q: Do QR codes expire?</strong><p>A: No, they work forever!</p></div>
+        <div class="faq-box"><strong>Q: Can I scan with any phone?</strong><p>A: Yes, any modern phone camera.</p></div>
+        <h2>Related Tools</h2>
+        <div class="related">
+            <a href="../../develop../../developer/../../../../developer/url-encoder/">🔗 URL Encoder</a>
+            <a href="../../develop../../developer/../../../../developer/website-to-apk/">📲 Website to APK</a>
+            <a href="../../s../../seo/../../../../seo/meta-tag-generator/">🏷️ Meta Tags</a>
+        </div>
+    </div>
 </div>
+
+<footer>
+    <div class="links">
+        <a href="../../../index.html">Home</a><a href="../../../about.html">About</a>
+        <a href="../../../contact.html">Contact</a><a href="../../../privacy.html">Privacy</a>
+        <a href="../../../terms.html">Terms</a>
+    </div>
+    <p class="copy">&copy; 2025 ToolPrime. Made with ❤️</p>
+</footer>
 
 <div class="toast" id="toast"></div>
 
 <script>
-const toast=document.getElementById('toast');
-function msg(t,x){toast.textContent=t;toast.className='toast '+(x||'')+' show';clearTimeout(toast._t);toast._t=setTimeout(()=>toast.classList.remove('show'),2500)}
-
 let type='url';
-document.getElementById('tabs').onclick=e=>{
-    const b=e.target.closest('.type-tab');if(!b)return;
-    document.querySelectorAll('.type-tab').forEach(t=>t.classList.remove('active'));
-    b.classList.add('active');type=b.dataset.t;inp();
-};
+function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.className='toast show';clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),2000)}
 
-document.getElementById('szR').oninput=()=>document.getElementById('szV').textContent=document.getElementById('szR').value+'px';
+document.getElementById('tabs').onclick=e=>{const b=e.target.closest('.tab');if(!b)return;document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));b.classList.add('active');type=b.dataset.t;renderInputs()};
 
-function inp(){
+function renderInputs(){
     const d=document.getElementById('inputs');let h='';
-    if(type=='url')h=`<div class="inp-group"><label>🌐 URL</label><input type="url" id="u1" placeholder="https://example.com" value="https://"></div>`;
-    else if(type=='text')h=`<div class="inp-group"><label>📝 Text</label><textarea id="t1" placeholder="Enter text..." rows="3"></textarea></div>`;
-    else if(type=='wifi')h=`<div class="inp-group"><label>📶 WiFi</label><div class="inp-row"><input type="text" id="w1" placeholder="Network Name (SSID)"><input type="password" id="w2" placeholder="Password"></div><select id="w3" style="margin-top:8px;padding:10px;width:100%;background:var(--search-bg);border:1.5px solid var(--border);border-radius:12px;color:var(--text);font-family:inherit"><option value="WPA">WPA/WPA2</option><option value="WEP">WEP</option><option value="nopass">No Password</option></select></div>`;
-    else if(type=='phone')h=`<div class="inp-group"><label>📞 Phone</label><input type="tel" id="p1" placeholder="+1234567890"></div>`;
-    else if(type=='email')h=`<div class="inp-group"><label>📧 Email</label><input type="email" id="e1" placeholder="email@example.com"><input type="text" id="e2" placeholder="Subject (optional)" style="margin-top:6px"><textarea id="e3" placeholder="Message (optional)" style="margin-top:6px;min-height:50px"></textarea></div>`;
+    if(type==='url')h='<label>URL</label><input type="url" id="u1" placeholder="https://example.com" value="https://">';
+    else if(type==='text')h='<label>Text</label><textarea id="t1" placeholder="Enter text..."></textarea>';
+    else if(type==='wifi')h='<label>WiFi Network</label><div class="row"><div class="col"><input type="text" id="w1" placeholder="Network Name (SSID)"></div><div class="col"><input type="password" id="w2" placeholder="Password"></div></div><select id="w3"><option value="WPA">WPA/WPA2</option><option value="WEP">WEP</option><option value="nopass">No Password</option></select>';
+    else if(type==='phone')h='<label>Phone Number</label><input type="tel" id="p1" placeholder="+1234567890">';
+    else if(type==='email')h='<label>Email</label><input type="email" id="e1" placeholder="email@example.com"><input type="text" id="e2" placeholder="Subject (optional)" style="margin-top:6px"><textarea id="e3" placeholder="Message (optional)" style="margin-top:6px;min-height:50px"></textarea>';
     d.innerHTML=h;
 }
 
-function gd(){
-    if(type=='url')return document.getElementById('u1')?.value?.trim()||'https://toolprime.online';
-    if(type=='text')return document.getElementById('t1')?.value?.trim()||'Hello ToolPrime!';
-    if(type=='wifi'){const s=document.getElementById('w1')?.value?.trim()||'MyWiFi',p=document.getElementById('w2')?.value?.trim()||'',e=document.getElementById('w3')?.value||'WPA';return `WIFI:T:${e};S:${s};P:${p};;`;}
-    if(type=='phone')return 'tel:'+(document.getElementById('p1')?.value?.trim()||'+1234567890');
-    if(type=='email'){const t=document.getElementById('e1')?.value?.trim()||'a@b.com',s=document.getElementById('e2')?.value?.trim(),b=document.getElementById('e3')?.value?.trim();let m='mailto:'+t,p=[];if(s)p.push('subject='+encodeURIComponent(s));if(b)p.push('body='+encodeURIComponent(b));if(p.length)m+='?'+p.join('&');return m;}
+function getData(){
+    if(type==='url')return document.getElementById('u1')?.value?.trim()||'https://toolprime.online';
+    if(type==='text')return document.getElementById('t1')?.value?.trim()||'Hello ToolPrime!';
+    if(type==='wifi'){const s=document.getElementById('w1')?.value?.trim()||'MyWiFi',p=document.getElementById('w2')?.value?.trim()||'',e=document.getElementById('w3')?.value||'WPA';return `WIFI:T:${e};S:${s};P:${p};;`;}
+    if(type==='phone')return 'tel:'+(document.getElementById('p1')?.value?.trim()||'+1234567890');
+    if(type==='email'){const t=document.getElementById('e1')?.value?.trim()||'a@b.com',s=document.getElementById('e2')?.value?.trim(),b=document.getElementById('e3')?.value?.trim();let m='mailto:'+t,p=[];if(s)p.push('subject='+encodeURIComponent(s));if(b)p.push('body='+encodeURIComponent(b));if(p.length)m+='?'+p.join('&');return m;}
     return 'https://toolprime.online';
 }
 
 function gen(){
-    const d=gd(),s=document.getElementById('szR').value,c=document.getElementById('clr').value.replace('#','');
-    if(!d){msg('Enter data first!','err');return}
+    const d=getData(),s=document.getElementById('qrSize').value,c=document.getElementById('qrColor').value.replace('#','');
     const u=`https://api.qrserver.com/v1/create-qr-code/?size=${s}x${s}&data=${encodeURIComponent(d)}&color=${c}&bgcolor=fff&margin=10`;
-    document.getElementById('qrImg').innerHTML=`<img src="${u}" alt="QR Code" onload="document.getElementById('out').classList.add('show');msg('Generated!','ok')" onerror="msg('Failed!','err')">`;
+    document.getElementById('qrImg').innerHTML=`<img src="${u}" alt="QR Code" onload="document.getElementById('qrResult').classList.add('show');showToast('Generated!')" onerror="showToast('Failed!')">`;
 }
 
-function dl(){
-    const i=document.querySelector('#qrImg img');if(!i){msg('Generate first!','err');return}
-    fetch(i.src).then(r=>r.blob()).then(b=>{const u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download='qrcode.png';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(u);msg('Downloaded!','ok')}).catch(()=>{window.open(i.src,'_blank');msg('Right-click to save','ok')});
-}
-
-document.addEventListener('keydown',e=>{if(e.ctrlKey&&e.key=='Enter'){e.preventDefault();gen()}if(e.ctrlKey&&e.key=='d'){e.preventDefault();dl()}});
-inp();
+function dl(){const i=document.querySelector('#qrImg img');if(!i){showToast('Generate first!');return}fetch(i.src).then(r=>r.blob()).then(b=>{const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='qrcode.png';document.body.appendChild(a);a.click();document.body.removeChild(a);showToast('Downloaded!')}).catch(()=>window.open(i.src,'_blank'))}
+document.addEventListener('keydown',e=>{if(e.ctrlKey&&e.key==='Enter'){e.preventDefault();gen()}});
+renderInputs();
 </script>
-
-<div style="background:#fff;border:1px solid #e5e5ea;border-radius:14px;padding:28px;margin-top:20px;box-shadow:0 2px 8px rgba(0,0,0,0.04)">
-    <h2 style="font-size:1.2rem;font-weight:700;margin-bottom:12px;color:#1d1d1f">📋 How to Create QR Codes Online</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:20px">
-        <div style="background:#f5f5f7;padding:16px;border-radius:10px">
-            <div style="font-size:1.5rem;font-weight:700;color:#0071e3;margin-bottom:4px">1️⃣</div>
-            <div style="font-weight:600;margin-bottom:2px">Select QR Type</div>
-            <div style="font-size:0.8rem;color:#6e6e73">Choose URL, Text, WiFi, Phone, or Email QR code type.</div>
-        </div>
-        <div style="background:#f5f5f7;padding:16px;border-radius:10px">
-            <div style="font-size:1.5rem;font-weight:700;color:#0071e3;margin-bottom:4px">2️⃣</div>
-            <div style="font-weight:600;margin-bottom:2px">Enter Your Data</div>
-            <div style="font-size:0.8rem;color:#6e6e73">Type or paste your URL, text, or WiFi credentials.</div>
-        </div>
-        <div style="background:#f5f5f7;padding:16px;border-radius:10px">
-            <div style="font-size:1.5rem;font-weight:700;color:#0071e3;margin-bottom:4px">3️⃣</div>
-            <div style="font-weight:600;margin-bottom:2px">Download & Share</div>
-            <div style="font-size:0.8rem;color:#6e6e73">Customize colors, size and download your QR code as PNG image.</div>
-        </div>
-    </div>
-    
-    <h2 style="font-size:1.1rem;font-weight:700;margin:20px 0 10px;color:#1d1d1f">✨ Features</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;margin-bottom:20px">
-        <div style="font-size:0.85rem">✅ 5 QR code types</div>
-        <div style="font-size:0.85rem">✅ Custom colors</div>
-        <div style="font-size:0.85rem">✅ Adjustable size</div>
-        <div style="font-size:0.85rem">✅ PNG download</div>
-        <div style="font-size:0.85rem">✅ WiFi QR codes</div>
-        <div style="font-size:0.85rem">✅ URL to QR</div>
-        <div style="font-size:0.85rem">✅ No sign-up needed</div>
-        <div style="font-size:0.85rem">✅ High resolution</div>
-    </div>
-    
-    <h2 style="font-size:1.1rem;font-weight:700;margin:20px 0 10px;color:#1d1d1f">❓ FAQ</h2>
-    <div style="margin-bottom:8px"><strong>Q: Are QR codes permanent?</strong><br><span style="color:#6e6e73;font-size:0.88rem">A: Yes, once generated the QR code image works forever. Save the PNG file.</span></div>
-    <div style="margin-bottom:8px"><strong>Q: Can I scan with any phone?</strong><br><span style="color:#6e6e73;font-size:0.88rem">A: Yes, works with any QR scanner app on Android, iPhone, or camera app.</span></div>
-    
-    <h2 style="font-size:1.1rem;font-weight:700;margin:20px 0 10px;color:#1d1d1f">🔗 Related Tools</h2>
-    <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <a href="../../developer/url-encoder/index.html" class="related-link">🔗 URL Encoder</a>
-        <a href="../../seo/meta-tag-generator/index.html" class="related-link">🏷️ Meta Tag Generator</a>
-    </div>
-</div>
-<!-- ═══════════ SEO SECTION ═══════════ -->
-<div style="max-width:850px;margin:0 auto;padding:0 20px 40px">
-    <div style="background:#fff;border:1px solid #e5e5ea;border-radius:14px;padding:28px;box-shadow:0 2px 8px rgba(0,0,0,0.04)">
-        
-        <h2 style="font-size:1.3rem;font-weight:700;margin-bottom:8px;color:#1d1d1f">Free QR Code Generator Online - Create QR Codes Instantly</h2>
-        <p style="color:#6e6e73;font-size:0.92rem;line-height:1.7;margin-bottom:20px">
-            Create <strong>free QR codes</strong> online instantly. Generate QR codes for URLs, text, WiFi networks, phone numbers & email addresses. Customize colors, size and download as high-quality PNG images. No sign-up required!
-        </p>
-        
-        <h3 style="font-size:1.1rem;font-weight:700;margin:20px 0 12px;color:#1d1d1f">QR Code Types You Can Generate</h3>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:20px">
-            <div style="background:#f0f6ff;padding:14px;border-radius:10px;text-align:center">
-                <div style="font-size:2rem;margin-bottom:4px">🔗</div>
-                <div style="font-weight:700;font-size:0.85rem">URL / Website</div>
-                <div style="font-size:0.72rem;color:#6e6e73">Link to any website</div>
-            </div>
-            <div style="background:#f0f6ff;padding:14px;border-radius:10px;text-align:center">
-                <div style="font-size:2rem;margin-bottom:4px">📝</div>
-                <div style="font-weight:700;font-size:0.85rem">Plain Text</div>
-                <div style="font-size:0.72rem;color:#6e6e73">Any text message</div>
-            </div>
-            <div style="background:#f0f6ff;padding:14px;border-radius:10px;text-align:center">
-                <div style="font-size:2rem;margin-bottom:4px">📶</div>
-                <div style="font-weight:700;font-size:0.85rem">WiFi Network</div>
-                <div style="font-size:0.72rem;color:#6e6e73">Auto-connect WiFi</div>
-            </div>
-            <div style="background:#f0f6ff;padding:14px;border-radius:10px;text-align:center">
-                <div style="font-size:2rem;margin-bottom:4px">📞</div>
-                <div style="font-weight:700;font-size:0.85rem">Phone Number</div>
-                <div style="font-size:0.72rem;color:#6e6e73">One-tap calling</div>
-            </div>
-            <div style="background:#f0f6ff;padding:14px;border-radius:10px;text-align:center">
-                <div style="font-size:2rem;margin-bottom:4px">📧</div>
-                <div style="font-weight:700;font-size:0.85rem">Email Address</div>
-                <div style="font-size:0.72rem;color:#6e6e73">Quick email compose</div>
-            </div>
-        </div>
-        
-        <h3 style="font-size:1.1rem;font-weight:700;margin:20px 0 12px;color:#1d1d1f">How to Create a QR Code</h3>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:20px">
-            <div style="text-align:center;background:#fff8e1;padding:16px;border-radius:12px">
-                <div style="font-size:2rem;margin-bottom:6px">1️⃣</div>
-                <div style="font-weight:700;margin-bottom:4px">Select QR Type</div>
-                <div style="font-size:0.78rem;color:#6e6e73">Choose URL, Text, WiFi, Phone or Email</div>
-            </div>
-            <div style="text-align:center;background:#fff8e1;padding:16px;border-radius:12px">
-                <div style="font-size:2rem;margin-bottom:6px">2️⃣</div>
-                <div style="font-weight:700;margin-bottom:4px">Enter Data</div>
-                <div style="font-size:0.78rem;color:#6e6e73">Type your URL, text or WiFi details</div>
-            </div>
-            <div style="text-align:center;background:#fff8e1;padding:16px;border-radius:12px">
-                <div style="font-size:2rem;margin-bottom:6px">3️⃣</div>
-                <div style="font-weight:700;margin-bottom:4px">Download PNG</div>
-                <div style="font-size:0.78rem;color:#6e6e73">Customize & download high-quality QR</div>
-            </div>
-        </div>
-        
-        <h3 style="font-size:1.1rem;font-weight:700;margin:20px 0 12px;color:#1d1d1f">Common Uses for QR Codes</h3>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:20px">
-            <div style="background:#f5f5f7;padding:14px;border-radius:10px;font-size:0.85rem">🏪 <strong>Business:</strong> Menu links, website URLs, payment links</div>
-            <div style="background:#f5f5f7;padding:14px;border-radius:10px;font-size:0.85rem">📶 <strong>WiFi Sharing:</strong> Guests scan to connect instantly</div>
-            <div style="background:#f5f5f7;padding:14px;border-radius:10px;font-size:0.85rem">🎫 <strong>Events:</strong> Tickets, invitations, check-in links</div>
-            <div style="background:#f5f5f7;padding:14px;border-radius:10px;font-size:0.85rem">📱 <strong>Social Media:</strong> Instagram, WhatsApp, YouTube links</div>
-            <div style="background:#f5f5f7;padding:14px;border-radius:10px;font-size:0.85rem">📋 <strong>Marketing:</strong> Flyers, brochures, business cards</div>
-            <div style="background:#f5f5f7;padding:14px;border-radius:10px;font-size:0.85rem">🏠 <strong>Personal:</strong> Contact info, vCard, personal website</div>
-        </div>
-        
-        <h3 style="font-size:1.1rem;font-weight:700;margin:20px 0 12px;color:#1d1d1f">Features</h3>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:20px">
-            <div style="font-size:0.82rem">✅ 5 QR code types</div>
-            <div style="font-size:0.82rem">✅ Custom colors</div>
-            <div style="font-size:0.82rem">✅ Adjustable size (150-400px)</div>
-            <div style="font-size:0.82rem">✅ PNG download</div>
-            <div style="font-size:0.82rem">✅ High resolution</div>
-            <div style="font-size:0.82rem">✅ WiFi QR codes</div>
-            <div style="font-size:0.82rem">✅ URL to QR instant</div>
-            <div style="font-size:0.82rem">✅ No sign-up needed</div>
-            <div style="font-size:0.82rem">✅ Free unlimited use</div>
-            <div style="font-size:0.82rem">✅ Works on mobile</div>
-            <div style="font-size:0.82rem">✅ Instant generation</div>
-            <div style="font-size:0.82rem">✅ Browser-based (private)</div>
-        </div>
-        
-        <h3 style="font-size:1.1rem;font-weight:700;margin:20px 0 12px;color:#1d1d1f">Frequently Asked Questions</h3>
-        <div style="margin-bottom:10px;background:#fafafa;padding:14px;border-radius:10px">
-            <strong>Q: Is this QR code generator really free?</strong><br>
-            <span style="color:#6e6e73;font-size:0.85rem">A: Yes! 100% free. Generate unlimited QR codes with no restrictions, no watermarks, and no sign-up required.</span>
-        </div>
-        <div style="margin-bottom:10px;background:#fafafa;padding:14px;border-radius:10px">
-            <strong>Q: Do QR codes expire?</strong><br>
-            <span style="color:#6e6e73;font-size:0.85rem">A: No! QR codes are permanent. Once generated, they work forever as long as the encoded data (URL, text) remains valid.</span>
-        </div>
-        <div style="margin-bottom:10px;background:#fafafa;padding:14px;border-radius:10px">
-            <strong>Q: Can I scan QR codes with any phone?</strong><br>
-            <span style="color:#6e6e73;font-size:0.85rem">A: Yes! Modern iPhones (iOS 11+) and Android phones can scan QR codes directly from the camera app. No extra app needed.</span>
-        </div>
-        <div style="margin-bottom:10px;background:#fafafa;padding:14px;border-radius:10px">
-            <strong>Q: What size should I make my QR code?</strong><br>
-            <span style="color:#6e6e73;font-size:0.85rem">A: For print, use at least 2x2 cm (200px+). For digital use, 250-400px is ideal. Our tool supports 150-400px sizes.</span>
-        </div>
-        <div style="margin-bottom:10px;background:#fafafa;padding:14px;border-radius:10px">
-            <strong>Q: Can I use these QR codes commercially?</strong><br>
-            <span style="color:#6e6e73;font-size:0.85rem">A: Absolutely! QR codes generated are yours to use for any purpose — business, personal, or commercial.</span>
-        </div>
-        
-        <h3 style="font-size:1.1rem;font-weight:700;margin:20px 0 12px;color:#1d1d1f">🔗 Related Tools</h3>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <a href="../../developer/url-encoder/index.html" class="related-link">🔗 URL Encoder</a>
-            <a href="../../developer/website-to-apk/index.html" class="related-link">📲 Website to APK</a>
-            <a href="../../seo/meta-tag-generator/index.html" class="related-link">🏷️ Meta Tag Generator</a>
-            <a href="../../design/color-picker/index.html" class="related-link">🎨 Color Picker</a>
-        </div>
-    </div>
-</div>
-<footer style="background:#fff;border-top:1px solid #e5e5ea;padding:24px 20px;margin-top:40px">
-    <div style="max-width:800px;margin:0 auto;text-align:center">
-        <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:12px">
-            <a href="../../../index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🏠 Home</a>
-            <a href="../../../tools/image/png-to-jpg-converter/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🖼️ PNG to JPG</a>
-            <a href="../../../tools/text/word-counter/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">📝 Word Counter</a>
-            <a href="../../../tools/url/qr-generator/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">📱 QR Code</a>
-            <a href="../../../tools/security/password-generator/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🔐 Password</a>
-        </div>
-        <p style="color:#8e8e93;font-size:0.76rem;margin:0">&copy; 2025 ToolPrime. All rights reserved. Made with ❤️</p>
-    </div>
-</footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

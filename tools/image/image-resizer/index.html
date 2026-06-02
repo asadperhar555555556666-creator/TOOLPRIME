@@ -2,467 +2,205 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="robots" content="index, follow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    
-    <!-- SEO -->
-    <title>Image Resizer - Resize Images Online Free | ToolPrime</title>
-    <meta name="description" content="Resize images online free. Change image dimensions, scale by percentage. Supports JPG, PNG, WebP. Instant download.">
-    <meta name="keywords" content="resize image, image resizer, change image size, photo resizer, resize jpg, resize png online">
-    <link rel="canonical" href="https://toolprime.online/tools/image/image-resizer/">
-    
-    <meta property="og:title" content="Free Image Resizer - ToolPrime">
-    <meta property="og:description" content="Resize images online free. Change dimensions or percentage. Instant download.">
-
-    <link rel="stylesheet" href="../../../css/tool-style.css">
-    <style>@media(max-width:480px){body{padding:0 10px!important}}</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Image Resizer - Resize Images Online | ToolPrime</title>
+    <meta name="description" content="Resize images online free. Change dimensions by pixels or percentage. Presets for social media, web. Instant download.">
+    <meta name="keywords" content="image resizer, resize image, change image size, photo resizer, resize jpg, resize png">
+    <meta property="og:title" content="Free Image Resizer | ToolPrime">
+    <link rel="canonical" href="https://toolprime.online../../image-resizer/">
     <link rel="icon" type="image/png" href="../../../assets/images/toolprime.png">
-    <style>footer{margin-left:-16px;margin-right:-16px}@media(max-width:768px){footer{margin-left:-12px;margin-right:-12px}}@media(max-width:480px){footer{margin-left:-8px;margin-right:-8px}}</style>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:system-ui,-apple-system,sans-serif;background:#f5f5f7;color:#1d1d1f;line-height:1.6;min-height:100vh}
+        .header{background:#fff;border-bottom:1px solid #e5e5ea;padding:0 20px;position:sticky;top:0;z-index:100}
+        .header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;height:56px;justify-content:space-between}
+        .logo{display:flex;align-items:center;text-decoration:none;gap:8px}.logo img{height:32px}.logo span{font-weight:700;color:#0071e3}
+        .home-btn{padding:7px 14px;background:#f5f5f7;border-radius:8px;text-decoration:none;color:#1d1d1f;font-weight:600;font-size:0.82rem;transition:0.15s}
+        .home-btn:hover{background:#0071e3;color:#fff}
+        .container{max-width:750px;margin:0 auto;padding:30px 20px 50px}
+        .back{display:inline-flex;align-items:center;gap:6px;color:#0071e3;text-decoration:none;font-weight:500;font-size:0.9rem;margin-bottom:20px}
+        .card{background:#fff;border:1px solid #e5e5ea;border-radius:14px;padding:28px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:24px}
+        .card h1{font-size:1.5rem;font-weight:800;margin-bottom:8px}
+        .card .desc{color:#6e6e73;margin-bottom:20px;font-size:0.9rem}
+        .upload-zone{border:2px dashed #d0d0d5;border-radius:12px;padding:40px 20px;text-align:center;cursor:pointer;transition:0.2s;background:#fafafa;margin-bottom:16px}
+        .upload-zone:hover{border-color:#0071e3;background:#f0f6ff}
+        .upload-zone input{display:none}
+        .upload-icon{font-size:3rem;margin-bottom:8px}
+        .upload-text{font-weight:600;font-size:1rem}.upload-hint{font-size:0.78rem;color:#6e6e73;margin-top:4px}
+        .workspace{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+        .preview-box{flex:1;min-width:200px;background:#f5f5f7;border-radius:10px;padding:16px;text-align:center}
+        .preview-box img{max-width:100%;max-height:200px;border-radius:8px}
+        .preview-box h4{font-size:0.75rem;color:#6e6e73;text-transform:uppercase;margin-bottom:8px}
+        .controls{flex:1;min-width:200px}
+        .input-row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+        .input-row label{font-weight:600;font-size:0.85rem;min-width:55px}
+        .input-row input{flex:1;padding:10px 12px;border:2px solid #e5e5ea;border-radius:8px;font-size:0.9rem;font-family:inherit}
+        .input-row input:focus{border-color:#0071e3;outline:none}
+        .input-row span{font-size:0.8rem;color:#6e6e73;min-width:25px}
+        .presets{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+        .presets button{padding:7px 14px;border:1px solid #e5e5ea;border-radius:20px;background:#fff;cursor:pointer;font-size:0.78rem;font-weight:500;font-family:inherit}
+        .presets button:hover{background:#f0f6ff;border-color:#0071e3;color:#0071e3}
+        .lock-btn{cursor:pointer;font-size:1.2rem;user-select:none;padding:4px}
+        .btn{display:inline-flex;align-items:center;gap:6px;padding:12px 24px;border-radius:10px;border:none;font-weight:600;font-size:0.9rem;cursor:pointer;font-family:inherit;transition:0.15s}
+        .btn-primary{background:#0071e3;color:#fff;width:100%;justify-content:center}
+        .btn-primary:hover{background:#005bb5}
+        .btn-outline{background:transparent;border:2px solid #e5e5ea;color:#1d1d1f}.btn-outline:hover{border-color:#0071e3;color:#0071e3}
+        .btn-row{display:flex;gap:10px;margin-top:8px}
+        .article{background:#fff;border:1px solid #e5e5ea;border-radius:14px;padding:28px;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+        .article h2{font-size:1.2rem;font-weight:700;margin:20px 0 10px}.article h2:first-child{margin-top:0}
+        .article p{color:#6e6e73;font-size:0.88rem;line-height:1.7;margin-bottom:12px}
+        .article ul{padding-left:18px;margin-bottom:12px}.article li{color:#6e6e73;font-size:0.85rem;line-height:1.7;margin-bottom:4px}
+        .faq-box{background:#fafafa;border-radius:10px;padding:14px 16px;margin-bottom:8px}
+        .faq-box strong{display:block;font-size:0.9rem;margin-bottom:4px}.faq-box p{font-size:0.82rem;margin:0;color:#6e6e73}
+        .related{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+        .related a{padding:8px 16px;background:#f5f5f7;border-radius:20px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:500;border:1px solid #e5e5ea}
+        .related a:hover{border-color:#0071e3;color:#0071e3}
+        footer{background:#fff;border-top:1px solid #e5e5ea;padding:20px;text-align:center;margin-top:20px}
+        footer .links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+        footer .links a{color:#6e6e73;text-decoration:none;font-size:0.8rem}footer .links a:hover{color:#0071e3}
+        footer .copy{color:#8e8e93;font-size:0.72rem}
+        .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1d1d1f;color:#fff;padding:10px 22px;border-radius:24px;font-size:0.85rem;z-index:999;opacity:0;transition:0.3s}
+        .toast.show{opacity:1}
+        @media(max-width:600px){.card{padding:18px}.card h1{font-size:1.2rem}.workspace{flex-direction:column}}
+    </style>
 </head>
-<body style="padding: 0 16px; margin: 0; overflow-x: hidden;">
-<!-- ═══════════ HEADER ═══════════ -->
-<header style="background:#fff;border-bottom:1px solid #e8eaed;padding:0;position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,0.04)">
-    <div style="max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 24px;gap:20px">
-        
-        <!-- Logo - Direct image only -->
-        <a href="../index.html" style="display:flex;align-items:center;text-decoration:none;flex-shrink:0">
-            <img src="../assets/images/toolprime.png" alt="ToolPrime" style="height:38px;width:auto;display:block">
-        </a>
-        
-        <!-- Search -->
-        <div style="flex:1;max-width:480px">
-            <input type="text" id="tpSearch" placeholder="Search tools..." autocomplete="off"
-                style="width:100%;padding:12px 20px;background:#f5f5f7;border:2px solid transparent;border-radius:14px;font-size:0.9rem;font-family:inherit;color:#1d1d1f;outline:none;transition:all 0.25s ease"
-                onfocus="this.style.background='#fff';this.style.borderColor='#0071e3';this.style.boxShadow='0 0 0 4px rgba(0,113,227,0.08)'"
-                onblur="this.style.background='#f5f5f7';this.style.borderColor='transparent';this.style.boxShadow='none'">
-        </div>
-        
-        <!-- Right -->
-        <div id="tpRight" style="flex-shrink:0">
-            <span style="font-size:0.78rem;color:#6e6e73;font-weight:500">🛠️ 20+ Tools</span>
-        </div>
+<body>
+
+<header class="header">
+    <div class="header-inner">
+        <a href="../../../index.html" class="logo"><img src="../../../assets/images/toolprime.png" alt="TP"><span>ToolPrime</span></a>
+        <a href="../../../index.html">Home</a>
     </div>
 </header>
 
-<script>
-(function(){
-    const path = window.location.pathname;
-    const depth = (path.match(/\//g)||[]).length - 1;
-    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+<div class="container">
+    <a href="../../../index.html" class="back">← Back to Store</a>
     
-    // Fix logo link
-    const logoLink = document.querySelector('header a[href="../index.html"]');
-    if(logoLink) logoLink.href = prefix + 'index.html';
-    
-    // Fix logo image
-    const logoImg = document.querySelector('header img[src="../assets/images/toolprime.png"]');
-    if(logoImg) logoImg.src = prefix + 'assets/images/toolprime.png';
-    
-    // Fix search
-    const search = document.getElementById('tpSearch');
-    if(search){
-        search.addEventListener('keydown', function(e){
-            if(e.key === 'Enter'){
-                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
-            }
-        });
-    }
-    
-    // Home button for tool pages
-    if(depth > 0){
-        const right = document.getElementById('tpRight');
-        if(right){
-            right.innerHTML = '<a href="' + prefix + 'index.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f5f5f7;border-radius:10px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:600;transition:0.2s;white-space:nowrap" onmouseover="this.style.background=\'#0071e3\';this.style.color=\'#fff\'" onmouseout="this.style.background=\'#f5f5f7\';this.style.color=\'#1d1d1f\'">🏠 Home</a>';
-        }
-        const header = document.querySelector('header');
-        if(header){ header.style.marginLeft = '-32px'; header.style.marginRight = '-32px'; }
-    }
-})();
-</script>
-<!-- ═══════════ TOOLPRIME HEADER ═══════════ -->
-
-
-<script>
-// Auto-fix header paths based on page location
-(function(){
-    const depth = (window.location.pathname.match(/\//g)||[]).length - 1;
-    const prefix = depth > 0 ? '../'.repeat(depth) : '';
-    
-    const logo = document.getElementById('tpLogo');
-    const logoImg = document.getElementById('tpLogoImg');
-    const search = document.getElementById('tpSearch');
-    const right = document.getElementById('tpRight');
-    
-    if(logo && prefix) logo.href = prefix + 'index.html';
-    if(logoImg && prefix) logoImg.src = prefix + 'assets/images/toolprime.png';
-    
-    // Search redirect
-    if(search){
-        search.addEventListener('keydown', function(e){
-            if(e.key === 'Enter'){
-                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
-            }
-        });
-    }
-    
-    // Show home button on tool pages
-    if(depth > 0 && right){
-        right.innerHTML = '<a href="' + prefix + 'index.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f5f5f7;border-radius:10px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:600;transition:0.2s;white-space:nowrap" onmouseover="this.style.background=\'#0071e3\';this.style.color=\'#fff\'" onmouseout="this.style.background=\'#f5f5f7\';this.style.color=\'#1d1d1f\'">🏠 Home</a>';
-    }
-    
-    // Style header margin for tool pages
-    const header = document.getElementById('tpHeader');
-    if(depth > 0 && header){
-        header.style.marginLeft = '-32px';
-        header.style.marginRight = '-32px';
-    }
-})();
-</script>
-<!-- ═══════════ HEADER ═══════════ -->
-
-<!-- ═══════════ PREMIUM HEADER ═══════════ -->
-
-
-
-
-
-
-
-
-    
-
-    <div class="resize-container">
-        <a href="../../../index.html" class="resize-back">← Back to Tool Store</a>
+    <div class="card">
+        <h1>📐 Image Resizer</h1>
+        <p class="desc">Resize images by pixels or percentage. Presets for Instagram, HD, web. Instant download.</p>
         
-        <div class="resize-card">
-            <h1>🖼️ Image Resizer</h1>
-            <p class="resize-desc">Resize images online for free. Change dimensions by pixels, percentage, or use preset sizes. No upload — works in your browser!</p>
-            
-            <!-- Upload -->
-            <div class="upload-zone" id="uploadZone">
-                <div class="upload-icon">📁</div>
-                <div class="upload-text">Drop Image Here or Click to Browse</div>
-                <div class="upload-hint">Supports: JPG, PNG, WEBP, SVG • Max 10MB</div>
-                <input type="file" id="fileInput" accept="image/*">
-            </div>
-            
-            <!-- Workspace -->
-            <div class="workspace" id="workspace">
-                <div class="preview-panel">
-                    <h4>📥 Original</h4>
-                    <img id="originalImg" alt="Original">
-                    <div class="img-info" id="originalInfo"></div>
-                </div>
-                <div class="preview-panel">
-                    <h4>📤 Resized Preview</h4>
-                    <img id="resizedImg" alt="Resized">
-                    <div class="img-info" id="resizedInfo"></div>
-                </div>
-            </div>
-            
-            <!-- Controls -->
-            <div id="controls" style="display:none;">
-                <!-- Mode -->
-                <div class="mode-tabs" id="modeTabs">
-                    <button class="mode-tab active" data-mode="pixels">📐 Pixels</button>
-                    <button class="mode-tab" data-mode="percentage">📊 Percentage</button>
-                </div>
-                
-                <!-- Presets -->
-                <div class="preset-row">
-                    <button class="preset-btn" data-w="1920" data-h="1080">HD (1920×1080)</button>
-                    <button class="preset-btn" data-w="1280" data-h="720">720p (1280×720)</button>
-                    <button class="preset-btn" data-w="1080" data-h="1080">Instagram (1080×1080)</button>
-                    <button class="preset-btn" data-w="800" data-h="600">Web (800×600)</button>
-                    <button class="preset-btn" data-w="300" data-h="250">Thumbnail</button>
-                </div>
-                
-                <!-- Pixel Mode -->
-                <div id="pixelInputs">
-                    <div class="input-row">
-                        <label>Width:</label>
-                        <input type="number" id="widthInput" placeholder="Width" min="1" value="800">
-                        <span class="unit">px</span>
-                        <span class="lock-icon" id="lockBtn" title="Lock aspect ratio">🔗</span>
-                        <span class="lock-icon" id="swapBtn" title="Swap width & height">🔄</span>
-                    </div>
-                    <div class="input-row">
-                        <label>Height:</label>
-                        <input type="number" id="heightInput" placeholder="Height" min="1" value="600">
-                        <span class="unit">px</span>
-                    </div>
-                </div>
-                
-                <!-- Percentage Mode -->
-                <div id="percentageInputs" style="display:none;">
-                    <div class="input-row">
-                        <label>Scale:</label>
-                        <input type="number" id="percentInput" placeholder="Percentage" min="1" max="500" value="50">
-                        <span class="unit">%</span>
-                    </div>
-                </div>
-                
-                <div class="checkbox-row">
-                    <input type="checkbox" id="maintainRatio" checked>
-                    <label for="maintainRatio">Maintain aspect ratio</label>
-                </div>
-                
-                <div class="btn-row">
-                    <button class="btn btn-primary" onclick="resizeImage()">✂️ Resize & Download</button>
-                    <button class="btn btn-outline" onclick="resetAll()">🔄 Reset</button>
-                </div>
-            </div>
+        <div class="upload-zone" id="uploadZone">
+            <div class="upload-icon">📁</div>
+            <div class="upload-text">Drop image here or click</div>
+            <div class="upload-hint">JPG, PNG, WebP • Any size</div>
+            <input type="file" id="fileInput" accept="image/*">
         </div>
         
-        <!-- SEO -->
-        <div class="seo-card">
-            <h2>Free Online Image Resizer</h2>
-            <p>Resize your images quickly with our <strong>free image resizer</strong>. No upload to server — all processing happens in your browser for maximum privacy and speed.</p>
-            <h3>Features</h3>
-            <ul>
-                <li>✅ Resize by pixels or percentage</li>
-                <li>✅ Maintain aspect ratio (lock)</li>
-                <li>✅ Preset sizes: HD, 720p, Instagram, Web, Thumbnail</li>
-                <li>✅ Supports JPG, PNG, WEBP, SVG</li>
-                <li>✅ 100% free, no sign-up, no upload</li>
-                <li>✅ Instant download</li>
-            </ul>
+        <div class="workspace" id="workspace" style="display:none">
+            <div class="preview-box"><h4>Original</h4><img id="origImg"><p style="font-size:0.72rem;color:#8e8e93;margin-top:6px" id="origSize"></p></div>
+            <div class="preview-box"><h4>Resized Preview</h4><img id="prevImg"><p style="font-size:0.72rem;color:#8e8e93;margin-top:6px" id="prevSize"></p></div>
+        </div>
+        
+        <div id="controls" style="display:none">
+            <div class="presets">
+                <button onclick="setPreset(1920,1080)">HD (1920×1080)</button>
+                <button onclick="setPreset(1080,1080)">Instagram (1080×1080)</button>
+                <button onclick="setPreset(800,600)">Web (800×600)</button>
+                <button onclick="setPreset(300,250)">Thumbnail</button>
+            </div>
+            <div class="input-row">
+                <label>Width:</label><input type="number" id="widthInput" value="800" oninput="updatePrev()"><span>px</span>
+                <span class="lock-btn" id="lockBtn" onclick="toggleLock()">🔗</span>
+            </div>
+            <div class="input-row">
+                <label>Height:</label><input type="number" id="heightInput" value="600" oninput="updatePrev()"><span>px</span>
+            </div>
+            <label style="display:flex;align-items:center;gap:8px;font-size:0.82rem;margin-bottom:12px;cursor:pointer">
+                <input type="checkbox" id="keepRatio" checked onchange="toggleLock()"> Maintain aspect ratio
+            </label>
+            <div class="btn-row">
+                <button class="btn btn-primary" onclick="resizeAndDownload()">📐 Resize & Download</button>
+                <button class="btn btn-outline" onclick="reset()">🔄 New</button>
+            </div>
         </div>
     </div>
-
-    <div class="toast" id="toast"></div>
-
-    <script>
-        // ========== ELEMENTS ==========
-        const uploadZone=document.getElementById('uploadZone');
-        const fileInput=document.getElementById('fileInput');
-        const workspace=document.getElementById('workspace');
-        const controls=document.getElementById('controls');
-        const widthInput=document.getElementById('widthInput');
-        const heightInput=document.getElementById('heightInput');
-        const percentInput=document.getElementById('percentInput');
-        const maintainRatio=document.getElementById('maintainRatio');
-        const lockBtn=document.getElementById('lockBtn');
-        const toast=document.getElementById('toast');
-        
-        let originalImage=null;
-        let originalWidth=0;
-        let originalHeight=0;
-        let aspectLocked=true;
-        let currentMode='pixels';
-        
-        // ========== TOAST ==========
-        function showToast(msg,type=''){
-            toast.textContent=msg;toast.className='toast '+type+' show';
-            clearTimeout(toast._t);toast._t=setTimeout(()=>toast.classList.remove('show'),2500);
-        }
-        
-        // ========== UPLOAD ==========
-        uploadZone.addEventListener('click',()=>fileInput.click());
-        uploadZone.addEventListener('dragover',e=>{e.preventDefault();uploadZone.classList.add('drag')});
-        uploadZone.addEventListener('dragleave',()=>uploadZone.classList.remove('drag'));
-        uploadZone.addEventListener('drop',e=>{e.preventDefault();uploadZone.classList.remove('drag');if(e.dataTransfer.files[0])loadImage(e.dataTransfer.files[0])});
-        fileInput.addEventListener('change',e=>{if(e.target.files[0])loadImage(e.target.files[0])});
-        
-        function loadImage(file){
-            if(file.size>10*1024*1024){showToast('❌ Max 10MB!','error');return;}
-            const reader=new FileReader();
-            reader.onload=e=>{
-                const img=new Image();
-                img.onload=()=>{
-                    originalImage=img;
-                    originalWidth=img.width;
-                    originalHeight=img.height;
-                    document.getElementById('originalImg').src=e.target.result;
-                    document.getElementById('originalInfo').textContent=`${originalWidth}×${originalHeight} • ${formatBytes(file.size)}`;
-                    widthInput.value=originalWidth;
-                    heightInput.value=originalHeight;
-                    percentInput.value=100;
-                    workspace.classList.add('show');
-                    controls.style.display='block';
-                    uploadZone.querySelector('.upload-text').textContent='Click to change image';
-                    uploadZone.querySelector('.upload-icon').textContent='🔄';
-                    updatePreview();
-                };
-                img.src=e.target.result;
-            };
-            reader.readAsDataURL(file);
-        }
-        
-        // ========== MODE TABS ==========
-        document.getElementById('modeTabs').addEventListener('click',e=>{
-            const tab=e.target.closest('.mode-tab');
-            if(!tab)return;
-            document.querySelectorAll('.mode-tab').forEach(t=>t.classList.remove('active'));
-            tab.classList.add('active');
-            currentMode=tab.dataset.mode;
-            document.getElementById('pixelInputs').style.display=currentMode==='pixels'?'block':'none';
-            document.getElementById('percentageInputs').style.display=currentMode==='percentage'?'block':'none';
-        });
-        
-        // ========== PRESETS ==========
-        document.querySelectorAll('.preset-btn').forEach(btn=>{
-            btn.addEventListener('click',()=>{
-                if(!originalImage)return;
-                widthInput.value=btn.dataset.w;
-                heightInput.value=btn.dataset.h;
-                if(aspectLocked){
-                    const ratio=originalWidth/originalHeight;
-                    heightInput.value=Math.round(btn.dataset.w/ratio);
-                }
-                updatePreview();
-            });
-        });
-        
-        // ========== LOCK ASPECT RATIO ==========
-        lockBtn.addEventListener('click',()=>{
-            aspectLocked=!aspectLocked;
-            lockBtn.textContent=aspectLocked?'🔗':'🔓';
-            maintainRatio.checked=aspectLocked;
-        });
-        maintainRatio.addEventListener('change',()=>{
-            aspectLocked=maintainRatio.checked;
-            lockBtn.textContent=aspectLocked?'🔗':'🔓';
-        });
-        
-        // ========== SWAP DIMENSIONS ==========
-        document.getElementById('swapBtn').addEventListener('click',()=>{
-            const w=widthInput.value;
-            widthInput.value=heightInput.value;
-            heightInput.value=w;
-            updatePreview();
-        });
-        
-        // ========== WIDTH CHANGE ==========
-        widthInput.addEventListener('input',()=>{
-            if(aspectLocked&&originalImage){
-                const ratio=originalHeight/originalWidth;
-                heightInput.value=Math.round(widthInput.value*ratio);
-            }
-            updatePreview();
-        });
-        heightInput.addEventListener('input',()=>{
-            if(aspectLocked&&originalImage){
-                const ratio=originalWidth/originalHeight;
-                widthInput.value=Math.round(heightInput.value*ratio);
-            }
-            updatePreview();
-        });
-        percentInput.addEventListener('input',updatePreview);
-        
-        // ========== UPDATE PREVIEW ==========
-        function updatePreview(){
-            if(!originalImage)return;
-            let w,h;
-            if(currentMode==='pixels'){
-                w=parseInt(widthInput.value)||1;
-                h=parseInt(heightInput.value)||1;
-            }else{
-                const p=(parseInt(percentInput.value)||100)/100;
-                w=Math.round(originalWidth*p);
-                h=Math.round(originalHeight*p);
-                widthInput.value=w;
-                heightInput.value=h;
-            }
-            
-            // Draw on canvas
-            const canvas=document.createElement('canvas');
-            canvas.width=w;canvas.height=h;
-            const ctx=canvas.getContext('2d');
-            ctx.drawImage(originalImage,0,0,w,h);
-            
-            document.getElementById('resizedImg').src=canvas.toDataURL('image/png');
-            document.getElementById('resizedInfo').textContent=`${w}×${h}`;
-        }
-        
-        // ========== RESIZE & DOWNLOAD ==========
-        function resizeImage(){
-            if(!originalImage){showToast('❌ Upload image first!','error');return;}
-            
-            let w,h;
-            if(currentMode==='pixels'){
-                w=parseInt(widthInput.value)||originalWidth;
-                h=parseInt(heightInput.value)||originalHeight;
-            }else{
-                const p=(parseInt(percentInput.value)||100)/100;
-                w=Math.round(originalWidth*p);
-                h=Math.round(originalHeight*p);
-            }
-            
-            const canvas=document.createElement('canvas');
-            canvas.width=w;canvas.height=h;
-            const ctx=canvas.getContext('2d');
-            ctx.drawImage(originalImage,0,0,w,h);
-            
-            // Download
-            canvas.toBlob(blob=>{
-                const url=URL.createObjectURL(blob);
-                const a=document.createElement('a');
-                a.href=url;
-                a.download='resized-image.png';
-                document.body.appendChild(a);a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-                showToast('✅ Downloaded!','success');
-            },'image/png');
-            
-            // Update preview
-            document.getElementById('resizedImg').src=canvas.toDataURL('image/png');
-            document.getElementById('resizedInfo').textContent=`${w}×${h} • Downloaded`;
-        }
-        
-        // ========== RESET ==========
-        function resetAll(){
-            originalImage=null;
-            fileInput.value='';
-            workspace.classList.remove('show');
-            controls.style.display='none';
-            document.getElementById('originalImg').src='';
-            document.getElementById('resizedImg').src='';
-            uploadZone.querySelector('.upload-text').textContent='Drop Image Here or Click to Browse';
-            uploadZone.querySelector('.upload-icon').textContent='📁';
-            widthInput.value=800;heightInput.value=600;percentInput.value=50;
-        }
-        
-        function formatBytes(b){return b<1024?b+' B':b<1048576?(b/1024).toFixed(1)+' KB':(b/1048576).toFixed(2)+' MB'}
-        
-        // Keyboard shortcuts
-        document.addEventListener('keydown',e=>{
-            if(e.ctrlKey&&e.key==='Enter'){e.preventDefault();resizeImage();}
-            if(e.ctrlKey&&e.key==='r'){e.preventDefault();resetAll();}
-        });
-    </script>
-
-<footer style="background:#fff;border-top:1px solid #e5e5ea;padding:24px 20px;margin-top:40px">
-    <div style="max-width:800px;margin:0 auto;text-align:center">
-        <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:12px">
-            <a href="../../../index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🏠 Home</a>
-            <a href="../../../tools/image/png-to-jpg-converter/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🖼️ PNG to JPG</a>
-            <a href="../../../tools/text/word-counter/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">📝 Word Counter</a>
-            <a href="../../../tools/url/qr-generator/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">📱 QR Code</a>
-            <a href="../../../tools/security/password-generator/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🔐 Password</a>
+    
+    <div class="article">
+        <h2>Free Online Image Resizer</h2>
+        <p>Resize images instantly with our <strong>free image resizer</strong>. Change dimensions for social media, websites, or email. Preset sizes for quick use.</p>
+        <h2>How to Resize</h2>
+        <ul><li><strong>Step 1:</strong> Upload your image</li><li><strong>Step 2:</strong> Enter width/height or use presets</li><li><strong>Step 3:</strong> Click Resize & Download</li></ul>
+        <h2>Features</h2>
+        <ul><li>✅ Presets: HD, Instagram, Web, Thumbnail</li><li>✅ Lock aspect ratio</li><li>✅ Live preview</li><li>✅ 100% free & private</li></ul>
+        <div class="faq-box"><strong>Q: Does resizing reduce quality?</strong><p>A: Enlarging may reduce quality. Shrinking maintains quality.</p></div>
+        <div class="faq-box"><strong>Q: What formats are supported?</strong><p>A: JPG, PNG, WebP, SVG.</p></div>
+        <h2>Related Tools</h2>
+        <div class="related">
+            <a href="../../png-to-jpg-converter/">🖼️ PNG to JPG</a>
+            <a href="../../image-compressor/">🗜️ Image Compressor</a>
+            <a href="../../p../../pdf/../../../../pdf/image-to-pdf/">📑 Image to PDF</a>
         </div>
-        <p style="color:#8e8e93;font-size:0.76rem;margin:0">&copy; 2025 ToolPrime. All rights reserved. Made with ❤️</p>
     </div>
+</div>
+
+<footer>
+    <div class="links">
+        <a href="../../../index.html">Home</a><a href="../../../about.html">About</a>
+        <a href="../../../contact.html">Contact</a><a href="../../../privacy.html">Privacy</a>
+        <a href="../../../terms.html">Terms</a>
+    </div>
+    <p class="copy">&copy; 2025 ToolPrime. Made with ❤️</p>
 </footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const uz=document.getElementById('uploadZone'),fi=document.getElementById('fileInput');
+const ws=document.getElementById('workspace'),ct=document.getElementById('controls');
+const wi=document.getElementById('widthInput'),hi=document.getElementById('heightInput');
+const kr=document.getElementById('keepRatio'),lb=document.getElementById('lockBtn');
+const toast=document.getElementById('toast');
+let oImg=null,locked=true,ow=0,oh=0;
+
+function msg(m){toast.textContent=m;toast.className='toast show';clearTimeout(toast._t);toast._t=setTimeout(()=>toast.classList.remove('show'),2500)}
+
+uz.onclick=()=>fi.click();
+uz.ondragover=e=>{e.preventDefault();uz.style.borderColor='#0071e3'};
+uz.ondragleave=()=>uz.style.borderColor='#d0d0d5';
+uz.ondrop=e=>{e.preventDefault();uz.style.borderColor='#d0d0d5';if(e.dataTransfer.files[0])load(e.dataTransfer.files[0])};
+fi.onchange=e=>{if(e.target.files[0])load(e.target.files[0])};
+
+function load(f){
+    const r=new FileReader();
+    r.onload=e=>{
+        const img=new Image();
+        img.onload=()=>{oImg=img;ow=img.width;oh=img.height;
+            document.getElementById('origImg').src=e.target.result;
+            document.getElementById('origSize').textContent=ow+'×'+oh;
+            wi.value=ow;hi.value=oh;ws.style.display='flex';ct.style.display='block';updatePrev();};
+        img.src=e.target.result;
+    };r.readAsDataURL(f);
+}
+
+function toggleLock(){locked=!locked;kr.checked=locked;lb.textContent=locked?'🔗':'🔓'}
+function setPreset(w,h){wi.value=w;hi.value=h;if(locked){const r=ow/oh;hi.value=Math.round(w/r)}updatePrev()}
+
+wi.oninput=function(){if(locked&&oImg){const r=oh/ow;hi.value=Math.round(this.value*r)}updatePrev()}
+hi.oninput=function(){if(locked&&oImg){const r=ow/oh;wi.value=Math.round(this.value*r)}updatePrev()}
+
+function updatePrev(){
+    if(!oImg)return;
+    const w=parseInt(wi.value)||ow,h=parseInt(hi.value)||oh;
+    const c=document.createElement('canvas');c.width=w;c.height=h;
+    c.getContext('2d').drawImage(oImg,0,0,w,h);
+    document.getElementById('prevImg').src=c.toDataURL();
+    document.getElementById('prevSize').textContent=w+'×'+h;
+}
+
+function resizeAndDownload(){
+    if(!oImg){msg('Upload image first!');return}
+    const w=parseInt(wi.value)||ow,h=parseInt(hi.value)||oh;
+    const c=document.createElement('canvas');c.width=w;c.height=h;
+    c.getContext('2d').drawImage(oImg,0,0,w,h);
+    c.toBlob(b=>{const a=document.createElement('a');a.href=URL.createObjectURL(b);
+        a.download='resized.png';document.body.appendChild(a);a.click();document.body.removeChild(a);msg('✅ Downloaded! '+w+'×'+h);},'image/png');
+}
+
+function reset(){oImg=null;fi.value='';ws.style.display='none';ct.style.display='none';wi.value=800;hi.value=600}
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -2,298 +2,162 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="robots" content="index, follow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>BMI Calculator - Body Mass Index Calculator | ToolPrime</title>
-    <meta name="description" content="Calculate your BMI online free. Body Mass Index calculator with metric & imperial units. Ideal weight range.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free BMI Calculator - Body Mass Index Online | ToolPrime</title>
+    <meta name="description" content="Calculate your BMI online free. Metric & imperial units. Find ideal weight range & health status instantly.">
     <meta name="keywords" content="bmi calculator, body mass index, bmi checker, ideal weight, health calculator, fitness calculator">
-    <link rel="canonical" href="https://toolprime.online/tools/calculator/bmi-calculator/">
-    <meta property="og:title" content="BMI Calculator - ToolPrime">
-    <meta property="og:description" content="Calculate your BMI instantly. Free, accurate, easy to use.">
-
-    <link rel="stylesheet" href="../../../css/tool-style.css">
-    <style>@media(max-width:480px){body{padding:0 10px!important}}</style>
+    <meta property="og:title" content="Free BMI Calculator | ToolPrime">
+    <link rel="canonical" href="https://toolprime.online../../bmi-calculator/">
     <link rel="icon" type="image/png" href="../../../assets/images/toolprime.png">
-    <style>footer{margin-left:-16px;margin-right:-16px}@media(max-width:768px){footer{margin-left:-12px;margin-right:-12px}}@media(max-width:480px){footer{margin-left:-8px;margin-right:-8px}}</style>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:system-ui,-apple-system,sans-serif;background:#f5f5f7;color:#1d1d1f;line-height:1.6;min-height:100vh}
+        .header{background:#fff;border-bottom:1px solid #e5e5ea;padding:0 20px;position:sticky;top:0;z-index:100}
+        .header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;height:56px;justify-content:space-between}
+        .logo{display:flex;align-items:center;text-decoration:none;gap:8px}.logo img{height:32px}.logo span{font-weight:700;color:#0071e3}
+        .home-btn{padding:7px 14px;background:#f5f5f7;border-radius:8px;text-decoration:none;color:#1d1d1f;font-weight:600;font-size:0.82rem;transition:0.15s}
+        .home-btn:hover{background:#0071e3;color:#fff}
+        .container{max-width:650px;margin:0 auto;padding:30px 20px 50px}
+        .back{display:inline-flex;align-items:center;gap:6px;color:#0071e3;text-decoration:none;font-weight:500;font-size:0.9rem;margin-bottom:20px}
+        .card{background:#fff;border:1px solid #e5e5ea;border-radius:14px;padding:28px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:24px}
+        .card h1{font-size:1.5rem;font-weight:800;margin-bottom:8px}.card .desc{color:#6e6e73;margin-bottom:20px;font-size:0.9rem}
+        .tabs{display:flex;gap:4px;margin-bottom:16px;background:#f5f5f7;border-radius:10px;padding:4px}
+        .tab{flex:1;padding:9px;text-align:center;border-radius:8px;cursor:pointer;font-weight:600;font-size:0.82rem;border:none;background:transparent;color:#6e6e73;font-family:inherit;transition:0.15s}
+        .tab.active{background:#fff;color:#0071e3;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+        label{display:block;font-size:0.78rem;font-weight:600;color:#1d1d1f;margin-bottom:6px}
+        .input-row{display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+        .input-row .col{flex:1;min-width:100px}
+        input[type=number]{width:100%;padding:12px 14px;background:#f5f5f7;border:2px solid #e5e5ea;border-radius:10px;font-size:0.95rem;font-family:inherit;color:#1d1d1f;text-align:center;transition:0.15s}
+        input:focus{border-color:#0071e3;outline:none;background:#fff;box-shadow:0 0 0 3px rgba(0,113,227,0.06)}
+        .unit{display:block;text-align:center;font-size:0.72rem;color:#6e6e73;margin-top:4px}
+        .btn-calc{width:100%;padding:14px;background:linear-gradient(135deg,#0071e3,#5ac8fa);color:#fff;border:none;border-radius:12px;font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit;transition:0.2s}
+        .btn-calc:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,113,227,0.3)}
+        .result{text-align:center;padding:20px;background:#f5f5f7;border-radius:12px;margin-top:16px;display:none}
+        .result.show{display:block}
+        .bmi-val{font-size:3rem;font-weight:800}.bmi-lbl{font-size:0.85rem;color:#6e6e73;margin-top:4px}
+        .bmi-status{display:inline-block;padding:6px 18px;border-radius:20px;font-weight:700;font-size:0.85rem;margin-top:8px}
+        .scale{display:flex;height:10px;border-radius:5px;overflow:hidden;margin:12px 0}
+        .scale div{transition:0.3s}.s-u{background:#3b82f6;flex:18.5}.s-n{background:#34c759;flex:6.5}.s-o{background:#ff9500;flex:5}.s-ob{background:#ff3b30;flex:10}
+        .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+        .info-box{background:#fff;border:1px solid #e5e5ea;border-radius:10px;padding:14px;text-align:center}
+        .info-box .val{font-size:1.2rem;font-weight:700;color:#0071e3}.info-box .lbl{font-size:0.7rem;color:#6e6e73;margin-top:2px}
+        .article{background:#fff;border:1px solid #e5e5ea;border-radius:14px;padding:28px;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+        .article h2{font-size:1.2rem;font-weight:700;margin:20px 0 10px}.article h2:first-child{margin-top:0}
+        .article p{color:#6e6e73;font-size:0.88rem;line-height:1.7;margin-bottom:12px}
+        .article ul{padding-left:18px;margin-bottom:12px}.article li{color:#6e6e73;font-size:0.85rem;line-height:1.7;margin-bottom:4px}
+        .faq-box{background:#fafafa;border-radius:10px;padding:14px 16px;margin-bottom:8px}
+        .faq-box strong{display:block;font-size:0.9rem;margin-bottom:4px}.faq-box p{font-size:0.82rem;margin:0;color:#6e6e73}
+        .related{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+        .related a{padding:8px 16px;background:#f5f5f7;border-radius:20px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:500;border:1px solid #e5e5ea}
+        .related a:hover{border-color:#0071e3;color:#0071e3}
+        footer{background:#fff;border-top:1px solid #e5e5ea;padding:20px;text-align:center;margin-top:20px}
+        footer .links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+        footer .links a{color:#6e6e73;text-decoration:none;font-size:0.8rem}footer .links a:hover{color:#0071e3}
+        footer .copy{color:#8e8e93;font-size:0.72rem}
+        @media(max-width:600px){.card{padding:18px}.card h1{font-size:1.2rem}.info-grid{grid-template-columns:1fr}}
+    </style>
 </head>
-<body style="padding: 0 16px; margin: 0; overflow-x: hidden;">
-<!-- ═══════════ HEADER ═══════════ -->
-<header style="background:#fff;border-bottom:1px solid #e8eaed;padding:0;position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,0.04)">
-    <div style="max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 24px;gap:20px">
-        
-        <!-- Logo - Direct image only -->
-        <a href="../index.html" style="display:flex;align-items:center;text-decoration:none;flex-shrink:0">
-            <img src="../assets/images/toolprime.png" alt="ToolPrime" style="height:38px;width:auto;display:block">
-        </a>
-        
-        <!-- Search -->
-        <div style="flex:1;max-width:480px">
-            <input type="text" id="tpSearch" placeholder="Search tools..." autocomplete="off"
-                style="width:100%;padding:12px 20px;background:#f5f5f7;border:2px solid transparent;border-radius:14px;font-size:0.9rem;font-family:inherit;color:#1d1d1f;outline:none;transition:all 0.25s ease"
-                onfocus="this.style.background='#fff';this.style.borderColor='#0071e3';this.style.boxShadow='0 0 0 4px rgba(0,113,227,0.08)'"
-                onblur="this.style.background='#f5f5f7';this.style.borderColor='transparent';this.style.boxShadow='none'">
-        </div>
-        
-        <!-- Right -->
-        <div id="tpRight" style="flex-shrink:0">
-            <span style="font-size:0.78rem;color:#6e6e73;font-weight:500">🛠️ 20+ Tools</span>
-        </div>
+<body>
+
+<header class="header">
+    <div class="header-inner">
+        <a href="../../../index.html" class="logo"><img src="../../../assets/images/toolprime.png" alt="TP"><span>ToolPrime</span></a>
+        <a href="../../../index.html">Home</a>
     </div>
 </header>
 
-<script>
-(function(){
-    const path = window.location.pathname;
-    const depth = (path.match(/\//g)||[]).length - 1;
-    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+<div class="container">
+    <a href="../../../index.html" class="back">← Back to Store</a>
     
-    // Fix logo link
-    const logoLink = document.querySelector('header a[href="../index.html"]');
-    if(logoLink) logoLink.href = prefix + 'index.html';
-    
-    // Fix logo image
-    const logoImg = document.querySelector('header img[src="../assets/images/toolprime.png"]');
-    if(logoImg) logoImg.src = prefix + 'assets/images/toolprime.png';
-    
-    // Fix search
-    const search = document.getElementById('tpSearch');
-    if(search){
-        search.addEventListener('keydown', function(e){
-            if(e.key === 'Enter'){
-                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
-            }
-        });
-    }
-    
-    // Home button for tool pages
-    if(depth > 0){
-        const right = document.getElementById('tpRight');
-        if(right){
-            right.innerHTML = '<a href="' + prefix + 'index.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f5f5f7;border-radius:10px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:600;transition:0.2s;white-space:nowrap" onmouseover="this.style.background=\'#0071e3\';this.style.color=\'#fff\'" onmouseout="this.style.background=\'#f5f5f7\';this.style.color=\'#1d1d1f\'">🏠 Home</a>';
-        }
-        const header = document.querySelector('header');
-        if(header){ header.style.marginLeft = '-32px'; header.style.marginRight = '-32px'; }
-    }
-})();
-</script>
-<!-- ═══════════ TOOLPRIME HEADER ═══════════ -->
-
-
-<script>
-// Auto-fix header paths based on page location
-(function(){
-    const depth = (window.location.pathname.match(/\//g)||[]).length - 1;
-    const prefix = depth > 0 ? '../'.repeat(depth) : '';
-    
-    const logo = document.getElementById('tpLogo');
-    const logoImg = document.getElementById('tpLogoImg');
-    const search = document.getElementById('tpSearch');
-    const right = document.getElementById('tpRight');
-    
-    if(logo && prefix) logo.href = prefix + 'index.html';
-    if(logoImg && prefix) logoImg.src = prefix + 'assets/images/toolprime.png';
-    
-    // Search redirect
-    if(search){
-        search.addEventListener('keydown', function(e){
-            if(e.key === 'Enter'){
-                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
-            }
-        });
-    }
-    
-    // Show home button on tool pages
-    if(depth > 0 && right){
-        right.innerHTML = '<a href="' + prefix + 'index.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f5f5f7;border-radius:10px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:600;transition:0.2s;white-space:nowrap" onmouseover="this.style.background=\'#0071e3\';this.style.color=\'#fff\'" onmouseout="this.style.background=\'#f5f5f7\';this.style.color=\'#1d1d1f\'">🏠 Home</a>';
-    }
-    
-    // Style header margin for tool pages
-    const header = document.getElementById('tpHeader');
-    if(depth > 0 && header){
-        header.style.marginLeft = '-32px';
-        header.style.marginRight = '-32px';
-    }
-})();
-</script>
-<!-- ═══════════ HEADER ═══════════ -->
-
-<!-- ═══════════ PREMIUM HEADER ═══════════ -->
-
-
-
-
-
-
-
-
-
-
-
-<div class="tp-wrap">
-    <a href="../../../index.html" class="tp-back">← Back to Store</a>
-    
-    <div class="tp-card">
+    <div class="card">
         <h1>⚖️ BMI Calculator</h1>
-        <p class="tp-desc">Calculate your Body Mass Index (BMI). Find your ideal weight range and understand your health status.</p>
+        <p class="desc">Calculate your Body Mass Index. Metric (cm/kg) & Imperial (ft/lbs) units supported.</p>
         
-        <div class="unit-tabs" id="unitTabs">
-            <button class="unit-tab active" data-unit="metric">📏 Metric (cm/kg)</button>
-            <button class="unit-tab" data-unit="imperial">📐 Imperial (ft/in/lbs)</button>
-        </div>
-        
-        <div class="gender-row">
-            <button class="gender-btn male active" data-gender="male">👨 Male</button>
-            <button class="gender-btn" data-gender="female">👩 Female</button>
+        <div class="tabs" id="tabs">
+            <button class="tab active" data-u="metric">📏 Metric</button>
+            <button class="tab" data-u="imperial">📐 Imperial</button>
         </div>
         
         <div id="metricInputs">
             <div class="input-row">
-                <div class="input-group"><label>Height</label><input type="number" id="heightCm" placeholder="175" value="175" min="50" max="300"><span class="unit">cm</span></div>
-                <div class="input-group"><label>Weight</label><input type="number" id="weightKg" placeholder="70" value="70" min="20" max="500"><span class="unit">kg</span></div>
+                <div class="col"><label>Height (cm)</label><input type="number" id="cm" placeholder="175" value="175"><span class="unit">cm</span></div>
+                <div class="col"><label>Weight (kg)</label><input type="number" id="kg" placeholder="70" value="70"><span class="unit">kg</span></div>
             </div>
         </div>
-        
         <div id="imperialInputs" style="display:none">
             <div class="input-row">
-                <div class="input-group"><label>Height (ft)</label><input type="number" id="heightFt" placeholder="5" value="5" min="1" max="8"><span class="unit">ft</span></div>
-                <div class="input-group"><label>Height (in)</label><input type="number" id="heightIn" placeholder="9" value="9" min="0" max="11"><span class="unit">in</span></div>
+                <div class="col"><label>Height (ft)</label><input type="number" id="ft" placeholder="5" value="5"><span class="unit">ft</span></div>
+                <div class="col"><label>Height (in)</label><input type="number" id="inch" placeholder="9" value="9"><span class="unit">in</span></div>
             </div>
-            <div class="input-row">
-                <div class="input-group"><label>Weight</label><input type="number" id="weightLbs" placeholder="154" value="154" min="44" max="1100"><span class="unit">lbs</span></div>
-            </div>
+            <div class="input-row"><div class="col"><label>Weight (lbs)</label><input type="number" id="lbs" placeholder="154" value="154"><span class="unit">lbs</span></div></div>
         </div>
         
-        <button class="btn-calc" onclick="calculateBMI()">📊 Calculate BMI</button>
+        <button class="btn-calc" onclick="calcBMI()">Calculate BMI</button>
         
-        <div class="result-area" id="resultArea">
-            <div class="bmi-display">
-                <div class="bmi-value" id="bmiVal" style="color:#06b6d4">-</div>
-                <div class="bmi-label">Your BMI</div>
-                <span class="bmi-status" id="bmiStatus">-</span>
-            </div>
-            
-            <div class="bmi-scale" id="bmiScale">
-                <div class="scale-under"></div>
-                <div class="scale-normal"></div>
-                <div class="scale-over"></div>
-                <div class="scale-obese"></div>
-            </div>
-            <div style="display:flex;justify-content:space-between;font-size:0.65rem;color:#5b6983">
-                <span>Under</span><span>Normal</span><span>Over</span><span>Obese</span>
-            </div>
-            
+        <div class="result" id="result">
+            <div class="bmi-val" id="bmiVal">-</div>
+            <div class="bmi-lbl">Your BMI</div>
+            <div class="bmi-status" id="bmiStatus">-</div>
+            <div class="scale"><div class="s-u"></div><div class="s-n"></div><div class="s-o"></div><div class="s-ob"></div></div>
+            <div style="display:flex;justify-content:space-between;font-size:0.65rem;color:#6e6e73"><span>Under</span><span>Normal</span><span>Over</span><span>Obese</span></div>
             <div class="info-grid">
-                <div class="info-box"><div class="val" id="idealMin">-</div><div class="lbl">Ideal Min Weight</div></div>
-                <div class="info-box"><div class="val" id="idealMax">-</div><div class="lbl">Ideal Max Weight</div></div>
-                <div class="info-box"><div class="val" id="ponderal">-</div><div class="lbl">Ponderal Index</div></div>
-                <div class="info-box"><div class="val" id="bmiprime">-</div><div class="lbl">BMI Prime</div></div>
+                <div class="info-box"><div class="val" id="idealMin">-</div><div class="lbl">Ideal Min</div></div>
+                <div class="info-box"><div class="val" id="idealMax">-</div><div class="lbl">Ideal Max</div></div>
             </div>
+        </div>
+    </div>
+    
+    <div class="article">
+        <h2>Free BMI Calculator Online</h2>
+        <p>Calculate your <strong>Body Mass Index (BMI)</strong> instantly. Understand your health status with our easy-to-use calculator.</p>
+        <h2>How to Use</h2>
+        <ul><li><strong>Step 1:</strong> Choose metric or imperial</li><li><strong>Step 2:</strong> Enter height & weight</li><li><strong>Step 3:</strong> Click Calculate BMI</li></ul>
+        <h2>BMI Categories</h2>
+        <ul><li>Below 18.5 — Underweight</li><li>18.5–24.9 — Normal weight</li><li>25–29.9 — Overweight</li><li>30+ — Obese</li></ul>
+        <h2>Features</h2>
+        <ul><li>✅ Metric & Imperial units</li><li>✅ Health status indicator</li><li>✅ Ideal weight range</li><li>✅ Free & instant</li></ul>
+        <div class="faq-box"><strong>Q: Is BMI accurate?</strong><p>A: BMI is a general guideline. Consult a doctor for personal health advice.</p></div>
+        <div class="faq-box"><strong>Q: What is a healthy BMI?</strong><p>A: 18.5 to 24.9 is considered healthy for most adults.</p></div>
+        <h2>Related Tools</h2>
+        <div class="related">
+            <a href="../../age-calculator/">Age Calculator</a>
+            <a href="../../convert../../converter/../../../../converter/unit-converter/">Unit Converter</a>
+            <a href="../../ti../../time/../../../../time/stopwatch-timer/">Stopwatch Timer</a>
         </div>
     </div>
 </div>
 
-<script>
-let unit='metric',gender='male';
-
-document.getElementById('unitTabs').onclick=e=>{
-    const b=e.target.closest('.unit-tab');if(!b)return;
-    document.querySelectorAll('.unit-tab').forEach(t=>t.classList.remove('active'));
-    b.classList.add('active');unit=b.dataset.unit;
-    document.getElementById('metricInputs').style.display=unit==='metric'?'block':'none';
-    document.getElementById('imperialInputs').style.display=unit==='imperial'?'block':'none';
-};
-
-document.querySelector('.gender-row').onclick=e=>{
-    const b=e.target.closest('.gender-btn');if(!b)return;
-    document.querySelectorAll('.gender-btn').forEach(t=>t.classList.remove('active'));
-    b.classList.add('active');gender=b.dataset.gender;
-};
-
-function calculateBMI(){
-    let h,w;
-    if(unit==='metric'){
-        h=parseFloat(document.getElementById('heightCm').value)/100;
-        w=parseFloat(document.getElementById('weightKg').value);
-    }else{
-        const ft=parseFloat(document.getElementById('heightFt').value)||0;
-        const inch=parseFloat(document.getElementById('heightIn').value)||0;
-        h=((ft*12)+inch)*0.0254;
-        w=parseFloat(document.getElementById('weightLbs').value)*0.453592;
-    }
-    
-    if(!h||!w||h<=0||w<=0)return;
-    
-    const bmi=w/(h*h);
-    const display=document.getElementById('resultArea');
-    display.classList.add('show');
-    
-    // BMI Value
-    const bv=document.getElementById('bmiVal');
-    bv.textContent=bmi.toFixed(1);
-    
-    // Status
-    let status,color;
-    if(bmi<18.5){status='Underweight';color='#3b82f6'}
-    else if(bmi<25){status='Normal Weight';color='#10b981'}
-    else if(bmi<30){status='Overweight';color='#f59e0b'}
-    else{status='Obese';color='#ef4444'}
-    
-    bv.style.color=color;
-    const bs=document.getElementById('bmiStatus');
-    bs.textContent=status;
-    bs.style.background=color+'22';
-    bs.style.color=color;
-    
-    // Ideal weight
-    const idealMin=(18.5*h*h).toFixed(1);
-    const idealMax=(24.9*h*h).toFixed(1);
-    document.getElementById('idealMin').textContent=unit==='metric'?idealMin+' kg':(idealMin*2.20462).toFixed(1)+' lbs';
-    document.getElementById('idealMax').textContent=unit==='metric'?idealMax+' kg':(idealMax*2.20462).toFixed(1)+' lbs';
-    
-    // Ponderal
-    document.getElementById('ponderal').textContent=(w/(h*h*h)).toFixed(1)+' kg/m³';
-    
-    // BMI Prime
-    document.getElementById('bmiprime').textContent=(bmi/25).toFixed(2);
-    
-    display.scrollIntoView({behavior:'smooth',block:'center'});
-}
-
-document.addEventListener('keydown',e=>{if(e.key==='Enter')calculateBMI()});
-</script>
-
-<footer style="background:#fff;border-top:1px solid #e5e5ea;padding:24px 20px;margin-top:40px">
-    <div style="max-width:800px;margin:0 auto;text-align:center">
-        <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:12px">
-            <a href="../../../index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🏠 Home</a>
-            <a href="../../../tools/image/png-to-jpg-converter/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🖼️ PNG to JPG</a>
-            <a href="../../../tools/text/word-counter/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">📝 Word Counter</a>
-            <a href="../../../tools/url/qr-generator/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">📱 QR Code</a>
-            <a href="../../../tools/security/password-generator/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🔐 Password</a>
-        </div>
-        <p style="color:#8e8e93;font-size:0.76rem;margin:0">&copy; 2025 ToolPrime. All rights reserved. Made with ❤️</p>
+<footer>
+    <div class="links">
+        <a href="../../../index.html">Home</a><a href="../../../about.html">About</a>
+        <a href="../../../contact.html">Contact</a><a href="../../../privacy.html">Privacy</a>
+        <a href="../../../terms.html">Terms</a>
     </div>
+    <p class="copy">&copy; 2025 ToolPrime. Made with ❤️</p>
 </footer>
+
+<script>
+let unit='metric';
+document.getElementById('tabs').onclick=e=>{const b=e.target.closest('.tab');if(!b)return;document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));b.classList.add('active');unit=b.dataset.u;document.getElementById('metricInputs').style.display=unit==='metric'?'block':'none';document.getElementById('imperialInputs').style.display=unit==='imperial'?'block':'none'};
+
+function calcBMI(){
+    let h,w;
+    if(unit==='metric'){h=parseFloat(document.getElementById('cm').value)/100;w=parseFloat(document.getElementById('kg').value)}
+    else{const ft=parseFloat(document.getElementById('ft').value)||0;const inch=parseFloat(document.getElementById('inch').value)||0;h=((ft*12)+inch)*0.0254;w=parseFloat(document.getElementById('lbs').value)*0.453592}
+    if(!h||!w||h<=0||w<=0)return;
+    const bmi=w/(h*h);
+    document.getElementById('bmiVal').textContent=bmi.toFixed(1);
+    document.getElementById('bmiVal').style.color=bmi<18.5?'#3b82f6':bmi<25?'#34c759':bmi<30?'#ff9500':'#ff3b30';
+    let status,color;
+    if(bmi<18.5){status='Underweight';color='#3b82f6'}else if(bmi<25){status='Normal Weight';color='#34c759'}else if(bmi<30){status='Overweight';color='#ff9500'}else{status='Obese';color='#ff3b30'}
+    const bs=document.getElementById('bmiStatus');bs.textContent=status;bs.style.background=color+'22';bs.style.color=color;
+    document.getElementById('idealMin').textContent=(18.5*h*h).toFixed(1)+' '+(unit==='metric'?'kg':'lbs');
+    document.getElementById('idealMax').textContent=(24.9*h*h).toFixed(1)+' '+(unit==='metric'?'kg':'lbs');
+    document.getElementById('result').classList.add('show');
+}
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

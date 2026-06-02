@@ -2,155 +2,112 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="robots" content="index, follow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Free Word Counter Online - Count Words & Characters Instantly | ToolPrime</title>
-    <meta name="description" content="Free online word counter. Count words, characters, sentences & paragraphs instantly. Real-time counting, no limits. Perfect for essays, blogs & SEO.">
-    <meta name="keywords" content="word counter, character counter, count words online, word count tool, text counter, letter counter, sentence counter">
-    <meta property="og:title" content="Word Counter - Count Words & Characters Online | ToolPrime">
-    <meta property="og:description" content="Free online word counter tool. Count words, characters, sentences & paragraphs instantly. Paste text to count.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://toolprime.online/tools/text/word-counter/">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Word Counter - Count Words & Characters Online | ToolPrime">
-    <meta name="twitter:description" content="Free online word counter tool. Count words, characters, sentences & paragraphs instantly. Paste text to count.">
-    <link rel="canonical" href="https://toolprime.online/tools/text/word-counter/">
-
-    <link rel="stylesheet" href="../../../css/tool-style.css">
-    <style>@media(max-width:480px){body{padding:0 10px!important}}</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Word Counter - Count Words & Characters Online | ToolPrime</title>
+    <meta name="description" content="Count words, characters, sentences & paragraphs instantly. Free online word counter with real-time stats.">
+    <meta name="keywords" content="word counter, character counter, count words, word count tool, text counter, letter counter">
+    <meta property="og:title" content="Free Word Counter | ToolPrime">
+    <link rel="canonical" href="https://toolprime.online../../word-counter/">
     <link rel="icon" type="image/png" href="../../../assets/images/toolprime.png">
-    <style>footer{margin-left:-16px;margin-right:-16px}@media(max-width:768px){footer{margin-left:-12px;margin-right:-12px}}@media(max-width:480px){footer{margin-left:-8px;margin-right:-8px}}</style>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:system-ui,-apple-system,sans-serif;background:#f5f5f7;color:#1d1d1f;line-height:1.6;min-height:100vh}
+        .header{background:#fff;border-bottom:1px solid #e5e5ea;padding:0 20px;position:sticky;top:0;z-index:100}
+        .header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;height:56px;justify-content:space-between}
+        .logo{display:flex;align-items:center;text-decoration:none;gap:8px}.logo img{height:32px}.logo span{font-weight:700;color:#0071e3}
+        .home-btn{padding:7px 14px;background:#f5f5f7;border-radius:8px;text-decoration:none;color:#1d1d1f;font-weight:600;font-size:0.82rem;transition:0.15s}
+        .home-btn:hover{background:#0071e3;color:#fff}
+        .container{max-width:750px;margin:0 auto;padding:30px 20px 50px}
+        .back{display:inline-flex;align-items:center;gap:6px;color:#0071e3;text-decoration:none;font-weight:500;font-size:0.9rem;margin-bottom:20px}
+        .card{background:#fff;border:1px solid #e5e5ea;border-radius:14px;padding:28px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:24px}
+        .card h1{font-size:1.5rem;font-weight:800;margin-bottom:8px}
+        .card .desc{color:#6e6e73;margin-bottom:20px;font-size:0.9rem}
+        textarea{width:100%;padding:14px;background:#fafafa;border:2px solid #e5e5ea;border-radius:10px;font-size:0.92rem;font-family:inherit;color:#1d1d1f;resize:vertical;min-height:180px;margin-bottom:16px}
+        textarea:focus{border-color:#0071e3;outline:none;background:#fff;box-shadow:0 0 0 3px rgba(0,113,227,0.08)}
+        .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:12px}
+        .stat-box{background:#f5f5f7;border-radius:10px;padding:16px;text-align:center;border:1px solid #e5e5ea}
+        .stat-box .num{font-size:1.8rem;font-weight:700;color:#0071e3}
+        .stat-box .lbl{font-size:0.72rem;color:#6e6e73;text-transform:uppercase;letter-spacing:0.5px;margin-top:4px}
+        .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:8px;border:none;font-weight:600;font-size:0.85rem;cursor:pointer;font-family:inherit}
+        .btn-outline{background:transparent;border:2px solid #e5e5ea;color:#1d1d1f}
+        .btn-outline:hover{border-color:#0071e3;color:#0071e3}
+        .article{background:#fff;border:1px solid #e5e5ea;border-radius:14px;padding:28px;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+        .article h2{font-size:1.2rem;font-weight:700;margin:20px 0 10px}.article h2:first-child{margin-top:0}
+        .article p{color:#6e6e73;font-size:0.88rem;line-height:1.7;margin-bottom:12px}
+        .article ul{padding-left:18px;margin-bottom:12px}.article li{color:#6e6e73;font-size:0.85rem;line-height:1.7;margin-bottom:4px}
+        .faq-box{background:#fafafa;border-radius:10px;padding:14px 16px;margin-bottom:8px}
+        .faq-box strong{display:block;font-size:0.9rem;margin-bottom:4px}.faq-box p{font-size:0.82rem;margin:0;color:#6e6e73}
+        .related{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+        .related a{padding:8px 16px;background:#f5f5f7;border-radius:20px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:500;border:1px solid #e5e5ea}
+        .related a:hover{border-color:#0071e3;color:#0071e3}
+        footer{background:#fff;border-top:1px solid #e5e5ea;padding:20px;text-align:center;margin-top:20px}
+        footer .links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+        footer .links a{color:#6e6e73;text-decoration:none;font-size:0.8rem}footer .links a:hover{color:#0071e3}
+        footer .copy{color:#8e8e93;font-size:0.72rem}
+        @media(max-width:600px){.card{padding:18px}.card h1{font-size:1.2rem}.stats{grid-template-columns:repeat(2,1fr)}}
+    </style>
 </head>
-<body style="padding: 0 16px; margin: 0; overflow-x: hidden;">
-<!-- ═══════════ HEADER ═══════════ -->
-<header style="background:#fff;border-bottom:1px solid #e8eaed;padding:0;position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,0.04)">
-    <div style="max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 24px;gap:20px">
-        
-        <!-- Logo - Direct image only -->
-        <a href="../index.html" style="display:flex;align-items:center;text-decoration:none;flex-shrink:0">
-            <img src="../assets/images/toolprime.png" alt="ToolPrime" style="height:38px;width:auto;display:block">
-        </a>
-        
-        <!-- Search -->
-        <div style="flex:1;max-width:480px">
-            <input type="text" id="tpSearch" placeholder="Search tools..." autocomplete="off"
-                style="width:100%;padding:12px 20px;background:#f5f5f7;border:2px solid transparent;border-radius:14px;font-size:0.9rem;font-family:inherit;color:#1d1d1f;outline:none;transition:all 0.25s ease"
-                onfocus="this.style.background='#fff';this.style.borderColor='#0071e3';this.style.boxShadow='0 0 0 4px rgba(0,113,227,0.08)'"
-                onblur="this.style.background='#f5f5f7';this.style.borderColor='transparent';this.style.boxShadow='none'">
-        </div>
-        
-        <!-- Right -->
-        <div id="tpRight" style="flex-shrink:0">
-            <span style="font-size:0.78rem;color:#6e6e73;font-weight:500">🛠️ 20+ Tools</span>
-        </div>
+<body>
+
+<header class="header">
+    <div class="header-inner">
+        <a href="../../../index.html" class="logo"><img src="../../../assets/images/toolprime.png" alt="TP"><span>ToolPrime</span></a>
+        <a href="../../../index.html">Home</a>
     </div>
 </header>
 
-<script>
-(function(){
-    const path = window.location.pathname;
-    const depth = (path.match(/\//g)||[]).length - 1;
-    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+<div class="container">
+    <a href="../../../index.html" class="back">← Back to Store</a>
     
-    // Fix logo link
-    const logoLink = document.querySelector('header a[href="../index.html"]');
-    if(logoLink) logoLink.href = prefix + 'index.html';
-    
-    // Fix logo image
-    const logoImg = document.querySelector('header img[src="../assets/images/toolprime.png"]');
-    if(logoImg) logoImg.src = prefix + 'assets/images/toolprime.png';
-    
-    // Fix search
-    const search = document.getElementById('tpSearch');
-    if(search){
-        search.addEventListener('keydown', function(e){
-            if(e.key === 'Enter'){
-                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
-            }
-        });
-    }
-    
-    // Home button for tool pages
-    if(depth > 0){
-        const right = document.getElementById('tpRight');
-        if(right){
-            right.innerHTML = '<a href="' + prefix + 'index.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f5f5f7;border-radius:10px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:600;transition:0.2s;white-space:nowrap" onmouseover="this.style.background=\'#0071e3\';this.style.color=\'#fff\'" onmouseout="this.style.background=\'#f5f5f7\';this.style.color=\'#1d1d1f\'">🏠 Home</a>';
-        }
-        const header = document.querySelector('header');
-        if(header){ header.style.marginLeft = '-32px'; header.style.marginRight = '-32px'; }
-    }
-})();
-</script>
-<!-- ═══════════ TOOLPRIME HEADER ═══════════ -->
-
-
-<script>
-// Auto-fix header paths based on page location
-(function(){
-    const depth = (window.location.pathname.match(/\//g)||[]).length - 1;
-    const prefix = depth > 0 ? '../'.repeat(depth) : '';
-    
-    const logo = document.getElementById('tpLogo');
-    const logoImg = document.getElementById('tpLogoImg');
-    const search = document.getElementById('tpSearch');
-    const right = document.getElementById('tpRight');
-    
-    if(logo && prefix) logo.href = prefix + 'index.html';
-    if(logoImg && prefix) logoImg.src = prefix + 'assets/images/toolprime.png';
-    
-    // Search redirect
-    if(search){
-        search.addEventListener('keydown', function(e){
-            if(e.key === 'Enter'){
-                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
-            }
-        });
-    }
-    
-    // Show home button on tool pages
-    if(depth > 0 && right){
-        right.innerHTML = '<a href="' + prefix + 'index.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f5f5f7;border-radius:10px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:600;transition:0.2s;white-space:nowrap" onmouseover="this.style.background=\'#0071e3\';this.style.color=\'#fff\'" onmouseout="this.style.background=\'#f5f5f7\';this.style.color=\'#1d1d1f\'">🏠 Home</a>';
-    }
-    
-    // Style header margin for tool pages
-    const header = document.getElementById('tpHeader');
-    if(depth > 0 && header){
-        header.style.marginLeft = '-32px';
-        header.style.marginRight = '-32px';
-    }
-})();
-</script>
-<!-- ═══════════ HEADER ═══════════ -->
-
-<!-- ═══════════ PREMIUM HEADER ═══════════ -->
-
-
-
-
-
-
-
-
-
-<div class="tp-wrap">
-    <a href="../../../index.html" class="tp-back">← Back to Store</a>
-    <div class="tp-card">
+    <div class="card">
         <h1>📝 Word Counter</h1>
-        <p class="tp-desc">Count words, characters, sentences & paragraphs instantly.</p>
-        <textarea id="txt" rows="6" placeholder="Type or paste your text here..."></textarea>
-<div class="row">
-    <div class="col"><div class="result"><div class="big" id="words">0</div><div class="lbl">Words</div></div></div>
-    <div class="col"><div class="result"><div class="big" id="chars">0</div><div class="lbl">Characters</div></div></div>
-    <div class="col"><div class="result"><div class="big" id="charsNS">0</div><div class="lbl">No Spaces</div></div></div>
+        <p class="desc">Count words, characters, sentences & paragraphs in real-time. Paste your text below.</p>
+        
+        <textarea id="textInput" placeholder="Type or paste your text here..."></textarea>
+        
+        <div class="stats">
+            <div class="stat-box"><div class="num" id="words">0</div><div class="lbl">Words</div></div>
+            <div class="stat-box"><div class="num" id="chars">0</div><div class="lbl">Characters</div></div>
+            <div class="stat-box"><div class="num" id="charsNS">0</div><div class="lbl">No Spaces</div></div>
+            <div class="stat-box"><div class="num" id="sentences">0</div><div class="lbl">Sentences</div></div>
+            <div class="stat-box"><div class="num" id="paras">0</div><div class="lbl">Paragraphs</div></div>
+            <div class="stat-box"><div class="num" id="lines">0</div><div class="lbl">Lines</div></div>
+        </div>
+        
+        <button class="btn btn-outline" onclick="document.getElementById('textInput').value='';update()">🗑️ Clear</button>
+    </div>
+    
+    <div class="article">
+        <h2>Free Online Word Counter</h2>
+        <p>Count words and characters instantly with our <strong>free word counter</strong>. Perfect for essays, blog posts, SEO content, and social media.</p>
+        <h2>How to Use</h2>
+        <ul><li><strong>Step 1:</strong> Paste your text in the box above</li><li><strong>Step 2:</strong> See real-time word & character counts</li></ul>
+        <h2>Features</h2>
+        <ul><li>✅ Real-time counting</li><li>✅ Words, characters, sentences, paragraphs</li><li>✅ Character count without spaces</li><li>✅ No text limit</li></ul>
+        <div class="faq-box"><strong>Q: Is there a word limit?</strong><p>A: No! Count unlimited text.</p></div>
+        <div class="faq-box"><strong>Q: Does it work for all languages?</strong><p>A: Yes, any language using spaces.</p></div>
+        <h2>Related Tools</h2>
+        <div class="related">
+            <a href="../../s../../seo/../../../../seo/meta-tag-generator/">🏷️ Meta Tags</a>
+            <a href="../../develop../../developer/../../../../developer/json-formatter/">📋 JSON Formatter</a>
+            <a href="../../develop../../developer/../../../../developer/url-encoder/">🔗 URL Encoder</a>
+        </div>
+    </div>
 </div>
-<div class="row" style="margin-top:10px">
-    <div class="col"><div class="result"><div class="big" id="sentences">0</div><div class="lbl">Sentences</div></div></div>
-    <div class="col"><div class="result"><div class="big" id="paras">0</div><div class="lbl">Paragraphs</div></div></div>
-    <div class="col"><div class="result"><div class="big" id="lines">0</div><div class="lbl">Lines</div></div></div>
-</div>
+
+<footer>
+    <div class="links">
+        <a href="../../../index.html">Home</a><a href="../../../about.html">About</a>
+        <a href="../../../contact.html">Contact</a><a href="../../../privacy.html">Privacy</a>
+        <a href="../../../terms.html">Terms</a>
+    </div>
+    <p class="copy">&copy; 2025 ToolPrime. Made with ❤️</p>
+</footer>
+
 <script>
-const t=document.getElementById('txt');
-t.addEventListener('input',()=>{
+const t=document.getElementById('textInput');
+t.addEventListener('input',update);
+function update(){
     const v=t.value;
     document.getElementById('words').textContent=v.trim()?v.trim().split(/\s+/).length:0;
     document.getElementById('chars').textContent=v.length;
@@ -158,81 +115,10 @@ t.addEventListener('input',()=>{
     document.getElementById('sentences').textContent=v.trim()?(v.match(/[.!?]+/g)||[]).length:0;
     document.getElementById('paras').textContent=v.trim()?v.split(/\n\s*\n/).filter(p=>p.trim()).length:0;
     document.getElementById('lines').textContent=v.trim()?v.split(/\n/).length:0;
-});
+}
 </script>
-    </div>
-</div>
-<div class="toast" id="toast"></div>
-<script>
-function msg(t){const x=document.getElementById('toast');x.textContent=t;x.className='toast ok show';clearTimeout(x._t);x._t=setTimeout(()=>x.classList.remove('show'),2000)}
-</script>
-
-        <h3 style="font-size:1.1rem;font-weight:700;margin:20px 0 12px;color:#1d1d1f">Features</h3>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:20px">
-            <div style="font-size:0.82rem">✅ Real-time counting</div>
-            <div style="font-size:0.82rem">✅ Word counter</div>
-            <div style="font-size:0.82rem">✅ Character counter</div>
-            <div style="font-size:0.82rem">✅ Character count (no spaces)</div>
-            <div style="font-size:0.82rem">✅ Sentence counter</div>
-            <div style="font-size:0.82rem">✅ Paragraph counter</div>
-            <div style="font-size:0.82rem">✅ Line counter</div>
-            <div style="font-size:0.82rem">✅ No text limits</div>
-            <div style="font-size:0.82rem">✅ 100% free</div>
-        </div>
-        
-        <h3 style="font-size:1.1rem;font-weight:700;margin:20px 0 12px;color:#1d1d1f">Frequently Asked Questions</h3>
-        <div style="margin-bottom:10px;background:#fafafa;padding:14px;border-radius:10px">
-            <strong>Q: Is there a word limit?</strong><br>
-            <span style="color:#6e6e73;font-size:0.85rem">A: No! You can count unlimited words and characters with our free tool.</span>
-        </div>
-        <div style="margin-bottom:10px;background:#fafafa;padding:14px;border-radius:10px">
-            <strong>Q: Does it work for languages other than English?</strong><br>
-            <span style="color:#6e6e73;font-size:0.85rem">A: Yes! Our word counter works with any language that uses spaces between words.</span>
-        </div>
-        <div style="margin-bottom:10px;background:#fafafa;padding:14px;border-radius:10px">
-            <strong>Q: Is my text saved or stored?</strong><br>
-            <span style="color:#6e6e73;font-size:0.85rem">A: No. All counting happens in your browser. Your text is never uploaded or stored.</span>
-        </div>
-        
-        <h3 style="font-size:1.1rem;font-weight:700;margin:20px 0 12px;color:#1d1d1f">🔗 Related Tools</h3>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <a href="../../seo/meta-tag-generator/index.html" class="related-link">🏷️ Meta Tag Generator</a>
-            <a href="../../developer/json-formatter/index.html" class="related-link">📋 JSON Formatter</a>
-        </div>
-    </div>
-</div>
-<footer style="background:#fff;border-top:1px solid #e5e5ea;padding:24px 20px;margin-top:40px">
-    <div style="max-width:800px;margin:0 auto;text-align:center">
-        <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:12px">
-            <a href="../../../index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🏠 Home</a>
-            <a href="../../../tools/image/png-to-jpg-converter/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🖼️ PNG to JPG</a>
-            <a href="../../../tools/text/word-counter/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">📝 Word Counter</a>
-            <a href="../../../tools/url/qr-generator/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">📱 QR Code</a>
-            <a href="../../../tools/security/password-generator/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🔐 Password</a>
-        </div>
-        <p style="color:#8e8e93;font-size:0.76rem;margin:0">&copy; 2025 ToolPrime. All rights reserved. Made with ❤️</p>
-    </div>
-</footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

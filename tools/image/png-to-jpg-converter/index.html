@@ -2,221 +2,217 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="robots" content="index, follow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Free PNG to JPG Converter Online - Convert PNG to JPEG Instantly | ToolPrime</title>
-    <meta name="description" content="Free online PNG to JPG converter. Convert PNG images to JPG format instantly. No upload needed, browser-based. Adjustable quality, drag & drop support.">
-    <meta name="keywords" content="png to jpg, convert png to jpg, png to jpg converter, online image converter, png to jpeg, free image converter, png to jpg online">
-    <meta property="og:title" content="PNG to JPG Converter - Free Online Image Converter | ToolPrime">
-    <meta property="og:description" content="Convert PNG to JPG online free. High quality image conversion. No upload, works in browser. Convert PNG images to JPEG instantly.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://toolprime.online/tools/image/png-to-jpg-converter/">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="PNG to JPG Converter - Free Online Image Converter | ToolPrime">
-    <meta name="twitter:description" content="Convert PNG to JPG online free. High quality image conversion. No upload, works in browser. Convert PNG images to JPEG instantly.">
-    <link rel="canonical" href="https://toolprime.online/tools/image/png-to-jpg-converter/">
-
-    <link rel="stylesheet" href="../../../css/tool-style.css">
-    <style>@media(max-width:480px){body{padding:0 10px!important}}</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free PNG to JPG Converter Online - Convert Instantly | ToolPrime</title>
+    <meta name="description" content="Convert PNG to JPG online free. High quality conversion, no upload needed. Works in browser. Instant download.">
+    <meta name="keywords" content="png to jpg, convert png to jpg, png to jpg converter, online image converter, png to jpeg, free image converter">
+    <meta property="og:title" content="Free PNG to JPG Converter | ToolPrime">
+    <meta property="og:description" content="Convert PNG to JPG instantly. Free, browser-based, no upload.">
+    <link rel="canonical" href="https://toolprime.online../../png-to-jpg-converter/">
     <link rel="icon" type="image/png" href="../../../assets/images/toolprime.png">
-    <style>footer{margin-left:-16px;margin-right:-16px}@media(max-width:768px){footer{margin-left:-12px;margin-right:-12px}}@media(max-width:480px){footer{margin-left:-8px;margin-right:-8px}}</style>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:system-ui,-apple-system,sans-serif;background:#f5f5f7;color:#1d1d1f;line-height:1.6;min-height:100vh}
+        .header{background:#fff;border-bottom:1px solid #e5e5ea;padding:0 20px;position:sticky;top:0;z-index:100}
+        .header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;height:56px;justify-content:space-between}
+        .logo{display:flex;align-items:center;text-decoration:none;gap:8px}
+        .logo img{height:32px}.logo span{font-weight:700;color:#0071e3}
+        .home-btn{padding:7px 14px;background:#f5f5f7;border-radius:8px;text-decoration:none;color:#1d1d1f;font-weight:600;font-size:0.82rem}
+        .home-btn:hover{background:#0071e3;color:#fff}
+        .container{max-width:750px;margin:0 auto;padding:30px 20px 50px}
+        .back{display:inline-flex;align-items:center;gap:6px;color:#0071e3;text-decoration:none;font-weight:500;font-size:0.9rem;margin-bottom:20px}
+        .back:hover{text-decoration:underline}
+        .card{background:#fff;border:1px solid #e5e5ea;border-radius:14px;padding:28px;box-shadow:0 1px 4px rgba(0,0,0,0.04);margin-bottom:24px}
+        .card h1{font-size:1.5rem;font-weight:800;margin-bottom:8px;color:#1d1d1f}
+        .card p{color:#6e6e73;margin-bottom:20px;font-size:0.9rem}
+        .upload-zone{border:2px dashed #d0d0d5;border-radius:12px;padding:40px 20px;text-align:center;cursor:pointer;transition:0.2s;background:#fafafa;margin-bottom:16px}
+        .upload-zone:hover{border-color:#0071e3;background:#f0f6ff}
+        .upload-zone input{display:none}
+        .upload-icon{font-size:3rem;margin-bottom:8px}
+        .upload-text{font-weight:600;font-size:1rem}.upload-hint{font-size:0.78rem;color:#6e6e73;margin-top:4px}
+        .preview{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+        .preview-box{flex:1;min-width:200px;background:#f5f5f7;border-radius:10px;padding:16px;text-align:center}
+        .preview-box img{max-width:100%;max-height:200px;border-radius:8px}
+        .preview-box h4{font-size:0.75rem;color:#6e6e73;text-transform:uppercase;margin-bottom:8px}
+        .preview-box .info{font-size:0.72rem;color:#8e8e93;margin-top:6px}
+        .quality-row{margin-bottom:16px;display:flex;align-items:center;gap:12px}
+        .quality-row label{font-weight:600;font-size:0.85rem;white-space:nowrap}
+        .quality-row input[type=range]{flex:1;accent-color:#0071e3}
+        .quality-row span{font-weight:700;color:#0071e3;min-width:40px}
+        .btn{display:inline-flex;align-items:center;gap:6px;padding:12px 24px;border-radius:10px;border:none;font-weight:600;font-size:0.9rem;cursor:pointer;font-family:inherit;transition:0.15s}
+        .btn-primary{background:#0071e3;color:#fff;width:100%;justify-content:center}
+        .btn-primary:hover{background:#005bb5}
+        .btn-primary:disabled{background:#a0c4e8;cursor:not-allowed}
+        .btn-outline{background:transparent;border:2px solid #e5e5ea;color:#1d1d1f}
+        .btn-outline:hover{border-color:#0071e3;color:#0071e3}
+        .btn-row{display:flex;gap:10px;margin-top:8px}
+        
+        /* Article */
+        .article{background:#fff;border:1px solid #e5e5ea;border-radius:14px;padding:28px;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+        .article h2{font-size:1.2rem;font-weight:700;margin:20px 0 10px;color:#1d1d1f}
+        .article h2:first-child{margin-top:0}
+        .article p{color:#6e6e73;font-size:0.88rem;line-height:1.7;margin-bottom:12px}
+        .article ul{padding-left:18px;margin-bottom:12px}
+        .article li{color:#6e6e73;font-size:0.85rem;line-height:1.7;margin-bottom:4px}
+        .faq-box{background:#fafafa;border-radius:10px;padding:14px 16px;margin-bottom:8px}
+        .faq-box strong{display:block;font-size:0.9rem;margin-bottom:4px}
+        .faq-box p{font-size:0.82rem;margin:0;color:#6e6e73}
+        .related{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+        .related a{padding:8px 16px;background:#f5f5f7;border-radius:20px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:500;border:1px solid #e5e5ea}
+        .related a:hover{border-color:#0071e3;color:#0071e3}
+        
+        footer{background:#fff;border-top:1px solid #e5e5ea;padding:20px;text-align:center;margin-top:20px}
+        footer .links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+        footer .links a{color:#6e6e73;text-decoration:none;font-size:0.8rem}
+        footer .links a:hover{color:#0071e3}
+        footer .copy{color:#8e8e93;font-size:0.72rem}
+        
+        .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1d1d1f;color:#fff;padding:10px 22px;border-radius:24px;font-size:0.85rem;z-index:999;opacity:0;transition:0.3s}
+        .toast.show{opacity:1}
+        
+        @media(max-width:600px){.card{padding:18px}.card h1{font-size:1.2rem}.preview{flex-direction:column}.upload-zone{padding:28px 14px}}
+    </style>
 </head>
-<body style="padding: 0 16px; margin: 0; overflow-x: hidden;">
-<!-- ═══════════ HEADER ═══════════ -->
-<header style="background:#fff;border-bottom:1px solid #e8eaed;padding:0;position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,0.04)">
-    <div style="max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 24px;gap:20px">
-        
-        <!-- Logo - Direct image only -->
-        <a href="../index.html" style="display:flex;align-items:center;text-decoration:none;flex-shrink:0">
-            <img src="../assets/images/toolprime.png" alt="ToolPrime" style="height:38px;width:auto;display:block">
-        </a>
-        
-        <!-- Search -->
-        <div style="flex:1;max-width:480px">
-            <input type="text" id="tpSearch" placeholder="Search tools..." autocomplete="off"
-                style="width:100%;padding:12px 20px;background:#f5f5f7;border:2px solid transparent;border-radius:14px;font-size:0.9rem;font-family:inherit;color:#1d1d1f;outline:none;transition:all 0.25s ease"
-                onfocus="this.style.background='#fff';this.style.borderColor='#0071e3';this.style.boxShadow='0 0 0 4px rgba(0,113,227,0.08)'"
-                onblur="this.style.background='#f5f5f7';this.style.borderColor='transparent';this.style.boxShadow='none'">
-        </div>
-        
-        <!-- Right -->
-        <div id="tpRight" style="flex-shrink:0">
-            <span style="font-size:0.78rem;color:#6e6e73;font-weight:500">🛠️ 20+ Tools</span>
-        </div>
+<body>
+
+<header class="header">
+    <div class="header-inner">
+        <a href="../../../index.html" class="logo"><img src="../../../assets/images/toolprime.png" alt="TP"><span>ToolPrime</span></a>
+        <a href="../../../index.html">Home</a>
     </div>
 </header>
 
-<script>
-(function(){
-    const path = window.location.pathname;
-    const depth = (path.match(/\//g)||[]).length - 1;
-    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+<div class="container">
+    <a href="../../../index.html" class="back">← Back to Store</a>
     
-    // Fix logo link
-    const logoLink = document.querySelector('header a[href="../index.html"]');
-    if(logoLink) logoLink.href = prefix + 'index.html';
-    
-    // Fix logo image
-    const logoImg = document.querySelector('header img[src="../assets/images/toolprime.png"]');
-    if(logoImg) logoImg.src = prefix + 'assets/images/toolprime.png';
-    
-    // Fix search
-    const search = document.getElementById('tpSearch');
-    if(search){
-        search.addEventListener('keydown', function(e){
-            if(e.key === 'Enter'){
-                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
-            }
-        });
-    }
-    
-    // Home button for tool pages
-    if(depth > 0){
-        const right = document.getElementById('tpRight');
-        if(right){
-            right.innerHTML = '<a href="' + prefix + 'index.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f5f5f7;border-radius:10px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:600;transition:0.2s;white-space:nowrap" onmouseover="this.style.background=\'#0071e3\';this.style.color=\'#fff\'" onmouseout="this.style.background=\'#f5f5f7\';this.style.color=\'#1d1d1f\'">🏠 Home</a>';
-        }
-        const header = document.querySelector('header');
-        if(header){ header.style.marginLeft = '-32px'; header.style.marginRight = '-32px'; }
-    }
-})();
-</script>
-<!-- ═══════════ TOOLPRIME HEADER ═══════════ -->
-
-
-<script>
-// Auto-fix header paths based on page location
-(function(){
-    const depth = (window.location.pathname.match(/\//g)||[]).length - 1;
-    const prefix = depth > 0 ? '../'.repeat(depth) : '';
-    
-    const logo = document.getElementById('tpLogo');
-    const logoImg = document.getElementById('tpLogoImg');
-    const search = document.getElementById('tpSearch');
-    const right = document.getElementById('tpRight');
-    
-    if(logo && prefix) logo.href = prefix + 'index.html';
-    if(logoImg && prefix) logoImg.src = prefix + 'assets/images/toolprime.png';
-    
-    // Search redirect
-    if(search){
-        search.addEventListener('keydown', function(e){
-            if(e.key === 'Enter'){
-                window.location.href = prefix + 'index.html?q=' + encodeURIComponent(this.value);
-            }
-        });
-    }
-    
-    // Show home button on tool pages
-    if(depth > 0 && right){
-        right.innerHTML = '<a href="' + prefix + 'index.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f5f5f7;border-radius:10px;text-decoration:none;color:#1d1d1f;font-size:0.82rem;font-weight:600;transition:0.2s;white-space:nowrap" onmouseover="this.style.background=\'#0071e3\';this.style.color=\'#fff\'" onmouseout="this.style.background=\'#f5f5f7\';this.style.color=\'#1d1d1f\'">🏠 Home</a>';
-    }
-    
-    // Style header margin for tool pages
-    const header = document.getElementById('tpHeader');
-    if(depth > 0 && header){
-        header.style.marginLeft = '-32px';
-        header.style.marginRight = '-32px';
-    }
-})();
-</script>
-<!-- ═══════════ HEADER ═══════════ -->
-
-<!-- ═══════════ PREMIUM HEADER ═══════════ -->
-
-
-
-
-
-
-
-
-    
-    <div class="tool-page">
-        <a href="../../../index.html" class="tool-back">← Back to Tool Store</a>
-        <div class="tool-box">
-            <h1>🖼️ PNG to JPG Converter</h1>
-            <p class="tool-desc">Convert PNG to JPG instantly. Free, browser-based.</p>
-            <div class="tool-placeholder">
-                <div class="tool-placeholder-icon">🖼️</div>
-                <h3>Tool Coming Soon!</h3>
-                <p>We're building this tool. Check back soon!</p>
-            </div>
+    <div class="card">
+        <h1>🖼️ PNG to JPG Converter</h1>
+        <p>Convert PNG images to JPG format instantly. No upload needed — everything works in your browser.</p>
+        
+        <div class="upload-zone" id="uploadZone">
+            <div class="upload-icon">📁</div>
+            <div class="upload-text">Drop PNG image here or click</div>
+            <div class="upload-hint">Max 10MB • PNG only</div>
+            <input type="file" id="fileInput" accept="image/png">
+        </div>
+        
+        <div class="preview" id="previewRow" style="display:none">
+            <div class="preview-box"><h4>Original PNG</h4><img id="origImg"><div class="info" id="origInfo"></div></div>
+            <div class="preview-box"><h4>Converted JPG</h4><img id="convImg"><div class="info" id="convInfo"></div></div>
+        </div>
+        
+        <div class="quality-row" id="qualityRow" style="display:none">
+            <label>Quality:</label>
+            <input type="range" id="qualSlider" min="10" max="100" value="85">
+            <span id="qualVal">85%</span>
+        </div>
+        
+        <div class="btn-row" id="btnRow" style="display:none">
+            <button class="btn btn-primary" id="dlBtn" onclick="download()" disabled>⬇️ Download JPG</button>
+            <button class="btn btn-outline" onclick="reset()">🔄 New</button>
         </div>
     </div>
-
-<!-- ═══════════ SEO ARTICLE ═══════════ -->
-
-        <h3 style="font-size:1.1rem;font-weight:700;margin:20px 0 12px;color:#1d1d1f">Features</h3>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:20px">
-            <div style="font-size:0.82rem">✅ Free unlimited conversions</div>
-            <div style="font-size:0.82rem">✅ No sign-up required</div>
-            <div style="font-size:0.82rem">✅ Browser-based processing</div>
-            <div style="font-size:0.82rem">✅ Adjustable JPG quality</div>
-            <div style="font-size:0.82rem">✅ Drag & drop support</div>
-            <div style="font-size:0.82rem">✅ Instant preview</div>
-            <div style="font-size:0.82rem">✅ Works on mobile</div>
-            <div style="font-size:0.82rem">✅ Privacy guaranteed</div>
-            <div style="font-size:0.82rem">✅ No file size limits</div>
-        </div>
+    
+    <div class="article">
+        <h2>Free PNG to JPG Converter Online</h2>
+        <p>Our <strong>PNG to JPG converter</strong> is the easiest way to convert your images. Why convert? JPG files are 50-80% smaller, perfect for websites, email, and social media.</p>
         
-        <h3 style="font-size:1.1rem;font-weight:700;margin:20px 0 12px;color:#1d1d1f">Frequently Asked Questions</h3>
-        <div style="margin-bottom:10px;background:#fafafa;padding:14px;border-radius:10px">
-            <strong>Q: Is this PNG to JPG converter free?</strong><br>
-            <span style="color:#6e6e73;font-size:0.85rem">A: Yes! Our converter is 100% free with no hidden fees. Convert unlimited PNG images to JPG.</span>
-        </div>
-        <div style="margin-bottom:10px;background:#fafafa;padding:14px;border-radius:10px">
-            <strong>Q: Does conversion reduce image quality?</strong><br>
-            <span style="color:#6e6e73;font-size:0.85rem">A: Some quality reduction is normal as JPG uses compression. For best results, use 90-100% quality setting.</span>
-        </div>
-        <div style="margin-bottom:10px;background:#fafafa;padding:14px;border-radius:10px">
-            <strong>Q: Are my images uploaded to your server?</strong><br>
-            <span style="color:#6e6e73;font-size:0.85rem">A: No! All processing is done locally in your browser. Your files never leave your device.</span>
-        </div>
-        <div style="margin-bottom:10px;background:#fafafa;padding:14px;border-radius:10px">
-            <strong>Q: What is the difference between PNG and JPG?</strong><br>
-            <span style="color:#6e6e73;font-size:0.85rem">A: PNG uses lossless compression (larger files, supports transparency). JPG uses lossy compression (smaller files, ideal for photos).</span>
-        </div>
+        <h2>How to Convert PNG to JPG</h2>
+        <ul>
+            <li><strong>Step 1:</strong> Upload your PNG image (drag & drop or click)</li>
+            <li><strong>Step 2:</strong> Adjust quality using the slider</li>
+            <li><strong>Step 3:</strong> Click Download JPG to save</li>
+        </ul>
         
-        <h3 style="font-size:1.1rem;font-weight:700;margin:20px 0 12px;color:#1d1d1f">🔗 Related Image Tools</h3>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <a href="../image-compressor/index.html" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:#f5f5f7;border-radius:24px;text-decoration:none;color:#1d1d1f;font-size:0.85rem;font-weight:500;border:1px solid #e5e5ea">🗜️ Image Compressor</a>
-            <a href="../image-resizer/index.html" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:#f5f5f7;border-radius:24px;text-decoration:none;color:#1d1d1f;font-size:0.85rem;font-weight:500;border:1px solid #e5e5ea">📐 Image Resizer</a>
-            <a href="../../pdf/image-to-pdf/index.html" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:#f5f5f7;border-radius:24px;text-decoration:none;color:#1d1d1f;font-size:0.85rem;font-weight:500;border:1px solid #e5e5ea">📑 Image to PDF</a>
-            <a href="../../design/color-picker-from-image/index.html" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:#f5f5f7;border-radius:24px;text-decoration:none;color:#1d1d1f;font-size:0.85rem;font-weight:500;border:1px solid #e5e5ea">🎨 Color from Image</a>
+        <h2>Features</h2>
+        <ul>
+            <li>✅ Instant conversion in browser</li>
+            <li>✅ Adjustable quality (10-100%)</li>
+            <li>✅ No upload to server — 100% private</li>
+            <li>✅ Free unlimited use</li>
+        </ul>
+        
+        <div class="faq-box"><strong>Q: Is PNG to JPG conversion free?</strong><p>A: Yes! 100% free, no limits.</p></div>
+        <div class="faq-box"><strong>Q: Will quality decrease?</strong><p>A: Some loss is normal. Use 90-100% quality for best results.</p></div>
+        
+        <h2>Related Tools</h2>
+        <div class="related">
+            <a href="../../image-compressor/">🗜️ Image Compressor</a>
+            <a href="../../image-resizer/">📐 Image Resizer</a>
+            <a href="../../p../../pdf/../../../../pdf/image-to-pdf/">📑 Image to PDF</a>
         </div>
     </div>
 </div>
-<footer style="background:#fff;border-top:1px solid #e5e5ea;padding:24px 20px;margin-top:40px">
-    <div style="max-width:800px;margin:0 auto;text-align:center">
-        <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:12px">
-            <a href="../../../index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🏠 Home</a>
-            <a href="../../../tools/image/png-to-jpg-converter/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🖼️ PNG to JPG</a>
-            <a href="../../../tools/text/word-counter/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">📝 Word Counter</a>
-            <a href="../../../tools/url/qr-generator/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">📱 QR Code</a>
-            <a href="../../../tools/security/password-generator/index.html" style="color:#6e6e73;text-decoration:none;font-size:0.84rem;font-weight:500;transition:0.2s" onmouseover="this.style.color='#0071e3'" onmouseout="this.style.color='#6e6e73'">🔐 Password</a>
-        </div>
-        <p style="color:#8e8e93;font-size:0.76rem;margin:0">&copy; 2025 ToolPrime. All rights reserved. Made with ❤️</p>
+
+<footer>
+    <div class="links">
+        <a href="../../../index.html">Home</a>
+        <a href="../../../about.html">About</a>
+        <a href="../../../contact.html">Contact</a>
+        <a href="../../../privacy.html">Privacy</a>
+        <a href="../../../terms.html">Terms</a>
     </div>
+    <p class="copy">&copy; 2025 ToolPrime. Made with ❤️</p>
 </footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const uz=document.getElementById('uploadZone'),fi=document.getElementById('fileInput');
+const pr=document.getElementById('previewRow'),qr=document.getElementById('qualityRow'),br=document.getElementById('btnRow');
+const qs=document.getElementById('qualSlider'),qv=document.getElementById('qualVal'),db=document.getElementById('dlBtn');
+const toast=document.getElementById('toast');let of=null,cb=null,cu=null;
+
+function msg(m){toast.textContent=m;toast.className='toast show';clearTimeout(toast._t);toast._t=setTimeout(()=>toast.classList.remove('show'),2500)}
+function fmt(b){return b<1024?b+' B':b<1048576?(b/1024).toFixed(1)+' KB':(b/1048576).toFixed(2)+' MB'}
+
+uz.onclick=()=>fi.click();
+uz.ondragover=e=>{e.preventDefault();uz.style.borderColor='#0071e3'};
+uz.ondragleave=()=>uz.style.borderColor='#d0d0d5';
+uz.ondrop=e=>{e.preventDefault();uz.style.borderColor='#d0d0d5';if(e.dataTransfer.files[0])load(e.dataTransfer.files[0])};
+fi.onchange=e=>{if(e.target.files[0])load(e.target.files[0])};
+
+function load(f){
+    if(f.type!=='image/png'){msg('Only PNG files!');return}
+    if(f.size>10*1024*1024){msg('Max 10MB!');return}
+    of=f;
+    const r=new FileReader();
+    r.onload=e=>{document.getElementById('origImg').src=e.target.result;document.getElementById('origInfo').textContent=f.name+' ('+fmt(f.size)+')';};
+    r.readAsDataURL(f);
+    convert(f,qs.value/100);
+    pr.style.display='flex';qr.style.display='flex';br.style.display='flex';
+}
+
+function convert(f,q=0.85){
+    const i=new Image(),u=URL.createObjectURL(f);
+    i.onload=()=>{
+        const c=document.createElement('canvas');c.width=i.width;c.height=i.height;
+        c.getContext('2d').fillStyle='#fff';c.getContext('2d').fillRect(0,0,c.width,c.height);
+        c.getContext('2d').drawImage(i,0,0);
+        c.toBlob(b=>{cb=b;if(cu)URL.revokeObjectURL(cu);cu=URL.createObjectURL(b);
+            document.getElementById('convImg').src=cu;
+            document.getElementById('convInfo').textContent='converted.jpg ('+fmt(b.size)+')';
+            db.disabled=false;URL.revokeObjectURL(u);
+        },'image/jpeg',q);
+    };i.src=u;
+}
+
+qs.oninput=()=>{qv.textContent=qs.value+'%';if(of)convert(of,qs.value/100)};
+
+function download(){
+    if(!cb)return;
+    const a=document.createElement('a');a.href=cu;a.download='converted.jpg';
+    document.body.appendChild(a);a.click();document.body.removeChild(a);msg('✅ Downloaded!');
+}
+
+function reset(){
+    of=cb=null;if(cu)URL.revokeObjectURL(cu);cu=null;fi.value='';
+    pr.style.display='none';qr.style.display='none';br.style.display='none';
+    qs.value=85;qv.textContent='85%';document.getElementById('origImg').src='';document.getElementById('convImg').src='';
+}
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
